@@ -1,0 +1,104 @@
+{
+  "task_name": "tadsr_output_tail_conv_out_smoke_training",
+  "created_at_utc": "2026-06-09T12:45:47.605006+00:00",
+  "num_samples": 32,
+  "train_samples": 24,
+  "val_samples": 8,
+  "train_indices": [
+    0,
+    1,
+    4,
+    6,
+    7,
+    8,
+    9,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    30
+  ],
+  "val_indices": [
+    2,
+    3,
+    5,
+    10,
+    12,
+    19,
+    29,
+    31
+  ],
+  "feature_shape": [
+    32,
+    320,
+    32,
+    32
+  ],
+  "target_shape": [
+    32,
+    4,
+    32,
+    32
+  ],
+  "train_feature_shape": [
+    24,
+    320,
+    32,
+    32
+  ],
+  "val_feature_shape": [
+    8,
+    320,
+    32,
+    32
+  ],
+  "train_target_shape": [
+    24,
+    4,
+    32,
+    32
+  ],
+  "val_target_shape": [
+    8,
+    4,
+    32,
+    32
+  ],
+  "seed": 1234,
+  "perturb_std": 0.02,
+  "trainable_module": "output_tail_conv_out",
+  "trainable_parameters": 11524,
+  "conv_weight_shape": [
+    4,
+    320,
+    3,
+    3
+  ],
+  "conv_bias_shape": [
+    4
+  ],
+  "full_tadsr_training": false,
+  "full_inference_executed": false,
+  "full_denoising_loop_executed": false,
+  "image_saved": false,
+  "video_saved": false,
+  "data_source": "deterministic_feature_target_pairs_from_official_output_tail",
+  "source_weight_file": "experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz",
+  "source_feature_files": [
+    "experiments/full_repro/unet_alignment/oracle_tensors_unet_output_tail/synthetic_output_tail_act_output.npy",
+    "experiments/full_repro/unet_alignment/oracle_tensors_unet_output_tail/entry_output_tail_act_output.npy"
+  ],
+  "limitation": "Smoke training validates the small training loop, not full TADSR training or production inference."
+}

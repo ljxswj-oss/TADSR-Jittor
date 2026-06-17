@@ -1,0 +1,15 @@
+{
+  "status_marker": "TADSR_EXPERIMENTAL_CLI_METADATA_ONLY_PLAN",
+  "status": "PASS",
+  "implemented": false,
+  "production_cli_guard_preserved": true,
+  "proposed_future_command": "python -m jittor_tadsr_full.tadsr_full_experimental --metadata-only --num-inference-steps 1 --disable-image-save",
+  "must_not_replace": "python -m jittor_tadsr_full.tadsr_full --full-inference",
+  "full_inference_executed": false,
+  "image_or_video_generated": false,
+  "raw_tensor_saved": false,
+  "required_approval_before_image_smoke": true,
+  "markers": {
+    "TADSR_EXPERIMENTAL_CLI_METADATA_ONLY_PLAN": "PASS"
+  }
+}

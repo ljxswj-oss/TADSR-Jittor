@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "target": "encoder.down_blocks.0",
+  "module_order": [
+    "resnets.0",
+    "resnets.1",
+    "downsamplers.0"
+  ],
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      128,
+      16,
+      16
+    ],
+    "max_abs_error": 3.337860107421875e-06,
+    "mean_abs_error": 4.0526577649302453e-07,
+    "relative_error": 1.8031701151913138e-07,
+    "cosine_similarity": 0.9999999999999829,
+    "tolerance": 0.0001
+  },
+  "diagnostics": {
+    "after_resnet0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "mean_abs_error": 1.1833916602199679e-07,
+      "relative_error": 2.0397433283820883e-07,
+      "cosine_similarity": 0.9999999999999832,
+      "tolerance": 0.0001
+    },
+    "after_resnet1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "mean_abs_error": 1.7957881226493555e-07,
+      "relative_error": 2.7642880894354596e-07,
+      "cosine_similarity": 0.9999999999999727,
+      "tolerance": 0.0001
+    },
+    "after_downsampler": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "max_abs_error": 3.337860107421875e-06,
+      "mean_abs_error": 4.0526577649302453e-07,
+      "relative_error": 1.8031701151913138e-07,
+      "cosine_similarity": 0.9999999999999829,
+      "tolerance": 0.0001
+    },
+    "final_downblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "max_abs_error": 3.337860107421875e-06,
+      "mean_abs_error": 4.0526577649302453e-07,
+      "relative_error": 1.8031701151913138e-07,
+      "cosine_similarity": 0.9999999999999829,
+      "tolerance": 0.0001
+    },
+    "direct_pytorch_downblock0_reference": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 0.9999999999999998,
+      "tolerance": 1e-07
+    }
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

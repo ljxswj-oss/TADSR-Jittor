@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "url": "https://pypi.org/simple",
+      "ok": true,
+      "status": 200,
+      "elapsed_sec": 1.062
+    },
+    {
+      "url": "https://download.pytorch.org/whl/cu118",
+      "ok": true,
+      "status": 200,
+      "elapsed_sec": 1.032
+    },
+    {
+      "url": "https://download.pytorch.org/whl/torch_stable.html",
+      "ok": true,
+      "status": 200,
+      "elapsed_sec": 0.947
+    }
+  ],
+  "pypi_ok": true
+}

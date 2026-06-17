@@ -1,0 +1,59 @@
+# TimeAware VAE Decoder MidBlock Audit
+
+Status: PASS
+
+## Key findings
+- decoder class: `diffusers.models.autoencoders.vae.Decoder`
+- decoder.forward signature: `(sample: torch.FloatTensor, latent_embeds: Optional[torch.FloatTensor] = None) -> torch.FloatTensor`
+- decoder.mid_block class: `diffusers.models.unet_2d_blocks.UNetMidBlock2D`
+- mid_block.forward signature: `(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None) -> torch.FloatTensor`
+- default decoder mid_block temb: `True`
+- input shape: `[1, 512, 4, 4]`
+- output shape: `[1, 512, 4, 4]`
+- module order: `['resnets.0', 'attentions.0', 'resnets.1']`
+- resnet_count: `2`
+- attention_count: `1`
+
+## ResNets
+
+| Module | in | out | time proj | conv1 | conv2 | shortcut |
+|---|---:|---:|---|---|---|---|
+| `decoder.mid_block.resnets.0` | 512 | 512 | False | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False |
+| `decoder.mid_block.resnets.1` | 512 | 512 | False | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False |
+
+## Attention
+
+| Module | exists | heads | head_dim | group_norm | q/k/v/out |
+|---|---|---:|---:|---|---|
+| `decoder.mid_block.attentions.0` | True | 1 | 512 | True | `[512, 512]` / `[512, 512]` / `[512, 512]` / `[512, 512]` |
+
+## Converted NPZ keys
+
+| Key | Shape | DType |
+|---|---|---|
+| `decoder__mid_block__attentions__0__group_norm__weight` | `[512]` | `float32` |
+| `decoder__mid_block__attentions__0__group_norm__bias` | `[512]` | `float32` |
+| `decoder__mid_block__attentions__0__query__weight` | `[512, 512]` | `float32` |
+| `decoder__mid_block__attentions__0__query__bias` | `[512]` | `float32` |
+| `decoder__mid_block__attentions__0__key__weight` | `[512, 512]` | `float32` |
+| `decoder__mid_block__attentions__0__key__bias` | `[512]` | `float32` |
+| `decoder__mid_block__attentions__0__value__weight` | `[512, 512]` | `float32` |
+| `decoder__mid_block__attentions__0__value__bias` | `[512]` | `float32` |
+| `decoder__mid_block__attentions__0__proj_attn__weight` | `[512, 512]` | `float32` |
+| `decoder__mid_block__attentions__0__proj_attn__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__norm1__weight` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__norm1__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__conv1__weight` | `[512, 512, 3, 3]` | `float32` |
+| `decoder__mid_block__resnets__0__conv1__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__norm2__weight` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__norm2__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__0__conv2__weight` | `[512, 512, 3, 3]` | `float32` |
+| `decoder__mid_block__resnets__0__conv2__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__norm1__weight` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__norm1__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__conv1__weight` | `[512, 512, 3, 3]` | `float32` |
+| `decoder__mid_block__resnets__1__conv1__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__norm2__weight` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__norm2__bias` | `[512]` | `float32` |
+| `decoder__mid_block__resnets__1__conv2__weight` | `[512, 512, 3, 3]` | `float32` |
+| `decoder__mid_block__resnets__1__conv2__bias` | `[512]` | `float32` |

@@ -1,0 +1,9 @@
+# TADSR Minimal Latent Integration Audit
+
+TADSR_MINIMAL_INTEGRATION_AUDIT: PASS
+TADSR_GET_X0_FROM_RES_AUDIT: PASS
+TADSR_MINIMAL_LATENT_ONE_STEP_CONTRACT_AUDIT: PASS
+
+Formula: `x0 = latent_lq / sqrt(alphas_cumprod[timestep]) - model_pred`
+Decode input formula: `decode_input = x0 / scaling_factor`
+Scope: source-code/contract audit only; no production full inference was executed.

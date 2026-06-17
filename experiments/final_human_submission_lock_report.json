@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-13T00:00:00+00:00",
+  "status": "PASS",
+  "branch": "codex/tadsr-production-completion",
+  "latest_locked_commit": "a072df9 Prepare TADSR-Jittor public release and human submission package",
+  "full_repo_path": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths",
+  "compact_final_materials_path": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Final_Materials_20260609_213457",
+  "clean_public_release_path": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Public_Release_Clean",
+  "manual_actions_remaining": [
+    "Create GitHub repository manually.",
+    "Upload the clean public release directory.",
+    "Run scripts/set_final_github_url.py with the real GitHub URL.",
+    "Record the final 20-30 minute video.",
+    "Submit PPT/PDF, video, GitHub URL, and required materials to the course system."
+  ],
+  "must_remain_statuses": {
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL",
+    "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE",
+    "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": "NOT_IMPLEMENTED_BY_DESIGN"
+  },
+  "markers": {
+    "TADSR_FINAL_HUMAN_SUBMISSION_LOCK_REPORT": "PASS",
+    "TADSR_FINAL_HUMAN_SUBMISSION_LOCK_READY": "PASS"
+  }
+}

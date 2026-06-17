@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-09T11:58:50.172325+00:00",
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 21625.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 64.0
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 14630.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 0.0
+    },
+    {
+      "index": 2,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 914.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 8.0
+    },
+    {
+      "index": 3,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 936.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 16.0
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 1874.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 89.0
+    },
+    {
+      "index": 5,
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_used_mb": 1524.0,
+      "memory_total_mb": 24564.0,
+      "utilization_gpu_percent": 18.0
+    }
+  ],
+  "selected_gpu": 2,
+  "selected_gpu_name": "NVIDIA GeForce RTX 4090",
+  "cpu_fallback": false,
+  "rule": {
+    "max_memory_used_mb": 2000.0,
+    "max_utilization": 20.0
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "target": "encoder image path -> quant_conv -> decoder up_blocks.2",
+  "note": "deterministic full bridge through encoder and partial decoder, ending at decoder.up_blocks.2; full decoder still excludes upblock3 and tail",
+  "diagnostics": {
+    "moments": {
+      "shape_match": true,
+      "shape": [
+        1,
+        8,
+        4,
+        4
+      ],
+      "max_abs_error": 9.5367431640625e-06,
+      "mean_abs_error": 1.689302735030651e-06,
+      "relative_error": 1.6456072783499378e-07,
+      "cosine_similarity": 0.9999999999999774,
+      "tolerance": 0.001
+    },
+    "posterior_mode": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 6.665941327810287e-07,
+      "relative_error": 1.2711904631882547e-07,
+      "cosine_similarity": 0.9999999999999906,
+      "tolerance": 0.001
+    },
+    "decoder_conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 1.9293725017632823e-07,
+      "relative_error": 1.9575239473845134e-07,
+      "cosine_similarity": 0.9999999999999838,
+      "tolerance": 0.001
+    },
+    "decoder_midblock": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 4.500150680541992e-06,
+      "mean_abs_error": 6.389774540593862e-07,
+      "relative_error": 5.408308145189686e-07,
+      "cosine_similarity": 0.9999999999998869,
+      "tolerance": 0.001
+    },
+    "decoder_upblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 2.288818359375e-05,
+      "mean_abs_error": 2.426172670766391e-06,
+      "relative_error": 5.853031475402665e-07,
+      "cosine_similarity": 0.9999999999998798,
+      "tolerance": 0.001
+    },
+    "decoder_upblock1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 8.0108642578125e-05,
+      "mean_abs_error": 8.99469925741414e-06,
+      "relative_error": 6.589430775618209e-07,
+      "cosine_similarity": 0.9999999999998507,
+      "tolerance": 0.001
+    },
+    "decoder_upblock2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0001678466796875,
+      "mean_abs_error": 1.3979698969102117e-05,
+      "relative_error": 6.356757399590799e-07,
+      "cosine_similarity": 0.9999999999998602,
+      "tolerance": 0.001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      256,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0001678466796875,
+    "mean_abs_error": 1.3979698969102117e-05,
+    "relative_error": 6.356757399590799e-07,
+    "cosine_similarity": 0.9999999999998602,
+    "tolerance": 0.001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

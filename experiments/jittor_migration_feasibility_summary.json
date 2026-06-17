@@ -1,0 +1,608 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:23.259248+00:00",
+  "status": "PASS",
+  "markers": {
+    "TADSR_MODULE_COVERAGE_MATRIX": "PASS",
+    "TADSR_WEIGHT_LOADING_COVERAGE_MATRIX": "PASS",
+    "TADSR_LORA_EFFECTIVE_WEIGHT_COVERAGE_MATRIX": "PASS",
+    "TADSR_NUMERICAL_ALIGNMENT_COVERAGE_MATRIX": "PASS",
+    "TADSR_INTEGRATION_PATH_COVERAGE_MATRIX": "PASS",
+    "TADSR_TRAINING_PATH_FEASIBILITY_MATRIX": "PASS",
+    "TADSR_SMALL_DATA_TRAINING_ALIGNMENT": "PASS",
+    "TADSR_FULL_INFERENCE_GUARD_VALIDATION": "PASS",
+    "TADSR_BOUNDARY_LEVEL_REPRODUCTION": "PASS",
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL",
+    "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE",
+    "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": "NOT_IMPLEMENTED_BY_DESIGN",
+    "TADSR_FULL_INFERENCE_GAP_ANALYSIS": "PASS",
+    "TADSR_TIMEVAE_FULL_ALIGNMENT_GAP_ANALYSIS": "PASS",
+    "TADSR_LORA_RUNTIME_GAP_ANALYSIS": "PASS",
+    "TADSR_RUNTIME_LORA_LAYER_FORMULA_ALIGNMENT": "PASS",
+    "TADSR_TIMEVAE_METADATA_PARTIAL_DIAGNOSIS": "PASS",
+    "TADSR_OFFICIAL_DIFFUSERS_OVERLAY_READY": "PASS",
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_REPAIR_READINESS": "PASS",
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_OVERLAY_ACTIVE": "PASS",
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_DIAGNOSIS": "PASS",
+    "TADSR_TIMEVAE_METADATA_REPAIR_ATTEMPT": "PASS",
+    "TADSR_TIMEVAE_METADATA_FIELDS_COMPLETE": "PASS",
+    "TADSR_TIMEVAE_METADATA_READY_FOR_ONE_STEP": "PASS",
+    "TADSR_TIMEVAE_LIVE_METADATA_COMPLETION": "PASS",
+    "TADSR_TIMEVAE_LIVE_ENCODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_DECODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_SAFETY_FLAGS": "PASS",
+    "TADSR_RUNTIME_LORA_DECISION_FINALIZED_FOR_FIXED_INFERENCE": "PASS",
+    "TADSR_SMOKE_TRAINING_SUBMISSION_SUMMARY": "PASS",
+    "TADSR_OFFICIAL_ACTUAL_INFERENCE_PATH_AUDIT": "PASS",
+    "TADSR_OFFICIAL_INFERENCE_MULTISTEP_REQUIREMENT_AUDIT": "PASS",
+    "TADSR_OFFICIAL_ACTUAL_PATH_SINGLE_STEP_CONTRACT": "PASS",
+    "TADSR_POSTPROCESS_CONTRACT_AUDIT": "PASS",
+    "TADSR_OUTPUT_IMAGE_SAVE_POLICY_AUDIT": "PASS",
+    "TADSR_POSTPROCESS_NOT_EXECUTED_GUARD": "PASS",
+    "TADSR_TINY_MULTISTEP_ALIGNMENT_APPLICABILITY": "NOT_REQUIRED_FOR_OFFICIAL_ACTUAL_INFERENCE",
+    "TADSR_TINY_MULTISTEP_ALIGNMENT_DECISION": "PASS",
+    "TADSR_EXPERIMENTAL_CLI_METADATA_ONLY_PLAN": "PASS",
+    "TADSR_PHASE5B_SUBMISSION_FREEZE_SUMMARY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_PLAN": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_READY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_EXECUTED": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NOT_FULL_INFERENCE": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NO_RAW_TENSORS": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ARTIFACTS_READY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_VALIDATION": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_FALSE_CLAIM_GUARD": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ARTIFACT_POLICY": "PASS",
+    "TADSR_ONE_STEP_DIAGNOSTIC_CLI_READY": "PASS",
+    "TADSR_ONE_STEP_DIAGNOSTIC_CLI_NOT_FULL_INFERENCE": "PASS",
+    "TADSR_TIMEVAE_FULL_ALIGNMENT_CLOSURE_SUMMARY": "PASS",
+    "TADSR_TIMEVAE_FULL_ALIGNMENT_REMAINS_SCOPED": "PASS",
+    "TADSR_RUNTIME_LORA_FINAL_DECISION_PROOF": "PASS",
+    "TADSR_DYNAMIC_RUNTIME_LORA_NOT_REQUIRED_FOR_AUDITED_PATH": "PASS",
+    "TADSR_OFFICIAL_ACTUAL_SINGLE_STEP_PATH_DOCUMENTED": "PASS",
+    "TADSR_MULTISTEP_NOT_REQUIRED_FOR_OFFICIAL_ACTUAL_PATH": "PASS",
+    "TADSR_CONTROLLED_ONE_STEP_EVIDENCE_DOCUMENTED": "PASS",
+    "TADSR_FINAL_SUBMISSION_AFTER_PHASE5B_READY": "PASS",
+    "TADSR_FINAL_SUBMISSION_WITH_DIAGNOSTIC_SMOKE_READY": "PASS",
+    "TADSR_SUBMISSION_FACING_STATUS_SUMMARY": "PASS",
+    "TADSR_ENVIRONMENT_BLOCKERS_EXPLAINED": "PASS",
+    "TADSR_GAP_ANALYSIS_READINESS": "PASS",
+    "TADSR_JITTOR_MIGRATION_FEASIBILITY_VALIDATION": "PASS"
+  },
+  "module_coverage_summary": {
+    "module_coverage_total": 31,
+    "module_coverage_aligned_count": 28,
+    "module_coverage_partial_count": 1,
+    "module_coverage_not_complete_count": 1,
+    "module_coverage_not_implemented_by_design_count": 1,
+    "module_coverage_percentage_aligned": 90.32
+  },
+  "module_coverage_matrix": [
+    {
+      "component_group": "UNet",
+      "component_name": "entry / conv_in / time embedding",
+      "official_reference": "official TADSR UNet entry, conv_in, time embedding",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_entry_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_entry_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "UNet",
+      "component_name": "down_blocks.0-3",
+      "official_reference": "official TADSR UNet down_blocks",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_full_forward_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblock0_downblock1_downblock2_downblock3_resnet0_resnet1_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "UNet",
+      "component_name": "mid_block",
+      "official_reference": "official TADSR UNet mid_block",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_midblock_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblocks_midblock_resnet0_attention0_resnet1_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "UNet",
+      "component_name": "up_blocks.0-3",
+      "official_reference": "official TADSR UNet up_blocks",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_full_forward_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblocks_midblock_upblocks_output_tail_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "UNet",
+      "component_name": "output tail",
+      "official_reference": "official TADSR UNet output tail",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_output_tail_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_output_tail_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "UNet",
+      "component_name": "full forward",
+      "official_reference": "official TADSR UNet full forward boundary",
+      "jittor_implementation_file": "jittor_tadsr_full/unet_2d_condition.py",
+      "primary_test_file": "tests_jittor_alignment/test_unet_full_forward_alignment.py",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_full_forward_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "TimeVAE/VAEHook",
+      "component_name": "deterministic decoder",
+      "official_reference": "official TimeAware VAE decoder deterministic path",
+      "jittor_implementation_file": "jittor_tadsr_full/time_vae.py",
+      "primary_test_file": "tests_jittor_alignment/test_time_vae_decoder_alignment.py",
+      "evidence_file": "experiments/full_repro/time_vae_alignment/jittor_decoder_entry_midblock_upblocks0123_tail_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "TimeVAE/VAEHook",
+      "component_name": "full decoder",
+      "official_reference": "official TimeAware VAE decoder full boundary",
+      "jittor_implementation_file": "jittor_tadsr_full/time_vae.py",
+      "primary_test_file": "tests_jittor_alignment/test_time_vae_full_boundary_alignment.py",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_full_boundary_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "TimeVAE/VAEHook",
+      "component_name": "non-tiled full boundary",
+      "official_reference": "official non-tiled VAEHook boundary",
+      "jittor_implementation_file": "jittor_tadsr_full/time_vae.py",
+      "primary_test_file": "tests_jittor_alignment/test_time_vae_actual_hook_behavior_alignment.py",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "TimeVAE/VAEHook",
+      "component_name": "actual VAEHook encoder tiled path",
+      "official_reference": "official VAEHook tiled encoder policy",
+      "jittor_implementation_file": "jittor_tadsr_full/time_vae.py",
+      "primary_test_file": "tests_jittor_alignment/test_time_vae_actual_hook_behavior_alignment.py",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+      "status": "PASS",
+      "coverage_category": "partial"
+    },
+    {
+      "component_group": "TimeVAE/VAEHook",
+      "component_name": "actual decoder original_forward",
+      "official_reference": "official decoder original_forward under VAEHook",
+      "jittor_implementation_file": "jittor_tadsr_full/time_vae.py",
+      "primary_test_file": "tests_jittor_alignment/test_time_vae_actual_hook_behavior_alignment.py",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "LoRA",
+      "component_name": "official LoRA policy audit",
+      "official_reference": "official TADSR LoRA/PEFT usage",
+      "jittor_implementation_file": "jittor_tadsr_full/lora.py",
+      "primary_test_file": "tools/audit_tadsr_lora_policy.py",
+      "evidence_file": "experiments/full_repro/lora_alignment/audit_tadsr_lora_policy.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "LoRA",
+      "component_name": "static effective LoRA coverage",
+      "official_reference": "official LoRA merged/effective weights",
+      "jittor_implementation_file": "jittor_tadsr_full/lora.py",
+      "primary_test_file": "scripts/final_audit.py",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "LoRA",
+      "component_name": "UNet active LoRA coverage",
+      "official_reference": "official UNet active LoRA modules",
+      "jittor_implementation_file": "jittor_tadsr_full/lora.py",
+      "primary_test_file": "scripts/final_audit.py",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "LoRA",
+      "component_name": "TimeVAE active LoRA coverage",
+      "official_reference": "official TimeVAE active LoRA modules",
+      "jittor_implementation_file": "jittor_tadsr_full/lora.py",
+      "primary_test_file": "tools/export_timevae_lora_effective_weights.py",
+      "evidence_file": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/timevae_lora_effective_weights_metadata.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "LoRA",
+      "component_name": "dynamic runtime LoRA status",
+      "official_reference": "official runtime LoRA loading path",
+      "jittor_implementation_file": "jittor_tadsr_full/lora.py",
+      "primary_test_file": "scripts/final_audit.py",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "status": "NOT_IMPLEMENTED_BY_DESIGN",
+      "coverage_category": "not_implemented_by_design"
+    },
+    {
+      "component_group": "Scheduler/integration",
+      "component_name": "scheduler boundary",
+      "official_reference": "official scheduler boundary",
+      "jittor_implementation_file": "jittor_tadsr_full/scheduler.py",
+      "primary_test_file": "tests_jittor_alignment/test_scheduler_boundary_alignment.py",
+      "evidence_file": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Scheduler/integration",
+      "component_name": "scheduler one-step",
+      "official_reference": "official denoising single-step contract",
+      "jittor_implementation_file": "jittor_tadsr_full/scheduler.py",
+      "primary_test_file": "tests_jittor_alignment/test_scheduler_boundary_alignment.py",
+      "evidence_file": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Scheduler/integration",
+      "component_name": "get_x0_from_res",
+      "official_reference": "official get_x0_from_res helper",
+      "jittor_implementation_file": "jittor_tadsr_full/scheduler.py",
+      "primary_test_file": "tests_jittor_alignment/test_scheduler_boundary_alignment.py",
+      "evidence_file": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Scheduler/integration",
+      "component_name": "minimal latent integration",
+      "official_reference": "UNet + scheduler + VAE boundary integration",
+      "jittor_implementation_file": "jittor_tadsr_full/tadsr_full.py",
+      "primary_test_file": "tests_jittor_alignment/test_minimal_latent_integration_alignment.py",
+      "evidence_file": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Scheduler/integration",
+      "component_name": "minimal one-step decode dry-run",
+      "official_reference": "one-step tensor decode dry-run",
+      "jittor_implementation_file": "jittor_tadsr_full/tadsr_full.py",
+      "primary_test_file": "tests_jittor_alignment/test_minimal_latent_integration_alignment.py",
+      "evidence_file": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Training smoke test",
+      "component_name": "data prep and train/val split",
+      "official_reference": "small-data PyTorch-vs-Jittor training setup",
+      "jittor_implementation_file": "scripts/train_smoke_jittor_output_tail.py",
+      "primary_test_file": "scripts/run_smoke_training_multiseed.py",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_data_summary.md",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Training smoke test",
+      "component_name": "PyTorch and Jittor smoke training",
+      "official_reference": "small-data output-tail training path",
+      "jittor_implementation_file": "scripts/train_smoke_jittor_output_tail.py",
+      "primary_test_file": "scripts/run_smoke_training_multiseed.py",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_alignment_metrics.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Training smoke test",
+      "component_name": "loss curve and prediction alignment",
+      "official_reference": "small-data training alignment artifacts",
+      "jittor_implementation_file": "scripts/analyze_smoke_training_alignment.py",
+      "primary_test_file": "scripts/plot_smoke_training_curves.py",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_alignment_metrics.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Training smoke test",
+      "component_name": "multi-seed stability",
+      "official_reference": "small-data multi-seed stability check",
+      "jittor_implementation_file": "scripts/run_smoke_training_multiseed.py",
+      "primary_test_file": "scripts/run_smoke_training_multiseed.py",
+      "evidence_file": "experiments/smoke_training/output_tail/multiseed/multiseed_summary.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Deliverables/reporting",
+      "component_name": "final evidence manifest",
+      "official_reference": "submission evidence manifest",
+      "jittor_implementation_file": "scripts/collect_final_evidence_manifest.py",
+      "primary_test_file": "scripts/collect_final_evidence_manifest.py",
+      "evidence_file": "experiments/final_evidence_manifest.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Deliverables/reporting",
+      "component_name": "final packaging readiness",
+      "official_reference": "final deliverables and package readiness",
+      "jittor_implementation_file": "scripts/validate_final_deliverables.py",
+      "primary_test_file": "scripts/validate_final_deliverables.py",
+      "evidence_file": "experiments/final_deliverables_validation.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Deliverables/reporting",
+      "component_name": "presentation package",
+      "official_reference": "final PPT/PDF/video package",
+      "jittor_implementation_file": "scripts/validate_final_presentation_package.py",
+      "primary_test_file": "scripts/validate_final_presentation_package.py",
+      "evidence_file": "experiments/final_presentation_package_validation.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Deliverables/reporting",
+      "component_name": "final submission package",
+      "official_reference": "README/checklist/video/deliverables",
+      "jittor_implementation_file": "scripts/validate_final_submission_content.py",
+      "primary_test_file": "scripts/validate_final_submission_content.py",
+      "evidence_file": "experiments/final_submission_content_validation.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Deliverables/reporting",
+      "component_name": "GitHub release readiness",
+      "official_reference": "GitHub size and release audit",
+      "jittor_implementation_file": "scripts/audit_github_release_readiness.py",
+      "primary_test_file": "scripts/audit_github_release_readiness.py",
+      "evidence_file": "experiments/github_release_readiness_audit.json",
+      "status": "PASS",
+      "coverage_category": "implemented_and_aligned"
+    },
+    {
+      "component_group": "Limits",
+      "component_name": "production full inference",
+      "official_reference": "official full TADSR denoising/image pipeline",
+      "jittor_implementation_file": "jittor_tadsr_full/tadsr_full.py",
+      "primary_test_file": "python -m jittor_tadsr_full.tadsr_full --full-inference",
+      "evidence_file": "experiments/jittor_migration_feasibility_summary.json",
+      "status": "NOT_COMPLETE",
+      "coverage_category": "not_complete"
+    }
+  ],
+  "weight_loading_coverage_matrix": [
+    {
+      "coverage_name": "Base model NPZ conversion",
+      "evidence_file": "experiments/full_repro/weights/weight_conversion_report.json",
+      "status": "PASS",
+      "notes": "基础权重转换已有独立报告。"
+    },
+    {
+      "coverage_name": "Diffusers weight conversion",
+      "evidence_file": "experiments/full_repro/weights/diffusers_conversion_manifest.json",
+      "status": "PASS",
+      "notes": "Diffusers 权重映射和转换 manifest 已记录。"
+    },
+    {
+      "coverage_name": "Static effective LoRA active module coverage",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "status": "PASS",
+      "expected_total_active_lora_pairs": 290,
+      "expected_unet_active_lora_pairs": 258,
+      "expected_timevae_active_lora_pairs": 32,
+      "actual_active_lora_pair_count": 290,
+      "covered_lora_pair_count": 290,
+      "missing_lora_pair_count": 0,
+      "dynamic_runtime_lora_implementation": "NOT_IMPLEMENTED_BY_DESIGN",
+      "notes": "运行期动态 LoRA 不作为本阶段目标；静态 effective LoRA 覆盖用于边界验证。"
+    },
+    {
+      "coverage_name": "TimeVAE effective LoRA metadata",
+      "evidence_file": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/timevae_lora_effective_weights_metadata.json",
+      "status": "PASS",
+      "expected_timevae_active_lora_pair_count": 32,
+      "actual_timevae_active_lora_pair_count": 32,
+      "manual_verify_max_abs_error_max": 1.0013580322265625e-05,
+      "notes": "TimeVAE LoRA effective weight 导出和人工校验已有元数据。"
+    },
+    {
+      "coverage_name": "Raw official key mapping",
+      "evidence_file": "experiments/full_repro/jittor_alignment/weight_loading_alignment.md",
+      "status": "PARTIAL",
+      "notes": "原始官方 key 到 Jittor key 的逐项映射不是最终判定的唯一依据；以 effective weight 覆盖和边界数值对齐为主。"
+    }
+  ],
+  "numerical_alignment_coverage_matrix": [
+    {
+      "alignment_name": "UNet full forward alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_full_forward_alignment.json",
+      "max_abs_error": 2.2277235984802246e-06,
+      "mean_abs_error": 5.021606739319395e-07,
+      "relative_error": 5.980908879035516e-06,
+      "cosine_similarity": 0.9999999999827354,
+      "tolerance": 0.002,
+      "notes": ""
+    },
+    {
+      "alignment_name": "UNet entry to output tail alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblocks_midblock_upblocks_output_tail_alignment.json",
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001,
+      "notes": ""
+    },
+    {
+      "alignment_name": "TimeVAE actual VAEHook full boundary alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+      "max_abs_error": 3.5762786865234375e-07,
+      "mean_abs_error": 5.798372310689754e-08,
+      "relative_error": 1.1130083550545222e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.002,
+      "notes": ""
+    },
+    {
+      "alignment_name": "TimeVAE full boundary alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_full_boundary_alignment.json",
+      "max_abs_error": 1.1444091796875e-05,
+      "mean_abs_error": 1.8557766452431679e-06,
+      "relative_error": 1.8077751391203726e-07,
+      "cosine_similarity": 0.9999999999999692,
+      "tolerance": 0.002,
+      "notes": ""
+    },
+    {
+      "alignment_name": "Scheduler boundary alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": null,
+      "tolerance": 0.0,
+      "notes": ""
+    },
+    {
+      "alignment_name": "Minimal latent integration alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+      "max_abs_error": 2.5272369384765625e-05,
+      "mean_abs_error": 1.4443925238083466e-06,
+      "relative_error": 2.3514815139824143e-07,
+      "cosine_similarity": 0.9999999999999597,
+      "tolerance": 0.002,
+      "notes": ""
+    },
+    {
+      "alignment_name": "Small-data PyTorch-vs-Jittor prediction alignment",
+      "status": "PASS",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_alignment_metrics.json",
+      "max_abs_error": 0.0007622092962265015,
+      "mean_abs_error": 0.00012582170634395373,
+      "relative_error": 0.002575377281918869,
+      "cosine_similarity": 0.9999968413988342,
+      "tolerance": null,
+      "notes": ""
+    }
+  ],
+  "integration_path_coverage_matrix": [
+    {
+      "path_name": "UNet full-forward path",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/unet_alignment/jittor_unet_full_forward_alignment.json",
+      "scope": "已完成 full-forward boundary alignment。"
+    },
+    {
+      "path_name": "TimeVAE actual path",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+      "scope": "已完成 official actual VAEHook boundary alignment。"
+    },
+    {
+      "path_name": "LoRA static effective path",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "scope": "静态 effective LoRA 覆盖已验证。"
+    },
+    {
+      "path_name": "Scheduler path",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+      "scope": "scheduler boundary / one-step 合约已验证。"
+    },
+    {
+      "path_name": "Minimal integration path",
+      "status": "PASS",
+      "evidence_file": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+      "scope": "最小 one-step decode dry-run 已通过。"
+    },
+    {
+      "path_name": "Training path",
+      "status": "PASS",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_alignment_metrics.json",
+      "scope": "小数据输出尾部训练和 PyTorch-vs-Jittor 对齐已记录。"
+    },
+    {
+      "path_name": "Production full inference",
+      "status": "NOT_COMPLETE",
+      "evidence_file": "jittor_tadsr_full/tadsr_full.py",
+      "scope": "不作为本阶段完成项；CLI guard 必须保留。"
+    },
+    {
+      "path_name": "Full denoising loop / image-video generation",
+      "status": "NOT_COMPLETE",
+      "evidence_file": "docs/production_cli_design_audit.md",
+      "scope": "不生成最终图片或视频推理结果。"
+    },
+    {
+      "path_name": "Dynamic runtime LoRA",
+      "status": "NOT_IMPLEMENTED_BY_DESIGN",
+      "evidence_file": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+      "scope": "当前采用静态 effective LoRA；运行期动态 LoRA 是未来工作。"
+    }
+  ],
+  "training_path_feasibility_matrix": [
+    {
+      "task": "output-tail small-data smoke training",
+      "trainable_module": "output_tail_conv_out",
+      "num_samples": 32,
+      "train_samples": 24,
+      "validation_samples": 8,
+      "pytorch_initial_loss": null,
+      "pytorch_final_loss": null,
+      "jittor_initial_loss": null,
+      "jittor_final_loss": null,
+      "loss_gap": null,
+      "prediction_max_abs_diff": 0.0007622092962265015,
+      "prediction_mean_abs_diff": 0.00012582170634395373,
+      "prediction_cosine_similarity": 0.9999968413988342,
+      "prediction_relative_l2_diff": 0.002575377281918869,
+      "multiseed_status": "PASS",
+      "completed_seeds": [
+        1234,
+        2025,
+        42
+      ],
+      "mean_jittor_final_val_loss": 0.0003193581699936961,
+      "full_tadsr_training": false,
+      "status": "PASS",
+      "evidence_file": "experiments/smoke_training/output_tail/smoke_training_alignment_metrics.json"
+    }
+  ],
+  "full_inference_guard": {
+    "command": "D:\\anaconda\\python.exe -m jittor_tadsr_full.tadsr_full --full-inference",
+    "status": "PASS",
+    "returncode": 1,
+    "stdout_tail": "",
+    "stderr_tail": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\jittor_tadsr_full\\tadsr_full.py\", line 46, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\jittor_tadsr_full\\tadsr_full.py\", line 33, in main\n    raise NotImplementedError(\"Full Jittor TADSR inference is not complete. This CLI only supports migration checks.\")\nNotImplementedError: Full Jittor TADSR inference is not complete. This CLI only supports migration checks.\n",
+    "not_implemented_error_seen": true,
+    "expected_message_seen": true
+  },
+  "false_claim_hits": [],
+  "feasibility_conclusion": "结论：当前项目已经形成较完整的 Jittor 迁移可行性证据链。UNet full forward、TimeVAE/VAEHook 边界、Scheduler 边界、静态 effective LoRA 覆盖、最小 one-step decode dry-run，以及 small-data PyTorch-vs-Jittor training alignment 均有可复查证据。同时，本项目仍明确保持 JITTOR_FULL_INFERENCE: NOT_COMPLETE、JITTOR_FULL_PORT: PARTIAL，不声称 production full inference、最终图片/视频生成或 dynamic runtime LoRA 已完成。"
+}

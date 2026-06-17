@@ -1,0 +1,174 @@
+{
+  "upload_dir": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights",
+  "selected_venv": "/mnt/data/sj/venvs/tadsr_official_strict_cu118",
+  "python_executable": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "missing": [],
+  "empty_dirs": [],
+  "zero_size_files": [],
+  "suspicious": [],
+  "items": [
+    {
+      "name": "time_vae",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/time_vae",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 2,
+      "size_bytes": 343010931,
+      "size": "327.121 MB"
+    },
+    {
+      "name": "unet",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/unet",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 2,
+      "size_bytes": 3463727409,
+      "size": "3.226 GB"
+    },
+    {
+      "name": "vae",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/vae",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 2,
+      "size_bytes": 334707770,
+      "size": "319.202 MB"
+    },
+    {
+      "name": "text_encoder",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/text_encoder",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 2,
+      "size_bytes": 1361597631,
+      "size": "1.268 GB"
+    },
+    {
+      "name": "tokenizer",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/tokenizer",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 4,
+      "size_bytes": 1585848,
+      "size": "1.512 MB"
+    },
+    {
+      "name": "scheduler",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/scheduler",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 1,
+      "size_bytes": 346,
+      "size": "346.000 B"
+    },
+    {
+      "name": "feature_extractor",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/feature_extractor",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 1,
+      "size_bytes": 342,
+      "size": "342.000 B"
+    },
+    {
+      "name": "bert-base-uncased",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/bert-base-uncased",
+      "expected_type": "dir",
+      "exists": true,
+      "is_dir": true,
+      "file_count": 5,
+      "size_bytes": 441171301,
+      "size": "420.734 MB"
+    },
+    {
+      "name": "DAPE.pth",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/DAPE.pth",
+      "expected_type": "file",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7194489,
+      "size": "6.861 MB"
+    },
+    {
+      "name": "ram_swin_large_14m.pth",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/ram_swin_large_14m.pth",
+      "expected_type": "file",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 5625634877,
+      "size": "5.239 GB"
+    },
+    {
+      "name": "tadsr.pkl",
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/tadsr.pkl",
+      "expected_type": "file",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 26281253,
+      "size": "25.064 MB"
+    }
+  ],
+  "safetensors_checks": [
+    {
+      "status": "PASS",
+      "key_count": 373,
+      "first_keys": [
+        "text_model.embeddings.position_embedding.weight",
+        "text_model.embeddings.position_ids",
+        "text_model.embeddings.token_embedding.weight",
+        "text_model.encoder.layers.0.layer_norm1.bias",
+        "text_model.encoder.layers.0.layer_norm1.weight",
+        "text_model.encoder.layers.0.layer_norm2.bias",
+        "text_model.encoder.layers.0.layer_norm2.weight",
+        "text_model.encoder.layers.0.mlp.fc1.bias",
+        "text_model.encoder.layers.0.mlp.fc1.weight",
+        "text_model.encoder.layers.0.mlp.fc2.bias"
+      ],
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/text_encoder/model.safetensors"
+    },
+    {
+      "status": "PASS",
+      "key_count": 686,
+      "first_keys": [
+        "conv_in.bias",
+        "conv_in.weight",
+        "conv_norm_out.bias",
+        "conv_norm_out.weight",
+        "conv_out.bias",
+        "conv_out.weight",
+        "down_blocks.0.attentions.0.norm.bias",
+        "down_blocks.0.attentions.0.norm.weight",
+        "down_blocks.0.attentions.0.proj_in.bias",
+        "down_blocks.0.attentions.0.proj_in.weight"
+      ],
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/unet/diffusion_pytorch_model.safetensors"
+    }
+  ],
+  "torch_load_checks": [
+    {
+      "status": "PASS",
+      "type": "dict",
+      "key_count": 9,
+      "first_keys": [
+        "state_dict_vae_time",
+        "vae_lora_encoder_modules",
+        "unet_lora_encoder_modules",
+        "unet_lora_decoder_modules",
+        "unet_lora_others_modules",
+        "rank_unet",
+        "rank_vae",
+        "state_dict_unet",
+        "state_dict_vae"
+      ],
+      "path": "/mnt/data/sj/incoming/TADSR_assets/TADSR_weights/tadsr.pkl"
+    }
+  ],
+  "status": "PASS"
+}

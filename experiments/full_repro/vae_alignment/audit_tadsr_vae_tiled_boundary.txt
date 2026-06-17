@@ -1,0 +1,15 @@
+TIME_VAE_TILED_HOOK_AUDIT: PASS
+TIME_VAE_TILED_PIPELINE_USAGE_AUDIT: PASS
+TIME_VAE_TILED_BOUNDARY_CONTRACT_AUDIT: PASS
+TIME_VAE_TILED_ORACLE_FEASIBILITY: BLOCKED_DECODER_HOOK_CONTRACT
+
+Key finding:
+Official _init_tiled_vae installs a decoder VAEHook, but the hook is constructed with time_vae=False and the VAEHook.__call__ source dispatches to net.original_forward instead of vae_tile_forward for decoder inputs. Therefore a truthful official tiled encode/decode oracle cannot claim tiled decode was triggered.
+
+_init_tiled_vae: {'file': '/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py', 'line': 522}
+VAEHook: {'file': '/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py', 'line': 540}
+Patch targets: vae.encoder.forward and vae.decoder.forward only; vae.encode/vae.decode are not directly replaced.
+Encoder hook: time_vae=True, pad=32, tile_size=args.vae_encoder_tiled_size.
+Decoder hook: time_vae=False, pad=11, tile_size=args.vae_decoder_tiled_size.
+Decoder tiled path under official hook: not reachable.
+TIME_VAE_TILED_VS_NONTILED_REFERENCE_RECORDED: NOT_APPLICABLE

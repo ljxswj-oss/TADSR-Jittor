@@ -1,0 +1,11 @@
+TADSR_UNET_MIDBLOCK_RESNET1_AUDIT: PASS
+TADSR_UNET_MIDBLOCK_LOCAL_FORWARD_AUDIT: PASS
+TADSR_UNET_MIDBLOCK_RESNET1_LORA_AUDIT: PASS
+TADSR_UNET_MIDBLOCK_OUTPUT_STATES_AUDIT: NOT_APPLICABLE
+mid_block class: diffusers.models.unet_2d_blocks.UNetMidBlock2DCrossAttn
+operation order: resnets.0 -> attentions.0 -> resnets.1
+actual_next_module_after_resnets_1: up_blocks.0
+input_shape: [1, 1280, 4, 4]
+output_shape: [1, 1280, 4, 4]
+local_midblock_manual_vs_official_max_abs_diff: 0.0
+up_blocks/full UNet/full inference remain unopened.

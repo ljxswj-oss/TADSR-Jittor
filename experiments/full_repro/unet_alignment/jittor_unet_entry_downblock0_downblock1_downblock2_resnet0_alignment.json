@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001
+    },
+    "time_embedding": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.2749661588459276e-09,
+      "relative_error": 2.484385767769718e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.0001
+    },
+    "downblock0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "max_abs_error": 1.2159347534179688e-05,
+      "mean_abs_error": 1.706075145335717e-06,
+      "relative_error": 1.1445761910420367e-06,
+      "cosine_similarity": 0.9999999999994224,
+      "tolerance": 0.002
+    },
+    "downblock1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 2.2277235984802246e-05,
+      "mean_abs_error": 2.579873682861944e-06,
+      "relative_error": 1.0776458816026287e-06,
+      "cosine_similarity": 0.9999999999994817,
+      "tolerance": 0.002
+    },
+    "downblock2_resnet0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.52587890625e-05,
+      "mean_abs_error": 1.72637531932196e-06,
+      "relative_error": 1.034923151878186e-06,
+      "cosine_similarity": 0.9999999999995038,
+      "tolerance": 0.002
+    }
+  },
+  "note": "Local bridge: entry -> full down_blocks.0 -> full down_blocks.1 -> down_blocks.2.resnets.0 only. Full down_blocks.2 and full UNet are not executed."
+}

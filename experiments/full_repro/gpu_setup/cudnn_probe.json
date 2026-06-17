@@ -1,0 +1,63 @@
+{
+  "python": "/mnt/data/sj/projects/TADSR-Jittor/.venv/bin/python",
+  "site_paths": [
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/site-packages",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/local/lib/python3.10/dist-packages",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3/dist-packages",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/dist-packages",
+    "/usr/lib/python3.10/site-packages",
+    "/usr/local/lib/python3.10/dist-packages",
+    "/usr/lib/python3/dist-packages",
+    "/usr/lib/python3.10/dist-packages",
+    "/home/sj/.local/lib/python3.10/site-packages"
+  ],
+  "checked_headers": [
+    "/usr/local/cuda/include/cudnn.h",
+    "/usr/include/cudnn.h",
+    "/mnt/data/sj/local/cudnn/include/cudnn.h",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/site-packages/nvidia/cudnn/include/cudnn.h",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/local/lib/python3.10/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/usr/lib/python3.10/site-packages/nvidia/cudnn/include/cudnn.h",
+    "/usr/local/lib/python3.10/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/usr/lib/python3/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/usr/lib/python3.10/dist-packages/nvidia/cudnn/include/cudnn.h",
+    "/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/include/cudnn.h"
+  ],
+  "checked_libs": [
+    "/mnt/data/sj/local/cudnn/lib/libcudnn.so",
+    "/usr/local/cuda/lib64/libcudnn.so",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/local/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/local/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/mnt/data/sj/projects/TADSR-Jittor/.venv/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/usr/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/usr/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/usr/local/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/usr/local/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/usr/lib/python3/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/usr/lib/python3/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/usr/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/usr/lib/python3.10/dist-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so",
+    "/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9"
+  ],
+  "found_headers": [
+    "/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/include/cudnn.h"
+  ],
+  "found_libs": [
+    "/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9"
+  ],
+  "recommend_exports": [
+    "export CPATH=/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/include:$CPATH",
+    "export C_INCLUDE_PATH=/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/include:$C_INCLUDE_PATH",
+    "export CPLUS_INCLUDE_PATH=/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/include:$CPLUS_INCLUDE_PATH",
+    "export LD_LIBRARY_PATH=/home/sj/.local/lib/python3.10/site-packages/nvidia/cudnn/lib:$LD_LIBRARY_PATH"
+  ],
+  "cudnn_ready": true
+}

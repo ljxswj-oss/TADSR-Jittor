@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "tadsr_scheduler_timesteps_alignment": "PASS",
+  "tadsr_scheduler_scale_model_input_alignment": "NOT_APPLICABLE_NOOP",
+  "tadsr_scheduler_step_alignment": "PASS",
+  "tadsr_unet_scheduler_one_step_alignment": "PASS",
+  "tadsr_scheduler_boundary_alignment": "PASS",
+  "rows": [
+    {
+      "shape_match": true,
+      "shape": [
+        1
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "name": "timesteps",
+      "tolerance": 0.0,
+      "pass": true
+    },
+    {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "name": "scale_model_input",
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 4.656612873077393e-10,
+      "mean_abs_error": 4.192202140984591e-13,
+      "relative_error": 8.205847462893002e-13,
+      "name": "scheduler_prev_sample",
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "name": "scheduler_pred_original_sample",
+      "tolerance": 1e-05,
+      "pass": true
+    }
+  ],
+  "optional_rows": [
+    {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 4.656612873077393e-10,
+      "mean_abs_error": 3.410605131648481e-13,
+      "relative_error": 6.79819954588129e-13,
+      "name": "unet_scheduler_prev_sample",
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "name": "unet_scheduler_pred_original_sample",
+      "tolerance": 1e-05,
+      "pass": true
+    }
+  ],
+  "oracle_metadata": "experiments/full_repro/scheduler_alignment/oracle_tensors_scheduler_boundary/scheduler_boundary_oracle_metadata.json",
+  "scheduler_loop_executed": false,
+  "vae_decode_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false
+}

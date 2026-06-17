@@ -1,0 +1,11 @@
+# TADSR Scheduler Boundary Audit
+
+Status: PASS
+
+- Constructed scheduler class: `DDPMScheduler`
+- Config `_class_name`: `PNDMScheduler`
+- Timesteps after `set_timesteps(1)`: `[1]`
+- `scale_model_input` no-op: `True`
+- Step output fields: `['prev_sample', 'pred_original_sample']`
+
+Important: official TADSR inference uses manual `get_x0_from_res` in `TADSR_gen.forward`; this audit does not run the full denoising loop or full TADSR inference.

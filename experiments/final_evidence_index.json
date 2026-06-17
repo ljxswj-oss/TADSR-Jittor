@@ -1,0 +1,294 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-13T11:59:22.841838+00:00",
+  "markers": {
+    "TADSR_FINAL_EVIDENCE_INDEX": "PASS",
+    "TADSR_FINAL_EVIDENCE_INDEX_TEACHER_READABLE": "PASS"
+  },
+  "sections": [
+    {
+      "title": "核心模块对齐证据",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "UNet official full forward",
+          "path": "experiments/full_repro/unet_alignment/jittor_unet_full_forward_alignment.json",
+          "exists": true,
+          "marker": "TADSR_UNET_FULL_FORWARD_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "TimeVAE actual VAEHook boundary",
+          "path": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+          "exists": true,
+          "marker": "TIME_VAE_ACTUAL_VAEHOOK_FULL_BOUNDARY_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Scheduler boundary",
+          "path": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+          "exists": true,
+          "marker": "TADSR_SCHEDULER_BOUNDARY_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Static effective LoRA coverage",
+          "path": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+          "exists": true,
+          "marker": "TADSR_STATIC_EFFECTIVE_LORA_COVERAGE_AUDIT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "One-step tensor alignment",
+          "path": "experiments/production_completion/full_inference/one_step/jittor_one_step_alignment.json",
+          "exists": true,
+          "marker": "TADSR_FULL_INFERENCE_ONE_STEP_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Diagnostic image smoke",
+          "path": "experiments/production_completion/diagnostic_image_smoke/diagnostic_image_smoke_metrics.json",
+          "exists": true,
+          "marker": "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "title": "训练证据",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "训练提交摘要",
+          "path": "experiments/smoke_training/output_tail/smoke_training_submission_summary.md",
+          "exists": true,
+          "marker": "TADSR_SMALL_DATA_TRAINING_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "PyTorch loss log",
+          "path": "experiments/smoke_training/output_tail/pytorch/loss.csv",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "Jittor loss log",
+          "path": "experiments/smoke_training/output_tail/jittor/loss.csv",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "Train/validation loss curve",
+          "path": "experiments/smoke_training/output_tail/visualizations/train_val_loss_curve.png",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "Prediction error heatmap",
+          "path": "experiments/smoke_training/output_tail/visualizations/prediction_error_heatmap.png",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "Multi-seed summary",
+          "path": "experiments/smoke_training/output_tail/multiseed/multiseed_summary.md",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "Performance log",
+          "path": "experiments/smoke_training/output_tail/visualizations/performance_step_time.png",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "title": "迁移可行性矩阵",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "可行性总表",
+          "path": "experiments/jittor_migration_feasibility_summary.md",
+          "exists": true,
+          "marker": "TADSR_JITTOR_MIGRATION_FEASIBILITY_VALIDATION",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "最终审计",
+          "path": "experiments/final_audit_report.md",
+          "exists": true,
+          "marker": "",
+          "marker_status": "",
+          "note": ""
+        },
+        {
+          "title": "GitHub release readiness",
+          "path": "experiments/github_release_readiness_audit.md",
+          "exists": true,
+          "marker": "TADSR_GITHUB_RELEASE_READINESS_AUDIT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "课程要求对照矩阵",
+          "path": "experiments/course_requirement_compliance_matrix.md",
+          "exists": true,
+          "marker": "TADSR_COURSE_REQUIREMENT_COMPLIANCE",
+          "marker_status": "PASS",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "title": "Production completion 证据",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "Actual inference path audit",
+          "path": "experiments/production_completion/full_inference/actual_inference_path_audit.md",
+          "exists": true,
+          "marker": "TADSR_OFFICIAL_ACTUAL_INFERENCE_PATH_AUDIT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "One-step alignment report",
+          "path": "experiments/production_completion/full_inference/one_step/jittor_one_step_alignment.md",
+          "exists": true,
+          "marker": "TADSR_FULL_INFERENCE_ONE_STEP_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Diagnostic smoke metrics",
+          "path": "experiments/production_completion/diagnostic_image_smoke/diagnostic_image_smoke_metrics.md",
+          "exists": true,
+          "marker": "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Postprocess contract",
+          "path": "experiments/production_completion/full_inference/postprocess_contract_audit.md",
+          "exists": true,
+          "marker": "TADSR_POSTPROCESS_CONTRACT_AUDIT",
+          "marker_status": "PASS",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "title": "最终提交材料",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "PPTX",
+          "path": "deliverables/TADSR-Jittor_final_presentation.pptx",
+          "exists": true,
+          "marker": "TADSR_FINAL_PPT_READY",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "PDF",
+          "path": "deliverables/TADSR-Jittor_final_presentation.pdf",
+          "exists": true,
+          "marker": "TADSR_FINAL_PDF_READY",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "视频录制指南",
+          "path": "deliverables/TADSR-Jittor_video_recording_guide.md",
+          "exists": true,
+          "marker": "TADSR_FINAL_VIDEO_RECORDING_PACKAGE_READY",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "提交 README",
+          "path": "deliverables/TADSR-Jittor_submission_readme.md",
+          "exists": true,
+          "marker": "TADSR_FINAL_SUBMISSION_README_READY",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "老师快速审阅指南",
+          "path": "docs/teacher_review_guide.md",
+          "exists": true,
+          "marker": "TADSR_TEACHER_REVIEW_GUIDE_READY",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "答辩 Q&A",
+          "path": "docs/final_defense_QA.md",
+          "exists": true,
+          "marker": "TADSR_FINAL_DEFENSE_QA_READY",
+          "marker_status": "PASS",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "title": "边界与防误称证据",
+      "status": "PASS",
+      "items": [
+        {
+          "title": "Full inference gap",
+          "path": "docs/full_inference_gap_analysis.md",
+          "exists": true,
+          "marker": "TADSR_FULL_INFERENCE_GAP_ANALYSIS",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "TimeVAE gap",
+          "path": "docs/timevae_full_alignment_gap_analysis.md",
+          "exists": true,
+          "marker": "TADSR_TIMEVAE_FULL_ALIGNMENT_GAP_ANALYSIS",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Runtime LoRA decision proof",
+          "path": "docs/runtime_lora_final_decision_proof.md",
+          "exists": true,
+          "marker": "TADSR_RUNTIME_LORA_FINAL_DECISION_PROOF",
+          "marker_status": "PASS",
+          "note": ""
+        },
+        {
+          "title": "Final claims consistency",
+          "path": "experiments/final_claims_consistency_validation.md",
+          "exists": true,
+          "marker": "TADSR_FINAL_CLAIMS_CONSISTENCY",
+          "marker_status": "PASS",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+# TADSR LoRA Policy Audit
+
+Status: **PASS**
+
+## Summary
+
+- Source hits scanned: 600
+- LoRA A/B pairs: 290
+- UNet pairs: 258
+- TimeVAE pairs: 32
+- Dynamic LoRA switching required for official inference: `False`
+- Static effective-weight policy sufficient for the audited official inference state: `True`
+
+## Policy conclusion
+
+Use static effective weights as the mainline alignment policy. Generic runtime LoRA loading, adapter registry, merge/unmerge, and runtime scale switching are not implemented by design in this stage. This is valid for the audited official inference state because adapters are loaded and fixed before forward.
+
+## Component inventory
+
+| Component | LoRA pair count |
+|---|---:|
+| UNet | 258 |
+| TimeVAE | 32 |
+
+## Representative official source hits
+
+| File | Line | Context | Text |
+|---|---:|---|---|
+| `requirements.txt` | 6 | `module` | peft==0.9.0 |
+| `requirements.txt` | 14 | `module` | loralib |
+| `requirements.txt` | 15 | `module` | fairscale |
+| `tadsr.py` | 12 | `module` | from peft import LoraConfig |
+| `tadsr.py` | 40 | `def initialize_vae_time` | lora_conf_encoder = LoraConfig(r=args.lora_rank, init_lora_weights="gaussian",target_modules=l_target_modules_encoder) |
+| `tadsr.py` | 41 | `def initialize_vae_time` | vae.add_adapter(lora_conf_encoder, adapter_name="default_encoder") |
+| `tadsr.py` | 45 | `def initialize_unet` | def initialize_unet(args, return_lora_module_names=False, pretrained_model_name_or_path=None): |
+| `tadsr.py` | 70 | `def initialize_unet` | lora_conf_encoder = LoraConfig(r=args.lora_rank, init_lora_weights="gaussian",target_modules=l_target_modules_encoder) |
+| `tadsr.py` | 71 | `def initialize_unet` | lora_conf_decoder = LoraConfig(r=args.lora_rank, init_lora_weights="gaussian",target_modules=l_target_modules_decoder) |
+| `tadsr.py` | 72 | `def initialize_unet` | lora_conf_others = LoraConfig(r=args.lora_rank, init_lora_weights="gaussian",target_modules=l_modules_others) |
+| `tadsr.py` | 73 | `def initialize_unet` | unet.add_adapter(lora_conf_encoder, adapter_name="default_encoder") |
+| `tadsr.py` | 74 | `def initialize_unet` | unet.add_adapter(lora_conf_decoder, adapter_name="default_decoder") |
+| `tadsr.py` | 75 | `def initialize_unet` | unet.add_adapter(lora_conf_others, adapter_name="default_others") |
+| `tadsr.py` | 92 | `def __init__` | self.vae, self.lora_vae_modules_encoder = initialize_vae_time(self.args) |
+| `tadsr.py` | 95 | `def __init__` | self.unet, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(self.args) |
+| `tadsr.py` | 97 | `def __init__` | self.lora_rank_unet = self.args.lora_rank |
+| `tadsr.py` | 98 | `def __init__` | self.lora_rank_vae = self.args.lora_rank |
+| `tadsr.py` | 106 | `def load_pretrained_model` | """加载预训练的LoRA权重 |
+| `tadsr.py` | 111 | `def load_pretrained_model` | if hasattr(self.args, 'pretrained_lora_path') and self.args.pretrained_lora_path is not None: |
+| `tadsr.py` | 112 | `def load_pretrained_model` | print(f"Loading pretrained LoRA weights from {self.args.pretrained_lora_path}") |
+| `tadsr.py` | 115 | `def load_pretrained_model` | pretrained_weights = torch.load(self.args.pretrained_lora_path, map_location="cuda") |
+| `tadsr.py` | 117 | `def load_pretrained_model` | # 加载UNet的LoRA权重 |
+| `tadsr.py` | 119 | `def load_pretrained_model` | print("Loading UNet LoRA weights...") |
+| `tadsr.py` | 121 | `def load_pretrained_model` | if "lora" in n and n in pretrained_weights["state_dict_unet"]: |
+| `tadsr.py` | 133 | `def load_pretrained_model` | # 加载VAE的LoRA权重 |
+| `tadsr.py` | 135 | `def load_pretrained_model` | print("Loading VAE LoRA weights...") |
+| `tadsr.py` | 137 | `def load_pretrained_model` | if "lora" in n and n in pretrained_weights["state_dict_vae"]: |
+| `tadsr.py` | 149 | `def load_pretrained_model` | print("Successfully loaded pretrained LoRA weights") |
+| `tadsr.py` | 151 | `def load_pretrained_model` | print("No pretrained LoRA path specified, using random initialization") |
+| `tadsr.py` | 157 | `def set_train` | if "lora" in n: |
+| `tadsr.py` | 161 | `def set_train` | if "lora" in n or "time" in n: |
+| `tadsr.py` | 213 | `def save_model` | sd["vae_lora_encoder_modules"] = self.lora_vae_modules_encoder |
+| `tadsr.py` | 214 | `def save_model` | sd["unet_lora_encoder_modules"], sd["unet_lora_decoder_modules"], sd["unet_lora_others_modules"] =\ |
+| `tadsr.py` | 215 | `def save_model` | self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others |
+| `tadsr.py` | 216 | `def save_model` | sd["rank_unet"] = self.lora_rank_unet |
+| `tadsr.py` | 217 | `def save_model` | sd["rank_vae"] = self.lora_rank_vae |
+| `tadsr.py` | 218 | `def save_model` | sd["state_dict_unet"] = {k: v for k, v in self.unet.state_dict().items() if "lora" in k or "conv_in" in k} |
+| `tadsr.py` | 219 | `def save_model` | sd["state_dict_vae"] = {k: v for k, v in self.vae.state_dict().items() if "lora" in k} |
+| `tadsr.py` | 237 | `def __init__` | self.unet_update, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(args, pretrained_model_name_or_path=args.pretrained_model_name_or_path_reg) |
+| `tadsr.py` | 244 | `def set_train` | if "lora" in n: |
+| `tadsr.py` | 254 | `def diff_loss` | self.unet_update.enable_adapters() |
+| `tadsr.py` | 288 | `def distribution_matching_loss` | self.unet_update.enable_adapters() |
+| `tadsr.py` | 301 | `def distribution_matching_loss` | self.unet_update.disable_adapters() |
+| `tadsr.py` | 352 | `def __init__` | # merge lora |
+| `tadsr.py` | 353 | `def __init__` | if self.args.merge_and_unload_lora: |
+| `tadsr.py` | 355 | `def __init__` | self.vae = self.vae.merge_and_unload() |
+| `tadsr.py` | 356 | `def __init__` | self.unet = self.unet.merge_and_unload() |
+| `tadsr.py` | 366 | `def load_ckpt` | # load unet lora |
+| `tadsr.py` | 367 | `def load_ckpt` | lora_conf_encoder = LoraConfig(r=model["rank_unet"], init_lora_weights="gaussian", target_modules=model["unet_lora_encoder_modules"]) |
+| `tadsr.py` | 368 | `def load_ckpt` | lora_conf_decoder = LoraConfig(r=model["rank_unet"], init_lora_weights="gaussian", target_modules=model["unet_lora_decoder_modules"]) |
+| `tadsr.py` | 369 | `def load_ckpt` | lora_conf_others = LoraConfig(r=model["rank_unet"], init_lora_weights="gaussian", target_modules=model["unet_lora_others_modules"]) |
+| `tadsr.py` | 370 | `def load_ckpt` | self.unet.add_adapter(lora_conf_encoder, adapter_name="default_encoder") |
+| `tadsr.py` | 371 | `def load_ckpt` | self.unet.add_adapter(lora_conf_decoder, adapter_name="default_decoder") |
+| `tadsr.py` | 372 | `def load_ckpt` | self.unet.add_adapter(lora_conf_others, adapter_name="default_others") |
+| `tadsr.py` | 374 | `def load_ckpt` | if "lora" in n or "conv_in" in n: |
+| `tadsr.py` | 376 | `def load_ckpt` | self.unet.set_adapter(["default_encoder", "default_decoder", "default_others"]) |
+| `tadsr.py` | 378 | `def load_ckpt` | # load vae lora |
+| `tadsr.py` | 379 | `def load_ckpt` | vae_lora_conf_encoder = LoraConfig(r=model["rank_vae"], init_lora_weights="gaussian", target_modules=model["vae_lora_encoder_modules"]) |
+| `tadsr.py` | 380 | `def load_ckpt` | self.vae.add_adapter(vae_lora_conf_encoder, adapter_name="default_encoder") |
+| `tadsr.py` | 382 | `def load_ckpt` | if "lora" in n: |
+| `tadsr.py` | 384 | `def load_ckpt` | self.vae.set_adapter(['default_encoder']) |
+| `test_tadsr.py` | 15 | `module` | from ram.models.ram_lora import ram |
+| `test_tadsr.py` | 50 | `def get_validation_prompt` | parser.add_argument("--upscale", type=int, default=4) |
+| `test_tadsr.py` | 59 | `def get_validation_prompt` | # merge lora |
+| `test_tadsr.py` | 60 | `def get_validation_prompt` | parser.add_argument("--merge_and_unload_lora", default=False) # merge lora weights before inference |
+| `test_tadsr.py` | 112 | `def get_validation_prompt` | rscale = args.upscale |
+| `test_tadsr.py` | 114 | `def get_validation_prompt` | if ori_width < args.process_size//rscale or ori_height < args.process_size//rscale: |
+| `test_tadsr.py` | 115 | `def get_validation_prompt` | scale = (args.process_size//rscale)/min(ori_width, ori_height) |
+| `test_tadsr.py` | 116 | `def get_validation_prompt` | input_image = input_image.resize((int(scale*ori_width), int(scale*ori_height))) |
+| `test_tadsr.py` | 118 | `def get_validation_prompt` | input_image = input_image.resize((input_image.size[0]*rscale, input_image.size[1]*rscale)) |
+| `test_tadsr.py` | 146 | `def get_validation_prompt` | output_pil.resize((int(args.upscale*ori_width), int(args.upscale*ori_height))) |
+| `train_tadsr.py` | 112 | `def parse_args` | parser.add_argument("--pretrained_lora_path", default=None, type=str) |
+| `train_tadsr.py` | 117 | `def parse_args` | parser.add_argument("--lambda_vsd_lora", default=1.0, type=float) |
+| `train_tadsr.py` | 122 | `def parse_args` | # lora setting |
+| `train_tadsr.py` | 123 | `def parse_args` | parser.add_argument("--lora_rank", default=4, type=int) |
+| `train_tadsr.py` | 206 | `def sanitize_config` | # set gen adapter |
+| `train_tadsr.py` | 207 | `def sanitize_config` | model_gen.unet.set_adapter(['default_encoder', 'default_decoder', 'default_others']) |
+| `train_tadsr.py` | 228 | `def sanitize_config` | if "lora" in n: |
+| `train_tadsr.py` | 233 | `def sanitize_config` | if "lora" in n or _p.requires_grad: |
+| `train_tadsr.py` | 249 | `def sanitize_config` | if "lora" in n: |
+
+## Representative active LoRA modules
+
+| Component | Module | Adapter | Kind | Rank | A shape | B shape |
+|---|---|---|---|---:|---|---|
+| UNet | `conv_in` | `default_encoder` | Conv2d | 4 | `[4, 4, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.0.attentions.0.proj_in` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 320]` | `[2560, 4]` |
+| UNet | `down_blocks.0.attentions.0.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.0.proj_out` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.proj_in` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 320]` | `[2560, 4]` |
+| UNet | `down_blocks.0.attentions.1.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[320, 4]` |
+| UNet | `down_blocks.0.attentions.1.proj_out` | `default_encoder` | Linear | 4 | `[4, 320]` | `[320, 4]` |
+| UNet | `down_blocks.0.resnets.0.conv1` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.0.resnets.0.conv2` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.0.resnets.1.conv1` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.0.resnets.1.conv2` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.0.downsamplers.0.conv` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[320, 4, 1, 1]` |
+| UNet | `down_blocks.1.attentions.0.proj_in` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 640]` | `[5120, 4]` |
+| UNet | `down_blocks.1.attentions.0.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 2560]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.0.proj_out` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.proj_in` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 640]` | `[5120, 4]` |
+| UNet | `down_blocks.1.attentions.1.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 2560]` | `[640, 4]` |
+| UNet | `down_blocks.1.attentions.1.proj_out` | `default_encoder` | Linear | 4 | `[4, 640]` | `[640, 4]` |
+| UNet | `down_blocks.1.resnets.0.conv1` | `default_encoder` | Conv2d | 4 | `[4, 320, 3, 3]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.1.resnets.0.conv2` | `default_encoder` | Conv2d | 4 | `[4, 640, 3, 3]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.1.resnets.0.conv_shortcut` | `default_encoder` | Conv2d | 4 | `[4, 320, 1, 1]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.1.resnets.1.conv1` | `default_encoder` | Conv2d | 4 | `[4, 640, 3, 3]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.1.resnets.1.conv2` | `default_encoder` | Conv2d | 4 | `[4, 640, 3, 3]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.1.downsamplers.0.conv` | `default_encoder` | Conv2d | 4 | `[4, 640, 3, 3]` | `[640, 4, 1, 1]` |
+| UNet | `down_blocks.2.attentions.0.proj_in` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[10240, 4]` |
+| UNet | `down_blocks.2.attentions.0.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 5120]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.0.proj_out` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.proj_in` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v` | `default_encoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[10240, 4]` |
+| UNet | `down_blocks.2.attentions.1.transformer_blocks.0.ff.net.2` | `default_encoder` | Linear | 4 | `[4, 5120]` | `[1280, 4]` |
+| UNet | `down_blocks.2.attentions.1.proj_out` | `default_encoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `down_blocks.2.resnets.0.conv1` | `default_encoder` | Conv2d | 4 | `[4, 640, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.2.resnets.0.conv2` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.2.resnets.0.conv_shortcut` | `default_encoder` | Conv2d | 4 | `[4, 640, 1, 1]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.2.resnets.1.conv1` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.2.resnets.1.conv2` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.2.downsamplers.0.conv` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.3.resnets.0.conv1` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.3.resnets.0.conv2` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.3.resnets.1.conv1` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `down_blocks.3.resnets.1.conv2` | `default_encoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.0.conv1` | `default_decoder` | Conv2d | 4 | `[4, 2560, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.0.conv2` | `default_decoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.0.conv_shortcut` | `default_decoder` | Conv2d | 4 | `[4, 2560, 1, 1]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.1.conv1` | `default_decoder` | Conv2d | 4 | `[4, 2560, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.1.conv2` | `default_decoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.1.conv_shortcut` | `default_decoder` | Conv2d | 4 | `[4, 2560, 1, 1]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.2.conv1` | `default_decoder` | Conv2d | 4 | `[4, 2560, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.2.conv2` | `default_decoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.resnets.2.conv_shortcut` | `default_decoder` | Conv2d | 4 | `[4, 2560, 1, 1]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.0.upsamplers.0.conv` | `default_decoder` | Conv2d | 4 | `[4, 1280, 3, 3]` | `[1280, 4, 1, 1]` |
+| UNet | `up_blocks.1.attentions.0.proj_in` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k` | `default_decoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v` | `default_decoder` | Linear | 4 | `[4, 1024]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[10240, 4]` |
+| UNet | `up_blocks.1.attentions.0.transformer_blocks.0.ff.net.2` | `default_decoder` | Linear | 4 | `[4, 5120]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.0.proj_out` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.1.proj_in` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+| UNet | `up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v` | `default_decoder` | Linear | 4 | `[4, 1280]` | `[1280, 4]` |
+
+Only the first 120 modules are shown here; full inventory is in JSON (290 rows).

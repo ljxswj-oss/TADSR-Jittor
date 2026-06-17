@@ -1,0 +1,142 @@
+{
+  "status_marker": "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_DIAGNOSIS",
+  "status": "PASS",
+  "markers": {
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_DIAGNOSIS": "PASS",
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_OVERLAY_ACTIVE": "PASS"
+  },
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "pythonpath_overlay": "/mnt/data/sj/tmp/tadsr_official_dependency_overlay_diffusers",
+  "strict_env_modified": false,
+  "official_python_can_import_diffusers_without_overlay": false,
+  "official_python_can_import_diffusers_with_overlay": true,
+  "imports": [
+    {
+      "module": "torch",
+      "status": "PASS",
+      "version": "2.0.1+cu118"
+    },
+    {
+      "module": "diffusers",
+      "status": "PASS",
+      "version": "0.30.3"
+    },
+    {
+      "module": "peft",
+      "status": "PASS",
+      "version": "0.9.0"
+    },
+    {
+      "module": "transformers",
+      "status": "PASS",
+      "version": "4.28.1"
+    },
+    {
+      "module": "accelerate",
+      "status": "PASS",
+      "version": "1.13.0"
+    },
+    {
+      "module": "safetensors",
+      "status": "PASS",
+      "version": "0.7.0"
+    },
+    {
+      "module": "PIL",
+      "status": "PASS",
+      "version": "9.5.0"
+    },
+    {
+      "module": "numpy",
+      "status": "PASS",
+      "version": "1.24.3"
+    },
+    {
+      "module": "cv2",
+      "status": "PASS",
+      "version": "4.11.0"
+    }
+  ],
+  "import_status": {
+    "torch": "PASS",
+    "diffusers": "PASS",
+    "peft": "PASS",
+    "transformers": "PASS",
+    "accelerate": "PASS",
+    "safetensors": "PASS",
+    "PIL": "PASS",
+    "numpy": "PASS",
+    "cv2": "PASS"
+  },
+  "diffusers_missing": false,
+  "official_repo_timevae_candidates": [
+    "tadsr.py",
+    "test_tadsr.py",
+    "train_tadsr.py",
+    "__pycache__/tadsr.cpython-310.pyc",
+    "__pycache__/vae_my.cpython-310.pyc",
+    "__pycache__/test_tadsr.cpython-310.pyc",
+    "__pycache__/train_tadsr.cpython-310.pyc",
+    "diffusers/pipelines",
+    "diffusers/models/autoencoders",
+    "diffusers/models/vae_flax.py",
+    "diffusers/models/__pycache__/vae_flax.cpython-310.pyc",
+    "diffusers/models/autoencoders/__init__.py",
+    "diffusers/models/autoencoders/__pycache__",
+    "diffusers/models/autoencoders/autoencoder_asym_kl.py",
+    "diffusers/models/autoencoders/autoencoder_kl.py",
+    "diffusers/models/autoencoders/autoencoder_kl_temporal_decoder.py",
+    "diffusers/models/autoencoders/autoencoder_tiny.py",
+    "diffusers/models/autoencoders/consistency_decoder_vae.py",
+    "diffusers/models/autoencoders/time_autoencoder_kl.py",
+    "diffusers/models/autoencoders/vae.py",
+    "diffusers/models/autoencoders/__pycache__/__init__.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_asym_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_kl_temporal_decoder.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_tiny.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/consistency_decoder_vae.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/time_autoencoder_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/vae.cpython-310.pyc",
+    "diffusers/pipelines/__init__.py",
+    "diffusers/pipelines/__pycache__",
+    "diffusers/pipelines/amused",
+    "diffusers/pipelines/animatediff",
+    "diffusers/pipelines/audioldm",
+    "diffusers/pipelines/audioldm2",
+    "diffusers/pipelines/auto_pipeline.py",
+    "diffusers/pipelines/blip_diffusion",
+    "diffusers/pipelines/consistency_models",
+    "diffusers/pipelines/controlnet",
+    "diffusers/pipelines/dance_diffusion",
+    "diffusers/pipelines/ddim",
+    "diffusers/pipelines/ddpm",
+    "diffusers/pipelines/deepfloyd_if",
+    "diffusers/pipelines/deprecated",
+    "diffusers/pipelines/dit",
+    "diffusers/pipelines/kandinsky",
+    "diffusers/pipelines/kandinsky2_2",
+    "diffusers/pipelines/kandinsky3",
+    "diffusers/pipelines/latent_consistency_models",
+    "diffusers/pipelines/latent_diffusion",
+    "diffusers/pipelines/musicldm"
+  ],
+  "weight_candidates": {
+    "scheduler": [
+      "scheduler"
+    ],
+    "vae": [
+      "time_vae",
+      "vae"
+    ],
+    "unet": [
+      "unet"
+    ],
+    "lora": []
+  },
+  "dependency_blockers": [],
+  "does_not_modify_environment": true,
+  "pip_install_executed": false
+}

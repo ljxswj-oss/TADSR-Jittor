@@ -1,0 +1,519 @@
+{
+  "status": "PASS",
+  "tadsr_scheduler_usage_audit": "PASS",
+  "tadsr_scheduler_config_audit": "PASS",
+  "tadsr_scheduler_timestep_contract_audit": "PASS",
+  "tadsr_scheduler_step_contract_audit": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "scheduler_config_path": "/mnt/data/sj/checkpoints/TADSR/preset/weights/scheduler/scheduler_config.json",
+  "constructed_scheduler_class": "DDPMScheduler",
+  "config_class_name": "PNDMScheduler",
+  "config": {
+    "num_train_timesteps": 1000,
+    "beta_start": 0.00085,
+    "beta_end": 0.012,
+    "beta_schedule": "scaled_linear",
+    "trained_betas": null,
+    "variance_type": "fixed_small",
+    "clip_sample": false,
+    "prediction_type": "epsilon",
+    "thresholding": false,
+    "dynamic_thresholding_ratio": 0.995,
+    "clip_sample_range": 1.0,
+    "sample_max_value": 1.0,
+    "timestep_spacing": "leading",
+    "steps_offset": 1,
+    "rescale_betas_zero_snr": false,
+    "_use_default_values": [
+      "dynamic_thresholding_ratio",
+      "clip_sample_range",
+      "timestep_spacing",
+      "sample_max_value",
+      "rescale_betas_zero_snr",
+      "variance_type",
+      "thresholding"
+    ],
+    "_class_name": "PNDMScheduler",
+    "_diffusers_version": "0.10.0.dev0",
+    "set_alpha_to_one": false,
+    "skip_prk_steps": true
+  },
+  "set_timesteps_call": {
+    "num_inference_steps": 1,
+    "device": "cpu"
+  },
+  "timesteps": [
+    1
+  ],
+  "chosen_timestep": 1,
+  "scale_model_input_signature": "(sample: torch.FloatTensor, timestep: Optional[int] = None) -> torch.FloatTensor",
+  "step_signature": "(model_output: torch.FloatTensor, timestep: int, sample: torch.FloatTensor, generator=None, return_dict: bool = True) -> Union[diffusers.schedulers.scheduling_ddpm.DDPMSchedulerOutput, Tuple]",
+  "step_output_type": "DDPMSchedulerOutput",
+  "step_output_fields": [
+    "prev_sample",
+    "pred_original_sample"
+  ],
+  "scale_model_input_is_noop": true,
+  "sample_summary": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.0,
+    "max": 1.0,
+    "mean": 0.0,
+    "std": 0.5774912238121033
+  },
+  "model_output_summary": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -0.5,
+    "max": 0.5,
+    "mean": 0.0,
+    "std": 0.28874561190605164
+  },
+  "scaled_model_input_summary": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.0,
+    "max": 1.0,
+    "mean": 0.0,
+    "std": 0.5774912238121033
+  },
+  "prev_sample_summary": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.021510362625122,
+    "max": 1.021510362625122,
+    "mean": 0.0,
+    "std": 0.5899132490158081
+  },
+  "pred_original_sample_summary": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.021510362625122,
+    "max": 1.021510362625122,
+    "mean": 0.0,
+    "std": 0.5899132490158081
+  },
+  "arrays": {
+    "betas": {
+      "shape": [
+        1000
+      ],
+      "dtype": "float32",
+      "min": 0.0008499999530613422,
+      "max": 0.011999999172985554,
+      "mean": 0.005348992999643087,
+      "std": 0.0032578979153186083
+    },
+    "alphas": {
+      "shape": [
+        1000
+      ],
+      "dtype": "float32",
+      "min": 0.9879999756813049,
+      "max": 0.9991499781608582,
+      "mean": 0.9946510195732117,
+      "std": 0.003257897449657321
+    },
+    "alphas_cumprod": {
+      "shape": [
+        1000
+      ],
+      "dtype": "float32",
+      "min": 0.00466009508818388,
+      "max": 0.9991499781608582,
+      "mean": 0.3733764588832855,
+      "std": 0.3321128189563751
+    },
+    "final_alpha_cumprod": {
+      "shape": [
+        0
+      ],
+      "dtype": "float32",
+      "min": null,
+      "max": null,
+      "mean": null,
+      "std": null
+    }
+  },
+  "init_noise_sigma": 1.0,
+  "official_usage_hits": [
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 87,
+      "text": "self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 88,
+      "text": "self.noise_scheduler.set_timesteps(1, device=\"cuda\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 89,
+      "text": "self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 102,
+      "text": "self.timesteps = torch.tensor([1], device=\"cuda\").long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 189,
+      "text": "def get_x0_from_res(self, latent_lq, model_pred, timesteps):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 190,
+      "text": "alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 191,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 197,
+      "text": "def forward(self, c_t, batch=None, timesteps=None):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 202,
+      "text": "encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 203,
+      "text": "model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 204,
+      "text": "x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 227,
+      "text": "self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 252,
+      "text": "timesteps = torch.randint(0, self.noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 253,
+      "text": "noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 257,
+      "text": "timestep=timesteps,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 265,
+      "text": "def eps_to_mu(self, scheduler, model_output, sample, timesteps):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 267,
+      "text": "alphas_cumprod = scheduler.alphas_cumprod.to(device=sample.device, dtype=sample.dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 268,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 276,
+      "text": "def distribution_matching_loss(self, latents, prompt_embeds, neg_prompt_embeds, args, model_timesteps=None):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 278,
+      "text": "if model_timesteps is not None:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 279,
+      "text": "peak = model_timesteps * 0.5 + 0"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 280,
+      "text": "timesteps = peak.long().to(latents.device)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 282,
+      "text": "timesteps = torch.randint(20, 980, (bsz,), device=latents.device).long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 285,
+      "text": "noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 291,
+      "text": "timestep=timesteps,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 295,
+      "text": "x0_pred_update = self.eps_to_mu(self.noise_scheduler, noise_pred_update, noisy_latents, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 298,
+      "text": "timesteps_input = torch.cat([timesteps] * 2)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 304,
+      "text": "timestep=timesteps_input,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 310,
+      "text": "cfg_vsd = torch.tensor(args.cfg_vsd, device=latents.device) + timesteps / 200"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 315,
+      "text": "x0_pred_fix = self.eps_to_mu(self.noise_scheduler, noise_pred_fix, noisy_latents, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 334,
+      "text": "self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 335,
+      "text": "self.noise_scheduler.set_timesteps(1, device=\"cuda\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 361,
+      "text": "self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 415,
+      "text": "def get_x0_from_res(self, latent_lq, model_pred, timesteps):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 416,
+      "text": "alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 417,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 426,
+      "text": "def forward(self, lq, prompt, timesteps):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 430,
+      "text": "lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 436,
+      "text": "model_pred = self.unet(lq_latent, timesteps, encoder_hidden_states=prompt_embeds).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 482,
+      "text": "model_out = self.unet(input_list_t, self.timesteps, encoder_hidden_states=prompt_embeds.to(self.weight_dtype),).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 513,
+      "text": "x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 20,
+      "text": "from diffusers.optimization import get_scheduler"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 70,
+      "text": "parser.add_argument(\"--lr_scheduler\", type=str, default=\"constant\","
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 72,
+      "text": "'The scheduler type to use. Choose between [\"linear\", \"cosine\", \"cosine_with_restarts\", \"polynomial\",'"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 76,
+      "text": "parser.add_argument(\"--lr_warmup_steps\", type=int, default=500, help=\"Number of steps for the warmup in the lr scheduler.\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 78,
+      "text": "help=\"Number of hard resets of the lr in cosine_with_restarts scheduler.\","
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 80,
+      "text": "parser.add_argument(\"--lr_power\", type=float, default=1.0, help=\"Power factor of the polynomial scheduler.\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 139,
+      "text": "def gaussian_blur(img, kernel_size=5, sigma=1.0, timesteps=None):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 142,
+      "text": "if timesteps is not None:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 145,
+      "text": "k = kernel_size + int(timesteps[i].item() / 200) * 4"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 146,
+      "text": "s = sigma + timesteps[i].item() / 200"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 242,
+      "text": "lr_scheduler = get_scheduler(args.lr_scheduler, optimizer=optimizer,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 254,
+      "text": "lr_scheduler_reg = get_scheduler(args.lr_scheduler, optimizer=optimizer_reg,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 264,
+      "text": "model_gen, model_reg, optimizer, optimizer_reg, dl_train, lr_scheduler, lr_scheduler_reg = accelerator.prepare("
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 265,
+      "text": "model_gen, model_reg, optimizer, optimizer_reg, dl_train, lr_scheduler, lr_scheduler_reg)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 285,
+      "text": "timesteps_list = np.linspace(1, 999, 50, dtype=int)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 286,
+      "text": "timesteps_list = torch.tensor(timesteps_list)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 298,
+      "text": "index = torch.randint(0, len(timesteps_list), (B,))"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 299,
+      "text": "timesteps = timesteps_list[index].to(accelerator.device)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 300,
+      "text": "timesteps = timesteps.long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 304,
+      "text": "x_tgt_pred, latents_pred, prompt_embeds, neg_prompt_embeds = model_gen(x_src, batch=batch, timesteps=timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 306,
+      "text": "loss_l2 = F.mse_loss(gaussian_blur(x_tgt_pred, timesteps=timesteps).float(), gaussian_blur(x_tgt, timesteps=timesteps).float(), reduction=\"mean\") * args.lambda_l2"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 312,
+      "text": "loss_kl = model_reg.module.distribution_matching_loss(latents=latents_pred, prompt_embeds=prompt_embeds, neg_prompt_embeds=neg_prompt_embeds, args=args, model_timesteps=timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 315,
+      "text": "loss_kl = model_reg.distribution_matching_loss(latents=latents_pred, prompt_embeds=prompt_embeds, neg_prompt_embeds=neg_prompt_embeds, args=args, model_timesteps=timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 322,
+      "text": "optimizer.step()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 323,
+      "text": "lr_scheduler.step()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 336,
+      "text": "optimizer_reg.step()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/train_tadsr.py",
+      "line": 337,
+      "text": "lr_scheduler_reg.step()"
+    }
+  ],
+  "official_inference_findings": {
+    "tadsr_gen_constructs_ddpm_scheduler": true,
+    "tadsr_gen_calls_set_timesteps_1": true,
+    "tadsr_gen_forward_calls_scheduler_step": false,
+    "tadsr_gen_forward_uses_manual_get_x0_from_res": true,
+    "full_denoising_loop_executed": false,
+    "vae_decode_executed": false,
+    "full_tadsr_inference_executed": false,
+    "image_saved": false
+  },
+  "recommended_next_stage": "Export scheduler-only oracle, align Jittor one-step scheduler boundary, then plan minimal latent-only integration without opening full inference."
+}

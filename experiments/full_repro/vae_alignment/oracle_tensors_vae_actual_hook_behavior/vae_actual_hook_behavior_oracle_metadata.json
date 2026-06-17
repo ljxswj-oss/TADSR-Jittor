@@ -1,0 +1,1182 @@
+{
+  "status": "PASS",
+  "oracle_type": "official_actual_vaehook_behavior",
+  "not_ideal_tiled_decode": true,
+  "source_audit_file": "experiments/full_repro/vae_alignment/audit_tadsr_vae_actual_hook_behavior.json",
+  "policy_decision": "mirror_official_actual_behavior",
+  "input_shape": [
+    1,
+    3,
+    96,
+    96
+  ],
+  "input_dtype": "float32",
+  "oracle_device": "cpu",
+  "oracle_device_policy": "official_cpu_deterministic_export_for_jittor_numpy_alignment",
+  "input_range": [
+    -1.0,
+    1.0
+  ],
+  "layout": "NCHW",
+  "timestep_shape": [
+    1
+  ],
+  "timestep_dtype": "int64",
+  "timestep_value": 50,
+  "latent_shape": [
+    1,
+    4,
+    12,
+    12
+  ],
+  "output_shape": [
+    1,
+    3,
+    96,
+    96
+  ],
+  "scaling_factor": 0.18215,
+  "deterministic_fixed_epsilon_policy": "posterior_sample = mean + std * exported epsilon",
+  "encoder_hook_installed": true,
+  "encoder_tiled_path_triggered": true,
+  "encoder_tile_count": 4,
+  "encoder_tile_size": 16,
+  "encoder_pad": 32,
+  "encoder_tile_input_bboxes": [
+    [
+      0,
+      80,
+      0,
+      80
+    ],
+    [
+      16,
+      96,
+      0,
+      80
+    ],
+    [
+      0,
+      80,
+      16,
+      96
+    ],
+    [
+      16,
+      96,
+      16,
+      96
+    ]
+  ],
+  "encoder_tile_output_bboxes": [
+    [
+      0,
+      6,
+      0,
+      6
+    ],
+    [
+      6,
+      12,
+      0,
+      6
+    ],
+    [
+      0,
+      6,
+      6,
+      12
+    ],
+    [
+      6,
+      12,
+      6,
+      12
+    ]
+  ],
+  "encoder_tile_records": [
+    {
+      "tile_index": 0,
+      "input_bbox": [
+        0,
+        80,
+        0,
+        80
+      ],
+      "output_bbox": [
+        0,
+        6,
+        0,
+        6
+      ],
+      "padded_output_bbox": [
+        0,
+        10,
+        0,
+        10
+      ],
+      "crop_margin": [
+        0,
+        -4,
+        0,
+        -4
+      ],
+      "write_bbox": [
+        0,
+        6,
+        0,
+        6
+      ]
+    },
+    {
+      "tile_index": 1,
+      "input_bbox": [
+        16,
+        96,
+        0,
+        80
+      ],
+      "output_bbox": [
+        6,
+        12,
+        0,
+        6
+      ],
+      "padded_output_bbox": [
+        2,
+        12,
+        0,
+        10
+      ],
+      "crop_margin": [
+        4,
+        0,
+        0,
+        -4
+      ],
+      "write_bbox": [
+        6,
+        12,
+        0,
+        6
+      ]
+    },
+    {
+      "tile_index": 2,
+      "input_bbox": [
+        0,
+        80,
+        16,
+        96
+      ],
+      "output_bbox": [
+        0,
+        6,
+        6,
+        12
+      ],
+      "padded_output_bbox": [
+        0,
+        10,
+        2,
+        12
+      ],
+      "crop_margin": [
+        0,
+        -4,
+        4,
+        0
+      ],
+      "write_bbox": [
+        0,
+        6,
+        6,
+        12
+      ]
+    },
+    {
+      "tile_index": 3,
+      "input_bbox": [
+        16,
+        96,
+        16,
+        96
+      ],
+      "output_bbox": [
+        6,
+        12,
+        6,
+        12
+      ],
+      "padded_output_bbox": [
+        2,
+        12,
+        2,
+        12
+      ],
+      "crop_margin": [
+        4,
+        0,
+        4,
+        0
+      ],
+      "write_bbox": [
+        6,
+        12,
+        6,
+        12
+      ]
+    }
+  ],
+  "encoder_write_back_rule": "assignment_no_blending",
+  "encoder_gaussian_blend_used": false,
+  "encoder_task_queue_summary": [
+    {
+      "index": 0,
+      "task": "conv_in",
+      "payload_class": "Conv2d"
+    },
+    {
+      "index": 1,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 2,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 3,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 4,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 5,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 6,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 7,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 8,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 9,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 10,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 11,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 12,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 13,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 14,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 15,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 16,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 17,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 18,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 19,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 20,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 21,
+      "task": "downsamplers",
+      "payload_class": "Downsample2D"
+    },
+    {
+      "index": 22,
+      "task": "store_res",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 23,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 24,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 25,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 26,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 27,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 28,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 29,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 30,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 31,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 32,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 33,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 34,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 35,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 36,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 37,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 38,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 39,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 40,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 41,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 42,
+      "task": "downsamplers",
+      "payload_class": "Downsample2D"
+    },
+    {
+      "index": 43,
+      "task": "store_res",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 44,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 45,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 46,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 47,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 48,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 49,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 50,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 51,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 52,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 53,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 54,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 55,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 56,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 57,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 58,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 59,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 60,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 61,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 62,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 63,
+      "task": "downsamplers",
+      "payload_class": "Downsample2D"
+    },
+    {
+      "index": 64,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 65,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 66,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 67,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 68,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 69,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 70,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 71,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 72,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 73,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 74,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 75,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 76,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 77,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 78,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 79,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 80,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 81,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 82,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 83,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 84,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 85,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 86,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 87,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 88,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 89,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 90,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 91,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 92,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 93,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 94,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 95,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 96,
+      "task": "attn",
+      "payload_class": "function"
+    },
+    {
+      "index": 97,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 98,
+      "task": "store_res",
+      "payload_class": "function"
+    },
+    {
+      "index": 99,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 100,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 101,
+      "task": "conv1",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 102,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 103,
+      "task": "time_emb_proj",
+      "payload_class": "LoRACompatibleLinear"
+    },
+    {
+      "index": 104,
+      "task": "scale_shift",
+      "payload_class": null
+    },
+    {
+      "index": 105,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 106,
+      "task": "conv2",
+      "payload_class": "LoRACompatibleConv"
+    },
+    {
+      "index": 107,
+      "task": "add_res",
+      "payload_class": null
+    },
+    {
+      "index": 108,
+      "task": "pre_norm",
+      "payload_class": "GroupNorm"
+    },
+    {
+      "index": 109,
+      "task": "silu",
+      "payload_class": "function"
+    },
+    {
+      "index": 110,
+      "task": "conv_out",
+      "payload_class": "Conv2d"
+    }
+  ],
+  "encoder_task_queue_counts": {
+    "add_res": 11,
+    "attn": 1,
+    "conv1": 10,
+    "conv2": 10,
+    "conv_in": 1,
+    "conv_out": 1,
+    "downsamplers": 3,
+    "pre_norm": 22,
+    "scale_shift": 10,
+    "silu": 21,
+    "store_res": 11,
+    "time_emb_proj": 10
+  },
+  "encoder_groupnorm_contract": {
+    "class": "GroupNormParam",
+    "num_groups": 32,
+    "eps": 1e-06,
+    "var_unbiased": false,
+    "aggregation": "per-tile var/mean weighted by tile pixel count normalized by max(pixel_list), then normalized by sum",
+    "pause_task": "pre_norm",
+    "resume_task": "apply_norm"
+  },
+  "actual_encoder_tiled_raw_output_exported": true,
+  "actual_encoder_tiled_recomputed_moments_vs_encoded_parameters": {
+    "shape_match": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 0.9999999999999999
+  },
+  "decoder_hook_installed": true,
+  "decoder_original_forward_used": true,
+  "decoder_original_forward_call_count": 1,
+  "decoder_tiled_path_triggered": false,
+  "decoder_tiled_path_status": "BLOCKED_DECODER_HOOK_CONTRACT",
+  "actual_hook_vs_nontiled_decode": {
+    "shape_match": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0
+  },
+  "actual_hook_vs_nontiled_final_output": {
+    "shape_match": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0
+  },
+  "scheduler_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false,
+  "jittor_tiled_implementation_done": false,
+  "timevae_full_alignment_candidate": false,
+  "recommended_next_stage": "implement Jittor official-actual VAEHook behavior wrapper/tester, not corrected tiled decoder",
+  "tensor_stats": [
+    {
+      "name": "actual_encoder_input_tile_0",
+      "shape": [
+        1,
+        3,
+        80,
+        80
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 0.8877274394035339,
+      "mean": -0.05613631010055542,
+      "std": 0.5674843788146973,
+      "sha256": "6b5c96f5e62f6a0ed8085cc9a46937c3a83050d98e180e69c58cfa8b5af57eed",
+      "source": "official encoder VAEHook input tile 0",
+      "nbytes": 76800
+    },
+    {
+      "name": "actual_encoder_input_tile_1",
+      "shape": [
+        1,
+        3,
+        80,
+        80
+      ],
+      "dtype": "float32",
+      "min": -0.9988425374031067,
+      "max": 0.8888848423957825,
+      "mean": -0.054978854954242706,
+      "std": 0.5674843788146973,
+      "sha256": "eac6da48f83dda28c558a9ec8719964ddb7d94cb69174c677ff4d86823c57ea3",
+      "source": "official encoder VAEHook input tile 1",
+      "nbytes": 76800
+    },
+    {
+      "name": "actual_encoder_input_tile_2",
+      "shape": [
+        1,
+        3,
+        80,
+        80
+      ],
+      "dtype": "float32",
+      "min": -0.8888848423957825,
+      "max": 0.9988425374031067,
+      "mean": 0.05497884005308151,
+      "std": 0.5674843788146973,
+      "sha256": "f3055bbb13699a943c3990a26e65b56658e094d8d36d4d3f6f8a729479a6148c",
+      "source": "official encoder VAEHook input tile 2",
+      "nbytes": 76800
+    },
+    {
+      "name": "actual_encoder_input_tile_3",
+      "shape": [
+        1,
+        3,
+        80,
+        80
+      ],
+      "dtype": "float32",
+      "min": -0.8877274394035339,
+      "max": 1.0,
+      "mean": 0.05613631010055542,
+      "std": 0.5674843788146973,
+      "sha256": "88a282ebbc9aa0f6d75e970323cc69baec3d679e70f191f80849967d0fdd49c8",
+      "source": "official encoder VAEHook input tile 3",
+      "nbytes": 76800
+    },
+    {
+      "name": "actual_hook_timestep",
+      "shape": [
+        1
+      ],
+      "dtype": "int64",
+      "min": 50.0,
+      "max": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "sha256": "0cbbab9d99fb661a1686f17ccaaf8a9d069aa8cb755925045a1d049c060b9e67",
+      "source": "deterministic timestep",
+      "nbytes": 8
+    },
+    {
+      "name": "actual_hook_input",
+      "shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.5773711204528809,
+      "sha256": "24efd5433751fc3b13db8809e62ddcb54dbf1d66eb69c5a773db79abf3e2372f",
+      "source": "deterministic input image tensor in [-1,1]",
+      "nbytes": 110592
+    },
+    {
+      "name": "actual_encoder_tiled_raw_output",
+      "shape": [
+        1,
+        8,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -26.519519805908203,
+      "max": 23.252357482910156,
+      "mean": -0.09582540392875671,
+      "std": 9.644583702087402,
+      "sha256": "fe3308b6327eec492c8875ceaf355e3068ea3b6c9a23ca93bbeaee1536062e05",
+      "source": "official actual encoder VAEHook tiled raw output before quant_conv",
+      "nbytes": 4608
+    },
+    {
+      "name": "actual_encoder_tiled_recomputed_moments",
+      "shape": [
+        1,
+        8,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -34.96736145019531,
+      "max": 12.630189895629883,
+      "mean": -9.19028377532959,
+      "std": 10.534597396850586,
+      "sha256": "94ff61b951c770e4edc0757be991068b6afceb974db635571a454d4f5355faf9",
+      "source": "quant_conv(actual_encoder_tiled_raw_output)",
+      "nbytes": 4608
+    },
+    {
+      "name": "actual_encoder_moments",
+      "shape": [
+        1,
+        8,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -34.96736145019531,
+      "max": 12.630189895629883,
+      "mean": -9.19028377532959,
+      "std": 10.534597396850586,
+      "sha256": "94ff61b951c770e4edc0757be991068b6afceb974db635571a454d4f5355faf9",
+      "source": "official actual encoder hook path: VAEHook(time_vae=True) + quant_conv posterior parameters",
+      "nbytes": 4608
+    },
+    {
+      "name": "actual_posterior_mean",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -12.876985549926758,
+      "max": 12.630189895629883,
+      "mean": -0.2534303665161133,
+      "std": 7.197913646697998,
+      "sha256": "de090b49a902d4d08fbfc26eaef6c28d34b789bfc7fe1826d96f8cfcde649005",
+      "source": "latent_dist.mean after official actual encoder hook path",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_posterior_logvar",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -30.0,
+      "max": -13.975950241088867,
+      "mean": -18.096405029296875,
+      "std": 3.093295097351074,
+      "sha256": "bea9202f9a44e149b6efaeae55c7c304a489755b8e056dd920c53d2a978086b1",
+      "source": "latent_dist.logvar after official actual encoder hook path",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_posterior_std",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": 3.0590231858695915e-07,
+      "max": 0.0009229134302586317,
+      "mean": 0.00023997382959350944,
+      "std": 0.0002251985133625567,
+      "sha256": "474d1a9048467e5e8fde561d5556a7cd76f52802081fe63a08343f84d17723ee",
+      "source": "latent_dist.std after official actual encoder hook path",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_sample_epsilon",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.28917673230171204,
+      "sha256": "dd3ae600d01e0fb0d3a05b9805cc7f9d16784a2468054f54e07a6f1fe32c4b0d",
+      "source": "fixed deterministic epsilon for posterior sample reproduction",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_posterior_sample",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -12.876985549926758,
+      "max": 12.630195617675781,
+      "mean": -0.25342878699302673,
+      "std": 7.19793176651001,
+      "sha256": "4e123d053e1dbac87b7894a55619c4c373f391fa433335ec14ae067db8b29f76",
+      "source": "mean + std * fixed epsilon",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_scaled_latent",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -2.3455429077148438,
+      "max": 2.3005902767181396,
+      "mean": -0.04616205021739006,
+      "std": 1.311103343963623,
+      "sha256": "0df50511102736184866a716dc0cf398dee43e411cda54b2e9db0548403d4aaa",
+      "source": "posterior_sample * scaling_factor",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_decode_input",
+      "shape": [
+        1,
+        4,
+        12,
+        12
+      ],
+      "dtype": "float32",
+      "min": -12.876984596252441,
+      "max": 12.630195617675781,
+      "mean": -0.25342899560928345,
+      "std": 7.19793176651001,
+      "sha256": "1168375acb9900c1b8e4f7f287bd83358400f9f8f7f4d5fa5cba5f91541e3027",
+      "source": "scaled_latent / scaling_factor",
+      "nbytes": 2304
+    },
+    {
+      "name": "actual_decoded_output",
+      "shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "dtype": "float32",
+      "min": -1.0229365825653076,
+      "max": 1.0601872205734253,
+      "mean": 0.0027497608680278063,
+      "std": 0.6035807728767395,
+      "sha256": "c471fb1807634868c6dbe4ec82f74e4635130ee82cc45e319af9be19be10ca8a",
+      "source": "official actual decoder hook path: hook installed but original_forward dispatch",
+      "nbytes": 110592
+    },
+    {
+      "name": "actual_final_clamped_output",
+      "shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.002273347694426775,
+      "std": 0.6026020646095276,
+      "sha256": "ceecce47a07709f105f3c41e9216595884edaff3dabc06060b6a2c3d4cf1f59a",
+      "source": "actual decoded output clamped to [-1,1]",
+      "nbytes": 110592
+    },
+    {
+      "name": "nontiled_reference_decoded_output",
+      "shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "dtype": "float32",
+      "min": -1.0229365825653076,
+      "max": 1.0601872205734253,
+      "mean": 0.0027497608680278063,
+      "std": 0.6035807728767395,
+      "sha256": "c471fb1807634868c6dbe4ec82f74e4635130ee82cc45e319af9be19be10ca8a",
+      "source": "decoder reference with hook removed",
+      "nbytes": 110592
+    },
+    {
+      "name": "nontiled_reference_final_clamped_output",
+      "shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.002273347694426775,
+      "std": 0.6026020646095276,
+      "sha256": "ceecce47a07709f105f3c41e9216595884edaff3dabc06060b6a2c3d4cf1f59a",
+      "source": "decoder reference final output with hook removed",
+      "nbytes": 110592
+    }
+  ]
+}

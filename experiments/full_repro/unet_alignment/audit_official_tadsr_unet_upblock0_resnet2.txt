@@ -1,0 +1,10 @@
+# TADSR UNet up_blocks.0.resnets.2 official audit
+
+TADSR_UNET_UPBLOCK0_RESNET2_AUDIT: PASS
+TADSR_UNET_UPBLOCK0_RESNET2_RESIDUAL_CONTRACT_AUDIT: PASS
+TADSR_UNET_UPBLOCK0_RESNET2_LORA_AUDIT: PASS
+
+resnet2 residual source: down_blocks.2.output_state_2
+resnet2 residual index: 9
+concat shape: [1, 2560, 4, 4]
+next unopened module: up_blocks.0.upsamplers.0

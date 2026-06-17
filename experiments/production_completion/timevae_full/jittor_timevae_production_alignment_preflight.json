@@ -1,0 +1,82 @@
+{
+  "status_marker": "TADSR_TIMEVAE_PRODUCTION_ALIGNMENT_PREFLIGHT",
+  "status": "PASS",
+  "oracle_metadata_status": "PASS",
+  "actual_vaehook_boundary_status": "PASS",
+  "timevae_full_alignment_status": "NOT_COMPLETE",
+  "remaining_gaps": [
+    "full production TimeVAE path not audited",
+    "full TADSR-coupled TimeVAE path not audited"
+  ],
+  "ready_for_one_step_tensor_alignment": true,
+  "timevae_live_metadata_completion_status": "PASS",
+  "missing_metadata_fields": [],
+  "markers": {
+    "TADSR_TIMEVAE_METADATA_REPAIR_ATTEMPT": "PASS",
+    "TADSR_TIMEVAE_METADATA_FIELDS_COMPLETE": "PASS",
+    "TADSR_TIMEVAE_METADATA_READY_FOR_ONE_STEP": "PASS",
+    "TADSR_TIMEVAE_LIVE_METADATA_COMPLETION": "PASS",
+    "TADSR_TIMEVAE_LIVE_ENCODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_DECODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_SAFETY_FLAGS": "PASS"
+  },
+  "checks": [
+    {
+      "name": "oracle_metadata_exists",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "name": "actual_vaehook_boundary_pass",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "name": "shape_contract_compatible",
+      "status": "PASS",
+      "detail": "live tensor shapes not exported in this phase"
+    },
+    {
+      "name": "scaling_clamp_policy_documented",
+      "status": "PASS",
+      "detail": "metadata/audit files inspected"
+    },
+    {
+      "name": "decoder_original_forward_policy_documented",
+      "status": "PASS",
+      "detail": "metadata_only_not_forward_executed"
+    },
+    {
+      "name": "tiled_policy_documented",
+      "status": "PASS",
+      "detail": "remaining gaps: 2"
+    },
+    {
+      "name": "timevae_full_alignment_not_upgraded",
+      "status": "PASS",
+      "detail": "NOT_COMPLETE"
+    },
+    {
+      "name": "raw_tensors_not_staged",
+      "status": "PASS",
+      "detail": "no staged .npy/.npz"
+    },
+    {
+      "name": "metadata_repair_attempt_recorded",
+      "status": "PASS",
+      "detail": "oracle status: PASS"
+    },
+    {
+      "name": "metadata_required_fields_complete",
+      "status": "PASS",
+      "detail": "all required fields complete"
+    },
+    {
+      "name": "metadata_ready_for_one_step",
+      "status": "PASS",
+      "detail": "True"
+    }
+  ],
+  "full_tadsr_inference_executed": false,
+  "image_or_video_output_generated": false
+}

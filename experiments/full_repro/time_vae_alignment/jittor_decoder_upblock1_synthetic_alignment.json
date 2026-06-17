@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "target": "synthetic hidden -> decoder.up_blocks.1",
+  "note": "isolated deterministic synthetic upblock1 pressure test; uses 1e-3 tolerance for large linspace activations",
+  "diagnostics": {
+    "resnet0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 0.00014400482177734375,
+      "mean_abs_error": 1.7385355960186644e-05,
+      "relative_error": 8.789544480536033e-06,
+      "cosine_similarity": 0.9999999999625597,
+      "tolerance": 0.001
+    },
+    "resnet1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 0.00018787384033203125,
+      "mean_abs_error": 3.0464780309102935e-05,
+      "relative_error": 1.1122483274820569e-05,
+      "cosine_similarity": 0.9999999999385983,
+      "tolerance": 0.001
+    },
+    "resnet2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 0.000240325927734375,
+      "mean_abs_error": 3.586780542264023e-05,
+      "relative_error": 1.119896526485909e-05,
+      "cosine_similarity": 0.999999999938995,
+      "tolerance": 0.001
+    },
+    "pre_upsampler": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 0.000240325927734375,
+      "mean_abs_error": 3.586780542264023e-05,
+      "relative_error": 1.119896526485909e-05,
+      "cosine_similarity": 0.999999999938995,
+      "tolerance": 0.001
+    },
+    "upsampler0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 0.00063323974609375,
+      "mean_abs_error": 9.810523469511168e-05,
+      "relative_error": 1.1767920165247865e-05,
+      "cosine_similarity": 0.9999999999345668,
+      "tolerance": 0.001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 0.00063323974609375,
+      "mean_abs_error": 9.810523469511168e-05,
+      "relative_error": 1.1767920165247865e-05,
+      "cosine_similarity": 0.9999999999345668,
+      "tolerance": 0.001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      16,
+      16
+    ],
+    "max_abs_error": 0.00063323974609375,
+    "mean_abs_error": 9.810523469511168e-05,
+    "relative_error": 1.1767920165247865e-05,
+    "cosine_similarity": 0.9999999999345668,
+    "tolerance": 0.001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

@@ -1,0 +1,18 @@
+# TADSR UNet up_blocks.2.resnets.0 official audit
+
+TADSR_UNET_UPBLOCK2_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESNET0_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESNET0_RESIDUAL_CONTRACT_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESNET0_LORA_AUDIT: PASS
+
+upblock2 class: diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D
+upblock2 has_cross_attention: True
+resnet0 residual source: down_blocks.1.output_state_1
+resnet0 residual index: 5
+hidden input shape: [1, 1280, 16, 16]
+residual shape: [1, 640, 16, 16]
+concat shape: [1, 1920, 16, 16]
+output shape: [1, 640, 16, 16]
+next module: up_blocks.2.attentions.0
+full up_blocks.2 alignment: NOT_COMPLETE
+full UNet forward alignment: NOT_COMPLETE

@@ -1,0 +1,36 @@
+{
+  "generated_at_utc": "2026-06-13T11:58:12.573727+00:00",
+  "status": "PASS",
+  "output_dir": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Public_Release_Clean",
+  "file_count": 2023,
+  "copied_file_count": 2023,
+  "total_size_bytes": 17793651,
+  "total_size_mb": 16.969347953796387,
+  "forbidden_count": 0,
+  "forbidden_files": [],
+  "missing_required_files": [],
+  "copied_top_level_dirs": [
+    "deliverables",
+    "docs",
+    "experiments",
+    "figures",
+    "jittor_tadsr",
+    "jittor_tadsr_full",
+    "scripts",
+    "tests_jittor_alignment",
+    "tools"
+  ],
+  "skipped_patterns": {
+    "forbidden_dir": 100,
+    "experiment_non_public_suffix": 120,
+    "forbidden_suffix": 174
+  },
+  "includes_diagnostic_figures": true,
+  "includes_deliverables": true,
+  "ready_for_manual_github_upload": true,
+  "markers": {
+    "TADSR_CLEAN_PUBLIC_RELEASE_PACKAGE_BUILD": "PASS",
+    "TADSR_CLEAN_PUBLIC_RELEASE_NO_RAW_TENSORS": "PASS",
+    "TADSR_CLEAN_PUBLIC_RELEASE_SIZE_AUDIT": "PASS"
+  }
+}

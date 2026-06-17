@@ -1,0 +1,11 @@
+# TADSR UNet up_blocks.1.attentions.1 official audit
+
+TADSR_UNET_UPBLOCK1_ATTENTION1_AUDIT: PASS
+TADSR_UNET_UPBLOCK1_ATTENTION1_LORA_AUDIT: PASS
+
+attention1 class: diffusers.models.transformer_2d.Transformer2DModel
+transformer block count: 1
+input shape: [1, 1280, 8, 8]
+output shape: [1, 1280, 8, 8]
+next module: up_blocks.1.resnets.2
+full up_blocks.1/full UNet/full inference remain NOT_COMPLETE.

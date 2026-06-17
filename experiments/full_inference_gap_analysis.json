@@ -1,0 +1,34 @@
+{
+  "status_marker": "TADSR_FULL_INFERENCE_GAP_ANALYSIS",
+  "status": "PASS",
+  "jittor_full_inference_status": "NOT_COMPLETE",
+  "false_claim_guard": true,
+  "full_chain_stages": [
+    {"stage": "preprocess", "current_status": "boundary-level evidence", "evidence_marker": "JITTOR_PREPROCESS_ALIGNMENT"},
+    {"stage": "condition / control input preparation", "current_status": "audited / partial integration evidence", "evidence_marker": "TADSR_MINIMAL_INTEGRATION_AUDIT"},
+    {"stage": "TimeVAE encode", "current_status": "actual VAEHook boundary aligned", "evidence_marker": "TIME_VAE_ACTUAL_VAEHOOK_FULL_BOUNDARY_ALIGNMENT"},
+    {"stage": "scheduler timesteps", "current_status": "aligned", "evidence_marker": "TADSR_SCHEDULER_BOUNDARY_ALIGNMENT"},
+    {"stage": "UNet denoising loop", "current_status": "UNet full forward aligned, production loop not opened", "evidence_marker": "TADSR_UNET_FULL_FORWARD_ALIGNMENT"},
+    {"stage": "get_x0_from_res", "current_status": "included in minimal integration", "evidence_marker": "TADSR_GET_X0_FROM_RES_ALIGNMENT"},
+    {"stage": "TimeVAE decode", "current_status": "minimal decode boundary aligned", "evidence_marker": "TADSR_MINIMAL_ONE_STEP_DECODE_DRY_RUN"},
+    {"stage": "postprocess", "current_status": "tensor clamp boundary aligned", "evidence_marker": "TADSR_MINIMAL_FINAL_CLAMPED_OUTPUT_ALIGNMENT"},
+    {"stage": "final image/video output", "current_status": "NOT_COMPLETE / NOT_CLAIMED", "evidence_marker": "JITTOR_FULL_INFERENCE: NOT_COMPLETE"}
+  ],
+  "verified_boundaries": [
+    "preprocess / tensor preparation",
+    "UNet full forward",
+    "Scheduler boundary",
+    "get_x0_from_res",
+    "TimeVAE actual VAEHook boundary",
+    "minimal one-step decode dry-run",
+    "static LoRA effective weight path"
+  ],
+  "unopened_boundaries": [
+    "production denoising loop",
+    "multi-step sampling",
+    "final image/video output",
+    "full runtime LoRA adapter switching",
+    "production CLI"
+  ],
+  "conclusion": "Full production inference remains NOT_COMPLETE, but the key computational boundaries required by full inference have strong boundary-level evidence."
+}

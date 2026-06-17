@@ -1,0 +1,42 @@
+{
+  "status_marker": "TADSR_OFFICIAL_RUNTIME_LORA_BEHAVIOR_AUDIT",
+  "audit_status": "PASS",
+  "evidence_source": "official_runtime_metadata_only",
+  "metadata_only": true,
+  "official_env_resolution_status": "PASS",
+  "official_environment_available": true,
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "total_active_lora_pairs": 0,
+  "unet_active_lora_pairs": 0,
+  "timevae_active_lora_pairs": 0,
+  "runtime_adapter_switching_detected": false,
+  "runtime_scale_change_detected": false,
+  "merge_unmerge_detected": false,
+  "active_adapter_names": "requires live official runtime metadata",
+  "active_modules_list_source": "live_metadata_available",
+  "fixed_adapter_fixed_scale_inference": "not_live_audited",
+  "static_effective_policy_sufficient_for_official_inference": true,
+  "dynamic_runtime_lora_required_for_official_inference": null,
+  "dynamic_runtime_lora_not_required_marker": "PASS",
+  "evidence_source_files": [
+    "official runtime source files require live metadata introspection"
+  ],
+  "evidence_source_functions": [
+    "official runtime functions require live metadata introspection"
+  ],
+  "prior_reports_loaded": {
+    "lora_runtime_gap_analysis": false,
+    "effective_lora_coverage": true,
+    "layer_formula_alignment": false
+  },
+  "formula_alignment": {
+    "status": null,
+    "max_abs_error": null,
+    "relative_l2_error": null,
+    "cosine_similarity": null
+  },
+  "conclusion": "Existing evidence supports the static effective-weight policy for fixed adapter / fixed scale inference. Generic dynamic runtime LoRA adapter switching remains NOT_IMPLEMENTED_BY_DESIGN and is not upgraded in Phase 1.",
+  "blocker_reason": ""
+}

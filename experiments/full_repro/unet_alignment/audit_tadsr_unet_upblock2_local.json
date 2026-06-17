@@ -1,0 +1,245 @@
+{
+  "status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "loaded_lora_parameter_count": 516,
+  "upblock2_class": "diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D",
+  "upblock2_forward_signature": "(hidden_states: torch.FloatTensor, res_hidden_states_tuple: Tuple[torch.FloatTensor, ...], temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, upsample_size: Optional[int] = None, attention_mask: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+  "accepted_forward_args": [
+    "hidden_states",
+    "res_hidden_states_tuple",
+    "temb",
+    "encoder_hidden_states",
+    "cross_attention_kwargs",
+    "upsample_size",
+    "attention_mask",
+    "encoder_attention_mask"
+  ],
+  "return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "output_states_status": "NOT_APPLICABLE",
+  "residual_contract": {
+    "accumulated_down_block_res_sample_count": 12,
+    "accumulated_down_block_res_sample_sources": [
+      "conv_in",
+      "down_blocks.0.output_state_0",
+      "down_blocks.0.output_state_1",
+      "down_blocks.0.output_state_2",
+      "down_blocks.1.output_state_0",
+      "down_blocks.1.output_state_1",
+      "down_blocks.1.output_state_2",
+      "down_blocks.2.output_state_0",
+      "down_blocks.2.output_state_1",
+      "down_blocks.2.output_state_2",
+      "down_blocks.3.output_state_0",
+      "down_blocks.3.output_state_1"
+    ],
+    "accumulated_down_block_res_sample_shapes": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "remaining_residual_count_before_upblock2": 6,
+    "remaining_residual_shapes_before_upblock2": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ]
+    ],
+    "local_upblock2_residual_tuple_count": 3,
+    "local_upblock2_residual_tuple_shapes": [
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ]
+    ],
+    "upblock2_resnet0_consumed_source": "down_blocks.1.output_state_1",
+    "upblock2_resnet1_consumed_source": "down_blocks.1.output_state_0",
+    "upblock2_resnet2_consumed_source": "down_blocks.0.output_state_2",
+    "attentions_consume_residual": false,
+    "upsampler_consumes_residual": false,
+    "remaining_internal_residual_count_after_upblock2": 0,
+    "remaining_external_residual_count_after_upblock2": 3,
+    "remaining_external_residual_shapes_after_upblock2": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ]
+    ],
+    "remaining_residuals_reserved_for": [
+      "up_blocks.3"
+    ]
+  },
+  "manual_chain_vs_official_local": {
+    "shape_match": true,
+    "shape": [
+      1,
+      640,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0
+  },
+  "local_output_shape": [
+    1,
+    640,
+    32,
+    32
+  ],
+  "local_output_stats": {
+    "shape": [
+      1,
+      640,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -29.284259796142578,
+    "max": 15.845993041992188,
+    "mean": -0.28327263057878527,
+    "std": 3.1755015011446845,
+    "nbytes": 2621440
+  },
+  "uses_full_unet_forward": false,
+  "uses_upblocks3": false,
+  "uses_full_tadsr_inference": false,
+  "next_module_preview": "up_blocks.3.resnets.0",
+  "markers": {
+    "TADSR_UNET_UPBLOCK2_LOCAL_FORWARD_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK2_RESIDUAL_CONTRACT_AUDIT": "PASS"
+  }
+}

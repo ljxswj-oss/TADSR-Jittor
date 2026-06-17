@@ -1,0 +1,12 @@
+# TADSR UNet up_blocks.3.attentions.2 official audit
+
+TADSR_UNET_UPBLOCK3_ATTENTION2_AUDIT: PASS
+TADSR_UNET_UPBLOCK3_ATTENTION2_TRANSFORMER_AUDIT: PASS
+TADSR_UNET_UPBLOCK3_ATTENTION2_LORA_AUDIT: PASS
+TADSR_UNET_UPBLOCK3_ATTENTION2_RESIDUAL_CONTRACT_AUDIT: PASS
+
+target: up_blocks.3.attentions.2
+next unopened module: output_tail
+attention input shape: [1, 320, 32, 32]
+attention output shape: [1, 320, 32, 32]
+scope: up_blocks.3.attentions.2 only; output tail/full upblock/full UNet/full inference were not executed.

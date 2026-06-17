@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "encoder_class": "diffusers.models.autoencoders.vae.TimeAwareEncoder",
+  "sample_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "timestep": 50,
+  "module_order": [
+    "encoder.conv_in",
+    "encoder.down_blocks.0.resnets.0",
+    "encoder.down_blocks.0.resnets.1",
+    "encoder.down_blocks.0.downsamplers.0"
+  ],
+  "hook_targets": [
+    {
+      "name": "encoder.down_blocks.0.downsamplers.0",
+      "class": "Downsample2D",
+      "input_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "output_shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.time_proj",
+      "class": "Timesteps",
+      "input_shape": [
+        1
+      ],
+      "output_shape": [
+        1,
+        128
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.time_embedding",
+      "class": "TimestepEmbedding",
+      "input_shape": [
+        1,
+        128
+      ],
+      "output_shape": [
+        1,
+        256
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.conv_in",
+      "class": "Conv2d",
+      "input_shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "output_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.0",
+      "class": "DownEncoderBlock2D",
+      "input_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "status": "PASS"
+    }
+  ],
+  "hook_failures": []
+}

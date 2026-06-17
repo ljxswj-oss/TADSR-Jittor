@@ -1,0 +1,12 @@
+# TADSR UNet down_blocks.2.resnets.0 Audit
+
+TADSR_UNET_DOWNBLOCK2_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_RESNET0_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_RESNET0_LORA_AUDIT: PASS
+
+Block class: `diffusers.models.unet_2d_blocks.CrossAttnDownBlock2D`
+ResNet0 channels: `640 -> 1280`, shortcut: `True`
+Input shape: `[1, 640, 8, 8]`, output shape: `[1, 1280, 8, 8]`
+Next module preview: `down_blocks.2.attentions.0`
+
+This audit stops after `down_blocks.2.resnets.0`; attention0, full down_blocks.2, full UNet forward and full TADSR inference remain out of scope.

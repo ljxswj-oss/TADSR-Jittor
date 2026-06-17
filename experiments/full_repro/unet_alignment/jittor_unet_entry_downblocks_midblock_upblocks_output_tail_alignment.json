@@ -1,0 +1,201 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001
+    },
+    "time_embedding": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.2749661588459276e-09,
+      "relative_error": 2.484385767769718e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.0001
+    },
+    "downblock0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "max_abs_error": 1.2159347534179688e-05,
+      "mean_abs_error": 1.706075145335717e-06,
+      "relative_error": 1.1445761910420367e-06,
+      "cosine_similarity": 0.9999999999994224,
+      "tolerance": 0.002
+    },
+    "downblock1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 2.2277235984802246e-05,
+      "mean_abs_error": 2.579873682861944e-06,
+      "relative_error": 1.0776458816026287e-06,
+      "cosine_similarity": 0.9999999999994817,
+      "tolerance": 0.002
+    },
+    "downblock2_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 3.0517578125e-05,
+      "mean_abs_error": 3.670575767955597e-06,
+      "relative_error": 1.3387986697652404e-06,
+      "cosine_similarity": 0.9999999999991991,
+      "tolerance": 0.002
+    },
+    "downblock3_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.47955322265625e-05,
+      "mean_abs_error": 3.7183403492235813e-06,
+      "relative_error": 1.4007089970714264e-06,
+      "cosine_similarity": 0.9999999999991385,
+      "tolerance": 0.002
+    },
+    "midblock_hidden_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.6702880859375e-05,
+      "mean_abs_error": 3.800192098424304e-06,
+      "relative_error": 1.3949179221757381e-06,
+      "cosine_similarity": 0.9999999999991097,
+      "tolerance": 0.002
+    },
+    "upblock0_output_hidden": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.704692840576172e-05,
+      "mean_abs_error": 7.323542648762782e-07,
+      "relative_error": 1.2861741591879397e-06,
+      "cosine_similarity": 0.999999999999486,
+      "tolerance": 0.002
+    },
+    "upblock1_output_hidden": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        16,
+        16
+      ],
+      "max_abs_error": 8.705258369445801e-05,
+      "mean_abs_error": 7.895466114504756e-06,
+      "relative_error": 1.889558076920784e-06,
+      "cosine_similarity": 0.999999999998297,
+      "tolerance": 0.002
+    },
+    "upblock2_output_hidden": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 8.535385131835938e-05,
+      "mean_abs_error": 5.06996946665339e-06,
+      "relative_error": 2.210366932101455e-06,
+      "cosine_similarity": 0.9999999999979134,
+      "tolerance": 0.002
+    },
+    "upblock3_output_hidden": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 2.288818359375e-05,
+      "mean_abs_error": 2.3209084091035947e-06,
+      "relative_error": 1.265436949888023e-06,
+      "cosine_similarity": 0.9999999999992443,
+      "tolerance": 0.002
+    },
+    "output_tail_norm_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.621246337890625e-05,
+      "mean_abs_error": 3.1494222215284614e-07,
+      "relative_error": 7.719566529243264e-07,
+      "cosine_similarity": 0.999999999999896,
+      "tolerance": 0.002
+    },
+    "output_tail_act_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 2.473592758178711e-06,
+      "mean_abs_error": 1.121274496231314e-07,
+      "relative_error": 1.6899209583211986e-06,
+      "cosine_similarity": 0.9999999999982524,
+      "tolerance": 0.002
+    },
+    "output_tail_conv_out_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 2.2277235984802246e-06,
+      "mean_abs_error": 5.021606739319395e-07,
+      "relative_error": 5.980908879035516e-06,
+      "cosine_similarity": 0.9999999999827354,
+      "tolerance": 0.002
+    }
+  },
+  "output_tail_status": "PASS",
+  "note": "Bridge validates entry -> all down_blocks -> full local mid_block -> full local up_blocks.0 -> full local up_blocks.1 -> full local up_blocks.2 -> full local up_blocks.3 -> output tail. It still does not call official UNet.forward, scheduler denoising, VAE integration, runtime LoRA, image postprocessing, or full TADSR inference."
+}

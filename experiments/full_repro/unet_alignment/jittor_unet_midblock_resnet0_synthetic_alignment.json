@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "synthetic_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 5.53131103515625e-05,
+      "mean_abs_error": 5.729241138396901e-06,
+      "relative_error": 3.95352119178316e-06,
+      "cosine_similarity": 0.9999999999936195,
+      "tolerance": 0.0001
+    },
+    "synthetic_conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 5.53131103515625e-05,
+      "mean_abs_error": 5.729178603530727e-06,
+      "relative_error": 4.267670125635222e-06,
+      "cosine_similarity": 0.9999999999928839,
+      "tolerance": 0.0001
+    },
+    "synthetic_shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Synthetic isolated hidden/temb -> mid_block.resnets.0 only."
+}

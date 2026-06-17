@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-13T11:59:23.214436+00:00",
+  "markers": {
+    "TADSR_FINAL_FALSE_CLAIM_GUARD": "PASS",
+    "TADSR_FINAL_SCOPE_CONSISTENCY": "PASS",
+    "TADSR_FINAL_CLAIMS_CONSISTENCY": "PASS"
+  },
+  "scanned_file_count": 521,
+  "required_phrase_status": {
+    "JITTOR_FULL_INFERENCE: NOT_COMPLETE": true,
+    "JITTOR_FULL_PORT: PARTIAL": true,
+    "TIME_VAE_FULL_ALIGNMENT: NOT_COMPLETE": true,
+    "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION: NOT_IMPLEMENTED_BY_DESIGN": true
+  },
+  "required_meaning_status": {
+    "diagnostic image smoke / diagnostic image-smoke": true,
+    "not full inference / 不是完整推理 / 不是 full inference": true,
+    "one-step tensor alignment / one-step": true,
+    "not full TADSR training / 不是 full TADSR training / 不是完整 TADSR 训练": true
+  },
+  "false_claim_hits": []
+}

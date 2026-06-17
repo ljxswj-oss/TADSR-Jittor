@@ -1,0 +1,10 @@
+TADSR UNet down_blocks.1.resnets.1 audit
+status: PASS
+resnet class: diffusers.models.resnet.ResnetBlock2D
+in_channels: 640
+out_channels: 640
+temb_channels: 1280
+has_shortcut: False
+input shape: [1, 640, 16, 16]
+output shape: [1, 640, 16, 16]
+next module: attentions.1

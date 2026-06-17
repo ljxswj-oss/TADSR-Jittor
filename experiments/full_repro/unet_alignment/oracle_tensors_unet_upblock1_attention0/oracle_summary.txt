@@ -1,0 +1,11 @@
+# TADSR UNet up_blocks.1.attentions.0 PyTorch oracle
+
+TADSR_UNET_UPBLOCK1_ATTENTION0_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK1_ATTENTION0_EFFECTIVE_WEIGHTS: PASS
+
+input shape: [1, 1280, 8, 8]
+output shape: [1, 1280, 8, 8]
+synthetic manual-vs-official max_abs_diff: 0.0
+entry manual-vs-official max_abs_diff: 0.0
+next unopened module: up_blocks.1.resnets.1
+full up_blocks.1/full UNet/full inference remain NOT_COMPLETE.

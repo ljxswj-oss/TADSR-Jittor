@@ -1,0 +1,49 @@
+{
+  "status_marker": "TADSR_PHASE3B_FINAL_MANUAL_HANDOFF_READY",
+  "status": "PASS",
+  "markers": {
+    "TADSR_PHASE3B_MANUAL_EXECUTION_KIT_READY": "PASS",
+    "TADSR_PHASE3B_FINAL_MANUAL_HANDOFF_READY": "PASS"
+  },
+  "files": [
+    {
+      "name": "manual runbook",
+      "path": "docs\\production_completion\\linux_phase3b_manual_runbook.md",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "name": "official env template",
+      "path": "docs\\production_completion\\linux_official_env_template.sh",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Linux live audit script",
+      "path": "scripts\\run_phase3b_live_audit_linux.sh",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "name": "result packager",
+      "path": "scripts\\package_phase3b_live_results.py",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "name": "result importer",
+      "path": "scripts\\import_phase3b_live_results.py",
+      "exists": true,
+      "status": "PASS"
+    }
+  ],
+  "must_remain_statuses": {
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL",
+    "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE",
+    "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": "NOT_IMPLEMENTED_BY_DESIGN"
+  },
+  "must_remain_statuses_preserved": true,
+  "blockers": [],
+  "next_required_action": "User manually logs into Linux, runs Phase 3-B live audit, packages results, and imports them locally."
+}

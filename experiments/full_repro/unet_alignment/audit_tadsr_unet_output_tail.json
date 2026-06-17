@@ -1,0 +1,220 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "loaded_lora_parameter_count": 516,
+  "unet_forward_signature_not_used": "(sample: torch.FloatTensor, timestep: Union[torch.Tensor, float, int], encoder_hidden_states: torch.Tensor, class_labels: Optional[torch.Tensor] = None, timestep_cond: Optional[torch.Tensor] = None, attention_mask: Optional[torch.Tensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, added_cond_kwargs: Optional[Dict[str, torch.Tensor]] = None, down_block_additional_residuals: Optional[Tuple[torch.Tensor]] = None, mid_block_additional_residual: Optional[torch.Tensor] = None, down_intrablock_additional_residuals: Optional[Tuple[torch.Tensor]] = None, encoder_attention_mask: Optional[torch.Tensor] = None, return_dict: bool = True) -> Union[models.unet_2d_condition.UNet2DConditionOutput, Tuple]",
+  "upblock2_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "upblock3_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "tail_config": {
+    "module_order": [
+      "conv_norm_out",
+      "conv_act",
+      "conv_out"
+    ],
+    "conv_norm_out": {
+      "class": "torch.nn.modules.normalization.GroupNorm",
+      "num_groups": 32,
+      "num_channels": 320,
+      "eps": 1e-05,
+      "affine": true,
+      "weight_shape": [
+        320
+      ],
+      "bias_shape": [
+        320
+      ]
+    },
+    "conv_act": {
+      "class": "torch.nn.modules.activation.SiLU",
+      "inplace": false,
+      "parameter_count": 0
+    },
+    "conv_out": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "torch.nn.modules.conv.Conv2d",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "bias_shape": [
+        4
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          320,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          4,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.035098280757665634,
+        "default_others": "ERROR: 'default_others'"
+      },
+      "in_channels": 320,
+      "out_channels": 4,
+      "kernel_size": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "padding": [
+        1,
+        1
+      ],
+      "dilation": [
+        1,
+        1
+      ],
+      "groups": 1
+    },
+    "input_shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "norm_output_shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "act_output_shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "conv_out_output_shape": [
+      1,
+      4,
+      32,
+      32
+    ]
+  },
+  "tail_input_stats": {
+    "shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -10.36383056640625,
+    "max": 10.669912338256836,
+    "mean": 0.24665558699019102,
+    "std": 2.4391267199702846,
+    "nbytes": 1310720
+  },
+  "tail_norm_stats": {
+    "shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -10.910004615783691,
+    "max": 0.8770302534103394,
+    "mean": -0.29506087314767243,
+    "std": 1.4156225494133527,
+    "nbytes": 1310720
+  },
+  "tail_act_stats": {
+    "shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -0.2784202992916107,
+    "max": 0.6193643808364868,
+    "mean": -0.0035628923892749445,
+    "std": 0.08954425275501868,
+    "nbytes": 1310720
+  },
+  "tail_conv_out_stats": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -0.5024965405464172,
+    "max": 0.9271302223205566,
+    "mean": -0.022930096586293303,
+    "std": 0.10461559601983722,
+    "nbytes": 16384
+  },
+  "tail_norm_self_check": {
+    "shape_match": true,
+    "shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0
+  },
+  "uses_official_unet_forward": false,
+  "uses_output_tail": true,
+  "uses_full_tadsr_inference": false,
+  "effective_weight_plan": {
+    "strategy": "export conv_norm_out raw affine parameters and conv_out LoRA-merged/effective static weights; no generic Jittor runtime LoRA",
+    "planned_npz": "experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz",
+    "conv_out_lora_wrapped": true
+  },
+  "markers": {
+    "TADSR_UNET_OUTPUT_TAIL_AUDIT": "PASS",
+    "TADSR_UNET_OUTPUT_TAIL_TOPOLOGY_AUDIT": "PASS",
+    "TADSR_UNET_OUTPUT_TAIL_LORA_AUDIT": "PASS",
+    "TADSR_UNET_OUTPUT_TAIL_LOCAL_EXECUTION_AUDIT": "PASS"
+  },
+  "scope_boundaries": {
+    "ported_this_stage": "conv_norm_out -> conv_act -> conv_out only",
+    "not_ported_this_stage": [
+      "official unet.forward",
+      "scheduler denoising",
+      "VAE integration",
+      "image generation",
+      "generic runtime LoRA"
+    ]
+  }
+}

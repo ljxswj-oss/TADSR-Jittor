@@ -1,0 +1,12 @@
+# TADSR UNet up_blocks.3.attentions.2 PyTorch oracle
+
+TADSR_UNET_UPBLOCK3_ATTENTION2_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK3_ATTENTION2_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_UPBLOCK3_PRE_LOCAL_AGGREGATE_ALIGNMENT: PASS
+TADSR_UNET_UPBLOCK3_ATTENTION2_RESIDUAL_CONTRACT_ORACLE: PASS
+
+attention input shape: [1, 320, 32, 32]
+attention output shape: [1, 320, 32, 32]
+synthetic manual-vs-official max_abs_diff: 0.0
+entry manual-vs-official max_abs_diff: 0.0
+next unopened module: output_tail

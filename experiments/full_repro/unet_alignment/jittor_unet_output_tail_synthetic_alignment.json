@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "synthetic_norm": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.0967254638671875e-05,
+      "mean_abs_error": 5.591842791316325e-07,
+      "relative_error": 2.0041135284393322e-06,
+      "cosine_similarity": 0.9999999999989374,
+      "tolerance": 0.0001
+    },
+    "synthetic_act": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.6987323760986328e-06,
+      "mean_abs_error": 2.2332164061992498e-07,
+      "relative_error": 2.709401090909763e-06,
+      "cosine_similarity": 0.9999999999947106,
+      "tolerance": 0.0001
+    },
+    "synthetic_conv_out": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 3.203749656677246e-06,
+      "mean_abs_error": 9.551721404932323e-07,
+      "relative_error": 1.9612306029867895e-05,
+      "cosine_similarity": 0.9999999997624285,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic hidden tensor -> output tail alignment; no full UNet forward or full inference."
+}

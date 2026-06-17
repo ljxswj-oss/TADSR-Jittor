@@ -1,0 +1,14 @@
+# TADSR UNet up_blocks.2.resnets.0 PyTorch oracle
+
+TADSR_UNET_UPBLOCK2_RESNET0_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK2_RESNET0_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_UPBLOCK2_RESNET0_RESIDUAL_CONTRACT_ORACLE: PASS
+
+residual source: down_blocks.1.output_state_1
+hidden input shape: [1, 1280, 16, 16]
+residual shape: [1, 640, 16, 16]
+concat shape: [1, 1920, 16, 16]
+output shape: [1, 640, 16, 16]
+synthetic manual-vs-official max_abs_diff: 0.0
+entry manual-vs-official max_abs_diff: 0.0
+next unopened module: up_blocks.2.attentions.0

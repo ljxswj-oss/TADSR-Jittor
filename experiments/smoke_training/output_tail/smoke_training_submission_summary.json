@@ -1,0 +1,195 @@
+{
+  "status_marker": "TADSR_SMOKE_TRAINING_SUBMISSION_SUMMARY",
+  "status": "PASS",
+  "task_definition": "output-tail conv_out small-data regression using exported feature-target pairs",
+  "train_val_split": "24 train / 8 validation over 32 output-tail samples",
+  "loss_summary": {
+    "pytorch": {
+      "exists": true,
+      "steps": 300,
+      "first": 0.005236602388322353,
+      "last": 0.00014055753126740456,
+      "decrease": 0.005096044857054949,
+      "relative_decrease": 0.973158639735404
+    },
+    "jittor": {
+      "exists": true,
+      "steps": 300,
+      "first": 0.005236602853983641,
+      "last": 0.00014113690122030675,
+      "decrease": 0.005095465952763334,
+      "relative_decrease": 0.9730480036092598
+    }
+  },
+  "validation_loss_summary": {
+    "pytorch": {
+      "exists": true,
+      "steps": 32,
+      "first": null,
+      "last": null,
+      "decrease": null
+    },
+    "jittor": {
+      "exists": true,
+      "steps": 32,
+      "first": null,
+      "last": null,
+      "decrease": null
+    }
+  },
+  "performance_summary": {
+    "pytorch": {
+      "exists": true,
+      "rows": 300,
+      "mean_step_time_sec": null,
+      "mean_samples_per_sec": 2141.824768246735
+    },
+    "jittor": {
+      "exists": true,
+      "rows": 300,
+      "mean_step_time_sec": null,
+      "mean_samples_per_sec": 2359.2229843855225
+    }
+  },
+  "alignment_metrics_status": "PASS",
+  "alignment_metrics": {
+    "status": "PASS",
+    "generated_at_utc": "2026-06-09T12:45:52.481847+00:00",
+    "metadata": {
+      "num_samples": 32,
+      "train_samples": 24,
+      "val_samples": 8,
+      "trainable_module": "output_tail_conv_out"
+    },
+    "prediction_alignment_status": "PASS",
+    "validation_alignment_status": "PASS",
+    "pytorch_vs_jittor_prediction": {
+      "mse": 6.07674534498604e-08,
+      "mae": 0.00012582170634395373,
+      "max_abs_diff": 0.0007622092962265015,
+      "mean_abs_diff": 0.00012582170634395373,
+      "cosine_similarity": 0.9999968413988342,
+      "relative_l2_diff": 0.002575377281918869
+    },
+    "pytorch_prediction_vs_target": {
+      "mse": 0.00017854908171673325,
+      "mae": 0.010340261388886829,
+      "max_abs_diff": 0.10569822788238525,
+      "mean_abs_diff": 0.010340261388886829,
+      "cosine_similarity": 0.990223953107226,
+      "relative_l2_diff": 0.14210767708052433
+    },
+    "jittor_prediction_vs_target": {
+      "mse": 0.000181269394659407,
+      "mae": 0.010411676318117014,
+      "max_abs_diff": 0.10578286647796631,
+      "mean_abs_diff": 0.010411676318117014,
+      "cosine_similarity": 0.9900883341969151,
+      "relative_l2_diff": 0.14318613690914625
+    },
+    "loss_curve_alignment": {
+      "final_train_loss_gap": 5.793699529021978e-07,
+      "final_val_loss_gap": 2.7204223442822695e-06,
+      "final_train_loss_relative_gap": 0.004105021067437452,
+      "final_val_loss_relative_gap": 0.015007609932191768,
+      "train_loss_correlation": 0.9999541744284655,
+      "val_loss_correlation": 0.9999733258616282,
+      "no_nan_inf": true
+    },
+    "full_tadsr_training": false,
+    "full_inference_executed": false,
+    "image_saved": false,
+    "video_saved": false
+  },
+  "multiseed_status": "PASS",
+  "multiseed_summary": {
+    "status": "PASS",
+    "generated_at_utc": "2026-06-09T12:46:10.622840+00:00",
+    "requested_seeds": [
+      1234,
+      2025,
+      42
+    ],
+    "completed_seeds": [
+      1234,
+      2025,
+      42
+    ],
+    "num_pass": 3,
+    "num_partial": 0,
+    "num_fail": 0,
+    "mean_jittor_final_val_loss": 0.0003193581699936961,
+    "std_jittor_final_val_loss": 0.00015688989278442506,
+    "mean_val_loss_relative_gap": 0.001304255192851761,
+    "std_val_loss_relative_gap": 0.001701132923741718,
+    "full_tadsr_training": false,
+    "full_inference_executed": false,
+    "image_saved": false,
+    "video_saved": false,
+    "rows": [
+      {
+        "seed": 1234,
+        "pytorch_train_final_loss": 0.002394642448052764,
+        "jittor_train_final_loss": 0.0023698483128100634,
+        "pytorch_val_final_loss": 0.0005391479935497046,
+        "jittor_val_final_loss": 0.0005411556921899319,
+        "pytorch_loss_drop_ratio": 0.5427106603715365,
+        "jittor_loss_drop_ratio": 0.547445475837976,
+        "pytorch_val_loss_drop_ratio": 0.8880184403110267,
+        "jittor_val_loss_drop_ratio": 0.8876008197114529,
+        "val_loss_relative_gap": 0.0037100203678956532,
+        "prediction_relative_l2_diff": 0.002308113219929688,
+        "status": "PASS"
+      },
+      {
+        "seed": 2025,
+        "pytorch_train_final_loss": 0.00018576842558104545,
+        "jittor_train_final_loss": 0.0001858498144429177,
+        "pytorch_val_final_loss": 0.000213541992707178,
+        "jittor_val_final_loss": 0.00021356352954171598,
+        "pytorch_loss_drop_ratio": 0.9566411710225154,
+        "jittor_loss_drop_ratio": 0.9566221652233634,
+        "pytorch_val_loss_drop_ratio": 0.9533319271686586,
+        "jittor_val_loss_drop_ratio": 0.9533271064535662,
+        "val_loss_relative_gap": 0.00010084509552824229,
+        "prediction_relative_l2_diff": 0.0004404154841507399,
+        "status": "PASS"
+      },
+      {
+        "seed": 42,
+        "pytorch_train_final_loss": 0.00011204227484995499,
+        "jittor_train_final_loss": 0.00011203467147424817,
+        "pytorch_val_final_loss": 0.0002033345663221553,
+        "jittor_val_final_loss": 0.0002033552882494405,
+        "pytorch_loss_drop_ratio": 0.9865728029394423,
+        "jittor_loss_drop_ratio": 0.9865737021433515,
+        "pytorch_val_loss_drop_ratio": 0.9735802783488051,
+        "jittor_val_loss_drop_ratio": 0.9735776130791803,
+        "val_loss_relative_gap": 0.0001019001151313871,
+        "prediction_relative_l2_diff": 0.0002488762113684496,
+        "status": "PASS"
+      }
+    ]
+  },
+  "prediction_alignment_file": "experiments/smoke_training/output_tail/prediction_alignment.csv",
+  "visualization_files": [
+    "experiments/smoke_training/output_tail/visualizations/loss_gap_curve.png",
+    "experiments/smoke_training/output_tail/visualizations/performance_samples_per_sec.png",
+    "experiments/smoke_training/output_tail/visualizations/performance_step_time.png",
+    "experiments/smoke_training/output_tail/visualizations/prediction_error_heatmap.png",
+    "experiments/smoke_training/output_tail/visualizations/prediction_target_heatmap.png",
+    "experiments/smoke_training/output_tail/visualizations/pytorch_jittor_prediction_heatmap.png",
+    "experiments/smoke_training/output_tail/visualizations/relative_loss_gap_curve.png",
+    "experiments/smoke_training/output_tail/visualizations/train_val_loss_curve.png",
+    "experiments/smoke_training/output_tail/loss_curve.png",
+    "experiments/smoke_training/output_tail/train_val_loss_curve.png"
+  ],
+  "final_audit_rows_available": true,
+  "limitation": "small-data output-tail smoke training only; not full TADSR end-to-end training",
+  "safety": {
+    "does_not_train_now": true,
+    "does_not_generate_image_or_video": true,
+    "does_not_save_new_weights": true,
+    "does_not_claim_full_tadsr_training": true
+  }
+}

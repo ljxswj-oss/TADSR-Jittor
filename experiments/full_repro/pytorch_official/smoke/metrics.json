@@ -1,0 +1,9 @@
+{
+  "output_dir": "experiments/full_repro/pytorch_official/smoke/output",
+  "num_output_images": 4,
+  "total_output_bytes": 1668966,
+  "gt_dir": null,
+  "psnr": null,
+  "ssim": null,
+  "note": "PSNR/SSIM are only computed when GT support is implemented and gt_dir is provided."
+}

@@ -1,0 +1,279 @@
+{
+  "status": "PASS",
+  "tadsr_minimal_latent_one_step_oracle": "PASS",
+  "tadsr_get_x0_from_res_oracle": "PASS",
+  "tadsr_minimal_decode_boundary_oracle": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "input_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "latent_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "model_pred_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "decode_input_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "decoded_output_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "final_clamped_output_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "final_clamped_output_range": [
+    -1.0,
+    1.0
+  ],
+  "timestep": [
+    1
+  ],
+  "scaling_factor": 0.18215,
+  "alpha_prod_t": [
+    0.9982960224151611
+  ],
+  "sqrt_alpha_prod_t": [
+    0.9991476535797119
+  ],
+  "formula": "x0 = scaled_latent / sqrt(alphas_cumprod[timestep]) - model_pred",
+  "decode_input_formula": "decode_input = x0 / scaling_factor",
+  "loaded_unet_lora_parameter_count": 516,
+  "unet_full_forward_executed": true,
+  "scheduler_step_executed": false,
+  "full_denoising_loop_executed": false,
+  "vae_decode_executed": true,
+  "decoder_hook_installed": true,
+  "decoder_actual_behavior": "original_forward_due_to_official_decoder_hook_time_vae_false",
+  "decoder_original_forward_used": true,
+  "decoder_original_forward_call_count": 1,
+  "decoder_tiled_path_triggered": false,
+  "decoder_tiled_path_call_count": 0,
+  "image_saved": false,
+  "full_tadsr_inference_executed": false,
+  "production_cli_used": false,
+  "runtime_lora_dynamic_loading": false,
+  "static_effective_lora_policy": true,
+  "optional_decode_boundary": "PASS_TENSOR_ONLY_DECODE_CLAMP_BOUNDARY",
+  "tensor_stats": {
+    "minimal_input": {
+      "shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -2.4835269396561444e-09,
+      "std": 0.5773532390594482,
+      "sha256": "f72d83abc7599c564539132963fe75ba4d4f15d64876c061b81adf41a6cfe103",
+      "nbytes": 786432,
+      "source": "deterministic low-quality/control input in [-1,1]"
+    },
+    "minimal_timestep": {
+      "shape": [
+        1
+      ],
+      "dtype": "int64",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+      "nbytes": 8,
+      "source": "official one-step timestep"
+    },
+    "minimal_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 9.289035318715833e-09,
+      "std": 0.2886787950992584,
+      "sha256": "0c6ed2d5140ed2e282c13c2ea63c431b981f1a57f0d16fc34a4559603f69f4ae",
+      "nbytes": 315392,
+      "source": "deterministic encoder_hidden_states matching UNet cross_attention_dim"
+    },
+    "minimal_sample_epsilon": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.28874561190605164,
+      "sha256": "8a765f6fe3fbfc91ed97b87345fd248317330b54c3695fa8623c3168d456d9aa",
+      "nbytes": 16384,
+      "source": "fixed epsilon for deterministic posterior sample"
+    },
+    "minimal_posterior_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -36.4074821472168,
+      "max": 20.663257598876953,
+      "mean": -0.11999475955963135,
+      "std": 7.406636714935303,
+      "sha256": "e0c888d41ff46f108ecdb18f79c7e84ec866aad52b481c587702c37f98887cd1",
+      "nbytes": 16384,
+      "source": "vae.encode(...).latent_dist mean + std * fixed epsilon"
+    },
+    "minimal_scaled_latent": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -6.631623268127441,
+      "max": 3.76381254196167,
+      "mean": -0.021857082843780518,
+      "std": 1.3491188287734985,
+      "sha256": "ecd0eb2cb7b6e9ad5d74a0483443a3b51803daf92e4dd59ec8aa2c8bf8cdf34e",
+      "nbytes": 16384,
+      "source": "posterior_sample * scaling_factor"
+    },
+    "minimal_unet_model_pred": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.2700740098953247,
+      "max": 0.6109416484832764,
+      "mean": 0.06714534759521484,
+      "std": 0.20003287494182587,
+      "sha256": "2997418665d3113709a735b12a049b6ce1d11d5e23c2d732c36dbdf1c9e98e11",
+      "nbytes": 16384,
+      "source": "official UNet full forward output from scaled latent"
+    },
+    "minimal_alpha_prod_t": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 0.9982960224151611,
+      "max": 0.9982960224151611,
+      "mean": 0.9982960224151611,
+      "std": 0.0,
+      "sha256": "58c0806894d977081a079d10c8b171cd2e451151d82b977bc1adbe19e02b3781",
+      "nbytes": 4,
+      "source": "scheduler.alphas_cumprod[timestep]"
+    },
+    "minimal_sqrt_alpha_prod_t": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 0.9991476535797119,
+      "max": 0.9991476535797119,
+      "mean": 0.9991476535797119,
+      "std": 0.0,
+      "sha256": "c5d68955fc2dfe1816f5d7c2bf546c408be8548c331b6b558faf31711fd905e1",
+      "nbytes": 4,
+      "source": "sqrt(alpha_prod_t)"
+    },
+    "minimal_x0_from_res": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -7.117111682891846,
+      "max": 3.810164213180542,
+      "mean": -0.08902102708816528,
+      "std": 1.2874069213867188,
+      "sha256": "ca44a49e2cbbe530861c8740e37c4c1805b12cee929b1cd33a0a575be7d05453",
+      "nbytes": 16384,
+      "source": "scaled_latent / sqrt(alpha_prod_t) - model_pred"
+    },
+    "minimal_decode_input": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -39.07280349731445,
+      "max": 20.917728424072266,
+      "mean": -0.48872363567352295,
+      "std": 7.0678391456604,
+      "sha256": "a259afdb3a45a0181023fed8a8aafa972b03668082d6441858ccdbc4ae9d434b",
+      "nbytes": 16384,
+      "source": "x0 / scaling_factor; input to actual decoder original_forward boundary"
+    },
+    "minimal_decoded_output": {
+      "shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": -1.1031932830810547,
+      "max": 1.1275092363357544,
+      "mean": -0.013643980026245117,
+      "std": 0.603239893913269,
+      "sha256": "3d0fa9892f8b588cc4e128af6acddd8a43c8f1e4116f6333d8f855975070bed2",
+      "nbytes": 786432,
+      "source": "official TimeVAE actual decoder path: decoder hook installed but original_forward dispatch"
+    },
+    "minimal_final_clamped_output": {
+      "shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.014104138128459454,
+      "std": 0.6008453965187073,
+      "sha256": "dbad69657fd6322c243535b8f54badbe4b258254a56e1cd5d3c245cb026879fe",
+      "nbytes": 786432,
+      "source": "minimal decoded output clamped to [-1, 1]"
+    }
+  },
+  "recommended_next_stage": "Run Jittor minimal one-step decode boundary alignment; if PASS, plan final packaging or a controlled production-CLI design audit without opening full inference."
+}

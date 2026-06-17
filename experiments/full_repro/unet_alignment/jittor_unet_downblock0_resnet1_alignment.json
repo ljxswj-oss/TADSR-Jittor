@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "target": "entry->resnet0->attention0 hidden/temb -> down_blocks.0.resnets.1 only",
+  "note": "Does not enter attentions.1, downsampler, full down_blocks.0, or full UNet.",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 2.384185791015625e-07,
+      "mean_abs_error": 1.760267654728198e-08,
+      "relative_error": 7.515876719475014e-08,
+      "cosine_similarity": 0.9999999999999962,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.152557373046875e-07,
+      "mean_abs_error": 8.561973516840737e-08,
+      "relative_error": 2.1575665889504777e-07,
+      "cosine_similarity": 0.9999999999999775,
+      "tolerance": 0.0001
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320
+      ],
+      "max_abs_error": 2.384185791015625e-07,
+      "mean_abs_error": 2.0809238776564598e-08,
+      "relative_error": 1.1682594574447797e-07,
+      "cosine_similarity": 0.9999999999999902,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.1026859283447266e-06,
+      "mean_abs_error": 1.7648123313840357e-07,
+      "relative_error": 3.8219380766891404e-07,
+      "cosine_similarity": 0.9999999999999261,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 1.76531742113184e-07,
+      "relative_error": 2.968001703160554e-07,
+      "cosine_similarity": 0.999999999999959,
+      "tolerance": 0.0001
+    }
+  },
+  "weights": "experiments/full_repro/unet_alignment/converted_unet_downblock0_resnet1_effective_weights.npz",
+  "shortcut_status": "NOT_APPLICABLE"
+}

@@ -1,0 +1,297 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-09T10:51:14.284387+00:00",
+  "sections": {
+    "UNet evidence": [
+      {
+        "name": "UNet entry alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_entry_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet down_blocks alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblock0_downblock1_downblock2_downblock3_resnet0_resnet1_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet mid_block alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblocks_midblock_resnet0_attention0_resnet1_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet up_blocks alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_entry_downblocks_midblock_upblocks_output_tail_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet output tail alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_output_tail_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet manual wrapper alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_manual_wrapper_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet official full forward alignment",
+        "path": "experiments/full_repro/unet_alignment/jittor_unet_full_forward_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      }
+    ],
+    "TimeVAE evidence": [
+      {
+        "name": "Deterministic decoder alignment",
+        "path": "experiments/full_repro/time_vae_alignment/jittor_decoder_entry_midblock_upblocks0123_tail_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "TimeVAE full boundary alignment",
+        "path": "experiments/full_repro/vae_alignment/jittor_timevae_full_boundary_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Actual VAEHook behavior audit",
+        "path": "experiments/full_repro/vae_alignment/audit_tadsr_vae_actual_hook_behavior.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Actual VAEHook oracle",
+        "path": "experiments/full_repro/vae_alignment/oracle_tensors_vae_actual_hook_behavior/vae_actual_hook_behavior_oracle_metadata.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Actual VAEHook alignment",
+        "path": "experiments/full_repro/vae_alignment/jittor_timevae_actual_hook_behavior_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Tiled decoder blocked reason",
+        "path": "experiments/full_repro/vae_alignment/audit_tadsr_vae_tiled_boundary.json",
+        "exists": true,
+        "status": "PASS",
+        "note": "records the truthful decoder-hook limitation"
+      },
+      {
+        "name": "TIME_VAE_FULL_ALIGNMENT remains NOT_COMPLETE",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "NOT_COMPLETE",
+        "note": "full TimeVAE status is intentionally not promoted"
+      }
+    ],
+    "LoRA evidence": [
+      {
+        "name": "Official LoRA policy audit",
+        "path": "experiments/full_repro/lora_alignment/audit_tadsr_lora_policy.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Static effective LoRA coverage",
+        "path": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet active LoRA coverage",
+        "path": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "TimeVAE active LoRA coverage",
+        "path": "experiments/full_repro/lora_alignment/timevae_lora_effective_weight_coverage_test.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Dynamic runtime LoRA remains design-not-implemented",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "NOT_IMPLEMENTED_BY_DESIGN",
+        "note": ""
+      }
+    ],
+    "Scheduler evidence": [
+      {
+        "name": "Scheduler boundary audit",
+        "path": "experiments/full_repro/scheduler_alignment/audit_tadsr_scheduler_boundary.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Scheduler oracle",
+        "path": "experiments/full_repro/scheduler_alignment/oracle_tensors_scheduler_boundary/scheduler_boundary_oracle_metadata.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Jittor scheduler boundary alignment",
+        "path": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "UNet scheduler one-step alignment",
+        "path": "experiments/full_repro/scheduler_alignment/jittor_scheduler_boundary_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      }
+    ],
+    "Minimal integration evidence": [
+      {
+        "name": "Minimal integration source audit",
+        "path": "experiments/full_repro/integration_alignment/audit_tadsr_minimal_integration.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Minimal latent oracle",
+        "path": "experiments/full_repro/integration_alignment/oracle_tensors_minimal_latent_integration/minimal_latent_integration_oracle_metadata.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "get_x0_from_res alignment",
+        "path": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Minimal decode/clamp tensor boundary alignment",
+        "path": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      },
+      {
+        "name": "Minimal one-step decode dry-run",
+        "path": "experiments/full_repro/integration_alignment/jittor_minimal_latent_integration_alignment.json",
+        "exists": true,
+        "status": "PASS",
+        "note": ""
+      }
+    ],
+    "Safety evidence": [
+      {
+        "name": "Final audit report",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "MISSING",
+        "note": ""
+      },
+      {
+        "name": "Migration report",
+        "path": "experiments/full_repro/jittor_alignment/jittor_migration_report.md",
+        "exists": true,
+        "status": "PRESENT",
+        "note": ""
+      },
+      {
+        "name": "Full inference guard remains NotImplemented",
+        "path": "jittor_tadsr_full/tadsr_full.py",
+        "exists": true,
+        "status": "NOT_COMPLETE",
+        "note": ""
+      },
+      {
+        "name": "Large oracle tensors ignored by git",
+        "path": ".gitignore",
+        "exists": true,
+        "status": "PRESENT",
+        "note": ""
+      }
+    ],
+    "Remaining gaps": [
+      {
+        "name": "JITTOR_FULL_INFERENCE",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "NOT_COMPLETE",
+        "note": "must remain NOT_COMPLETE"
+      },
+      {
+        "name": "JITTOR_FULL_PORT",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "PARTIAL",
+        "note": "must remain PARTIAL"
+      },
+      {
+        "name": "TIME_VAE_FULL_ALIGNMENT",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "NOT_COMPLETE",
+        "note": "must remain NOT_COMPLETE"
+      },
+      {
+        "name": "Generic runtime LoRA",
+        "path": "experiments/final_audit_report.json",
+        "exists": true,
+        "status": "NOT_IMPLEMENTED_BY_DESIGN",
+        "note": "not implemented by design"
+      },
+      {
+        "name": "Image/video generation",
+        "path": "docs/production_cli_design_audit.md",
+        "exists": true,
+        "status": "NOT_IMPLEMENTED",
+        "note": ""
+      },
+      {
+        "name": "Full denoising loop",
+        "path": "docs/production_cli_design_audit.md",
+        "exists": true,
+        "status": "NOT_IMPLEMENTED",
+        "note": ""
+      }
+    ]
+  },
+  "missing_evidence_files": [],
+  "major_status": {
+    "TADSR_UNET_FULL_FORWARD_ALIGNMENT": "PASS",
+    "TIME_VAE_ACTUAL_VAEHOOK_FULL_BOUNDARY_ALIGNMENT": "PASS",
+    "TADSR_STATIC_EFFECTIVE_LORA_COVERAGE_AUDIT": "PASS",
+    "TADSR_SCHEDULER_BOUNDARY_ALIGNMENT": "PASS",
+    "TADSR_MINIMAL_ONE_STEP_DECODE_DRY_RUN": "PASS",
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL",
+    "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE"
+  }
+}

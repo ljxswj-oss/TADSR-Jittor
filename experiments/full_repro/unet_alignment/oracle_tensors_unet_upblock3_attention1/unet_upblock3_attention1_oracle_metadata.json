@@ -1,0 +1,1740 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "loaded_lora_parameter_count": 516,
+  "oracle_dir": "experiments/full_repro/unet_alignment/oracle_tensors_unet_upblock3_attention1",
+  "effective_weights": "experiments/full_repro/unet_alignment/converted_unet_upblock3_attention1_effective_weights.npz",
+  "selected_timestep": [
+    1
+  ],
+  "entry_sample_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "encoder_hidden_states_shape": [
+    1,
+    77,
+    1024
+  ],
+  "upblock2_output_hidden_shape": [
+    1,
+    640,
+    32,
+    32
+  ],
+  "upblock3_resnet0_output_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "upblock3_attention0_output_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "upblock3_resnet1_output_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "upblock3_attention1_input_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "upblock3_attention1_output_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "remaining_residual_samples_before_upblocks3_count": 3,
+  "remaining_residual_samples_before_upblocks3_shapes": [
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ]
+  ],
+  "upblock3_local_residual_tuple_sources": [
+    "conv_in",
+    "down_blocks.0.output_state_0",
+    "down_blocks.0.output_state_1"
+  ],
+  "upblock3_local_residual_tuple_shapes": [
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ]
+  ],
+  "upblock3_resnet0_consumed_residual_index_in_accumulated_tuple": 2,
+  "upblock3_resnet0_consumed_residual_source": "down_blocks.0.output_state_1",
+  "upblock3_resnet0_consumed_residual_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "remaining_residual_count_after_upblock3_resnet0_pop": 2,
+  "upblock3_resnet1_consumed_residual_index_in_accumulated_tuple": 1,
+  "upblock3_resnet1_consumed_residual_source": "down_blocks.0.output_state_0",
+  "upblock3_resnet1_consumed_residual_shape": [
+    1,
+    320,
+    32,
+    32
+  ],
+  "remaining_residual_count_after_upblock3_resnet1_pop": 1,
+  "remaining_residual_shapes_after_upblock3_resnet1_pop": [
+    [
+      1,
+      320,
+      32,
+      32
+    ]
+  ],
+  "remaining_residual_count_after_upblock3_attention1": 1,
+  "attention1_consumes_accumulated_residuals": false,
+  "actual_next_module_after_upblock3_attention1": "up_blocks.3.resnets.2",
+  "attention_config": {
+    "prefix": "up_blocks_3_attentions_1",
+    "in_channels": 320,
+    "inner_dim": 320,
+    "num_attention_heads": 5,
+    "attention_head_dim": 64,
+    "cross_attention_dim": 1024,
+    "use_linear_projection": true,
+    "norm_num_groups": 32,
+    "norm_eps": 1e-06
+  },
+  "transformer0_config": {
+    "heads": 5,
+    "head_dim": 64,
+    "inner_dim": 320,
+    "norm_eps": 1e-05,
+    "dropout": 0.0,
+    "transformer_block_count": 1
+  },
+  "attention_mask": null,
+  "encoder_attention_mask": null,
+  "cross_attention_kwargs": null,
+  "saved_tensors": {
+    "synthetic_upblock3_attention1_input": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.5773520259677167,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.2886787944380361,
+      "nbytes": 315392
+    },
+    "synthetic_upblock3_attention1_norm": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.8898820877075195,
+      "max": 0.95118647813797,
+      "mean": -0.0069890916362868065,
+      "std": 0.41071500132533134,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_sequence_input": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -0.8898820877075195,
+      "max": 0.95118647813797,
+      "mean": -0.0069890916362868065,
+      "std": 0.41071500132533134,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_proj_in": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.7897331714630127,
+      "max": 1.5390325784683228,
+      "mean": 0.04147453453488685,
+      "std": 0.4796134952774561,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_norm1": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.8604421615600586,
+      "max": 1.8546005487442017,
+      "mean": -0.015996991337003837,
+      "std": 0.6688363200264642,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn1_q": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.696959972381592,
+      "max": 6.841869354248047,
+      "mean": -0.008854575914425932,
+      "std": 1.8479089084361322,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn1_k": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -5.249713897705078,
+      "max": 5.543921947479248,
+      "mean": -0.06167654938888134,
+      "std": 1.767222532551133,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn1_v": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.9289946556091309,
+      "max": 2.0908148288726807,
+      "mean": -0.0015077323403003718,
+      "std": 0.7265413041256116,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn1_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.8751258850097656,
+      "max": 2.377146005630493,
+      "mean": 0.046540763213648265,
+      "std": 0.6665568746719877,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_after_attn1": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.787806272506714,
+      "max": 1.9603638648986816,
+      "mean": 0.08801529770518216,
+      "std": 0.7046586975084209,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_norm2": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -0.7826801538467407,
+      "max": 0.6289863586425781,
+      "mean": -0.04595575155044337,
+      "std": 0.2332033535804792,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn2_q": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.0207456350326538,
+      "max": 0.9826178550720215,
+      "mean": 0.03446106194596883,
+      "std": 0.3522503792922406,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_attn2_k": {
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.24606990814209,
+      "max": 4.23883056640625,
+      "mean": -0.0001438448549450115,
+      "std": 0.9670376111041035,
+      "nbytes": 98560
+    },
+    "synthetic_upblock3_attention1_transformer0_attn2_v": {
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "dtype": "float32",
+      "min": -5.469196319580078,
+      "max": 5.461341857910156,
+      "mean": 5.218275999586931e-05,
+      "std": 0.5109645569128412,
+      "nbytes": 98560
+    },
+    "synthetic_upblock3_attention1_transformer0_attn2_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -3.1714508533477783,
+      "max": 1.1902817487716675,
+      "mean": -0.010729413011387124,
+      "std": 0.27634864996511893,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_after_attn2": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.334794044494629,
+      "max": 2.1344361305236816,
+      "mean": 0.07728588467018653,
+      "std": 0.7655400295209841,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_norm3": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.6781758069992065,
+      "max": 1.4594789743423462,
+      "mean": -0.0045826058932331905,
+      "std": 0.5257634183189765,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_ff_geglu_proj": {
+      "shape": [
+        1,
+        1024,
+        2560
+      ],
+      "dtype": "float32",
+      "min": -2.2524373531341553,
+      "max": 2.3250255584716797,
+      "mean": 0.10536071270321509,
+      "std": 0.5037690829997699,
+      "nbytes": 10485760
+    },
+    "synthetic_upblock3_attention1_transformer0_ff_geglu_output": {
+      "shape": [
+        1,
+        1024,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -1.7795222997665405,
+      "max": 1.307373285293579,
+      "mean": 0.004051165226176269,
+      "std": 0.1742344186856773,
+      "nbytes": 5242880
+    },
+    "synthetic_upblock3_attention1_transformer0_ff_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.172990322113037,
+      "max": 1.0723531246185303,
+      "mean": -0.004370466172806076,
+      "std": 0.3441041363335111,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_transformer0_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -3.2624409198760986,
+      "max": 2.3850603103637695,
+      "mean": 0.07291541849779719,
+      "std": 0.838611484906482,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_proj_out_sequence": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.075601100921631,
+      "max": 3.705799102783203,
+      "mean": 0.3548548845422815,
+      "std": 1.3001957992659785,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_proj_out_nchw": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.075601100921631,
+      "max": 3.705799102783203,
+      "mean": 0.3548548845422815,
+      "std": 1.3001957992659785,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.844353437423706,
+      "max": 4.049176216125488,
+      "mean": 0.3548548845084838,
+      "std": 1.3989490735256058,
+      "nbytes": 1310720
+    },
+    "synthetic_upblock3_attention1_official_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.844353437423706,
+      "max": 4.049176216125488,
+      "mean": 0.3548548845084838,
+      "std": 1.3989490735256058,
+      "nbytes": 1310720
+    },
+    "entry_synthetic_unet_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "entry_synthetic_unet_timestep": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "nbytes": 4
+    },
+    "entry_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.2886787944380361,
+      "nbytes": 315392
+    },
+    "entry_synthetic_unet_sample_after_center": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "entry_synthetic_unet_conv_in_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.9214454889297485,
+      "max": 2.051663398742676,
+      "mean": 0.009378110880123991,
+      "std": 0.24807758577950303,
+      "nbytes": 1310720
+    },
+    "entry_synthetic_unet_time_proj_output": {
+      "shape": [
+        1,
+        320
+      ],
+      "dtype": "float32",
+      "min": 0.00010592537000775337,
+      "max": 1.0,
+      "mean": 0.5389276413728339,
+      "std": 0.45777396088383415,
+      "nbytes": 1280
+    },
+    "entry_synthetic_unet_time_embedding_output": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -1.4923566579818726,
+      "max": 3.7227675914764404,
+      "mean": -0.00029221720545251627,
+      "std": 0.1708280877860561,
+      "nbytes": 5120
+    },
+    "entry_downblock0_output_hidden": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "entry_downblock0_output_state_0": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.6430697441101074,
+      "max": 2.688417673110962,
+      "mean": 0.08611325352106007,
+      "std": 0.6066678784633245,
+      "nbytes": 1310720
+    },
+    "entry_downblock0_output_state_1": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.791571617126465,
+      "max": 3.83322811126709,
+      "mean": 0.14057920170933827,
+      "std": 0.7920613701085149,
+      "nbytes": 1310720
+    },
+    "entry_downblock0_output_state_2": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "entry_downblock1_output_hidden": {
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -20.893442153930664,
+      "max": 17.661746978759766,
+      "mean": 0.11107184369631681,
+      "std": 3.201900710778233,
+      "nbytes": 163840
+    },
+    "entry_downblock1_output_state_0": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -5.852540016174316,
+      "max": 6.829677104949951,
+      "mean": 0.09395026862701457,
+      "std": 1.340116296552071,
+      "nbytes": 655360
+    },
+    "entry_downblock1_output_state_1": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -54.59074783325195,
+      "max": 51.037071228027344,
+      "mean": 0.1184109847944967,
+      "std": 1.2152557409201579,
+      "nbytes": 655360
+    },
+    "entry_downblock1_output_state_2": {
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -20.893442153930664,
+      "max": 17.661746978759766,
+      "mean": 0.11107184369631681,
+      "std": 3.201900710778233,
+      "nbytes": 163840
+    },
+    "entry_downblock2_output_hidden": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.04606053392669764,
+      "std": 3.788399588312576,
+      "nbytes": 81920
+    },
+    "entry_downblock2_output_state_0": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -16.938003540039062,
+      "max": 12.33202075958252,
+      "mean": 0.16636927590230927,
+      "std": 1.775059550850683,
+      "nbytes": 327680
+    },
+    "entry_downblock2_output_state_1": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -11.030681610107422,
+      "max": 13.805471420288086,
+      "mean": 0.25502749722619455,
+      "std": 1.596493510704457,
+      "nbytes": 327680
+    },
+    "entry_downblock2_output_state_2": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.04606053392669764,
+      "std": 3.788399588312576,
+      "nbytes": 81920
+    },
+    "entry_downblock3_output_hidden": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -50.87424850463867,
+      "max": 20.980514526367188,
+      "mean": -0.08692454791371347,
+      "std": 3.6243053401819467,
+      "nbytes": 81920
+    },
+    "entry_downblock3_output_state_0": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -49.779640197753906,
+      "max": 21.262269973754883,
+      "mean": -0.13547893905406455,
+      "std": 3.6705466199827392,
+      "nbytes": 81920
+    },
+    "entry_downblock3_output_state_1": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -50.87424850463867,
+      "max": 20.980514526367188,
+      "mean": -0.08692454791371347,
+      "std": 3.6243053401819467,
+      "nbytes": 81920
+    },
+    "entry_midblock_output_hidden": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -47.66788101196289,
+      "max": 38.62425994873047,
+      "mean": -0.11309421192281661,
+      "std": 3.6359635779740347,
+      "nbytes": 81920
+    },
+    "entry_upblock0_output_hidden": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -21.127756118774414,
+      "max": 32.81813430786133,
+      "mean": -0.04490450975673781,
+      "std": 1.165266711467924,
+      "nbytes": 327680
+    },
+    "entry_upblock1_output_hidden": {
+      "shape": [
+        1,
+        1280,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -35.499244689941406,
+      "max": 32.044715881347656,
+      "mean": -0.45227152770349266,
+      "std": 5.473237329966953,
+      "nbytes": 1310720
+    },
+    "entry_upblock2_output_hidden": {
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -29.284259796142578,
+      "max": 15.845993041992188,
+      "mean": -0.28327263057878527,
+      "std": 3.1755015011446845,
+      "nbytes": 2621440
+    },
+    "entry_upblock3_resnet0_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -6.515807628631592,
+      "max": 7.539052486419678,
+      "mean": -0.0815129470390076,
+      "std": 1.4618326177329761,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention0_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -12.142833709716797,
+      "max": 10.160940170288086,
+      "mean": 0.017516558275048055,
+      "std": 1.8117732661732897,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_resnet1_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.518369436264038,
+      "max": 4.724490165710449,
+      "mean": 0.05789549766664308,
+      "std": 1.006551366361783,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_input": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.518369436264038,
+      "max": 4.724490165710449,
+      "mean": 0.05789549766664308,
+      "std": 1.006551366361783,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_norm": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.8496350049972534,
+      "max": 2.112152576446533,
+      "mean": -0.004950856701438048,
+      "std": 0.3887434289867193,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_sequence_input": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.8496350049972534,
+      "max": 2.112152576446533,
+      "mean": -0.004950856701438048,
+      "std": 0.3887434289867193,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_proj_in": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -5.138200759887695,
+      "max": 4.01365327835083,
+      "mean": 0.059191760128405546,
+      "std": 0.5616929973053931,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_norm1": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.1939797401428223,
+      "max": 3.1190059185028076,
+      "mean": -0.015851418338240178,
+      "std": 0.5659034884416555,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn1_q": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -6.582935810089111,
+      "max": 6.357223987579346,
+      "mean": -0.002783046193712835,
+      "std": 1.623797156726858,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn1_k": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -7.114395618438721,
+      "max": 7.223151206970215,
+      "mean": -0.07305442277368535,
+      "std": 2.05357595173961,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn1_v": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.806140422821045,
+      "max": 3.9256091117858887,
+      "mean": 0.006691884558874195,
+      "std": 0.605253674603923,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn1_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.9056849479675293,
+      "max": 4.08230447769165,
+      "mean": -0.15192273622523605,
+      "std": 0.65137743917607,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_after_attn1": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.9882538318634033,
+      "max": 2.6302390098571777,
+      "mean": -0.09273097604773213,
+      "std": 0.5927060354061526,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_norm2": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.5457487106323242,
+      "max": 0.7204582095146179,
+      "mean": -0.043234258664244574,
+      "std": 0.23295990652648496,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn2_q": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.398976445198059,
+      "max": 1.0682475566864014,
+      "mean": 0.021077275565661725,
+      "std": 0.33363791358032324,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_attn2_k": {
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.24606990814209,
+      "max": 4.23883056640625,
+      "mean": -0.0001438448549450115,
+      "std": 0.9670376111041035,
+      "nbytes": 98560
+    },
+    "entry_upblock3_attention1_transformer0_attn2_v": {
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "dtype": "float32",
+      "min": -5.469196319580078,
+      "max": 5.461341857910156,
+      "mean": 5.218275999586931e-05,
+      "std": 0.5109645569128412,
+      "nbytes": 98560
+    },
+    "entry_upblock3_attention1_transformer0_attn2_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.339616060256958,
+      "max": 1.3490427732467651,
+      "mean": -0.007183362838345619,
+      "std": 0.22153063090123384,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_after_attn2": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -5.284298896789551,
+      "max": 2.4215781688690186,
+      "mean": -0.0999143388829559,
+      "std": 0.627602975645033,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_norm3": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -2.3681888580322266,
+      "max": 2.0471653938293457,
+      "mean": -8.10998682569189e-06,
+      "std": 0.5321591203674204,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_ff_geglu_proj": {
+      "shape": [
+        1,
+        1024,
+        2560
+      ],
+      "dtype": "float32",
+      "min": -6.260482311248779,
+      "max": 4.32436466217041,
+      "mean": 0.038265298628991126,
+      "std": 0.5730264926906526,
+      "nbytes": 10485760
+    },
+    "entry_upblock3_attention1_transformer0_ff_geglu_output": {
+      "shape": [
+        1,
+        1024,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -3.144833564758301,
+      "max": 4.359451770782471,
+      "mean": 0.0014696115162781665,
+      "std": 0.1939160719226726,
+      "nbytes": 5242880
+    },
+    "entry_upblock3_attention1_transformer0_ff_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -1.7953648567199707,
+      "max": 2.2585809230804443,
+      "mean": 0.0009737912615706001,
+      "std": 0.42357506496083164,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_transformer0_output": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.893887996673584,
+      "max": 3.4548208713531494,
+      "mean": -0.09894054761149249,
+      "std": 0.7133965617979333,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_proj_out_sequence": {
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "dtype": "float32",
+      "min": -4.219457149505615,
+      "max": 4.688232421875,
+      "mean": -0.02591697510950377,
+      "std": 1.0118493421619097,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_proj_out_nchw": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.219457149505615,
+      "max": 4.688232421875,
+      "mean": -0.02591697510950377,
+      "std": 1.01184934216191,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.6421356201171875,
+      "max": 5.938153266906738,
+      "mean": 0.03197852256105875,
+      "std": 1.2609802620510089,
+      "nbytes": 1310720
+    },
+    "entry_upblock3_attention1_official_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.6421356201171875,
+      "max": 5.938153266906738,
+      "mean": 0.03197852256105875,
+      "std": 1.2609802620510089,
+      "nbytes": 1310720
+    }
+  },
+  "effective_weight_export": {
+    "status": "PASS",
+    "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_attention1_effective_weights.npz",
+    "keys": {
+      "up_blocks_3_attentions_1_norm_weight": [
+        320
+      ],
+      "up_blocks_3_attentions_1_norm_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_proj_in_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_proj_in_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_proj_out_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_proj_out_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm1_weight": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm1_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm2_weight": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm2_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm3_weight": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_norm3_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn1_to_q_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn1_to_k_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn1_to_v_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn1_to_out_0_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn1_to_out_0_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn2_to_q_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn2_to_k_weight": [
+        320,
+        1024
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn2_to_v_weight": [
+        320,
+        1024
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn2_to_out_0_weight": [
+        320,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_attn2_to_out_0_bias": [
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_ff_geglu_proj_weight": [
+        2560,
+        320
+      ],
+      "up_blocks_3_attentions_1_transformer0_ff_geglu_proj_bias": [
+        2560
+      ],
+      "up_blocks_3_attentions_1_transformer0_ff_out_weight": [
+        320,
+        1280
+      ],
+      "up_blocks_3_attentions_1_transformer0_ff_out_bias": [
+        320
+      ]
+    },
+    "module_effective_meta": {
+      "up_blocks_3_attentions_1_norm": {
+        "is_lora_wrapped": false,
+        "weight_shape": [
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_proj_in": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.020800698548555374
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_proj_in_weight",
+        "bias_key": "up_blocks_3_attentions_1_proj_in_bias",
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_proj_out": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.025343922898173332
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_proj_out_weight",
+        "bias_key": "up_blocks_3_attentions_1_proj_out_bias",
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_norm1": {
+        "is_lora_wrapped": false,
+        "weight_shape": [
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_norm2": {
+        "is_lora_wrapped": false,
+        "weight_shape": [
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_norm3": {
+        "is_lora_wrapped": false,
+        "weight_shape": [
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_attn1_to_q": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.03708717226982117
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn1_to_q_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn1_to_k": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.036226045340299606
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn1_to_k_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn1_to_v": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.024148527532815933
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn1_to_v_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn1_to_out_0": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.024942371994256973
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn1_to_out_0_weight",
+        "bias_key": "up_blocks_3_attentions_1_transformer0_attn1_to_out_0_bias",
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_attn2_to_q": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.042297374457120895
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn2_to_q_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn2_to_k": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              1024
+            ],
+            "max_abs": 0.05222803354263306
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn2_to_k_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          1024
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn2_to_v": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              1024
+            ],
+            "max_abs": 0.03678479790687561
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn2_to_v_weight",
+        "bias_key": null,
+        "weight_shape": [
+          320,
+          1024
+        ],
+        "bias_shape": null
+      },
+      "up_blocks_3_attentions_1_transformer0_attn2_to_out_0": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              320
+            ],
+            "max_abs": 0.023787369951605797
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_attn2_to_out_0_weight",
+        "bias_key": "up_blocks_3_attentions_1_transformer0_attn2_to_out_0_bias",
+        "weight_shape": [
+          320,
+          320
+        ],
+        "bias_shape": [
+          320
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_ff_geglu_proj": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              2560,
+              320
+            ],
+            "max_abs": 0.06457239389419556
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_ff_geglu_proj_weight",
+        "bias_key": "up_blocks_3_attentions_1_transformer0_ff_geglu_proj_bias",
+        "weight_shape": [
+          2560,
+          320
+        ],
+        "bias_shape": [
+          2560
+        ]
+      },
+      "up_blocks_3_attentions_1_transformer0_ff_out": {
+        "class": "peft.tuners.lora.layer.Linear",
+        "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+        "is_lora_wrapped": true,
+        "active_adapters": [
+          "default_encoder",
+          "default_decoder",
+          "default_others"
+        ],
+        "delta_records": [
+          {
+            "adapter": "default_decoder",
+            "shape": [
+              320,
+              1280
+            ],
+            "max_abs": 0.029780590906739235
+          }
+        ],
+        "weight_key": "up_blocks_3_attentions_1_transformer0_ff_out_weight",
+        "bias_key": "up_blocks_3_attentions_1_transformer0_ff_out_bias",
+        "weight_shape": [
+          320,
+          1280
+        ],
+        "bias_shape": [
+          320
+        ]
+      }
+    },
+    "lora_affected_modules": [
+      "up_blocks_3_attentions_1_proj_in",
+      "up_blocks_3_attentions_1_proj_out",
+      "up_blocks_3_attentions_1_transformer0_attn1_to_q",
+      "up_blocks_3_attentions_1_transformer0_attn1_to_k",
+      "up_blocks_3_attentions_1_transformer0_attn1_to_v",
+      "up_blocks_3_attentions_1_transformer0_attn1_to_out_0",
+      "up_blocks_3_attentions_1_transformer0_attn2_to_q",
+      "up_blocks_3_attentions_1_transformer0_attn2_to_k",
+      "up_blocks_3_attentions_1_transformer0_attn2_to_v",
+      "up_blocks_3_attentions_1_transformer0_attn2_to_out_0",
+      "up_blocks_3_attentions_1_transformer0_ff_geglu_proj",
+      "up_blocks_3_attentions_1_transformer0_ff_out"
+    ]
+  },
+  "manual_vs_official": {
+    "synthetic_max_abs_diff": 0.0,
+    "synthetic_mean_abs_diff": 0.0,
+    "entry_max_abs_diff": 0.0,
+    "entry_mean_abs_diff": 0.0,
+    "status": "PASS"
+  },
+  "previous_upblock3_resnet1_compare": {
+    "previous_upblock3_resnet1_oracle_tensor_available": true,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0
+  },
+  "upblock2_local_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "uses_full_unet_forward": false,
+  "uses_upblock3_resnet2": false,
+  "uses_output_tail": false,
+  "uses_full_tadsr_inference": false,
+  "uses_stochastic_sampling": false,
+  "next_module_preview": "up_blocks.3.resnets.2",
+  "markers": {
+    "TADSR_UNET_UPBLOCK3_ATTENTION1_ORACLE_TENSORS": "PASS",
+    "TADSR_UNET_UPBLOCK3_ATTENTION1_EFFECTIVE_WEIGHTS": "PASS",
+    "TADSR_UNET_UPBLOCK3_ATTENTION1_RESIDUAL_CONTRACT_ORACLE": "PASS"
+  }
+}

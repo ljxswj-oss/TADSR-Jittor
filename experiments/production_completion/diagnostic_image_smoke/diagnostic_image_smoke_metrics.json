@@ -1,0 +1,65 @@
+{
+  "generated_at_utc": "2026-06-13T07:17:18.234805+00:00",
+  "status": "PASS",
+  "status_marker": "TADSR_DIAGNOSTIC_IMAGE_SMOKE_READY",
+  "source_stage": "clamped_output",
+  "official_tensor": "experiments\\production_completion\\full_inference\\one_step\\local_tensors\\clamped_output.npy",
+  "jittor_tensor": "experiments\\production_completion\\full_inference\\one_step\\local_tensors\\clamped_output_got.npy",
+  "metrics": {
+    "shape_match": true,
+    "official_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "jittor_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "official_range": [
+      -1.0,
+      1.0
+    ],
+    "jittor_range": [
+      -1.0,
+      1.0
+    ],
+    "mae": 2.4488862019704055e-07,
+    "max_abs": 4.308298230171204e-06,
+    "rmse": 3.4760109612852134e-07,
+    "psnr": 129.1783772542593,
+    "ssim": 1.0,
+    "relative_l2": 5.783607204842348e-07,
+    "cosine_similarity": 0.9999999999998049,
+    "finite_check": true
+  },
+  "figures": {
+    "official": "figures\\diagnostic_image_smoke\\official_one_step_clamped_output.png",
+    "jittor": "figures\\diagnostic_image_smoke\\jittor_one_step_clamped_output.png",
+    "absolute_difference_heatmap": "figures\\diagnostic_image_smoke\\absolute_difference_heatmap.png",
+    "side_by_side_diagnostic_grid": "figures\\diagnostic_image_smoke\\side_by_side_diagnostic_grid.png",
+    "error_histogram": "figures\\diagnostic_image_smoke\\error_histogram.png"
+  },
+  "safety": {
+    "full_inference_executed": false,
+    "denoising_loop_executed": false,
+    "multi_step_executed": false,
+    "production_image_generation": false,
+    "image_is_diagnostic": true,
+    "raw_tensors_committed": false,
+    "local_tensors_used": true,
+    "diagnostic_image_generated": true
+  },
+  "markers": {
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_READY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_EXECUTED": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NOT_FULL_INFERENCE": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NO_RAW_TENSORS": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ARTIFACTS_READY": "PASS"
+  },
+  "next_action": "Use the PNGs only as diagnostic one-step tensor visualizations in the report and video; do not claim full inference completion."
+}

@@ -1,0 +1,9 @@
+TIME_VAE_FULL_BOUNDARY_ORACLE_TENSORS: PASS
+
+Boundary type: encode_sample_scale_decode_clamp
+Input shape: [1, 3, 32, 32]
+Latent shape: [1, 4, 4, 4]
+Output shape: [1, 3, 32, 32]
+Scaling factor: 0.18215
+Full TADSR inference executed: False
+TimeVAE full alignment candidate: False

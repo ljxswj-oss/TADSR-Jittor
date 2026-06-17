@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "document": "docs/final_submission_freeze_tag.md",
+  "markers": {
+    "TADSR_FINAL_SUBMISSION_FREEZE_TAG_DOC": "PASS"
+  },
+  "branch": "codex/tadsr-production-completion",
+  "baseline_commit": "f247147 Finalize TADSR-Jittor release candidate QA package",
+  "suggested_tag": "tadsr-jittor-final-submission",
+  "auto_tag_created": false
+}

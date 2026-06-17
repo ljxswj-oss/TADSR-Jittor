@@ -1,0 +1,532 @@
+{
+  "status": "PASS",
+  "block_index": 3,
+  "block_class": "DownEncoderBlock2D",
+  "block_module": "diffusers.models.unet_2d_blocks",
+  "resnet_count": 2,
+  "has_resnet0": true,
+  "has_resnet1": true,
+  "has_downsampler": false,
+  "resnet_info": [
+    {
+      "module_name": "encoder.down_blocks.3.resnets.0",
+      "class_name": "ResnetBlock2D",
+      "class_module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "scale_shift",
+      "output_scale_factor": 1.0,
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "time_emb_proj_weight_shape": [
+        1024,
+        256
+      ],
+      "time_emb_proj_out_features": 1024,
+      "expected_scale_shift_channels": 1024,
+      "has_conv_shortcut": false,
+      "conv_shortcut_weight_shape": null,
+      "has_nin_shortcut": false,
+      "nin_shortcut_weight_shape": null
+    },
+    {
+      "module_name": "encoder.down_blocks.3.resnets.1",
+      "class_name": "ResnetBlock2D",
+      "class_module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "scale_shift",
+      "output_scale_factor": 1.0,
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "time_emb_proj_weight_shape": [
+        1024,
+        256
+      ],
+      "time_emb_proj_out_features": 1024,
+      "expected_scale_shift_channels": 1024,
+      "has_conv_shortcut": false,
+      "conv_shortcut_weight_shape": null,
+      "has_nin_shortcut": false,
+      "nin_shortcut_weight_shape": null
+    }
+  ],
+  "downsampler_info": null,
+  "channel_change_detected": false,
+  "module_tree": [
+    {
+      "name": "encoder.down_blocks.3",
+      "class": "DownEncoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.DownEncoderBlock2D",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7,
+      "out_channels": 512,
+      "time_embedding_norm": "scale_shift",
+      "output_scale_factor": 1.0,
+      "in_channels": 512
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0,
+      "out_channels": 512,
+      "padding": "(1, 1)",
+      "in_channels": 512
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0,
+      "out_channels": 512,
+      "padding": "(1, 1)",
+      "in_channels": 512
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.nonlinearity",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation.SiLU",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7,
+      "out_channels": 512,
+      "time_embedding_norm": "scale_shift",
+      "output_scale_factor": 1.0,
+      "in_channels": 512
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0,
+      "out_channels": 512,
+      "padding": "(1, 1)",
+      "in_channels": 512
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0,
+      "out_channels": 512,
+      "padding": "(1, 1)",
+      "in_channels": 512
+    }
+  ],
+  "state_keys": [
+    {
+      "key": "encoder.down_blocks.3.resnets.0.norm1.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.norm1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.conv1.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.conv1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.time_emb_proj.weight",
+      "shape": [
+        1024,
+        256
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.time_emb_proj.bias",
+      "shape": [
+        1024
+      ],
+      "dtype": "torch.float32",
+      "numel": 1024
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.norm2.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.norm2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.conv2.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.0.conv2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.norm1.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.norm1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.conv1.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.conv1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.time_emb_proj.weight",
+      "shape": [
+        1024,
+        256
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.time_emb_proj.bias",
+      "shape": [
+        1024
+      ],
+      "dtype": "torch.float32",
+      "numel": 1024
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.norm2.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.norm2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.conv2.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "encoder.down_blocks.3.resnets.1.conv2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    }
+  ],
+  "key_mapping": [
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm1__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.time_emb_proj.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__time_emb_proj__weight",
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.time_emb_proj.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__time_emb_proj__bias",
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm2__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm1__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.time_emb_proj.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__time_emb_proj__weight",
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.time_emb_proj.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__time_emb_proj__bias",
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm2__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv2__bias",
+      "shape": [
+        512
+      ]
+    }
+  ]
+}

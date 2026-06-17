@@ -1,0 +1,12 @@
+# TADSR UNet down_blocks.3.resnets.1 oracle export
+
+TADSR_UNET_DOWNBLOCK3_RESNET1_ORACLE_TENSORS: PASS
+TADSR_UNET_DOWNBLOCK3_RESNET1_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_DOWNBLOCK3_OUTPUT_STATES_ORACLE_TENSORS: PASS
+
+effective weights: experiments/full_repro/unet_alignment/converted_unet_downblock3_resnet1_effective_weights.npz
+oracle tensors: experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock3_resnet1
+synthetic manual/offical max abs diff: 0.0
+entry manual/offical max abs diff: 0.0
+local hidden max abs diff: 0.0
+output state diffs: [{'index': 0, 'max_abs_diff': 0.0, 'shape': [1, 1280, 4, 4]}, {'index': 1, 'max_abs_diff': 0.0, 'shape': [1, 1280, 4, 4]}]

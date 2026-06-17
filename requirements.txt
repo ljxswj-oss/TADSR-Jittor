@@ -1,0 +1,11 @@
+jittor
+numpy
+pillow
+opencv-python
+matplotlib
+tqdm
+scikit-image
+pyyaml
+torch
+pandas
+tabulate

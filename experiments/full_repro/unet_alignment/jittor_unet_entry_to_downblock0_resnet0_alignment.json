@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "target": "UNet entry -> down_blocks.0.resnets.0 bridge",
+  "diagnostics": {
+    "conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001
+    },
+    "time_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320
+      ],
+      "max_abs_error": 1.1920928955078125e-07,
+      "mean_abs_error": 4.547564458334819e-09,
+      "relative_error": 8.438172602820315e-09,
+      "cosine_similarity": 0.9999999999999998,
+      "tolerance": 1e-05
+    },
+    "time_embedding": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.2749661588459276e-09,
+      "relative_error": 2.484385767769718e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.001
+    },
+    "resnet0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 1.068939880610742e-07,
+      "relative_error": 2.321830538716543e-07,
+      "cosine_similarity": 0.9999999999999781,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Stops before down_blocks.0.attentions.0."
+}

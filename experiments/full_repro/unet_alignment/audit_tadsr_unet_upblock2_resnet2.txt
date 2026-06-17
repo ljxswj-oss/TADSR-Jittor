@@ -1,0 +1,15 @@
+# TADSR UNet up_blocks.2.resnets.2 official audit
+
+TADSR_UNET_UPBLOCK2_RESNET2_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESNET2_RESIDUAL_CONTRACT_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESNET2_LORA_AUDIT: PASS
+
+resnet2 residual source: down_blocks.0.output_state_2
+resnet2 residual index: 3
+hidden input shape: [1, 640, 16, 16]
+residual shape: [1, 320, 16, 16]
+concat shape: [1, 960, 16, 16]
+output shape: [1, 640, 16, 16]
+next module: up_blocks.2.attentions.2
+full up_blocks.2 alignment: NOT_COMPLETE
+full UNet forward alignment: NOT_COMPLETE

@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "target": "transformer_blocks.0 norm2 + cross-attention attn2",
+  "diagnostics": {
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 4.589557647705078e-06,
+      "mean_abs_error": 9.403177438924507e-07,
+      "relative_error": 4.307513251223362e-06,
+      "cosine_similarity": 0.9999999999910045,
+      "tolerance": 0.0001
+    },
+    "attn2_q": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 6.794929504394531e-06,
+      "mean_abs_error": 1.3164861207854567e-06,
+      "relative_error": 2.972107809612825e-06,
+      "cosine_similarity": 0.9999999999955642,
+      "tolerance": 0.0001
+    },
+    "attn2_k": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "max_abs_error": 2.6226043701171875e-06,
+      "mean_abs_error": 1.7929130461953872e-07,
+      "relative_error": 4.847075569773504e-07,
+      "cosine_similarity": 0.9999999999999012,
+      "tolerance": 0.0001
+    },
+    "attn2_v": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        320
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 5.8387741159708936e-08,
+      "relative_error": 2.836080069391487e-07,
+      "cosine_similarity": 0.9999999999999661,
+      "tolerance": 0.0001
+    },
+    "attn2_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 8.046627044677734e-07,
+      "mean_abs_error": 5.3311395475930115e-08,
+      "relative_error": 5.813872193977164e-07,
+      "cosine_similarity": 0.9999999999998213,
+      "tolerance": 0.001
+    },
+    "after_attn2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 7.063150405883789e-06,
+      "mean_abs_error": 1.4176787502151455e-06,
+      "relative_error": 4.10232763297539e-06,
+      "cosine_similarity": 0.99999999999166,
+      "tolerance": 0.001
+    }
+  }
+}

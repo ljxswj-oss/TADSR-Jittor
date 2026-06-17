@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "target": "encoder.down_blocks.3.resnets.1",
+  "channel_change": "512->512",
+  "uses_conv_shortcut": false,
+  "uses_nin_shortcut": false,
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      4,
+      4
+    ],
+    "max_abs_error": 1.52587890625e-05,
+    "mean_abs_error": 7.311082299565896e-07,
+    "relative_error": 3.133838447720458e-08,
+    "cosine_similarity": 0.9999999999999994,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      320,
+      4,
+      3,
+      3
+    ],
+    "max_abs_error": 1.862645149230957e-09,
+    "mean_abs_error": 6.026704074062965e-11,
+    "relative_error": 2.983282167086883e-08
+  },
+  "formula": "linear: B @ A; conv: einsum over rank dimension"
+}

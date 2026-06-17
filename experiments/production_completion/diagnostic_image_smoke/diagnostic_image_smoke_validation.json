@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:22.872445+00:00",
+  "status": "PASS",
+  "metrics_json_exists": true,
+  "diagnostic_png_count": 5,
+  "diagnostic_pngs": [
+    "figures\\diagnostic_image_smoke\\absolute_difference_heatmap.png",
+    "figures\\diagnostic_image_smoke\\error_histogram.png",
+    "figures\\diagnostic_image_smoke\\jittor_one_step_clamped_output.png",
+    "figures\\diagnostic_image_smoke\\official_one_step_clamped_output.png",
+    "figures\\diagnostic_image_smoke\\side_by_side_diagnostic_grid.png"
+  ],
+  "staged_raw_tensors": [],
+  "false_claim_hits": [],
+  "blocker": null,
+  "markers": {
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_VALIDATION": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_FALSE_CLAIM_GUARD": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ARTIFACT_POLICY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_READY": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_EXECUTED": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NOT_FULL_INFERENCE": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NO_RAW_TENSORS": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ARTIFACTS_READY": "PASS"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "oracle_dir": "experiments/full_repro/unet_alignment/oracle_tensors_unet_full_forward",
+  "loaded_lora_parameter_count": 516,
+  "official_forward_signature": "(sample: torch.FloatTensor, timestep: Union[torch.Tensor, float, int], encoder_hidden_states: torch.Tensor, class_labels: Optional[torch.Tensor] = None, timestep_cond: Optional[torch.Tensor] = None, attention_mask: Optional[torch.Tensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, added_cond_kwargs: Optional[Dict[str, torch.Tensor]] = None, down_block_additional_residuals: Optional[Tuple[torch.Tensor]] = None, mid_block_additional_residual: Optional[torch.Tensor] = None, down_intrablock_additional_residuals: Optional[Tuple[torch.Tensor]] = None, encoder_attention_mask: Optional[torch.Tensor] = None, return_dict: bool = True) -> Union[models.unet_2d_condition.UNet2DConditionOutput, Tuple]",
+  "sample_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "sample_dtype": "torch.float32",
+  "timestep_shape": [
+    1
+  ],
+  "timestep_dtype": "torch.int64",
+  "timestep_value": [
+    1
+  ],
+  "encoder_hidden_states_shape": [
+    1,
+    77,
+    1024
+  ],
+  "encoder_hidden_states_dtype": "torch.float32",
+  "return_dict_behavior": {
+    "return_dict_true": {
+      "return_type": "UNet2DConditionOutput",
+      "extraction": "sample"
+    },
+    "return_dict_false": {
+      "return_type": "tuple",
+      "extraction": "tuple[0]",
+      "tuple_len": 1
+    },
+    "tuple_matches_return_dict": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "cosine_similarity": 1.0000000000000002
+    }
+  },
+  "official_output_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "manual_wrapper_output_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "manual_vs_official_full_forward": {
+    "shape_match": true,
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0000000000000002
+  },
+  "saved_tensors": {
+    "full_forward_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "full_forward_timestep": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "nbytes": 4
+    },
+    "full_forward_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.2886787944380361,
+      "nbytes": 315392
+    },
+    "official_full_forward_output": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5024965405464172,
+      "max": 0.9271302223205566,
+      "mean": -0.022930096586293303,
+      "std": 0.10461559601983722,
+      "nbytes": 16384
+    },
+    "manual_wrapper_output": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5024965405464172,
+      "max": 0.9271302223205566,
+      "mean": -0.022930096586293303,
+      "std": 0.10461559601983722,
+      "nbytes": 16384
+    },
+    "official_full_forward_tuple_output": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5024965405464172,
+      "max": 0.9271302223205566,
+      "mean": -0.022930096586293303,
+      "std": 0.10461559601983722,
+      "nbytes": 16384
+    }
+  },
+  "upblock2_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "upblock3_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "official_full_forward_executed": true,
+  "scheduler_executed": false,
+  "vae_executed": false,
+  "full_tadsr_inference_executed": false,
+  "runtime_lora_implemented": false,
+  "recommended_next_stage": "Jittor alignment-only full forward wrapper comparison, then pipeline boundary planning; do not enable full inference yet.",
+  "markers": {
+    "TADSR_UNET_OFFICIAL_FULL_FORWARD_ORACLE_TENSORS": "PASS",
+    "TADSR_UNET_MANUAL_VS_OFFICIAL_FULL_FORWARD_ALIGNMENT": "PASS"
+  }
+}

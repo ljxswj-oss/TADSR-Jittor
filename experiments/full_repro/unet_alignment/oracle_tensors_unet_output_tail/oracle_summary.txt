@@ -1,0 +1,10 @@
+# TADSR UNet output tail oracle export
+
+TADSR_UNET_OUTPUT_TAIL_ORACLE_TENSORS: PASS
+TADSR_UNET_OUTPUT_TAIL_EFFECTIVE_WEIGHTS: PASS
+
+entry tail input shape: [1, 320, 32, 32]
+entry tail output shape: [1, 4, 32, 32]
+effective weights: experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz
+previous upblock3 local compare: {'previous_upblock3_local_oracle_available': True, 'max_abs_diff': 0.0, 'mean_abs_diff': 0.0}
+scope: output tail only; official unet.forward/full inference were not executed.

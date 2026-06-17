@@ -1,0 +1,210 @@
+{
+  "status": "PASS",
+  "reason": "",
+  "block_index": 3,
+  "class": "UpDecoderBlock2D",
+  "module": "diffusers.models.unet_2d_blocks",
+  "forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None, scale: float = 1.0) -> torch.FloatTensor",
+  "children_order": [
+    {
+      "name": "resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container"
+    }
+  ],
+  "input_shape": [
+    1,
+    256,
+    32,
+    32
+  ],
+  "output_shape": [
+    1,
+    128,
+    32,
+    32
+  ],
+  "resnet_count": 3,
+  "attention_count": 0,
+  "upsampler_count": 0,
+  "has_upsampler": false,
+  "has_attention": false,
+  "module_order": [
+    "resnets.0",
+    "resnets.1",
+    "resnets.2"
+  ],
+  "uses_temb": true,
+  "default_temb_is_none": true,
+  "spatial_size_changes": false,
+  "channel_count_changes": true,
+  "resnet_info": [
+    {
+      "module_name": "decoder.up_blocks.3.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 256,
+      "out_channels": 128,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        256
+      ],
+      "norm1_bias_shape": [
+        256
+      ],
+      "norm2_weight_shape": [
+        128
+      ],
+      "norm2_bias_shape": [
+        128
+      ],
+      "conv1_weight_shape": [
+        128,
+        256,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        128
+      ],
+      "conv2_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        128
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": true,
+      "conv_shortcut_weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "conv_shortcut_bias_shape": [
+        128
+      ],
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__3__resnets__0"
+    },
+    {
+      "module_name": "decoder.up_blocks.3.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 128,
+      "out_channels": 128,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        128
+      ],
+      "norm1_bias_shape": [
+        128
+      ],
+      "norm2_weight_shape": [
+        128
+      ],
+      "norm2_bias_shape": [
+        128
+      ],
+      "conv1_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        128
+      ],
+      "conv2_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        128
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__3__resnets__1"
+    },
+    {
+      "module_name": "decoder.up_blocks.3.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 128,
+      "out_channels": 128,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        128
+      ],
+      "norm1_bias_shape": [
+        128
+      ],
+      "norm2_weight_shape": [
+        128
+      ],
+      "norm2_bias_shape": [
+        128
+      ],
+      "conv1_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        128
+      ],
+      "conv2_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        128
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__3__resnets__2"
+    }
+  ],
+  "upsampler_info": []
+}

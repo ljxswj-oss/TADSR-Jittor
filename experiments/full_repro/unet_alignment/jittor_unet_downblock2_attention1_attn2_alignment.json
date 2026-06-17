@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 4.293397068977356e-06,
+      "mean_abs_error": 9.318880810127439e-07,
+      "relative_error": 4.125001759405704e-06,
+      "cosine_similarity": 0.9999999999915794,
+      "tolerance": 0.0001
+    },
+    "attn2_q": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 1.430511474609375e-05,
+      "mean_abs_error": 1.8465457273464382e-06,
+      "relative_error": 3.3484889759869447e-06,
+      "cosine_similarity": 0.9999999999964254,
+      "tolerance": 0.0001
+    },
+    "attn2_k": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        1280
+      ],
+      "max_abs_error": 1.9818544387817383e-06,
+      "mean_abs_error": 1.314722732805516e-07,
+      "relative_error": 8.694326878160189e-07,
+      "cosine_similarity": 0.9999999999997342,
+      "tolerance": 0.0001
+    },
+    "attn2_v": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        1280
+      ],
+      "max_abs_error": 2.384185791015625e-06,
+      "mean_abs_error": 9.978897331656263e-08,
+      "relative_error": 4.2702179518712575e-07,
+      "cosine_similarity": 0.9999999999999192,
+      "tolerance": 0.0001
+    },
+    "attn2_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 9.5367431640625e-06,
+      "mean_abs_error": 2.8473119044747365e-07,
+      "relative_error": 6.104332460088859e-07,
+      "cosine_similarity": 0.9999999999998874,
+      "tolerance": 0.001
+    },
+    "after_attn2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 2.765655517578125e-05,
+      "mean_abs_error": 3.5955192061010164e-06,
+      "relative_error": 3.516551249531854e-06,
+      "cosine_similarity": 0.9999999999956152,
+      "tolerance": 0.001
+    }
+  }
+}

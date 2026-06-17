@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 3.224611282348633e-05,
+      "mean_abs_error": 2.9097361220919994e-06,
+      "relative_error": 3.3143658333476054e-06,
+      "cosine_similarity": 0.9999999999947589,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic hidden/residual concat -> up_blocks.0.resnets.2 only."
+}

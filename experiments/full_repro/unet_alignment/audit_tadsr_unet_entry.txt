@@ -1,0 +1,17 @@
+# TADSR UNet Entry Audit
+
+TADSR_UNET_OVERVIEW_AUDIT: PASS
+TADSR_UNET_ENTRY_AUDIT: PASS
+
+Official class: `models.unet_2d_condition.UNet2DConditionModel`
+Source: `/mnt/data/sj/projects/TADSR_official_pytorch/models/unet_2d_condition.py`
+Input sample contract: `['batch', 4, 'height', 'width']`
+Synthetic sample shape: `[1, 4, 32, 32]`
+Timestep: `[1]`
+Conv-in weight: `[320, 4, 3, 3]`; bias: `[320]`
+Time proj attrs: `{'num_channels': 320, 'flip_sin_to_cos': True, 'downscale_freq_shift': 0, 'scale': None, 'max_period': None}`
+Time embedding state shapes: `{'linear_1.weight': [1280, 320], 'linear_1.bias': [1280], 'linear_2.weight': [1280, 1280], 'linear_2.bias': [1280]}`
+
+## Scope guard
+
+This audit only covers UNet entry modules: input centering, `conv_in`, `time_proj`, and `time_embedding`. It does not execute full UNet forward or any downstream blocks.

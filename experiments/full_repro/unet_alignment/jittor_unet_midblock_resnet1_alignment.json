@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.384185791015625e-07,
+      "mean_abs_error": 1.2086772749331232e-08,
+      "relative_error": 5.784090131774079e-08,
+      "cosine_similarity": 0.9999999999999972,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 6.631656788158579e-08,
+      "relative_error": 2.2833832001453274e-07,
+      "cosine_similarity": 0.9999999999999717,
+      "tolerance": 0.0001
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 1.1920928955078125e-07,
+      "mean_abs_error": 1.2821328709833325e-08,
+      "relative_error": 1.1621061200617518e-07,
+      "cosine_similarity": 0.9999999999999899,
+      "tolerance": 0.0001
+    },
+    "after_temb_add": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 6.90624801791273e-08,
+      "relative_error": 2.0117018168578862e-07,
+      "cosine_similarity": 0.9999999999999755,
+      "tolerance": 0.0001
+    },
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "mean_abs_error": 7.73070818027577e-08,
+      "relative_error": 2.2264255776990435e-07,
+      "cosine_similarity": 0.9999999999999769,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 1.7741161286721763e-07,
+      "relative_error": 2.182203563529388e-07,
+      "cosine_similarity": 0.9999999999999799,
+      "tolerance": 0.0001
+    },
+    "shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 1.768584297678899e-07,
+      "relative_error": 6.491855858375701e-08,
+      "cosine_similarity": 0.9999999999999974,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Only mid_block.resnets.1 is executed with entry attention0 output; up_blocks/full UNet remain unopened."
+}

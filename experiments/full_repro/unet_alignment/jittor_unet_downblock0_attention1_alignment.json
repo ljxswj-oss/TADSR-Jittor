@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "target": "isolated down_blocks.0.attentions.1 only",
+  "note": "Stops before downsampler/full down_blocks.0.",
+  "diagnostics": {
+    "proj_out_sequence": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.138448715209961e-05,
+      "mean_abs_error": 2.12727735373619e-06,
+      "relative_error": 3.85446561803591e-06,
+      "cosine_similarity": 0.9999999999929698,
+      "tolerance": 0.001
+    },
+    "proj_out_nchw": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.138448715209961e-05,
+      "mean_abs_error": 2.12727735373619e-06,
+      "relative_error": 3.85446561803591e-06,
+      "cosine_similarity": 0.9999999999929701,
+      "tolerance": 0.001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.1444091796875e-05,
+      "mean_abs_error": 2.127268334106702e-06,
+      "relative_error": 2.8085169476042263e-06,
+      "cosine_similarity": 0.9999999999959186,
+      "tolerance": 0.002
+    }
+  }
+}

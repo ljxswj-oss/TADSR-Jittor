@@ -1,0 +1,15 @@
+# TADSR UNet down_blocks.2.downsamplers.0 Oracle Export
+
+TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_ORACLE_TENSORS: PASS
+TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_DOWNBLOCK2_ORACLE_TENSORS: PASS
+TADSR_UNET_DOWNBLOCK2_OUTPUT_STATES_ORACLE_TENSORS: PASS
+
+Oracle dir: `experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock2_downsampler`
+Effective weights: `experiments/full_repro/unet_alignment/converted_unet_downblock2_downsampler_effective_weights.npz`
+Path A synthetic output shape: `[1, 1280, 4, 4]`
+Path B entry full down_blocks.2 output shape: `[1, 1280, 4, 4]`
+Manual chain vs official block.forward max abs error: `0.0`
+Output states order: `['attention0_output', 'attention1_output', 'downsampler_output']`
+
+This export completes the local `down_blocks.2` chain only. Full UNet forward and full TADSR inference remain out of scope.

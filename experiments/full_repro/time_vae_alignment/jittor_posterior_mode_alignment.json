@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "DiagonalGaussianDistribution.mode() deterministic mean",
+  "note": "mode returns posterior mean; no sampling",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      4,
+      4,
+      4
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "relative_error": 0.0,
+    "cosine_similarity": 1.0,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

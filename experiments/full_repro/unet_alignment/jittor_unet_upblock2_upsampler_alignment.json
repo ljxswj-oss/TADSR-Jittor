@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "interpolation": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0000000000000002,
+      "tolerance": 1e-06
+    },
+    "conv": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 9.5367431640625e-06,
+      "mean_abs_error": 6.281105427774492e-07,
+      "relative_error": 2.738388825793071e-07,
+      "cosine_similarity": 0.9999999999999677,
+      "tolerance": 0.0002
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 9.5367431640625e-06,
+      "mean_abs_error": 6.281105427774492e-07,
+      "relative_error": 2.738388825793071e-07,
+      "cosine_similarity": 0.9999999999999677,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Only up_blocks.2.upsamplers.0 is executed after exported attention2 output; up_blocks.3/full UNet are not executed."
+}

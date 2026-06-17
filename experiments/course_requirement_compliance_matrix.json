@@ -1,0 +1,362 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-13T11:59:22.721474+00:00",
+  "markers": {
+    "TADSR_COURSE_REQUIREMENT_EVIDENCE_MATRIX": "PASS",
+    "TADSR_COURSE_TRAINING_REQUIREMENT_EVIDENCE": "PASS",
+    "TADSR_COURSE_VISUALIZATION_REQUIREMENT_EVIDENCE": "PASS",
+    "TADSR_COURSE_GITHUB_REQUIREMENT_EVIDENCE": "PASS",
+    "TADSR_COURSE_PPT_VIDEO_REQUIREMENT_EVIDENCE": "PASS",
+    "TADSR_COURSE_REQUIREMENT_COMPLIANCE": "PASS"
+  },
+  "requirements": [
+    {
+      "requirement_id": "R01",
+      "course_requirement": "选题合规：近期顶会/顶刊论文，且无现成 Jittor 开源实现",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "README.md",
+          "exists": true
+        },
+        {
+          "path": "docs/01_algorithm_explanation.md",
+          "exists": true
+        },
+        {
+          "path": "docs/TADSR-Jittor_项目全流程详解.md",
+          "exists": true
+        }
+      ],
+      "markers": {},
+      "notes": "README 和项目全流程文档说明选择 TADSR、论文背景、复现目标与 Jittor 迁移定位。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R02",
+      "course_requirement": "Jittor 代码实现与开源仓库结构",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "jittor_tadsr_full",
+          "exists": true
+        },
+        {
+          "path": "jittor_tadsr",
+          "exists": true
+        },
+        {
+          "path": "tests_jittor_alignment",
+          "exists": true
+        },
+        {
+          "path": "README.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_JITTOR_MIGRATION_FEASIBILITY_VALIDATION": "PASS"
+      },
+      "notes": "核心 Jittor 模块、对齐测试和最终审计均在仓库内。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R03",
+      "course_requirement": "环境配置说明",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "README.md",
+          "exists": true
+        },
+        {
+          "path": "requirements.txt",
+          "exists": true
+        },
+        {
+          "path": "docs/repository_handoff_guide.md",
+          "exists": true
+        },
+        {
+          "path": "docs/final_demo_runbook.md",
+          "exists": true
+        }
+      ],
+      "markers": {},
+      "notes": "README、handoff guide 和 demo runbook 给出环境与演示说明。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R04",
+      "course_requirement": "数据准备脚本",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "tools/export_tadsr_smoke_training_data.py",
+          "exists": true
+        },
+        {
+          "path": "scripts/collect_final_evidence_manifest.py",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/smoke_training_data_metadata.json",
+          "exists": true
+        }
+      ],
+      "markers": {},
+      "notes": "包含 smoke training 数据导出与 evidence manifest 收集；大型 raw tensors 不提交。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R05",
+      "course_requirement": "训练脚本",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "tools/train_smoke_pytorch_output_tail.py",
+          "exists": true
+        },
+        {
+          "path": "scripts/train_smoke_jittor_output_tail.py",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/smoke_training_submission_summary.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_SMALL_DATA_TRAINING_ALIGNMENT": "PASS"
+      },
+      "notes": "当前训练是小数据 PyTorch-vs-Jittor smoke training，不声明 full TADSR training。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R06",
+      "course_requirement": "测试脚本",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "tests_jittor_alignment",
+          "exists": true
+        },
+        {
+          "path": "scripts/final_audit.py",
+          "exists": true
+        },
+        {
+          "path": "scripts/validate_jittor_migration_feasibility.py",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_FINAL_SUBMISSION_AFTER_PHASE5B_READY": "PASS"
+      },
+      "notes": "测试脚本覆盖核心边界对齐、final audit 和最终提交一致性。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R07",
+      "course_requirement": "与 PyTorch 实现对齐的实验 log",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "experiments/full_repro",
+          "exists": true
+        },
+        {
+          "path": "experiments/production_completion/full_inference/one_step/jittor_one_step_alignment.json",
+          "exists": true
+        },
+        {
+          "path": "experiments/production_completion/diagnostic_image_smoke/diagnostic_image_smoke_metrics.json",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_FULL_INFERENCE_ONE_STEP_ALIGNMENT": "PASS",
+        "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT": "PASS"
+      },
+      "notes": "包含 UNet、TimeVAE、Scheduler、LoRA、one-step tensor path 和 diagnostic smoke 对齐证据。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R08",
+      "course_requirement": "性能 log",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "experiments/smoke_training/output_tail/pytorch/performance_log.csv",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/jittor/performance_log.csv",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/visualizations/performance_step_time.png",
+          "exists": true
+        }
+      ],
+      "markers": {},
+      "notes": "小数据训练阶段记录 step time / samples per second；不夸大速度结论。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R09",
+      "course_requirement": "训练过程 log 与 loss 曲线",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "experiments/smoke_training/output_tail/pytorch/training.log",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/jittor/training.log",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/visualizations/train_val_loss_curve.png",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/visualizations/loss_gap_curve.png",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_SMALL_DATA_TRAINING_ALIGNMENT": "PASS"
+      },
+      "notes": "包含 train/validation loss、loss gap 和多 seed 稳定性。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R10",
+      "course_requirement": "结果与可视化对齐",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "figures/diagnostic_image_smoke/side_by_side_diagnostic_grid.png",
+          "exists": true
+        },
+        {
+          "path": "figures/diagnostic_image_smoke/absolute_difference_heatmap.png",
+          "exists": true
+        },
+        {
+          "path": "experiments/smoke_training/output_tail/visualizations/prediction_error_heatmap.png",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_DIAGNOSTIC_IMAGE_SMOKE_ALIGNMENT": "PASS"
+      },
+      "notes": "diagnostic image smoke 是 one-step tensor visualization，不是最终 restored image。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R11",
+      "course_requirement": "PPT/PDF",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "deliverables/TADSR-Jittor_final_presentation.pptx",
+          "exists": true
+        },
+        {
+          "path": "deliverables/TADSR-Jittor_final_presentation.pdf",
+          "exists": true
+        },
+        {
+          "path": "deliverables/TADSR-Jittor_final_presentation.md",
+          "exists": true
+        },
+        {
+          "path": "docs/03_ppt_outline.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_FINAL_PPT_READY": "PASS",
+        "TADSR_FINAL_PDF_READY": "PASS"
+      },
+      "notes": "最终演示材料存在，并由 validator 检查不夸大 full inference。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R12",
+      "course_requirement": "视频讲稿与录制指南",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "docs/04_video_script.md",
+          "exists": true
+        },
+        {
+          "path": "deliverables/TADSR-Jittor_video_recording_guide.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_FINAL_VIDEO_RECORDING_PACKAGE_READY": "PASS"
+      },
+      "notes": "包含 20-30 分钟结构、算法讲解、Jittor 实现与现场演示命令。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R13",
+      "course_requirement": "GitHub release readiness 与提交索引",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "experiments/github_release_readiness_audit.md",
+          "exists": true
+        },
+        {
+          "path": "deliverables/TADSR-Jittor_submission_readme.md",
+          "exists": true
+        },
+        {
+          "path": "docs/github_submission_handoff.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "TADSR_GITHUB_RELEASE_READINESS_AUDIT": "PASS"
+      },
+      "notes": "仓库大小、历史大文件、提交材料结构已审计。",
+      "limitation_if_any": ""
+    },
+    {
+      "requirement_id": "R14",
+      "course_requirement": "诚实边界与 false-claim guard",
+      "evidence_status": "PASS",
+      "evidence_files": [
+        {
+          "path": "experiments/final_audit_report.md",
+          "exists": true
+        },
+        {
+          "path": "docs/full_inference_gap_analysis.md",
+          "exists": true
+        },
+        {
+          "path": "docs/timevae_full_alignment_gap_analysis.md",
+          "exists": true
+        },
+        {
+          "path": "docs/runtime_lora_final_decision_proof.md",
+          "exists": true
+        }
+      ],
+      "markers": {
+        "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+        "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE",
+        "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": "NOT_IMPLEMENTED_BY_DESIGN"
+      },
+      "notes": "明确保留 NOT_COMPLETE / NOT_IMPLEMENTED_BY_DESIGN，不把 one-step 或 diagnostic smoke 写成 full inference。",
+      "limitation_if_any": "production full inference、TimeVAE full alignment、dynamic runtime LoRA 仍不作为已完成项。"
+    }
+  ]
+}

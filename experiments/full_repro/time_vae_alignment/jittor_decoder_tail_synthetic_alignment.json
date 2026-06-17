@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "synthetic hidden -> decoder tail",
+  "note": "pressure test for isolated deterministic linspace hidden through decoder tail",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      3,
+      32,
+      32
+    ],
+    "max_abs_error": 1.7285346984863281e-06,
+    "mean_abs_error": 6.843505010086423e-07,
+    "relative_error": 1.8593110967628196e-06,
+    "cosine_similarity": 0.9999999999987242,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

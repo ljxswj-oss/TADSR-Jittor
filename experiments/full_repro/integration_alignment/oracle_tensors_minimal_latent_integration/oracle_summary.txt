@@ -1,0 +1,13 @@
+# Minimal latent-only TADSR integration oracle
+
+TADSR_MINIMAL_LATENT_ONE_STEP_ORACLE: PASS
+TADSR_GET_X0_FROM_RES_ORACLE: PASS
+TADSR_MINIMAL_DECODE_BOUNDARY_ORACLE: PASS
+
+Input shape: [1, 3, 256, 256]
+Latent shape: [1, 4, 32, 32]
+Decoded output shape: [1, 3, 256, 256]
+Final clamped output range: [-1.0, 1.0]
+Formula: `x0 = scaled_latent / sqrt(alphas_cumprod[timestep]) - model_pred`
+
+No full denoising loop, image save, production CLI, or full TADSR inference was executed. Only tensor decode/clamp oracle values were saved.

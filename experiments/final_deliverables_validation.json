@@ -1,0 +1,52 @@
+{
+  "generated_at_utc": "2026-06-13T11:57:59.464881+00:00",
+  "status": "PASS",
+  "files": {
+    "deliverables\\TADSR-Jittor_final_presentation.md": {
+      "exists": true,
+      "size_bytes": 19047
+    },
+    "deliverables\\TADSR-Jittor_final_presentation.pptx": {
+      "exists": true,
+      "size_bytes": 200298
+    },
+    "deliverables\\TADSR-Jittor_final_presentation.pdf": {
+      "exists": true,
+      "size_bytes": 79524
+    },
+    "deliverables\\TADSR-Jittor_video_recording_guide.md": {
+      "exists": true,
+      "size_bytes": 7097
+    },
+    "deliverables\\TADSR-Jittor_submission_readme.md": {
+      "exists": true,
+      "size_bytes": 18082
+    },
+    "deliverables\\TADSR-Jittor_final_checklist.md": {
+      "exists": true,
+      "size_bytes": 2646
+    }
+  },
+  "total_size_bytes": 326694,
+  "total_size_mb": 0.31155967712402344,
+  "false_claim_hits": [],
+  "markers": {
+    "TADSR_FINAL_PPT_READY": "PASS",
+    "TADSR_FINAL_PDF_READY": "PASS",
+    "TADSR_FINAL_VIDEO_RECORDING_PACKAGE_READY": "PASS",
+    "TADSR_FINAL_SUBMISSION_README_READY": "PASS",
+    "TADSR_FINAL_DELIVERABLE_SIZE_AUDIT": "PASS",
+    "TADSR_FINAL_DELIVERABLES_INCLUDE_SMOKE_TRAINING": "PASS",
+    "TADSR_FINAL_DELIVERABLES_INCLUDE_DEFENSE_RISK_PACK": "PASS",
+    "TADSR_FINAL_DELIVERABLES_INCLUDE_RELEASE_QA": "PASS",
+    "TADSR_FINAL_PPT_INCLUDES_SMOKE_TRAINING": "PASS",
+    "TADSR_VIDEO_SCRIPT_INCLUDES_SMOKE_TRAINING": "PASS",
+    "TADSR_SUBMISSION_README_INCLUDES_SMOKE_TRAINING": "PASS",
+    "TADSR_FINAL_DELIVERABLES_INCLUDE_PHASE4A_EVIDENCE": "PASS",
+    "TADSR_FINAL_DELIVERABLES_READY": "PASS"
+  },
+  "guard": {
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL"
+  }
+}

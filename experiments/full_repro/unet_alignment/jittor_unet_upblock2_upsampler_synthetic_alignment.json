@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "interpolation": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 1e-06
+    },
+    "conv": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 2.384185791015625e-06,
+      "mean_abs_error": 2.3441932910373e-07,
+      "relative_error": 2.607546669198132e-07,
+      "cosine_similarity": 0.9999999999999656,
+      "tolerance": 0.0002
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 2.384185791015625e-06,
+      "mean_abs_error": 2.3441932910373e-07,
+      "relative_error": 2.607546669198132e-07,
+      "cosine_similarity": 0.9999999999999656,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic isolated up_blocks.2.upsamplers.0 check; no up_blocks.3 or full UNet forward is executed."
+}

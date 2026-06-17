@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "pytorch_key": "encoder.conv_norm_out.weight",
+      "jittor_npz_key": "encoder__conv_norm_out__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_norm_out.bias",
+      "jittor_npz_key": "encoder__conv_norm_out__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_out.weight",
+      "jittor_npz_key": "encoder__conv_out__weight",
+      "shape": [
+        8,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_out.bias",
+      "jittor_npz_key": "encoder__conv_out__bias",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "pytorch_key": "quant_conv.weight",
+      "jittor_npz_key": "quant_conv__weight",
+      "shape": [
+        8,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "pytorch_key": "quant_conv.bias",
+      "jittor_npz_key": "quant_conv__bias",
+      "shape": [
+        8
+      ]
+    }
+  ]
+}

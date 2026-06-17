@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "target": "isolated down_blocks.0.attentions.0 only",
+  "note": "No resnets.1, attentions.1, downsampler, full down_blocks.0, or full UNet.",
+  "diagnostics": {
+    "proj_out_sequence": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 7.852911949157715e-06,
+      "mean_abs_error": 1.3148315283650902e-06,
+      "relative_error": 3.9559708346726905e-06,
+      "cosine_similarity": 0.9999999999920258,
+      "tolerance": 0.001
+    },
+    "proj_out_nchw": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.852911949157715e-06,
+      "mean_abs_error": 1.3148315283650902e-06,
+      "relative_error": 3.9559708346726905e-06,
+      "cosine_similarity": 0.9999999999920267,
+      "tolerance": 0.001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.867813110351562e-06,
+      "mean_abs_error": 1.3148283755981537e-06,
+      "relative_error": 2.216273479623449e-06,
+      "cosine_similarity": 0.9999999999972097,
+      "tolerance": 0.002
+    }
+  }
+}

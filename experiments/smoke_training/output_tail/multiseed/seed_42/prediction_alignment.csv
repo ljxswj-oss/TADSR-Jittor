@@ -1,0 +1,9 @@
+metric,value
+prediction_relative_l2_diff,0.0002488762113684496
+prediction_mae,1.4976491468421393e-05
+prediction_max_abs_diff,8.42362642288208e-05
+prediction_cosine_similarity,0.9999999697696061
+final_train_loss_relative_gap,6.78616684372393e-05
+final_val_loss_relative_gap,0.0001019001151313871
+train_loss_correlation,0.9999999546717318
+val_loss_correlation,0.999999957057644

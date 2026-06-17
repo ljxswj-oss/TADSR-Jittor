@@ -1,0 +1,16 @@
+# TADSR UNet up_blocks.3.resnets.2 audit
+
+TADSR_UNET_UPBLOCK3_RESNET2_AUDIT: PASS
+TADSR_UNET_UPBLOCK3_RESNET2_RESIDUAL_CONTRACT_AUDIT: PASS
+TADSR_UNET_UPBLOCK3_RESNET2_LORA_AUDIT: PASS
+
+upblock3 class: diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D
+forward signature: (hidden_states: torch.FloatTensor, res_hidden_states_tuple: Tuple[torch.FloatTensor, ...], temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, upsample_size: Optional[int] = None, attention_mask: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor
+resnet2 consumed source: conv_in
+residual index: 0
+hidden input shape: [1, 320, 32, 32]
+residual shape: [1, 320, 32, 32]
+concat shape: [1, 640, 32, 32]
+output shape: [1, 320, 32, 32]
+actual next module: up_blocks.3.attentions.2
+scope: up_blocks.3 topology and resnets.2 only; attention2/full up_blocks/full UNet/full inference were not executed.

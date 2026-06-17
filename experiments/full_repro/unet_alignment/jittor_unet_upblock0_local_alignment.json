@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output_hidden": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.704692840576172e-05,
+      "mean_abs_error": 7.323542648762782e-07,
+      "relative_error": 1.2861741591879397e-06,
+      "cosine_similarity": 0.999999999999486,
+      "tolerance": 0.002
+    },
+    "output_states": {
+      "status": "PASS",
+      "note": "Official UpBlock2D returns hidden_states only; no output_states are produced for up_blocks.0."
+    }
+  },
+  "note": "Local up_blocks.0 hidden-state output is aligned through resnets.0/1/2 and upsamplers.0 only. Full up_blocks.1+ and full UNet remain unopened."
+}

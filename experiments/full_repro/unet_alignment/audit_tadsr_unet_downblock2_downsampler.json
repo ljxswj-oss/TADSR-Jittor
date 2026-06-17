@@ -1,0 +1,343 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "source_module_path": "unet.down_blocks.2.downsamplers.0",
+  "block_class": "diffusers.models.unet_2d_blocks.CrossAttnDownBlock2D",
+  "block_forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, attention_mask: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None, additional_residuals: Optional[torch.FloatTensor] = None) -> Tuple[torch.FloatTensor, Tuple[torch.FloatTensor, ...]]",
+  "block_module_order": [
+    {
+      "name": "attentions",
+      "class": "torch.nn.modules.container.ModuleList"
+    },
+    {
+      "name": "resnets",
+      "class": "torch.nn.modules.container.ModuleList"
+    },
+    {
+      "name": "downsamplers",
+      "class": "torch.nn.modules.container.ModuleList"
+    }
+  ],
+  "downsampler_config": {
+    "prefix": "down_blocks_2_downsamplers_0",
+    "class": "diffusers.models.downsampling.Downsample2D",
+    "forward_signature": "(hidden_states: torch.FloatTensor, scale: float = 1.0) -> torch.FloatTensor",
+    "channels": 1280,
+    "out_channels": 1280,
+    "use_conv": true,
+    "padding": 1,
+    "name": "op",
+    "conv": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        1280,
+        1280,
+        3,
+        3
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "stride": [
+        2,
+        2
+      ],
+      "padding": [
+        1,
+        1
+      ],
+      "kernel_size": [
+        3,
+        3
+      ],
+      "dilation": [
+        1,
+        1
+      ],
+      "groups": 1,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_encoder": [
+          4,
+          1280,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_encoder": [
+          1280,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_encoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": 0.02098342590034008,
+        "default_decoder": "ERROR: 'default_decoder'",
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "operation": "single effective LoRA-merged Conv2d, stride=2, padding=1"
+  },
+  "full_downblock2_local_order": [
+    "entry conv_in + time_embedding",
+    "down_blocks.0 full local chain",
+    "down_blocks.1 full local chain",
+    "down_blocks.2.resnets.0",
+    "down_blocks.2.attentions.0",
+    "down_blocks.2.resnets.1",
+    "down_blocks.2.attentions.1",
+    "down_blocks.2.downsamplers.0"
+  ],
+  "input_contract": {
+    "sample_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "timestep": [
+      1
+    ],
+    "encoder_hidden_states_shape": [
+      1,
+      77,
+      1024
+    ],
+    "attention_mask": null,
+    "encoder_attention_mask": null,
+    "cross_attention_kwargs": null,
+    "additional_residuals": null
+  },
+  "dry_run": {
+    "conv_in_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "min": -1.9214454889297485,
+      "max": 2.051663398742676,
+      "mean": 0.009378108195960522,
+      "std": 0.24807758629322052
+    },
+    "time_embedding_output": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "torch.float32",
+      "min": -1.4923566579818726,
+      "max": 3.7227675914764404,
+      "mean": -0.00029221753356978297,
+      "std": 0.17082808911800385
+    },
+    "downblock0_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "torch.float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959411859512,
+      "std": 2.0096046924591064
+    },
+    "downblock1_output": {
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -20.893442153930664,
+      "max": 17.661746978759766,
+      "mean": 0.11107184737920761,
+      "std": 3.2019007205963135
+    },
+    "resnet0_output": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -19.89340591430664,
+      "max": 13.414687156677246,
+      "mean": 0.0356924831867218,
+      "std": 2.1979551315307617
+    },
+    "attention0_output": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -16.938003540039062,
+      "max": 12.33202075958252,
+      "mean": 0.1663692742586136,
+      "std": 1.7750595808029175
+    },
+    "resnet1_output": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -16.311548233032227,
+      "max": 12.39342212677002,
+      "mean": 0.21462365984916687,
+      "std": 1.836667537689209
+    },
+    "attention1_output": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -11.030681610107422,
+      "max": 13.805471420288086,
+      "mean": 0.25502750277519226,
+      "std": 1.5964934825897217
+    },
+    "downsampler_output": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "torch.float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.046060532331466675,
+      "std": 3.7883996963500977
+    },
+    "block_forward_output": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "torch.float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.046060532331466675,
+      "std": 3.7883996963500977
+    },
+    "block_forward_res_sample_shapes": [
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "manual_vs_block_forward_max_abs_error": 0.0,
+    "manual_vs_block_forward_mean_abs_error": 0.0,
+    "output_states_expected_order": [
+      "attention0_output",
+      "attention1_output",
+      "downsampler_output"
+    ],
+    "output_state_diffs": [
+      {
+        "index": 0,
+        "max_abs_error": 0.0,
+        "shape": [
+          1,
+          1280,
+          8,
+          8
+        ]
+      },
+      {
+        "index": 1,
+        "max_abs_error": 0.0,
+        "shape": [
+          1,
+          1280,
+          8,
+          8
+        ]
+      },
+      {
+        "index": 2,
+        "max_abs_error": 0.0,
+        "shape": [
+          1,
+          1280,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  "down_blocks3_preview": {
+    "exists": true,
+    "class": "diffusers.models.unet_2d_blocks.DownBlock2D",
+    "resnet_count": 2,
+    "attention_count": 0,
+    "downsampler_count": 0,
+    "has_cross_attention": false,
+    "first_resnet_has_conv_shortcut": false,
+    "note": "planning preview only; down_blocks.3 is not executed or ported in this stage"
+  },
+  "effective_weight_plan": {
+    "export_conv_weight_key": "down_blocks_2_downsamplers_0_conv_weight",
+    "export_conv_bias_key": "down_blocks_2_downsamplers_0_conv_bias",
+    "use_static_lora_merged_weight": true,
+    "generic_runtime_lora_integration": "PARTIAL/DEFERRED"
+  },
+  "markers": {
+    "TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_AUDIT": "PASS",
+    "TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_LORA_AUDIT": "PASS",
+    "TADSR_UNET_DOWNBLOCK2_LOCAL_FORWARD_AUDIT": "PASS",
+    "TADSR_UNET_DOWNBLOCK2_OUTPUT_STATES_AUDIT": "PASS"
+  },
+  "not_in_scope": [
+    "down_blocks.3",
+    "mid_block",
+    "up_blocks",
+    "full UNet forward",
+    "full TADSR inference"
+  ]
+}

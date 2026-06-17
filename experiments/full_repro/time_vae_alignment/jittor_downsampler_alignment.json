@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "encoder.down_blocks.0.downsamplers.0",
+  "padding_note": "Diffusers Downsample2D uses right/bottom asymmetric zero padding before stride-2 conv when padding=0.",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      128,
+      16,
+      16
+    ],
+    "max_abs_error": 2.86102294921875e-06,
+    "mean_abs_error": 2.743584808229116e-07,
+    "relative_error": 1.2207174702739264e-07,
+    "cosine_similarity": 0.9999999999999913,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

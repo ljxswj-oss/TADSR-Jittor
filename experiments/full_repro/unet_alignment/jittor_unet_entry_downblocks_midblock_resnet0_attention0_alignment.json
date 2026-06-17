@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001
+    },
+    "time_embedding": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.2749661588459276e-09,
+      "relative_error": 2.484385767769718e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.0001
+    },
+    "downblock0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "max_abs_error": 1.2159347534179688e-05,
+      "mean_abs_error": 1.706075145335717e-06,
+      "relative_error": 1.1445761910420367e-06,
+      "cosine_similarity": 0.9999999999994224,
+      "tolerance": 0.002
+    },
+    "downblock1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 2.2277235984802246e-05,
+      "mean_abs_error": 2.579873682861944e-06,
+      "relative_error": 1.0776458816026287e-06,
+      "cosine_similarity": 0.9999999999994817,
+      "tolerance": 0.002
+    },
+    "downblock2_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 3.0517578125e-05,
+      "mean_abs_error": 3.670575767955597e-06,
+      "relative_error": 1.3387986697652404e-06,
+      "cosine_similarity": 0.9999999999991991,
+      "tolerance": 0.002
+    },
+    "downblock3_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.47955322265625e-05,
+      "mean_abs_error": 3.7183403492235813e-06,
+      "relative_error": 1.4007089970714264e-06,
+      "cosine_similarity": 0.9999999999991385,
+      "tolerance": 0.002
+    },
+    "midblock_resnet0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.574920654296875e-05,
+      "mean_abs_error": 3.7846585200895786e-06,
+      "relative_error": 1.3531946330662328e-06,
+      "cosine_similarity": 0.9999999999992023,
+      "tolerance": 0.002
+    },
+    "midblock_attention0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.6702880859375e-05,
+      "mean_abs_error": 3.7925757169432473e-06,
+      "relative_error": 1.3587631589675926e-06,
+      "cosine_similarity": 0.9999999999991539,
+      "tolerance": 0.002
+    },
+    "midblock_attention0_official_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.6702880859375e-05,
+      "mean_abs_error": 3.7925757169432473e-06,
+      "relative_error": 1.3587631589675926e-06,
+      "cosine_similarity": 0.9999999999991539,
+      "tolerance": 0.002
+    }
+  },
+  "note": "Bridge stops at mid_block.attentions.0. mid_block.resnets.1/up_blocks/full UNet are not executed."
+}

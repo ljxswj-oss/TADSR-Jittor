@@ -1,0 +1,6 @@
+{
+  "status": "NOT_APPLICABLE",
+  "target": "optional VAE-mode latent -> UNet entry bridge",
+  "reason": "Full TimeAware VAE API / stochastic encode-decode pipeline is intentionally not complete; this stage avoids full TADSR inference and exports only synthetic UNet entry tensors.",
+  "note": "Optional check only. Full TimeAware VAE API and full TADSR inference remain intentionally unopened."
+}

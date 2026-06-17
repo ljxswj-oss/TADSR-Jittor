@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "tensor": "betas",
+      "shape_match": true,
+      "shape": [
+        1000
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "tensor": "alphas",
+      "shape_match": true,
+      "shape": [
+        1000
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "tensor": "alphas_cumprod",
+      "shape_match": true,
+      "shape": [
+        1000
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "tensor": "timesteps",
+      "shape_match": true,
+      "shape": [
+        1000
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0
+    }
+  ]
+}

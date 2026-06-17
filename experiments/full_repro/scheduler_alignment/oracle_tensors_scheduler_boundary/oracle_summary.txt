@@ -1,0 +1,11 @@
+# Scheduler Boundary Oracle
+
+Status: PASS
+
+- Scheduler class: `DDPMScheduler`
+- Timesteps: `[1]`
+- Chosen timestep: `1`
+- Step fields: `['prev_sample', 'pred_original_sample']`
+- Optional UNet+scheduler one-step: `PASS`
+
+No denoising loop, VAE decode, image save, or full TADSR inference was executed.

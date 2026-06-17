@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "target": "decoder.conv_in(real path output) -> decoder.mid_block",
+  "note": "real encoder-derived decoder.conv_in output; decoder temb is None",
+  "diagnostics": {
+    "resnet0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 2.1092500901431777e-07,
+      "relative_error": 2.0579742258424653e-07,
+      "cosine_similarity": 0.9999999999999829,
+      "tolerance": 0.0001
+    },
+    "attention": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 3.9340693547273986e-07,
+      "relative_error": 3.7365078309720756e-07,
+      "cosine_similarity": 0.9999999999999458,
+      "tolerance": 0.0001
+    },
+    "resnet1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 3.814697265625e-06,
+      "mean_abs_error": 5.09384832980686e-07,
+      "relative_error": 4.3114355972088685e-07,
+      "cosine_similarity": 0.9999999999999267,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 3.814697265625e-06,
+      "mean_abs_error": 5.09384832980686e-07,
+      "relative_error": 4.3114355972088685e-07,
+      "cosine_similarity": 0.9999999999999267,
+      "tolerance": 0.0001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      4,
+      4
+    ],
+    "max_abs_error": 3.814697265625e-06,
+    "mean_abs_error": 5.09384832980686e-07,
+    "relative_error": 4.3114355972088685e-07,
+    "cosine_similarity": 0.9999999999999267,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

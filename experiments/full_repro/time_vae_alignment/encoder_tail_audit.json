@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "conv_norm_out": {
+    "module_name": "encoder.conv_norm_out",
+    "class_name": "GroupNorm",
+    "class_module": "torch.nn.modules.normalization",
+    "num_groups": 32,
+    "num_channels": 512,
+    "eps": 1e-06,
+    "affine": true,
+    "weight_key": "encoder.conv_norm_out.weight",
+    "bias_key": "encoder.conv_norm_out.bias",
+    "weight_shape": [
+      512
+    ],
+    "bias_shape": [
+      512
+    ]
+  },
+  "conv_act": {
+    "module_name": "encoder.conv_act",
+    "class_name": "SiLU",
+    "class_module": "torch.nn.modules.activation"
+  },
+  "conv_out": {
+    "module_name": "encoder.conv_out",
+    "class_name": "Conv2d",
+    "class_module": "torch.nn.modules.conv",
+    "weight_shape": [
+      8,
+      512,
+      3,
+      3
+    ],
+    "bias_shape": [
+      8
+    ],
+    "kernel_size": [
+      3,
+      3
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ],
+    "in_channels": 512,
+    "out_channels": 8
+  },
+  "conv_out_outputs_double_z": true,
+  "quant_conv": {
+    "module_name": "quant_conv",
+    "class_name": "Conv2d",
+    "class_module": "torch.nn.modules.conv",
+    "weight_shape": [
+      8,
+      8,
+      1,
+      1
+    ],
+    "bias_shape": [
+      8
+    ],
+    "kernel_size": [
+      1,
+      1
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ],
+    "in_channels": 8,
+    "out_channels": 8
+  },
+  "quant_conv_channel_mapping": "8->8",
+  "post_quant_conv_exists": true,
+  "post_quant_conv": {
+    "module_name": "post_quant_conv",
+    "class_name": "Conv2d",
+    "class_module": "torch.nn.modules.conv",
+    "weight_shape": [
+      4,
+      4,
+      1,
+      1
+    ],
+    "bias_shape": [
+      4
+    ],
+    "kernel_size": [
+      1,
+      1
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ],
+    "in_channels": 4,
+    "out_channels": 4
+  },
+  "post_quant_conv_note": "Recorded but not ported in this stage.",
+  "state_keys": [
+    {
+      "key": "encoder.conv_norm_out.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.conv_norm_out.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "encoder.conv_out.weight",
+      "shape": [
+        8,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 36864
+    },
+    {
+      "key": "encoder.conv_out.bias",
+      "shape": [
+        8
+      ],
+      "dtype": "torch.float32",
+      "numel": 8
+    },
+    {
+      "key": "quant_conv.weight",
+      "shape": [
+        8,
+        8,
+        1,
+        1
+      ],
+      "dtype": "torch.float32",
+      "numel": 64
+    },
+    {
+      "key": "quant_conv.bias",
+      "shape": [
+        8
+      ],
+      "dtype": "torch.float32",
+      "numel": 8
+    },
+    {
+      "key": "post_quant_conv.weight",
+      "shape": [
+        4,
+        4,
+        1,
+        1
+      ],
+      "dtype": "torch.float32",
+      "numel": 16
+    },
+    {
+      "key": "post_quant_conv.bias",
+      "shape": [
+        4
+      ],
+      "dtype": "torch.float32",
+      "numel": 4
+    }
+  ],
+  "key_mapping": [
+    {
+      "pytorch_key": "encoder.conv_norm_out.weight",
+      "jittor_npz_key": "encoder__conv_norm_out__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_norm_out.bias",
+      "jittor_npz_key": "encoder__conv_norm_out__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_out.weight",
+      "jittor_npz_key": "encoder__conv_out__weight",
+      "shape": [
+        8,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.conv_out.bias",
+      "jittor_npz_key": "encoder__conv_out__bias",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "pytorch_key": "quant_conv.weight",
+      "jittor_npz_key": "quant_conv__weight",
+      "shape": [
+        8,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "pytorch_key": "quant_conv.bias",
+      "jittor_npz_key": "quant_conv__bias",
+      "shape": [
+        8
+      ]
+    }
+  ]
+}

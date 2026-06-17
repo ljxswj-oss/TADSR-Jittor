@@ -1,0 +1,16 @@
+{
+  "status_marker": "TADSR_REMOTE_SSH_CONNECTIVITY",
+  "status": "AUTH_AVAILABLE_FOR_PHASE3B",
+  "checked_from": "Windows local workspace",
+  "remote_host": "10.195.21.2",
+  "expected_user": "sj",
+  "ssh_port": 10022,
+  "reference_port": 22,
+  "tcp_10022_succeeded": true,
+  "tcp_22_succeeded": false,
+  "ssh_protocol_handshake_reached": true,
+  "ssh_authentication_available": true,
+  "ssh_authentication_detail": "A temporary in-memory Paramiko session authenticated as sj on port 10022 after the user provided updated credentials. No password, key, token, or secret was written to the repository, scripts, result package, or git history.",
+  "conclusion": "The server is reachable on port 10022 and Phase 3-B live audit was executed via a temporary authenticated session. The imported result package is still evaluated by the local import gate and one-step readiness validators.",
+  "safety_decision": "Do not treat SSH authentication or Phase 3-B import as full inference completion. Keep full inference / TimeVAE / dynamic LoRA completion markers unchanged unless later controlled tensor evidence passes."
+}

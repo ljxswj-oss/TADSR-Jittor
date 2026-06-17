@@ -1,0 +1,49 @@
+# TimeVAE LoRA Effective Weight Export
+
+TIME_VAE_LORA_EFFECTIVE_WEIGHTS_AUDIT: PASS
+TIME_VAE_LORA_EFFECTIVE_WEIGHTS_EXPORT: PASS
+TIME_VAE_LORA_EFFECTIVE_WEIGHT_MANUAL_VERIFY: PASS
+
+TimeVAE active LoRA pairs: 32
+Loaded LoRA parameters: 64
+Adapters: {'default_encoder': 32}
+Base layer classes: {'Conv2d': 3, 'LoRACompatibleConv': 25, 'LoRACompatibleLinear': 4}
+Manual verify status counts: {'PASS': 32}
+Max manual verify max_abs_error: 1.0013580322265625e-05
+NPZ artifact: experiments/full_repro/lora_alignment/timevae_lora_effective_weights/converted_timevae_lora_effective_weights.npz
+NPZ size bytes: 380694872
+
+| Module | Adapter | Layer | Shape | Max abs error | Mean abs error | Cosine | Status |
+|---|---|---|---|---:|---:|---:|---|
+| `encoder.conv_in` | `default_encoder` | Conv2d | `[128, 3, 3, 3]` | 7.15256e-07 | 5.30394e-08 | 1.000000119209 | PASS |
+| `encoder.down_blocks.0.resnets.0.conv1` | `default_encoder` | LoRACompatibleConv | `[128, 128, 3, 3]` | 2.6226e-06 | 2.59605e-07 | 1.000000238419 | PASS |
+| `encoder.down_blocks.0.resnets.0.conv2` | `default_encoder` | LoRACompatibleConv | `[128, 128, 3, 3]` | 1.66893e-06 | 2.13323e-07 | 1.000000000000 | PASS |
+| `encoder.down_blocks.0.resnets.1.conv1` | `default_encoder` | LoRACompatibleConv | `[128, 128, 3, 3]` | 2.38419e-06 | 2.6462e-07 | 1.000000119209 | PASS |
+| `encoder.down_blocks.0.resnets.1.conv2` | `default_encoder` | LoRACompatibleConv | `[128, 128, 3, 3]` | 1.51992e-06 | 2.09219e-07 | 1.000000000000 | PASS |
+| `encoder.down_blocks.0.downsamplers.0.conv` | `default_encoder` | LoRACompatibleConv | `[128, 128, 3, 3]` | 1.37091e-06 | 2.26835e-07 | 1.000000119209 | PASS |
+| `encoder.down_blocks.1.resnets.0.conv1` | `default_encoder` | LoRACompatibleConv | `[256, 128, 3, 3]` | 2.44379e-06 | 2.75297e-07 | 0.999999582767 | PASS |
+| `encoder.down_blocks.1.resnets.0.conv2` | `default_encoder` | LoRACompatibleConv | `[256, 256, 3, 3]` | 2.86102e-06 | 3.28189e-07 | 0.999999761581 | PASS |
+| `encoder.down_blocks.1.resnets.0.conv_shortcut` | `default_encoder` | LoRACompatibleConv | `[256, 128, 1, 1]` | 1.43051e-06 | 1.09744e-07 | 0.999999701977 | PASS |
+| `encoder.down_blocks.1.resnets.1.conv1` | `default_encoder` | LoRACompatibleConv | `[256, 256, 3, 3]` | 4.05312e-06 | 3.79009e-07 | 1.000000238419 | PASS |
+| `encoder.down_blocks.1.resnets.1.conv2` | `default_encoder` | LoRACompatibleConv | `[256, 256, 3, 3]` | 2.38419e-06 | 3.33649e-07 | 0.999999880791 | PASS |
+| `encoder.down_blocks.1.downsamplers.0.conv` | `default_encoder` | LoRACompatibleConv | `[256, 256, 3, 3]` | 1.90735e-06 | 3.15277e-07 | 0.999999701977 | PASS |
+| `encoder.down_blocks.2.resnets.0.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 256, 3, 3]` | 4.29153e-06 | 3.79263e-07 | 1.000000476837 | PASS |
+| `encoder.down_blocks.2.resnets.0.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 4.05312e-06 | 5.18617e-07 | 1.000000715256 | PASS |
+| `encoder.down_blocks.2.resnets.0.conv_shortcut` | `default_encoder` | LoRACompatibleConv | `[512, 256, 1, 1]` | 2.6226e-06 | 1.52333e-07 | 1.000000000000 | PASS |
+| `encoder.down_blocks.2.resnets.1.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 4.76837e-06 | 5.45727e-07 | 1.000000357628 | PASS |
+| `encoder.down_blocks.2.resnets.1.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 4.29153e-06 | 5.40212e-07 | 1.000001192093 | PASS |
+| `encoder.down_blocks.2.downsamplers.0.conv` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 3.8147e-06 | 5.13691e-07 | 0.999999880791 | PASS |
+| `encoder.down_blocks.3.resnets.0.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 3.8147e-06 | 5.20408e-07 | 0.999999582767 | PASS |
+| `encoder.down_blocks.3.resnets.0.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 5.72205e-06 | 5.8718e-07 | 1.000000357628 | PASS |
+| `encoder.down_blocks.3.resnets.1.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 3.8147e-06 | 5.30708e-07 | 0.999999761581 | PASS |
+| `encoder.down_blocks.3.resnets.1.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 6.67572e-06 | 6.18264e-07 | 0.999999940395 | PASS |
+| `encoder.mid_block.attentions.0.to_q` | `default_encoder` | LoRACompatibleLinear | `[512, 512]` | 5.96046e-07 | 9.56958e-08 | 1.000000000000 | PASS |
+| `encoder.mid_block.attentions.0.to_k` | `default_encoder` | LoRACompatibleLinear | `[512, 512]` | 4.91738e-07 | 9.57079e-08 | 0.999999880791 | PASS |
+| `encoder.mid_block.attentions.0.to_v` | `default_encoder` | LoRACompatibleLinear | `[512, 512]` | 6.25849e-07 | 1.05295e-07 | 1.000000000000 | PASS |
+| `encoder.mid_block.attentions.0.to_out.0` | `default_encoder` | LoRACompatibleLinear | `[512, 512]` | 7.07805e-07 | 1.07182e-07 | 1.000000119209 | PASS |
+| `encoder.mid_block.resnets.0.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 4.76837e-06 | 5.46935e-07 | 0.999999403954 | PASS |
+| `encoder.mid_block.resnets.0.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 7.15256e-06 | 6.64422e-07 | 1.000001192093 | PASS |
+| `encoder.mid_block.resnets.1.conv1` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 5.00679e-06 | 5.55606e-07 | 1.000000715256 | PASS |
+| `encoder.mid_block.resnets.1.conv2` | `default_encoder` | LoRACompatibleConv | `[512, 512, 3, 3]` | 1.00136e-05 | 7.34447e-07 | 1.000000476837 | PASS |
+| `encoder.conv_out` | `default_encoder` | Conv2d | `[8, 512, 3, 3]` | 2.38419e-06 | 4.90298e-07 | 0.999999940395 | PASS |
+| `quant_conv` | `default_encoder` | Conv2d | `[8, 8, 1, 1]` | 1.90735e-06 | 1.32368e-07 | 0.999999880791 | PASS |

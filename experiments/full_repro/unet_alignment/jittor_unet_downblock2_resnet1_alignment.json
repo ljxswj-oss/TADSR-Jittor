@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.384185791015625e-07,
+      "mean_abs_error": 1.679008618804545e-08,
+      "relative_error": 6.34222884769185e-08,
+      "cosine_similarity": 0.9999999999999972,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 2.1250238759762397e-07,
+      "relative_error": 2.0838381842140167e-07,
+      "cosine_similarity": 0.9999999999999761,
+      "tolerance": 0.0001
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 3.4374897950328885e-08,
+      "relative_error": 1.1576471938218892e-07,
+      "cosine_similarity": 0.9999999999999923,
+      "tolerance": 0.0001
+    },
+    "after_temb_add": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 2.18760084180758e-07,
+      "relative_error": 1.9238703530313063e-07,
+      "cosine_similarity": 0.9999999999999791,
+      "tolerance": 0.0001
+    },
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 1.0643806473975559e-07,
+      "relative_error": 1.774511273709192e-07,
+      "cosine_similarity": 0.9999999999999865,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "mean_abs_error": 2.6466435159022695e-07,
+      "relative_error": 3.4586294872918467e-07,
+      "cosine_similarity": 0.9999999999999399,
+      "tolerance": 0.0001
+    },
+    "shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "mean_abs_error": 2.645921540533891e-07,
+      "relative_error": 1.85543308797196e-07,
+      "cosine_similarity": 0.9999999999999828,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Only down_blocks.2.resnets.1 is executed; attentions.1/downsampler/full down_blocks.2 remain unopened."
+}

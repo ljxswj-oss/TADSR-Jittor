@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "midblock_hidden_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 2.6702880859375e-05,
+      "mean_abs_error": 3.800192098424304e-06,
+      "relative_error": 1.3949179221757381e-06,
+      "cosine_similarity": 0.9999999999991097,
+      "tolerance": 0.002
+    }
+  },
+  "output_states_status": "NOT_APPLICABLE",
+  "note": "Manual chain resnets.0 -> attentions.0 -> resnets.1 is compared with official local mid_block hidden output. up_blocks/full UNet are not executed."
+}

@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "block_index": 3,
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "encoder_class": "diffusers.models.autoencoders.vae.TimeAwareEncoder",
+  "sample_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "timestep": 50,
+  "input_size": 32,
+  "module_order": [
+    "encoder.conv_in",
+    "encoder.down_blocks.0",
+    "encoder.down_blocks.1",
+    "encoder.down_blocks.2",
+    "encoder.down_blocks.3.resnets.0",
+    "encoder.down_blocks.3.resnets.1",
+    "encoder.down_blocks.3.downsamplers.0"
+  ],
+  "channel_change_happens": false,
+  "has_downsampler": false,
+  "hook_targets": [
+    {
+      "name": "encoder.time_proj",
+      "class": "Timesteps",
+      "input_shape": [
+        1
+      ],
+      "output_shape": [
+        1,
+        128
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.time_embedding",
+      "class": "TimestepEmbedding",
+      "input_shape": [
+        1,
+        128
+      ],
+      "output_shape": [
+        1,
+        256
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.conv_in",
+      "class": "Conv2d",
+      "input_shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "output_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.0",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.1",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        256,
+        8,
+        8
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.2",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "channel_change": false,
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "channel_change": false,
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "encoder.down_blocks.3",
+      "class": "DownEncoderBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    }
+  ],
+  "hook_failures": [
+    {
+      "name": "encoder.down_blocks.3.downsamplers.0",
+      "status": "NOT_APPLICABLE",
+      "reason": "official block has no downsampler"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "target": "decoder.conv_in output -> decoder.mid_block -> decoder.up_blocks.0",
+  "note": "synthetic latent decoder.conv_in output; decoder temb is None",
+  "diagnostics": {
+    "decoder_midblock": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 2.3096799850463867e-06,
+      "mean_abs_error": 3.492893938528141e-07,
+      "relative_error": 3.5995961093502767e-07,
+      "cosine_similarity": 0.9999999999999342,
+      "tolerance": 0.0001
+    },
+    "decoder_upblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 1.239776611328125e-05,
+      "mean_abs_error": 1.6619595442080026e-06,
+      "relative_error": 5.573097562830429e-07,
+      "cosine_similarity": 0.999999999999856,
+      "tolerance": 0.0001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      8,
+      8
+    ],
+    "max_abs_error": 1.239776611328125e-05,
+    "mean_abs_error": 1.6619595442080026e-06,
+    "relative_error": 5.573097562830429e-07,
+    "cosine_similarity": 0.999999999999856,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

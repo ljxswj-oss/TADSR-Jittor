@@ -1,0 +1,585 @@
+{
+  "status": "PASS",
+  "tadsr_minimal_integration_audit": "PASS",
+  "tadsr_get_x0_from_res_audit": "PASS",
+  "tadsr_minimal_latent_one_step_contract_audit": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_tadsr_py": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+  "official_tadsr_test_class": "TADSR_test",
+  "official_tadsr_gen_class": "TADSR_gen",
+  "get_x0_from_res_signature": "(self, latent_lq, model_pred, timesteps)",
+  "forward_signature": "(self, c_t, batch=None, timesteps=None)",
+  "one_step_path": [
+    "encoded_control = vae.encode(control, timesteps).latent_dist.sample() * scaling_factor",
+    "model_pred = unet(encoded_control, timesteps, encoder_hidden_states=caption_enc).sample",
+    "alpha_prod_t = noise_scheduler.alphas_cumprod[timesteps]",
+    "x_denoised = encoded_control / sqrt(alpha_prod_t) - model_pred",
+    "decode_input = x_denoised / scaling_factor",
+    "output = vae.decode(decode_input).sample.clamp(-1, 1)"
+  ],
+  "formula": "x0 = latent_lq / sqrt(alphas_cumprod[timestep]) - model_pred",
+  "decode_input_formula": "decode_input = x0 / scaling_factor",
+  "scaling_factor": 0.18215,
+  "scheduler_contract": {
+    "constructed_class": "DDPMScheduler",
+    "config_class_name": "PNDMScheduler",
+    "timesteps_after_set_timesteps_1": [
+      1
+    ],
+    "alphas_cumprod_shape": [
+      1000
+    ]
+  },
+  "critical_findings": {
+    "official_forward_is_not_full_denoising_loop": true,
+    "official_forward_uses_get_x0_from_res": true,
+    "scheduler_step_is_not_main_tadsr_forward_update": true,
+    "current_test_path_timesteps": [
+      1
+    ],
+    "production_full_inference_executed": false,
+    "image_saved": false,
+    "training_executed": false
+  },
+  "minimal_dry_run_contract": {
+    "primary_target": "latent-only x0 / x_denoised",
+    "input_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "latent_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "timestep": [
+      1
+    ],
+    "encoder_hidden_states_source": "deterministic tensor matching UNet cross_attention_dim",
+    "posterior_sample_policy": "fixed exported epsilon",
+    "static_effective_lora_policy": true,
+    "optional_decode_boundary": "NOT_APPLICABLE in this round; no image output path is opened"
+  },
+  "usage_hits": [
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 88,
+      "text": "self.noise_scheduler.set_timesteps(1, device=\"cuda\")",
+      "context": "86:         self.text_encoder = CLIPTextModel.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"text_encoder\").cuda()\n87:         self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")\n88:         self.noise_scheduler.set_timesteps(1, device=\"cuda\")\n89:         self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()\n90:         self.args = args"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 89,
+      "text": "self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()",
+      "context": "87:         self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")\n88:         self.noise_scheduler.set_timesteps(1, device=\"cuda\")\n89:         self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()\n90:         self.args = args\n91: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 95,
+      "text": "self.unet, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(self.args)",
+      "context": "93: \n94: \n95:         self.unet, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(self.args)\n96:         self.load_pretrained_model()\n97:         self.lora_rank_unet = self.args.lora_rank"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 100,
+      "text": "self.unet.to(\"cuda\")",
+      "context": "98:         self.lora_rank_vae = self.args.lora_rank\n99: \n100:         self.unet.to(\"cuda\")\n101:         self.vae.to(\"cuda\")\n102:         self.timesteps = torch.tensor([1], device=\"cuda\").long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 102,
+      "text": "self.timesteps = torch.tensor([1], device=\"cuda\").long()",
+      "context": "100:         self.unet.to(\"cuda\")\n101:         self.vae.to(\"cuda\")\n102:         self.timesteps = torch.tensor([1], device=\"cuda\").long()\n103:         self.text_encoder.requires_grad_(False)\n104: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 120,
+      "text": "for n, p in self.unet.named_parameters():",
+      "context": "118:             if \"state_dict_unet\" in pretrained_weights:\n119:                 print(\"Loading UNet LoRA weights...\")\n120:                 for n, p in self.unet.named_parameters():\n121:                     if \"lora\" in n and n in pretrained_weights[\"state_dict_unet\"]:\n122:                         p.data.copy_(pretrained_weights[\"state_dict_unet\"][n])"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 127,
+      "text": "self.unet.conv_in.weight.data.copy_(pretrained_weights[\"state_dict_unet\"][\"conv_in.weight\"])",
+      "context": "125:                 # \u52a0\u8f7dconv_in\u6743\u91cd\n126:                 if \"conv_in.weight\" in pretrained_weights[\"state_dict_unet\"]:\n127:                     self.unet.conv_in.weight.data.copy_(pretrained_weights[\"state_dict_unet\"][\"conv_in.weight\"])\n128:                     print(\"Loaded UNet conv_in.weight\")\n129:                 if \"conv_in.bias\" in pretrained_weights[\"state_dict_unet\"]:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 130,
+      "text": "self.unet.conv_in.bias.data.copy_(pretrained_weights[\"state_dict_unet\"][\"conv_in.bias\"])",
+      "context": "128:                     print(\"Loaded UNet conv_in.weight\")\n129:                 if \"conv_in.bias\" in pretrained_weights[\"state_dict_unet\"]:\n130:                     self.unet.conv_in.bias.data.copy_(pretrained_weights[\"state_dict_unet\"][\"conv_in.bias\"])\n131:                     print(\"Loaded UNet conv_in.bias\")\n132:             "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 154,
+      "text": "self.unet.train()",
+      "context": "152: \n153:     def set_train(self):\n154:         self.unet.train()\n155:         self.vae.train()\n156:         for n, _p in self.unet.named_parameters():"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 156,
+      "text": "for n, _p in self.unet.named_parameters():",
+      "context": "154:         self.unet.train()\n155:         self.vae.train()\n156:         for n, _p in self.unet.named_parameters():\n157:             if \"lora\" in n:\n158:                 _p.requires_grad = True"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 159,
+      "text": "self.unet.conv_in.requires_grad_(True)",
+      "context": "157:             if \"lora\" in n:\n158:                 _p.requires_grad = True\n159:         self.unet.conv_in.requires_grad_(True)\n160:         for n, _p in self.vae.named_parameters():\n161:             if \"lora\" in n or \"time\" in n:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 189,
+      "text": "def get_x0_from_res(self, latent_lq, model_pred, timesteps):",
+      "context": "187:         return latent\n188:     \n189:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n190:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n191:         alpha_prod_t = alphas_cumprod[timesteps]"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 190,
+      "text": "alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)",
+      "context": "188:     \n189:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n190:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n191:         alpha_prod_t = alphas_cumprod[timesteps]\n192:         while len(alpha_prod_t.shape) < len(latent_lq.shape):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 191,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]",
+      "context": "189:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n190:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n191:         alpha_prod_t = alphas_cumprod[timesteps]\n192:         while len(alpha_prod_t.shape) < len(latent_lq.shape):\n193:             alpha_prod_t = alpha_prod_t.unsqueeze(-1)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 194,
+      "text": "x0 = (latent_lq / alpha_prod_t ** (0.5)) - model_pred",
+      "context": "192:         while len(alpha_prod_t.shape) < len(latent_lq.shape):\n193:             alpha_prod_t = alpha_prod_t.unsqueeze(-1)\n194:         x0 = (latent_lq / alpha_prod_t ** (0.5)) - model_pred\n195:         return x0\n196: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 197,
+      "text": "def forward(self, c_t, batch=None, timesteps=None):",
+      "context": "195:         return x0\n196: \n197:     def forward(self, c_t, batch=None, timesteps=None):\n198: \n199:         prompt_embeds = self.encode_prompt(batch[\"prompt\"])"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 202,
+      "text": "encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+      "context": "200:         neg_prompt_embeds = self.encode_prompt(batch[\"neg_prompt\"])\n201: \n202:         encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 203,
+      "text": "model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample",
+      "context": "201: \n202:         encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 204,
+      "text": "x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)",
+      "context": "202:         encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 205,
+      "text": "output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+      "context": "203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 207,
+      "text": "return output_image, x_denoised, prompt_embeds, neg_prompt_embeds",
+      "context": "205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds\n208: \n209:     def save_model(self, outf):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 218,
+      "text": "sd[\"state_dict_unet\"] = {k: v for k, v in self.unet.state_dict().items() if \"lora\" in k or \"conv_in\" in k}",
+      "context": "216:         sd[\"rank_unet\"] = self.lora_rank_unet\n217:         sd[\"rank_vae\"] = self.lora_rank_vae\n218:         sd[\"state_dict_unet\"] = {k: v for k, v in self.unet.state_dict().items() if \"lora\" in k or \"conv_in\" in k}\n219:         sd[\"state_dict_vae\"] = {k: v for k, v in self.vae.state_dict().items() if \"lora\" in k}\n220:         torch.save(sd, outf)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 237,
+      "text": "self.unet_update, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(args, pretrained_model_name_or_path=args.pretrained_model_name_or_path_reg)",
+      "context": "235:         self.weight_dtype = weight_dtype\n236: \n237:         self.unet_update, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(args, pretrained_model_name_or_path=args.pretrained_model_name_or_path_reg)\n238:         self.unet_update.to(accelerator.device)\n239: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 238,
+      "text": "self.unet_update.to(accelerator.device)",
+      "context": "236: \n237:         self.unet_update, self.lora_unet_modules_encoder, self.lora_unet_modules_decoder, self.lora_unet_others = initialize_unet(args, pretrained_model_name_or_path=args.pretrained_model_name_or_path_reg)\n238:         self.unet_update.to(accelerator.device)\n239: \n240: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 242,
+      "text": "self.unet_update.train()",
+      "context": "240: \n241:     def set_train(self):\n242:         self.unet_update.train()\n243:         for n, _p in self.unet_update.named_parameters():\n244:             if \"lora\" in n:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 243,
+      "text": "for n, _p in self.unet_update.named_parameters():",
+      "context": "241:     def set_train(self):\n242:         self.unet_update.train()\n243:         for n, _p in self.unet_update.named_parameters():\n244:             if \"lora\" in n:\n245:                 _p.requires_grad = True"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 252,
+      "text": "timesteps = torch.randint(0, self.noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()",
+      "context": "250:         noise = torch.randn_like(latents)\n251:         bsz = latents.shape[0]\n252:         timesteps = torch.randint(0, self.noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()\n253:         noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)\n254:         self.unet_update.enable_adapters()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 253,
+      "text": "noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)",
+      "context": "251:         bsz = latents.shape[0]\n252:         timesteps = torch.randint(0, self.noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()\n253:         noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)\n254:         self.unet_update.enable_adapters()\n255:         noise_pred = self.unet_update("
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 254,
+      "text": "self.unet_update.enable_adapters()",
+      "context": "252:         timesteps = torch.randint(0, self.noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()\n253:         noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)\n254:         self.unet_update.enable_adapters()\n255:         noise_pred = self.unet_update(\n256:         noisy_latents,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 255,
+      "text": "noise_pred = self.unet_update(",
+      "context": "253:         noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)\n254:         self.unet_update.enable_adapters()\n255:         noise_pred = self.unet_update(\n256:         noisy_latents,\n257:         timestep=timesteps,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 257,
+      "text": "timestep=timesteps,",
+      "context": "255:         noise_pred = self.unet_update(\n256:         noisy_latents,\n257:         timestep=timesteps,\n258:         encoder_hidden_states=prompt_embeds,\n259:         ).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 265,
+      "text": "def eps_to_mu(self, scheduler, model_output, sample, timesteps):",
+      "context": "263:         return loss_d\n264: \n265:     def eps_to_mu(self, scheduler, model_output, sample, timesteps):\n266:         \n267:         alphas_cumprod = scheduler.alphas_cumprod.to(device=sample.device, dtype=sample.dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 267,
+      "text": "alphas_cumprod = scheduler.alphas_cumprod.to(device=sample.device, dtype=sample.dtype)",
+      "context": "265:     def eps_to_mu(self, scheduler, model_output, sample, timesteps):\n266:         \n267:         alphas_cumprod = scheduler.alphas_cumprod.to(device=sample.device, dtype=sample.dtype)\n268:         alpha_prod_t = alphas_cumprod[timesteps]\n269:         while len(alpha_prod_t.shape) < len(sample.shape):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 268,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]",
+      "context": "266:         \n267:         alphas_cumprod = scheduler.alphas_cumprod.to(device=sample.device, dtype=sample.dtype)\n268:         alpha_prod_t = alphas_cumprod[timesteps]\n269:         while len(alpha_prod_t.shape) < len(sample.shape):\n270:             alpha_prod_t = alpha_prod_t.unsqueeze(-1)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 276,
+      "text": "def distribution_matching_loss(self, latents, prompt_embeds, neg_prompt_embeds, args, model_timesteps=None):",
+      "context": "274:     \n275:     \n276:     def distribution_matching_loss(self, latents, prompt_embeds, neg_prompt_embeds, args, model_timesteps=None):\n277:         bsz = latents.shape[0]\n278:         if model_timesteps is not None:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 278,
+      "text": "if model_timesteps is not None:",
+      "context": "276:     def distribution_matching_loss(self, latents, prompt_embeds, neg_prompt_embeds, args, model_timesteps=None):\n277:         bsz = latents.shape[0]\n278:         if model_timesteps is not None:\n279:             peak = model_timesteps * 0.5 + 0 \n280:             timesteps = peak.long().to(latents.device)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 279,
+      "text": "peak = model_timesteps * 0.5 + 0",
+      "context": "277:         bsz = latents.shape[0]\n278:         if model_timesteps is not None:\n279:             peak = model_timesteps * 0.5 + 0 \n280:             timesteps = peak.long().to(latents.device)\n281:         else:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 280,
+      "text": "timesteps = peak.long().to(latents.device)",
+      "context": "278:         if model_timesteps is not None:\n279:             peak = model_timesteps * 0.5 + 0 \n280:             timesteps = peak.long().to(latents.device)\n281:         else:\n282:             timesteps = torch.randint(20, 980, (bsz,), device=latents.device).long()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 282,
+      "text": "timesteps = torch.randint(20, 980, (bsz,), device=latents.device).long()",
+      "context": "280:             timesteps = peak.long().to(latents.device)\n281:         else:\n282:             timesteps = torch.randint(20, 980, (bsz,), device=latents.device).long()\n283:          \n284:         noise = torch.randn_like(latents)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 285,
+      "text": "noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)",
+      "context": "283:          \n284:         noise = torch.randn_like(latents)\n285:         noisy_latents = self.noise_scheduler.add_noise(latents, noise, timesteps)\n286: \n287:         with torch.no_grad():"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 288,
+      "text": "self.unet_update.enable_adapters()",
+      "context": "286: \n287:         with torch.no_grad():\n288:             self.unet_update.enable_adapters()\n289:             noise_pred_update = self.unet_update(\n290:                 noisy_latents,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 289,
+      "text": "noise_pred_update = self.unet_update(",
+      "context": "287:         with torch.no_grad():\n288:             self.unet_update.enable_adapters()\n289:             noise_pred_update = self.unet_update(\n290:                 noisy_latents,\n291:                 timestep=timesteps,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 291,
+      "text": "timestep=timesteps,",
+      "context": "289:             noise_pred_update = self.unet_update(\n290:                 noisy_latents,\n291:                 timestep=timesteps,\n292:                 encoder_hidden_states=prompt_embeds.float(),\n293:                 ).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 295,
+      "text": "x0_pred_update = self.eps_to_mu(self.noise_scheduler, noise_pred_update, noisy_latents, timesteps)",
+      "context": "293:                 ).sample\n294: \n295:             x0_pred_update = self.eps_to_mu(self.noise_scheduler, noise_pred_update, noisy_latents, timesteps)\n296: \n297:             noisy_latents_input = torch.cat([noisy_latents] * 2)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 298,
+      "text": "timesteps_input = torch.cat([timesteps] * 2)",
+      "context": "296: \n297:             noisy_latents_input = torch.cat([noisy_latents] * 2)\n298:             timesteps_input = torch.cat([timesteps] * 2)\n299:             prompt_embeds = torch.cat([neg_prompt_embeds, prompt_embeds], dim=0)\n300: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 301,
+      "text": "self.unet_update.disable_adapters()",
+      "context": "299:             prompt_embeds = torch.cat([neg_prompt_embeds, prompt_embeds], dim=0)\n300: \n301:             self.unet_update.disable_adapters()\n302:             noise_pred_fix = self.unet_update(\n303:                 noisy_latents_input,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 302,
+      "text": "noise_pred_fix = self.unet_update(",
+      "context": "300: \n301:             self.unet_update.disable_adapters()\n302:             noise_pred_fix = self.unet_update(\n303:                 noisy_latents_input,\n304:                 timestep=timesteps_input,"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 304,
+      "text": "timestep=timesteps_input,",
+      "context": "302:             noise_pred_fix = self.unet_update(\n303:                 noisy_latents_input,\n304:                 timestep=timesteps_input,\n305:                 encoder_hidden_states=prompt_embeds,\n306:                 ).sample"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 310,
+      "text": "cfg_vsd = torch.tensor(args.cfg_vsd, device=latents.device) + timesteps / 200",
+      "context": "308:             noise_pred_uncond, noise_pred_text = noise_pred_fix.chunk(2)\n309: \n310:             cfg_vsd = torch.tensor(args.cfg_vsd, device=latents.device) + timesteps / 200\n311:             cfg_vsd = cfg_vsd.view(bsz, 1, 1, 1)\n312:             noise_pred_fix = noise_pred_uncond + cfg_vsd * (noise_pred_text - noise_pred_uncond)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 315,
+      "text": "x0_pred_fix = self.eps_to_mu(self.noise_scheduler, noise_pred_fix, noisy_latents, timesteps)",
+      "context": "313:             noise_pred_fix.to(dtype=torch.float32)\n314: \n315:             x0_pred_fix = self.eps_to_mu(self.noise_scheduler, noise_pred_fix, noisy_latents, timesteps)\n316: \n317:         weighting_factor = torch.abs(latents - x0_pred_fix).mean(dim=[1, 2, 3], keepdim=True)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 326,
+      "text": "class TADSR_test(torch.nn.Module):",
+      "context": "324: \n325:     \n326: class TADSR_test(torch.nn.Module):\n327:     def __init__(self, args):\n328:         super().__init__()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 335,
+      "text": "self.noise_scheduler.set_timesteps(1, device=\"cuda\")",
+      "context": "333:         self.text_encoder = CLIPTextModel.from_pretrained(self.args.pretrained_model_name_or_path, subfolder=\"text_encoder\")\n334:         self.noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder=\"scheduler\")\n335:         self.noise_scheduler.set_timesteps(1, device=\"cuda\")\n336: \n337:         self.vae = TimeAwareAutoencoderKL.from_pretrained(self.args.pretrained_model_name_or_path, subfolder=\"time_vae\")   "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 338,
+      "text": "self.unet = UNet2DConditionModel.from_pretrained(self.args.pretrained_model_name_or_path, subfolder=\"unet\")",
+      "context": "336: \n337:         self.vae = TimeAwareAutoencoderKL.from_pretrained(self.args.pretrained_model_name_or_path, subfolder=\"time_vae\")   \n338:         self.unet = UNet2DConditionModel.from_pretrained(self.args.pretrained_model_name_or_path, subfolder=\"unet\")\n339: \n340: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 356,
+      "text": "self.unet = self.unet.merge_and_unload()",
+      "context": "354:             print(f'===> MERGE LORA <===')\n355:             self.vae = self.vae.merge_and_unload()\n356:             self.unet = self.unet.merge_and_unload()\n357: \n358:         self.unet.to(\"cuda\", dtype=self.weight_dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 358,
+      "text": "self.unet.to(\"cuda\", dtype=self.weight_dtype)",
+      "context": "356:             self.unet = self.unet.merge_and_unload()\n357: \n358:         self.unet.to(\"cuda\", dtype=self.weight_dtype)\n359:         self.vae.to(\"cuda\", dtype=self.weight_dtype)\n360:         self.text_encoder.to(\"cuda\", dtype=self.weight_dtype)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 361,
+      "text": "self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()",
+      "context": "359:         self.vae.to(\"cuda\", dtype=self.weight_dtype)\n360:         self.text_encoder.to(\"cuda\", dtype=self.weight_dtype)\n361:         self.noise_scheduler.alphas_cumprod = self.noise_scheduler.alphas_cumprod.cuda()\n362: \n363:         "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 370,
+      "text": "self.unet.add_adapter(lora_conf_encoder, adapter_name=\"default_encoder\")",
+      "context": "368:         lora_conf_decoder = LoraConfig(r=model[\"rank_unet\"], init_lora_weights=\"gaussian\", target_modules=model[\"unet_lora_decoder_modules\"])\n369:         lora_conf_others = LoraConfig(r=model[\"rank_unet\"], init_lora_weights=\"gaussian\", target_modules=model[\"unet_lora_others_modules\"])\n370:         self.unet.add_adapter(lora_conf_encoder, adapter_name=\"default_encoder\")\n371:         self.unet.add_adapter(lora_conf_decoder, adapter_name=\"default_decoder\")\n372:         self.unet.add_adapter(lora_conf_others, adapter_name=\"default_others\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 371,
+      "text": "self.unet.add_adapter(lora_conf_decoder, adapter_name=\"default_decoder\")",
+      "context": "369:         lora_conf_others = LoraConfig(r=model[\"rank_unet\"], init_lora_weights=\"gaussian\", target_modules=model[\"unet_lora_others_modules\"])\n370:         self.unet.add_adapter(lora_conf_encoder, adapter_name=\"default_encoder\")\n371:         self.unet.add_adapter(lora_conf_decoder, adapter_name=\"default_decoder\")\n372:         self.unet.add_adapter(lora_conf_others, adapter_name=\"default_others\")\n373:         for n, p in self.unet.named_parameters():"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 372,
+      "text": "self.unet.add_adapter(lora_conf_others, adapter_name=\"default_others\")",
+      "context": "370:         self.unet.add_adapter(lora_conf_encoder, adapter_name=\"default_encoder\")\n371:         self.unet.add_adapter(lora_conf_decoder, adapter_name=\"default_decoder\")\n372:         self.unet.add_adapter(lora_conf_others, adapter_name=\"default_others\")\n373:         for n, p in self.unet.named_parameters():\n374:             if \"lora\" in n or \"conv_in\" in n:"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 373,
+      "text": "for n, p in self.unet.named_parameters():",
+      "context": "371:         self.unet.add_adapter(lora_conf_decoder, adapter_name=\"default_decoder\")\n372:         self.unet.add_adapter(lora_conf_others, adapter_name=\"default_others\")\n373:         for n, p in self.unet.named_parameters():\n374:             if \"lora\" in n or \"conv_in\" in n:\n375:                 p.data.copy_(model[\"state_dict_unet\"][n])"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 376,
+      "text": "self.unet.set_adapter([\"default_encoder\", \"default_decoder\", \"default_others\"])",
+      "context": "374:             if \"lora\" in n or \"conv_in\" in n:\n375:                 p.data.copy_(model[\"state_dict_unet\"][n])\n376:         self.unet.set_adapter([\"default_encoder\", \"default_decoder\", \"default_others\"])\n377: \n378:         # load vae lora"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 415,
+      "text": "def get_x0_from_res(self, latent_lq, model_pred, timesteps):",
+      "context": "413: \n414:     \n415:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n416:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n417:         alpha_prod_t = alphas_cumprod[timesteps]"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 416,
+      "text": "alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)",
+      "context": "414:     \n415:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n416:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n417:         alpha_prod_t = alphas_cumprod[timesteps]\n418:         while len(alpha_prod_t.shape) < len(latent_lq.shape):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 417,
+      "text": "alpha_prod_t = alphas_cumprod[timesteps]",
+      "context": "415:     def get_x0_from_res(self, latent_lq, model_pred, timesteps):\n416:         alphas_cumprod = self.noise_scheduler.alphas_cumprod.to(device=latent_lq.device, dtype=latent_lq.dtype)\n417:         alpha_prod_t = alphas_cumprod[timesteps]\n418:         while len(alpha_prod_t.shape) < len(latent_lq.shape):\n419:             alpha_prod_t = alpha_prod_t.unsqueeze(-1)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 420,
+      "text": "x0 = (latent_lq / alpha_prod_t ** (0.5)) - model_pred",
+      "context": "418:         while len(alpha_prod_t.shape) < len(latent_lq.shape):\n419:             alpha_prod_t = alpha_prod_t.unsqueeze(-1)\n420:         x0 = (latent_lq / alpha_prod_t ** (0.5)) - model_pred\n421:         return x0\n422:     "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 426,
+      "text": "def forward(self, lq, prompt, timesteps):",
+      "context": "424:     # @perfcount\n425:     @torch.no_grad()\n426:     def forward(self, lq, prompt, timesteps):\n427: \n428:         prompt_embeds = self.encode_prompt([prompt])"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 430,
+      "text": "lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+      "context": "428:         prompt_embeds = self.encode_prompt([prompt])\n429:         \n430:         lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n431:         ## add tile function\n432:         _, _, h, w = lq_latent.size()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 436,
+      "text": "model_pred = self.unet(lq_latent, timesteps, encoder_hidden_states=prompt_embeds).sample",
+      "context": "434:         if h * w <= tile_size * tile_size:\n435:             print(f\"[Tiled Latent]: the input size is tiny and unnecessary to tile.\")\n436:             model_pred = self.unet(lq_latent, timesteps, encoder_hidden_states=prompt_embeds).sample\n437:         else:\n438:             print(f\"[Tiled Latent]: the input size is {lq.shape[-2]}x{lq.shape[-1]}, need to tiled\")"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 482,
+      "text": "model_out = self.unet(input_list_t, self.timesteps, encoder_hidden_states=prompt_embeds.to(self.weight_dtype),).sample",
+      "context": "480:                         input_list_t = torch.cat(input_list, dim=0)\n481:                         # predict the noise residual\n482:                         model_out = self.unet(input_list_t, self.timesteps, encoder_hidden_states=prompt_embeds.to(self.weight_dtype),).sample\n483:                         input_list = []\n484:                     noise_preds.append(model_out)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 511,
+      "text": "model_pred = noise_pred",
+      "context": "509:             # Average overlapping areas with more than 1 contributor\n510:             noise_pred /= contributors\n511:             model_pred = noise_pred\n512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 513,
+      "text": "x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)",
+      "context": "511:             model_pred = noise_pred\n512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 514,
+      "text": "output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+      "context": "512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: \n516:         return output_image"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 519,
+      "text": "output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+      "context": "517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image\n521:     "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 530,
+      "text": "if not hasattr(self.vae.encoder, 'original_forward'):",
+      "context": "528:             vae_to_gpu = True):\n529:         # save original forward (only once)\n530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 531,
+      "text": "setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)",
+      "context": "529:         # save original forward (only once)\n530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 532,
+      "text": "if not hasattr(self.vae.decoder, 'original_forward'):",
+      "context": "530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 533,
+      "text": "setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)",
+      "context": "531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: \n535:         encoder = self.vae.encoder"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 535,
+      "text": "encoder = self.vae.encoder",
+      "context": "533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: \n535:         encoder = self.vae.encoder\n536:         decoder = self.vae.decoder\n537: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 536,
+      "text": "decoder = self.vae.decoder",
+      "context": "534: \n535:         encoder = self.vae.encoder\n536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook("
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 538,
+      "text": "self.vae.encoder.forward = VAEHook(",
+      "context": "536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook("
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 540,
+      "text": "self.vae.decoder.forward = VAEHook(",
+      "context": "538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook(\n541:             decoder, decoder_tile_size, is_decoder=True, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu)\n542: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 558,
+      "text": "return torch.tile(torch.tensor(weights, device=self.device), (nbatches, self.unet.config.in_channels, 1, 1))",
+      "context": "556: \n557:         weights = np.outer(y_probs, x_probs)\n558:         return torch.tile(torch.tensor(weights, device=self.device), (nbatches, self.unet.config.in_channels, 1, 1))\n559: \n560: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/test_tadsr.py",
+      "line": 12,
+      "text": "from tadsr import TADSR_test",
+      "context": "10: from PIL import Image\n11: \n12: from tadsr import TADSR_test\n13: from my_utils.wavelet_color_fix import adain_color_fix, wavelet_color_fix\n14: "
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/test_tadsr.py",
+      "line": 66,
+      "text": "parser.add_argument(\"--timesteps\", type=int, default=500)",
+      "context": "64:     parser.add_argument(\"--latent_tiled_size\", type=int, default=96) \n65:     parser.add_argument(\"--latent_tiled_overlap\", type=int, default=32) \n66:     parser.add_argument(\"--timesteps\", type=int, default=500)\n67: \n68:     args = parser.parse_args()"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/test_tadsr.py",
+      "line": 71,
+      "text": "model = TADSR_test(args)",
+      "context": "69: \n70:     # initialize the model\n71:     model = TADSR_test(args)\n72: \n73:     # get all input images"
+    },
+    {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/test_tadsr.py",
+      "line": 137,
+      "text": "output_image = model(lq, prompt=validation_prompt, timesteps=args.timesteps)",
+      "context": "135:         with torch.no_grad():\n136:             lq = lq*2-1\n137:             output_image = model(lq, prompt=validation_prompt, timesteps=args.timesteps)\n138:             output_pil = transforms.ToPILImage()(output_image[0].cpu() * 0.5 + 0.5)\n139:             if args.align_method == 'adain':"
+    }
+  ],
+  "recommended_next_stage": "Export minimal latent-only oracle and align Jittor encode -> UNet -> get_x0_from_res without enabling full inference."
+}

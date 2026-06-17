@@ -1,0 +1,7 @@
+TIME_VAE_TILED_ORACLE_TENSORS: BLOCKED_DECODER_HOOK_CONTRACT
+
+Reason: Official _init_tiled_vae installs a decoder VAEHook, but the hook is constructed with time_vae=False and the VAEHook.__call__ source dispatches to net.original_forward instead of vae_tile_forward for decoder inputs. Therefore a truthful official tiled encode/decode oracle cannot claim tiled decode was triggered.
+No scheduler denoising loop was run.
+No full TADSR inference was run.
+No image was saved.
+No Jittor tiled implementation was added.

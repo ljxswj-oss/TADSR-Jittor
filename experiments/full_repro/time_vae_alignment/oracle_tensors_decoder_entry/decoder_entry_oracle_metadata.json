@@ -1,0 +1,283 @@
+{
+  "status": "PASS",
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "diagonal_gaussian_distribution_class": "diffusers.models.autoencoders.vae.DiagonalGaussianDistribution",
+  "sample_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "synthetic_latent_shape": [
+    1,
+    4,
+    4,
+    4
+  ],
+  "timestep": 50,
+  "input_size": 32,
+  "split_rule": "torch.chunk(moments, 2, dim=1)",
+  "logvar_clamp_min": -30.0,
+  "logvar_clamp_max": 20.0,
+  "posterior_mode": "mean",
+  "uses_sampling": false,
+  "path_a_order": [
+    "synthetic_latent_z",
+    "post_quant_conv",
+    "decoder.conv_in"
+  ],
+  "path_b_order": [
+    "synthetic_image",
+    "encoder.conv_in",
+    "down_blocks.0..3",
+    "encoder.mid_block",
+    "encoder.conv_norm_out",
+    "encoder.conv_act",
+    "encoder.conv_out",
+    "quant_conv",
+    "split moments",
+    "mode(mean)",
+    "post_quant_conv",
+    "decoder.conv_in"
+  ],
+  "post_quant_conv": {
+    "weight_shape": [
+      4,
+      4,
+      1,
+      1
+    ],
+    "bias_shape": [
+      4
+    ],
+    "kernel_size": [
+      1,
+      1
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ]
+  },
+  "decoder_conv_in": {
+    "weight_shape": [
+      512,
+      4,
+      3,
+      3
+    ],
+    "bias_shape": [
+      512
+    ],
+    "kernel_size": [
+      3,
+      3
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ]
+  },
+  "consistency_checks": {
+    "manual_mean_vs_distribution_mean_max_abs_diff": 0.0,
+    "manual_logvar_clamped_vs_distribution_logvar_max_abs_diff": 0.0,
+    "mode_vs_mean_max_abs_diff": 0.0
+  },
+  "arrays": {
+    "synthetic_latent_z": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "a55e8cee55116b534e87fc710ab1c03820d1351b5db1ff85321067f2efbd3a77"
+    },
+    "synthetic_post_quant_conv_output": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "c493ec097b1f08cbdc4cdece73f369c45dbb2499228fefacdb790875169a3389"
+    },
+    "synthetic_decoder_conv_in_output": {
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "sha256": "dfa7e9ac4174494e3197d5b6fa8ddf42c9b7a2a3c4e5761bdbd444d9a283583d"
+    },
+    "real_synthetic_image_tensor": {
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "sha256": "12872e9486f091b1f9d09870651a3a85b6ba3edf8018a0668251eec19565129c"
+    },
+    "real_temb": {
+      "shape": [
+        1,
+        256
+      ],
+      "sha256": "64864bde0474580e735c6b51d5c879aadaeca34655e4b40c728c5c12a5a85bea"
+    },
+    "real_encoder_mid_output": {
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "sha256": "7f47f549674422e9fe9954b010131995537028a3f6dc5ed3594d393a8d0565fb"
+    },
+    "real_encoder_tail_output": {
+      "shape": [
+        1,
+        8,
+        4,
+        4
+      ],
+      "sha256": "52eaf9e2c29355f61558484db99869765fc62b31616ca17d9fa64d550ca5044c"
+    },
+    "real_moments": {
+      "shape": [
+        1,
+        8,
+        4,
+        4
+      ],
+      "sha256": "9ec3dd0f02b050d4f053d319cb519f6566524212a38e007838efd104beda6148"
+    },
+    "real_mean_manual": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "c526b8ec59addbe651360842b9634c0c849fb63c8436c7d5f089bf045b0d2276"
+    },
+    "real_logvar_raw_manual": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "27e428db79b23804e9cb66b695eb766e20dc8ee486cd227ff5757d84fba836ed"
+    },
+    "real_logvar_clamped_manual": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "27e428db79b23804e9cb66b695eb766e20dc8ee486cd227ff5757d84fba836ed"
+    },
+    "real_latent_dist_mean": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "c526b8ec59addbe651360842b9634c0c849fb63c8436c7d5f089bf045b0d2276"
+    },
+    "real_latent_dist_logvar": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "27e428db79b23804e9cb66b695eb766e20dc8ee486cd227ff5757d84fba836ed"
+    },
+    "real_latent_dist_mode": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "c526b8ec59addbe651360842b9634c0c849fb63c8436c7d5f089bf045b0d2276"
+    },
+    "real_post_quant_conv_input": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "c526b8ec59addbe651360842b9634c0c849fb63c8436c7d5f089bf045b0d2276"
+    },
+    "real_post_quant_conv_output": {
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "sha256": "ea405c9018e1690718958f33bdd4b99809db61dd801e251e1e5ac09a8dbc8c68"
+    },
+    "real_decoder_conv_in_output": {
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "sha256": "fadeffeb2cb296a5b173ee3763bf61ffa85e4aee1a4dd219621b1ff61e30f784"
+    },
+    "downblock0_output": {
+      "shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "sha256": "8e6c8fc2aff191453111fe87afd3ae2ce29ebe5f5b6bbdfe39454dce436c3089"
+    },
+    "downblock1_output": {
+      "shape": [
+        1,
+        256,
+        8,
+        8
+      ],
+      "sha256": "903749e6483b6148565a30c183aa4956adebdda784709b26e15559f74e2cf2bf"
+    },
+    "downblock2_output": {
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "sha256": "7d1217e8b817fe141b4596fb19ea1f0bb72f6f340b814b3ce336b2c5c91c1a37"
+    },
+    "downblock3_output": {
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "sha256": "24666d910b1c6835882807b9b59abfac3a3a09bef0afe83dba97f1a3c6566e78"
+    }
+  }
+}

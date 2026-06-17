@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "concat_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1920,
+        16,
+        16
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 1e-06
+    },
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1920,
+        16,
+        16
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 3.132986896835684e-08,
+      "relative_error": 5.249787643341612e-08,
+      "cosine_similarity": 0.9999999999999982,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 8.58306884765625e-06,
+      "mean_abs_error": 4.3181007480797007e-07,
+      "relative_error": 2.6620631682914174e-07,
+      "cosine_similarity": 0.9999999999999624,
+      "tolerance": 0.0002
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 4.011599230580032e-08,
+      "relative_error": 1.0617756171235306e-07,
+      "cosine_similarity": 0.9999999999999897,
+      "tolerance": 0.0001
+    },
+    "after_temb_add": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 8.58306884765625e-06,
+      "mean_abs_error": 4.381826158805779e-07,
+      "relative_error": 2.689518897235795e-07,
+      "cosine_similarity": 0.9999999999999641,
+      "tolerance": 0.0002
+    },
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 5.245208740234375e-06,
+      "mean_abs_error": 2.9444059084227093e-07,
+      "relative_error": 2.957489736868082e-07,
+      "cosine_similarity": 0.9999999999999525,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 2.288818359375e-05,
+      "mean_abs_error": 1.0684990492393354e-06,
+      "relative_error": 5.737693715937163e-07,
+      "cosine_similarity": 0.9999999999998448,
+      "tolerance": 0.0001
+    },
+    "shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 1.1563301086425781e-05,
+      "mean_abs_error": 5.256019719013239e-07,
+      "relative_error": 2.0483204955809475e-07,
+      "cosine_similarity": 0.9999999999999778,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 2.288818359375e-05,
+      "mean_abs_error": 1.204517431574459e-06,
+      "relative_error": 3.7478160666756157e-07,
+      "cosine_similarity": 0.9999999999999304,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Only up_blocks.2.resnets.0 is executed. up_blocks.2.attentions.0/full up_blocks.2/full UNet are not executed."
+}

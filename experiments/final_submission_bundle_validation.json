@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:24.588093+00:00",
+  "status": "PASS",
+  "materials_root": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Final_Materials_20260609_213457",
+  "create_zip_requested": false,
+  "zip_created": false,
+  "file_count": 2207,
+  "total_size_bytes": 19954373,
+  "total_size_mb": 19.029973030090332,
+  "forbidden_files": [],
+  "missing_required_files": [],
+  "markers": {
+    "TADSR_FINAL_SUBMISSION_BUNDLE_VALIDATION": "PASS",
+    "TADSR_FINAL_SUBMISSION_BUNDLE_NO_RAW_TENSORS": "PASS",
+    "TADSR_FINAL_SUBMISSION_BUNDLE_SIZE_AUDIT": "PASS"
+  }
+}

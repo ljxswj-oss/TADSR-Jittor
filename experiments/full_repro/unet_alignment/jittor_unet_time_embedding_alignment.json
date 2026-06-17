@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "target": "UNet TimestepEmbedding linear_1 -> SiLU -> linear_2",
+  "note": "Tests only the timestep MLP; no down/up/mid/cross-attention blocks are executed.",
+  "diagnostics": {
+    "linear1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 2.1003188521717675e-08,
+      "relative_error": 9.810873964028384e-08,
+      "cosine_similarity": 0.9999999999999969,
+      "tolerance": 0.0001
+    },
+    "act": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 5.591943086358242e-09,
+      "relative_error": 1.2210132837621203e-07,
+      "cosine_similarity": 0.9999999999999989,
+      "tolerance": 0.0001
+    },
+    "full": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.34172306995606e-09,
+      "relative_error": 2.5231813777698347e-07,
+      "cosine_similarity": 0.9999999999999917,
+      "tolerance": 0.001
+    }
+  },
+  "weights": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz"
+}

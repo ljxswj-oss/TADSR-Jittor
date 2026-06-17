@@ -1,0 +1,14 @@
+# TADSR UNet down_blocks.2.downsamplers.0 Audit
+
+TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_DOWNSAMPLER_LORA_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_LOCAL_FORWARD_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_OUTPUT_STATES_AUDIT: PASS
+
+Official class: `diffusers.models.downsampling.Downsample2D`
+Conv shape: `[1280, 1280, 3, 3]`
+Stride: `[2, 2]`, padding: `[1, 1]`
+Manual local down_blocks.2 vs official block.forward max abs error: `0.0`
+Output states order: `['attention0_output', 'attention1_output', 'downsampler_output']`
+
+This audit stops after `down_blocks.2.downsamplers.0`; down_blocks.3, full UNet forward and full TADSR inference remain out of scope.

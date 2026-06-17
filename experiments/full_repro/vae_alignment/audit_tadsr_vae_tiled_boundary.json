@@ -1,0 +1,289 @@
+{
+  "status": "PASS",
+  "source_file_paths": {
+    "tadsr.py": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+    "test_tadsr.py": "/mnt/data/sj/projects/TADSR_official_pytorch/test_tadsr.py",
+    "my_utils/vaehook.py": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+    "time_autoencoder_kl.py": "/mnt/data/sj/projects/TADSR_official_pytorch/diffusers/models/autoencoders/time_autoencoder_kl.py"
+  },
+  "symbol_locations": {
+    "TADSR_test": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 326
+    },
+    "TADSR_test._init_tiled_vae": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/tadsr.py",
+      "line": 522
+    },
+    "VAEHook": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+      "line": 540
+    },
+    "VAEHook.__call__": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+      "line": 552
+    },
+    "VAEHook.split_tiles": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+      "line": 587
+    },
+    "VAEHook.vae_tile_forward": {
+      "file": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+      "line": 691
+    }
+  },
+  "symbol_names": [
+    "TADSR_test",
+    "_init_tiled_vae",
+    "VAEHook",
+    "VAEHook.__call__",
+    "VAEHook.vae_tile_forward"
+  ],
+  "call_graph_summary": [
+    "TADSR_test.__init__ loads TimeAwareAutoencoderKL and immediately calls _init_tiled_vae.",
+    "_init_tiled_vae saves encoder/decoder original_forward and replaces encoder.forward / decoder.forward.",
+    "TADSR_test.forward calls vae.encode(lq, timesteps).latent_dist.sample() * scaling_factor.",
+    "TADSR_test.forward later calls vae.decode(x_denoised / scaling_factor).sample.clamp(-1, 1).",
+    "encode enters patched encoder.forward and can execute VAEHook.vae_tile_forward with time_vae=True.",
+    "decode enters patched decoder.forward, but official hook dispatches to decoder.original_forward because time_vae=False."
+  ],
+  "pipeline_usage_audit": {
+    "status": "PASS",
+    "tadsr_test_calls_init_tiled_vae": true,
+    "train_or_generation_path_uses_init_tiled_vae": false,
+    "test_or_inference_path_uses_init_tiled_vae": true,
+    "cli_or_config_controls": {
+      "vae_decoder_tiled_size": 224,
+      "vae_encoder_tiled_size": 1024,
+      "latent_tiled_size": 96,
+      "latent_tiled_overlap": 32
+    },
+    "encode_sample_scale_snippets": [
+      {
+        "line": 202,
+        "text": "encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+        "context": "200:         neg_prompt_embeds = self.encode_prompt(batch[\"neg_prompt\"])\n201: \n202:         encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)"
+      },
+      {
+        "line": 205,
+        "text": "output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds"
+      },
+      {
+        "line": 430,
+        "text": "lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+        "context": "428:         prompt_embeds = self.encode_prompt([prompt])\n429:         \n430:         lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n431:         ## add tile function\n432:         _, _, h, w = lq_latent.size()"
+      },
+      {
+        "line": 514,
+        "text": "output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: \n516:         return output_image"
+      },
+      {
+        "line": 519,
+        "text": "output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image\n521:     "
+      },
+      {
+        "line": 530,
+        "text": "if not hasattr(self.vae.encoder, 'original_forward'):",
+        "context": "528:             vae_to_gpu = True):\n529:         # save original forward (only once)\n530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):"
+      },
+      {
+        "line": 531,
+        "text": "setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)",
+        "context": "529:         # save original forward (only once)\n530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)"
+      },
+      {
+        "line": 535,
+        "text": "encoder = self.vae.encoder",
+        "context": "533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: \n535:         encoder = self.vae.encoder\n536:         decoder = self.vae.decoder\n537: "
+      },
+      {
+        "line": 538,
+        "text": "self.vae.encoder.forward = VAEHook(",
+        "context": "536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook("
+      }
+    ],
+    "decode_clamp_snippets": [
+      {
+        "line": 205,
+        "text": "output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds"
+      },
+      {
+        "line": 514,
+        "text": "output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: \n516:         return output_image"
+      },
+      {
+        "line": 518,
+        "text": "def decode_latent(self, latent):",
+        "context": "516:         return output_image\n517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image"
+      },
+      {
+        "line": 519,
+        "text": "output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+        "context": "517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image\n521:     "
+      },
+      {
+        "line": 532,
+        "text": "if not hasattr(self.vae.decoder, 'original_forward'):",
+        "context": "530:         if not hasattr(self.vae.encoder, 'original_forward'):\n531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: "
+      },
+      {
+        "line": 533,
+        "text": "setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)",
+        "context": "531:             setattr(self.vae.encoder, 'original_forward', self.vae.encoder.forward)\n532:         if not hasattr(self.vae.decoder, 'original_forward'):\n533:             setattr(self.vae.decoder, 'original_forward', self.vae.decoder.forward)\n534: \n535:         encoder = self.vae.encoder"
+      },
+      {
+        "line": 536,
+        "text": "decoder = self.vae.decoder",
+        "context": "534: \n535:         encoder = self.vae.encoder\n536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook("
+      },
+      {
+        "line": 540,
+        "text": "self.vae.decoder.forward = VAEHook(",
+        "context": "538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook(\n541:             decoder, decoder_tile_size, is_decoder=True, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu)\n542: "
+      }
+    ],
+    "init_tiled_vae_snippets": [
+      {
+        "line": 342,
+        "text": "self._init_tiled_vae(encoder_tile_size=args.vae_encoder_tiled_size, decoder_tile_size=args.vae_decoder_tiled_size)",
+        "context": "340: \n341:         # vae tile\n342:         self._init_tiled_vae(encoder_tile_size=args.vae_encoder_tiled_size, decoder_tile_size=args.vae_decoder_tiled_size)\n343: \n344:         self.weight_dtype = torch.float32"
+      },
+      {
+        "line": 522,
+        "text": "def _init_tiled_vae(self,",
+        "context": "520:         return output_image\n521:     \n522:     def _init_tiled_vae(self,\n523:             encoder_tile_size = 256,\n524:             decoder_tile_size = 256,"
+      },
+      {
+        "line": 538,
+        "text": "self.vae.encoder.forward = VAEHook(",
+        "context": "536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook("
+      },
+      {
+        "line": 540,
+        "text": "self.vae.decoder.forward = VAEHook(",
+        "context": "538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook(\n541:             decoder, decoder_tile_size, is_decoder=True, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu)\n542: "
+      }
+    ]
+  },
+  "hook_audit": {
+    "status": "PASS",
+    "patch_targets": {
+      "vae.encoder.forward": "replaced with VAEHook(encoder, encoder_tile_size, is_decoder=False, time_vae=True)",
+      "vae.decoder.forward": "replaced with VAEHook(decoder, decoder_tile_size, is_decoder=True, time_vae=False)",
+      "vae.encode": "not directly patched; encode internally calls the patched encoder.forward",
+      "vae.decode": "not directly patched; decode internally calls the patched decoder.forward",
+      "other_functions": "no other VAE functions are patched by _init_tiled_vae",
+      "original_forward_saved": {
+        "encoder": "self.vae.encoder.original_forward stores the previous encoder.forward if absent",
+        "decoder": "self.vae.decoder.original_forward stores the previous decoder.forward if absent"
+      },
+      "restore_api": "no explicit restore method found in TADSR_test._init_tiled_vae"
+    },
+    "hook_init_params": {
+      "encoder": {
+        "tile_size_arg": "args.vae_encoder_tiled_size",
+        "default_from_test_tadsr": 1024,
+        "is_decoder": false,
+        "fast_decoder": false,
+        "fast_encoder": false,
+        "color_fix": false,
+        "to_gpu": true,
+        "time_vae": true,
+        "pad": 32
+      },
+      "decoder": {
+        "tile_size_arg": "args.vae_decoder_tiled_size",
+        "default_from_test_tadsr": 224,
+        "is_decoder": true,
+        "fast_decoder": false,
+        "fast_encoder": false,
+        "color_fix": false,
+        "to_gpu": true,
+        "time_vae": false,
+        "pad": 11
+      }
+    },
+    "decoder_dispatch_probe": {
+      "status": "PASS",
+      "decoder_time_vae_false_hook_calls_original_forward_for_tiny_input": true,
+      "decoder_time_vae_false_hook_calls_original_forward_for_large_input": true,
+      "original_forward_call_count": 2,
+      "conclusion": "official TADSR installs decoder VAEHook with time_vae=False, and VAEHook.__call__ dispatches to net.original_forward rather than vae_tile_forward for both tiny and large decoder inputs"
+    },
+    "source_contains_vae_tile_forward": true,
+    "source_contains_original_forward_dispatch": true
+  },
+  "tiled_boundary_contract": {
+    "status": "PASS",
+    "encoder": {
+      "input_layout": "NCHW image tensor",
+      "input_range": "official caller passes lq converted to model weight dtype; earlier preprocessing maps image range to [-1,1]",
+      "dtype": "weight_dtype, float32 by default; fp16 if --mixed_precision fp16",
+      "timestep": "required for TimeAware encoder; scalar or batch tensor expanded to batch in VAEHook.vae_tile_forward",
+      "tile_size": "args.vae_encoder_tiled_size, default 1024 in test_tadsr.py",
+      "padding": 32,
+      "tile_split_dims": "height/width only; batch is preserved",
+      "tile_count_formula": "ceil((H - 2*pad) / tile_size) by ceil((W - 2*pad) / tile_size), min 1 per dimension",
+      "real_tile_size": "auto-adjusted by get_best_tile_size to divisor-friendly sizes",
+      "tile_call_path": "VAEHook.vae_tile_forward builds a task queue for the encoder and executes tasks per tile",
+      "time_embedding": "computed inside VAEHook.vae_tile_forward from net.time_proj and net.time_embedding",
+      "merge": "crop_valid_region writes each tile result into the output tensor by output bounding boxes; no gaussian blend in this VAEHook implementation",
+      "output": "encoder moments before quant_conv if patch target is encoder.forward; TimeAwareAutoencoderKL.encode then applies quant_conv and builds posterior",
+      "posterior_sampling": "outside VAEHook in latent_dist.sample(); deterministic oracle should reconstruct mean + std * fixed epsilon after merged moments"
+    },
+    "decoder": {
+      "input_layout": "NCHW latent tensor",
+      "decode_input_scaled": "official pipeline passes x_denoised / scaling_factor to vae.decode",
+      "tile_size": "args.vae_decoder_tiled_size, default 224 in test_tadsr.py",
+      "padding": 11,
+      "official_patch_installed": true,
+      "official_tiled_decode_reachable": false,
+      "reason": "decoder VAEHook is constructed with time_vae=False; VAEHook.__call__ returns net.original_forward(x) in both small and large branches when time_vae is false",
+      "clamp": "outside decoder in TADSR_test.forward/decode_latent via .sample.clamp(-1, 1)",
+      "sample_object_contract": "vae.decode returns an object with .sample; VAEHook itself only replaces decoder.forward tensor path"
+    },
+    "encoder_tiling_trigger": "max(H, W) > pad * 2 + tile_size for VAEHook.__call__; however time_vae=True calls vae_tile_forward even when it prints tiny/unnecessary",
+    "decoder_tiling_trigger": "not reachable under official TADSR_test decoder hook because time_vae=False dispatches to net.original_forward for both tiny and large inputs",
+    "minimal_reproducible_size": {
+      "official_test_defaults": {
+        "vae_decoder_tiled_size": 224,
+        "vae_encoder_tiled_size": 1024,
+        "latent_tiled_size": 96,
+        "latent_tiled_overlap": 32
+      },
+      "controlled_encoder_oracle_recommendation": {
+        "shape": [
+          1,
+          3,
+          96,
+          96
+        ],
+        "encoder_tile_size": 16,
+        "reason": "96 > 32*2 + 16, so VAEHook.__call__ enters the large-input branch and vae_tile_forward for encoder"
+      },
+      "decoder_oracle_recommendation": null,
+      "decoder_blocker": "Official _init_tiled_vae installs a decoder VAEHook, but the hook is constructed with time_vae=False and the VAEHook.__call__ source dispatches to net.original_forward instead of vae_tile_forward for decoder inputs. Therefore a truthful official tiled encode/decode oracle cannot claim tiled decode was triggered."
+    },
+    "tiled_vs_nontiled_reference": {
+      "status": "NOT_APPLICABLE",
+      "reason": "full official tiled encode/decode oracle is blocked by the decoder hook contract; do not force zero-error tiled vs non-tiled comparison"
+    },
+    "scheduler_executed": false,
+    "full_tadsr_inference_executed": false,
+    "image_saved": false,
+    "jittor_tiled_implementation_done": false,
+    "timevae_full_alignment_candidate": false
+  },
+  "oracle_feasibility": {
+    "status": "BLOCKED_DECODER_HOOK_CONTRACT",
+    "reason": "Official _init_tiled_vae installs a decoder VAEHook, but the hook is constructed with time_vae=False and the VAEHook.__call__ source dispatches to net.original_forward instead of vae_tile_forward for decoder inputs. Therefore a truthful official tiled encode/decode oracle cannot claim tiled decode was triggered.",
+    "encoder_tiled_oracle_feasible": true,
+    "decoder_tiled_oracle_feasible_under_official_hook": false,
+    "recommended_next_stage": "Resolve whether the Jittor port should mirror official decoder.original_forward dispatch or intentionally implement a corrected decoder tiled path; until then implement only an audit/export blocker, not Jittor tiled VAE."
+  }
+}

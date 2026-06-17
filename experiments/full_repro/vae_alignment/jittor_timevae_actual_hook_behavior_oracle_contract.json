@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "oracle_type": "official_actual_vaehook_behavior",
+  "policy_decision": "mirror_official_actual_behavior",
+  "decoder_original_forward_used": true,
+  "decoder_tiled_path_triggered": false,
+  "scheduler_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false
+}

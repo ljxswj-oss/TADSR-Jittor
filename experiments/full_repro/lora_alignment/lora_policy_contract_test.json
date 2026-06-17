@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "missing_required_files": [],
+  "staged_npy_npz": [],
+  "policy_status": "PASS",
+  "static_effective_coverage_status": "PASS",
+  "timevae_lora_effective_artifact_coverage": "PASS",
+  "dynamic_runtime_lora_status": "NOT_IMPLEMENTED_BY_DESIGN",
+  "final_audit_unet_full_forward": "PASS",
+  "final_audit_full_inference": "NOT_COMPLETE"
+}

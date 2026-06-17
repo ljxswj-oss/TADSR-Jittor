@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "quant_conv",
+  "note": "deterministic moments tensor only; no latent sampling",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      8,
+      4,
+      4
+    ],
+    "max_abs_error": 3.814697265625e-06,
+    "mean_abs_error": 6.395857781171799e-07,
+    "relative_error": 6.230422705020026e-08,
+    "cosine_similarity": 0.9999999999999958,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

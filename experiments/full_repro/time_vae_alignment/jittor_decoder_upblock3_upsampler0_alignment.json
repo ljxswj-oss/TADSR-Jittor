@@ -1,0 +1,6 @@
+{
+  "status": "NOT_APPLICABLE",
+  "target": "decoder.up_blocks.3.upsamplers.0",
+  "note": "official decoder.up_blocks.3 has no upsampler module",
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

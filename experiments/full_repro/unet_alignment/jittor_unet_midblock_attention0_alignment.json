@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 4.38690185546875e-05,
+      "mean_abs_error": 5.085613292976632e-06,
+      "relative_error": 3.050451166411695e-06,
+      "cosine_similarity": 0.999999999995612,
+      "tolerance": 0.002
+    },
+    "official_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 4.38690185546875e-05,
+      "mean_abs_error": 5.085613292976632e-06,
+      "relative_error": 3.050451166411695e-06,
+      "cosine_similarity": 0.999999999995612,
+      "tolerance": 0.002
+    }
+  },
+  "note": "Only mid_block.attentions.0 is executed; mid_block.resnets.1/up_blocks/full UNet remain unopened."
+}

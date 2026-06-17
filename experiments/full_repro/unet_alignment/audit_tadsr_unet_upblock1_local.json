@@ -1,0 +1,286 @@
+{
+  "status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "loaded_lora_parameter_count": 516,
+  "upblock1_class": "diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D",
+  "upblock1_forward_signature": "(hidden_states: torch.FloatTensor, res_hidden_states_tuple: Tuple[torch.FloatTensor, ...], temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, upsample_size: Optional[int] = None, attention_mask: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+  "accepted_forward_args": [
+    "hidden_states",
+    "res_hidden_states_tuple",
+    "temb",
+    "encoder_hidden_states",
+    "cross_attention_kwargs",
+    "upsample_size",
+    "attention_mask",
+    "encoder_attention_mask"
+  ],
+  "return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "output_states_status": "NOT_APPLICABLE",
+  "residual_contract": {
+    "accumulated_down_block_res_sample_count": 12,
+    "accumulated_down_block_res_sample_sources": [
+      "conv_in",
+      "down_blocks.0.output_state_0",
+      "down_blocks.0.output_state_1",
+      "down_blocks.0.output_state_2",
+      "down_blocks.1.output_state_0",
+      "down_blocks.1.output_state_1",
+      "down_blocks.1.output_state_2",
+      "down_blocks.2.output_state_0",
+      "down_blocks.2.output_state_1",
+      "down_blocks.2.output_state_2",
+      "down_blocks.3.output_state_0",
+      "down_blocks.3.output_state_1"
+    ],
+    "accumulated_down_block_res_sample_shapes": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "upblock0_consumed_sources": [
+      "down_blocks.2.output_state_2",
+      "down_blocks.3.output_state_0",
+      "down_blocks.3.output_state_1"
+    ],
+    "remaining_before_upblock1_count": 9,
+    "remaining_before_upblock1_shapes": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ]
+    ],
+    "local_upblock1_residual_tuple_count": 3,
+    "local_upblock1_residual_tuple_shapes": [
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ]
+    ],
+    "upblock1_resnet0_consumed_source": "down_blocks.2.output_state_1",
+    "upblock1_resnet1_consumed_source": "down_blocks.2.output_state_0",
+    "upblock1_resnet2_consumed_source": "down_blocks.1.output_state_2",
+    "attentions_consume_residual": false,
+    "upsampler_consumes_residual": false,
+    "remaining_residual_count_after_upblock1": 6,
+    "remaining_residual_shapes_after_upblock1": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ]
+    ],
+    "remaining_residuals_reserved_for": [
+      "up_blocks.2",
+      "up_blocks.3"
+    ]
+  },
+  "manual_chain_vs_official_local": {
+    "shape_match": true,
+    "shape": [
+      1,
+      1280,
+      16,
+      16
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0
+  },
+  "local_output_shape": [
+    1,
+    1280,
+    16,
+    16
+  ],
+  "local_output_stats": {
+    "shape": [
+      1,
+      1280,
+      16,
+      16
+    ],
+    "dtype": "float32",
+    "min": -35.499244689941406,
+    "max": 32.044715881347656,
+    "mean": -0.45227152770349266,
+    "std": 5.473237329966953,
+    "nbytes": 1310720
+  },
+  "uses_full_unet_forward": false,
+  "uses_upblocks2_3": false,
+  "uses_full_tadsr_inference": false,
+  "next_module_preview": "up_blocks.2",
+  "markers": {
+    "TADSR_UNET_UPBLOCK1_LOCAL_FORWARD_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK1_RESIDUAL_CONTRACT_AUDIT": "PASS"
+  }
+}

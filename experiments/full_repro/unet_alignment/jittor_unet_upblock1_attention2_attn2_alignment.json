@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 3.7550926208496094e-06,
+      "mean_abs_error": 8.520717262039401e-07,
+      "relative_error": 3.147987426588484e-06,
+      "cosine_similarity": 0.9999999999951031,
+      "tolerance": 0.0001
+    },
+    "attn2_q": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 9.82731580734253e-06,
+      "mean_abs_error": 1.7917902368935756e-06,
+      "relative_error": 2.6966417043162044e-06,
+      "cosine_similarity": 0.9999999999975926,
+      "tolerance": 0.0001
+    },
+    "attn2_k": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        1280
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 1.4033873657052782e-07,
+      "relative_error": 7.881628422712085e-07,
+      "cosine_similarity": 0.99999999999978,
+      "tolerance": 0.0001
+    },
+    "attn2_v": {
+      "shape_match": true,
+      "shape": [
+        1,
+        77,
+        1280
+      ],
+      "max_abs_error": 5.7220458984375e-06,
+      "mean_abs_error": 1.1598871765272634e-07,
+      "relative_error": 3.9450842023946457e-07,
+      "cosine_similarity": 0.999999999999933,
+      "tolerance": 0.0001
+    },
+    "attn2_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 2.86102294921875e-05,
+      "mean_abs_error": 3.915250204045151e-07,
+      "relative_error": 6.253679713901737e-07,
+      "cosine_similarity": 0.9999999999999021,
+      "tolerance": 0.001
+    },
+    "after_attn2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        64,
+        1280
+      ],
+      "max_abs_error": 3.814697265625e-05,
+      "mean_abs_error": 3.266073645136203e-06,
+      "relative_error": 2.71616915488024e-06,
+      "cosine_similarity": 0.9999999999978285,
+      "tolerance": 0.001
+    }
+  }
+}

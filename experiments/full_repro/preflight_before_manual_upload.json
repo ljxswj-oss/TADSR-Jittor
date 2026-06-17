@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "name": "git_commit",
+      "detail": "762a483",
+      "ok": true
+    },
+    {
+      "name": "git_worktree_clean",
+      "detail": "M experiments/full_repro/pytorch_official/dryrun/status.json\n M experiments/full_repro/pytorch_official/dryrun/stderr.log\n M experiments/full_repro/pytorch_official/dryrun/stdout.log\n M experiments/full_repro/pytorch_official/env_matrix/env_check_relaxed-pypi.json\n M experiments/full_repro/pytorch_official/env_matrix/env_check_relaxed-pypi.md\n M experiments/full_repro/pytorch_official/env_matrix/env_check_relaxed-pypi.stdout.log\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-cu118.json\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-cu118.md\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-cu118.stdout.log\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-pypi.json\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-pypi.md\n M experiments/full_repro/pytorch_official/env_matrix/env_check_strict-pypi.stdout.log\n M experiments/full_repro/pytorch_official/env_matrix/env_matrix_summary.json\n M experiments/full_repro/pytorch_official/env_matrix/env_matrix_summary.md\n M experiments/full_repro/pytorch_official/env_matrix/import_smoke_relaxed-pypi.log\n M experiments/full_repro/pytorch_official/env_matrix/import_smoke_strict-cu118.log\n M experiments/full_repro/pytorch_official/env_matrix/import_smoke_strict-cu118.status\n M experiments/full_repro/pytorch_official/env_matrix/import_smoke_strict-pypi.log\n M experiments/full_repro/pytorch_official/env_matrix/import_smoke_strict-pypi.status\n M experiments/full_repro/pytorch_official/env_matrix/install_relaxed-pypi.log\n M experiments/full_repro/pytorch_official/env_matrix/install_relaxed-pypi.status\n M experiments/full_repro/pytorch_official/env_matrix/install_strict-cu118.log\n M experiments/full_repro/pytorch_official/env_matrix/install_strict-cu118.status\n M experiments/full_repro/pytorch_official/env_matrix/install_strict-pypi.log\n M experiments/full_repro/pytorch_official/env_matrix/install_strict-pypi.status\n M experiments/full_repro/pytorch_official/env_matrix/network_probe.json\n M experiments/full_repro/pytorch_official/env_matrix/official_repo_imports.json\n M experiments/full_repro/pytorch_official/env_matrix/official_repo_imports.md\n M experiments/full_repro/pytorch_official/env_matrix/selected_env.sh\n M scripts/check_official_pytorch_env.py\n M scripts/install_official_env_matrix.sh\n?? experiments/full_repro/pytorch_official/env/env_check_strict-cu118.json\n?? experiments/full_repro/pytorch_official/env/env_check_strict-cu118.md\n?? experiments/full_repro/pytorch_official/env/env_check_strict-cu118.stdout.log\n?? experiments/full_repro/pytorch_official/env_matrix/matrix_runner.out\n?? experiments/full_repro/pytorch_official/env_matrix/matrix_runner.pid",
+      "ok": false
+    },
+    {
+      "name": "official_venv_exists",
+      "detail": "/mnt/data/sj/venvs/tadsr_official_pytorch",
+      "ok": true
+    },
+    {
+      "name": "official_env_installed",
+      "detail": "env_check_strict.json PASS",
+      "ok": false
+    },
+    {
+      "name": "wheelhouse_exists",
+      "detail": "/mnt/data/sj/wheelhouse/tadsr_official_pytorch",
+      "ok": false
+    },
+    {
+      "name": "incoming_dir_exists",
+      "detail": "/mnt/data/sj/incoming",
+      "ok": true
+    },
+    {
+      "name": "checkpoints_dir_exists",
+      "detail": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+      "ok": true
+    },
+    {
+      "name": "datasets_dir_exists",
+      "detail": "/mnt/data/sj/datasets/TADSR",
+      "ok": true
+    },
+    {
+      "name": "run_after_assets_ready_exists",
+      "detail": "scripts/run_after_assets_ready.sh",
+      "ok": true
+    },
+    {
+      "name": "verify_official_assets_exists",
+      "detail": "scripts/verify_official_assets.py",
+      "ok": true
+    },
+    {
+      "name": "final_audit_runs",
+      "detail": "python3 scripts/final_audit.py",
+      "ok": true
+    }
+  ],
+  "next_user_action": [
+    "Download zty557/TADSR weights on a networked machine.",
+    "Put them into /mnt/data/sj/incoming/TADSR_assets/TADSR_weights/",
+    "If official environment is still missing, prepare wheelhouse in /mnt/data/sj/wheelhouse/tadsr_official_pytorch/",
+    "Run: cd /mnt/data/sj/projects/TADSR-Jittor && bash scripts/run_after_assets_ready.sh"
+  ]
+}

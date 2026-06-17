@@ -1,0 +1,7 @@
+# TADSR UNet manual full-chain wrapper oracle export
+
+TADSR_UNET_MANUAL_FULL_WRAPPER_ORACLE_TENSORS: PASS
+
+output shape: [1, 4, 32, 32]
+previous output-tail compare: {'previous_output_tail_oracle_available': True, 'shape_match': True, 'shape': [1, 4, 32, 32], 'max_abs_error': 0.0, 'mean_abs_error': 0.0, 'cosine_similarity': 1.0000000000000002}
+scope: manual wrapper oracle only; official unet.forward/full inference were not executed.

@@ -1,0 +1,236 @@
+{
+  "status": "PASS",
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "encoder_class": "diffusers.models.autoencoders.vae.TimeAwareEncoder",
+  "mid_block_class": "diffusers.models.unet_2d_blocks.UNetMidBlock2D",
+  "sample_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "timestep": 50,
+  "input_size": 32,
+  "attention_exists": true,
+  "attention_count": 1,
+  "resnet_count": 2,
+  "module_order": [
+    "encoder.conv_in",
+    "encoder.down_blocks.0",
+    "encoder.down_blocks.1",
+    "encoder.down_blocks.2",
+    "encoder.down_blocks.3",
+    "encoder.mid_block.resnets.0",
+    "encoder.mid_block.attentions.0",
+    "encoder.mid_block.resnets.1"
+  ],
+  "hook_targets": [
+    {
+      "name": "encoder.time_proj",
+      "class": "Timesteps",
+      "input_shape": [
+        1
+      ],
+      "output_shape": [
+        1,
+        128
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.time_embedding",
+      "class": "TimestepEmbedding",
+      "input_shape": [
+        1,
+        128
+      ],
+      "output_shape": [
+        1,
+        256
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.conv_in",
+      "class": "Conv2d",
+      "input_shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "output_shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.mid_block.attentions.0",
+      "class": "Attention",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "encoder.mid_block.resnets.1",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "encoder.down_blocks.0",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        128,
+        16,
+        16
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.1",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        256,
+        8,
+        8
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.2",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.down_blocks.3",
+      "class": "DownEncoderBlock2D",
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "encoder.mid_block.resnets.0",
+      "class": "ResnetBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "encoder.mid_block",
+      "class": "UNetMidBlock2D",
+      "input_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "temb_shape": [
+        1,
+        256
+      ],
+      "output_shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "status": "PASS",
+      "input_spatial_size": [
+        4,
+        4
+      ],
+      "output_spatial_size": [
+        4,
+        4
+      ]
+    }
+  ],
+  "hook_failures": [],
+  "input_spatial_size": [
+    4,
+    4
+  ],
+  "output_spatial_size": [
+    4,
+    4
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "selected_env": "/mnt/data/sj/venvs/tadsr_official_strict_cu118",
+  "env_kind": "strict-cu118",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "rows": [
+    {
+      "target": "tadsr",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:tadsr\n",
+      "stderr": ""
+    },
+    {
+      "target": "test_tadsr",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:test_tadsr\n",
+      "stderr": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers\n  warnings.warn(f\"Importing from {__name__} is deprecated, please import via timm.layers\", FutureWarning)\n/mnt/data/sj/venvs/tadsr_official_strict_cu118/lib/python3.10/site-packages/timm/models/hub.py:4: FutureWarning: Importing from timm.models.hub is deprecated, please import via timm.models\n  warnings.warn(f\"Importing from {__name__} is deprecated, please import via timm.models\", FutureWarning)\n/mnt/data/sj/venvs/tadsr_official_strict_cu118/lib/python3.10/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models\n  warnings.warn(f\"Importing from {__name__} is deprecated, please import via timm.models\", FutureWarning)\n/mnt/data/sj/venvs/tadsr_official_strict_cu118/lib/python3.10/site-packages/timm/models/helpers.py:7: FutureWarning: Importing from timm.models.helpers is deprecated, please import via timm.models\n  warnings.warn(f\"Importing from {__name__} is deprecated, please import via timm.models\", FutureWarning)\n"
+    },
+    {
+      "target": "train_tadsr",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:train_tadsr\n",
+      "stderr": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/lib/python3.10/site-packages/torchvision/transforms/functional_tensor.py:5: UserWarning: The torchvision.transforms.functional_tensor module is deprecated in 0.15 and will be **removed in 0.17**. Please don't rely on it. You probably just need to use APIs in torchvision.transforms.functional or in torchvision.transforms.v2.functional.\n  warnings.warn(\n"
+    },
+    {
+      "target": "dataloaders",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:dataloaders\n",
+      "stderr": ""
+    },
+    {
+      "target": "models",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:models\n",
+      "stderr": ""
+    },
+    {
+      "target": "ram",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:ram\n",
+      "stderr": ""
+    },
+    {
+      "target": "my_utils",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:my_utils\n",
+      "stderr": ""
+    },
+    {
+      "target": "diffusers",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "IMPORT_OK:diffusers\n",
+      "stderr": ""
+    }
+  ]
+}

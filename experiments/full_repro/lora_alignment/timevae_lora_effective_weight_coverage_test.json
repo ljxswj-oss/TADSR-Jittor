@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": {
+    "metadata_exists": true,
+    "metadata_status": true,
+    "metadata_pair_count": true,
+    "manual_verify_pass": true,
+    "manual_verify_rows_pass": true,
+    "coverage_timevae_pass": true,
+    "coverage_all_lora_pass": true,
+    "dynamic_runtime_lora_not_implemented": true,
+    "no_staged_npy_npz": true,
+    "unet_full_forward_pass": true,
+    "timevae_actual_vaehook_boundary_pass": true,
+    "full_inference_not_complete": true
+  },
+  "metadata_path": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/timevae_lora_effective_weights_metadata.json",
+  "coverage_path": "experiments/full_repro/lora_alignment/jittor_effective_lora_coverage.json",
+  "timevae_active_lora_pair_count": 32,
+  "manual_verify_status_counts": {
+    "PASS": 32
+  },
+  "coverage_timevae_status": "PASS",
+  "coverage_all_lora_status": "PASS",
+  "staged_npy_npz": [],
+  "final_audit_unet_full_forward": "PASS",
+  "final_audit_timevae_actual_vaehook_full_boundary": "PASS",
+  "final_audit_full_inference": "NOT_COMPLETE"
+}

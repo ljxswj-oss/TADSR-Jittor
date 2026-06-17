@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "command_groups": [
+    "final_audit",
+    "course_requirement",
+    "evidence_index",
+    "training_evidence",
+    "one_step_tensor_alignment",
+    "diagnostic_image_smoke",
+    "defense_risk_pack",
+    "links_and_paths",
+    "chinese_materials",
+    "github_release_readiness",
+    "final_bundle",
+    "full_inference_guard"
+  ],
+  "markers": {
+    "TADSR_FINAL_COMMAND_INDEX": "PASS",
+    "TADSR_FINAL_DEMO_COMMANDS_READY": "PASS"
+  }
+}

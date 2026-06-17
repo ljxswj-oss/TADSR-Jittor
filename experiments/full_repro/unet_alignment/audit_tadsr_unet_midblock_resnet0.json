@@ -1,0 +1,500 @@
+{
+  "status": "PASS",
+  "scope": "mid_block.resnets.0 audit only; mid_block.attentions.0/resnets.1/up_blocks/full UNet remain intentionally unopened.",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "loaded_lora_parameter_count": 516,
+  "mid_block_overview": {
+    "class": "diffusers.models.unet_2d_blocks.UNetMidBlock2DCrossAttn",
+    "forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, attention_mask: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+    "children": [
+      {
+        "name": "attentions",
+        "class": "torch.nn.modules.container.ModuleList"
+      },
+      {
+        "name": "resnets",
+        "class": "torch.nn.modules.container.ModuleList"
+      }
+    ],
+    "resnet_count": 2,
+    "attention_count": 1,
+    "has_cross_attention": true,
+    "consumes_encoder_hidden_states": true,
+    "consumes_attention_mask": true,
+    "consumes_encoder_attention_mask": true,
+    "consumes_cross_attention_kwargs": true,
+    "has_lora_scale_arg": false,
+    "target_module": "mid_block.resnets.0",
+    "remaining_modules_after_this_stage": [
+      "mid_block.attentions.0",
+      "mid_block.resnets.1"
+    ],
+    "actual_next_module_after_resnets_0": "mid_block.attentions.0",
+    "expected_operation_order": [
+      "resnets.0",
+      "attentions.0 if present",
+      "resnets.1 if present"
+    ],
+    "peft_wrapped_children_present": true
+  },
+  "resnet0_input_stats": {
+    "shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "dtype": "torch.float32",
+    "min": -50.87424850463867,
+    "max": 20.980514526367188,
+    "mean": -0.08692453801631927,
+    "std": 3.624305248260498
+  },
+  "resnet0_output_stats": {
+    "shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "dtype": "torch.float32",
+    "min": -54.919700622558594,
+    "max": 21.528852462768555,
+    "mean": -0.1774945855140686,
+    "std": 3.8225150108337402
+  },
+  "resnet0_config": {
+    "prefix": "mid_block_resnets_0",
+    "class": "diffusers.models.resnet.ResnetBlock2D",
+    "forward_signature": "(input_tensor: torch.FloatTensor, temb: torch.FloatTensor, scale: float = 1.0) -> torch.FloatTensor",
+    "in_channels": 1280,
+    "out_channels": 1280,
+    "temb_channels": 1280,
+    "groups": 32,
+    "groups_out": 32,
+    "eps": 1e-05,
+    "eps_out": 1e-05,
+    "non_linearity": "SiLU",
+    "time_embedding_norm": "default",
+    "output_scale_factor": 1,
+    "use_in_shortcut": false,
+    "use_conv_shortcut": false,
+    "up": false,
+    "down": false,
+    "dropout": 0.0,
+    "skip_time_act": false,
+    "pre_norm": true,
+    "has_time_emb_proj": true,
+    "time_emb_proj_out_features": 1280,
+    "has_shortcut": false,
+    "has_conv_shortcut": false,
+    "channel_change": false,
+    "operation_order": [
+      "input_tensor -> norm1",
+      "norm1 -> nonlinearity",
+      "act1 -> conv1",
+      "temb -> nonlinearity unless skip_time_act",
+      "temb -> time_emb_proj -> NCHW broadcast",
+      "default: conv1 + temb_proj before norm2",
+      "scale_shift: norm2 then scale/shift",
+      "norm2 -> nonlinearity -> dropout -> conv2",
+      "optional conv_shortcut on input_tensor",
+      "(shortcut + conv2) / output_scale_factor"
+    ]
+  },
+  "resnet0_submodules": {
+    "norm1": {
+      "exists": true,
+      "class": "torch.nn.modules.normalization.GroupNorm",
+      "weight_shape": [
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "num_groups": 32,
+      "eps": 1e-05,
+      "is_lora_wrapped": false
+    },
+    "conv1": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        1280,
+        1280,
+        3,
+        3
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_others": [
+          4,
+          1280,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_others": [
+          1280,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_others": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": "ERROR: 'default_decoder'",
+        "default_others": 0.028850408270955086
+      }
+    },
+    "time_emb_proj": {
+      "exists": true,
+      "class": "diffusers.models.lora.LoRACompatibleLinear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": false,
+      "weight_shape": [
+        1280,
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [],
+      "lora_A_shapes": {},
+      "lora_B_shapes": {},
+      "scaling": {},
+      "delta_weight_max_abs": {}
+    },
+    "norm2": {
+      "exists": true,
+      "class": "torch.nn.modules.normalization.GroupNorm",
+      "weight_shape": [
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "num_groups": 32,
+      "eps": 1e-05,
+      "is_lora_wrapped": false
+    },
+    "conv2": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        1280,
+        1280,
+        3,
+        3
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_others": [
+          4,
+          1280,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_others": [
+          1280,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_others": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": "ERROR: 'default_decoder'",
+        "default_others": 0.028359413146972656
+      }
+    },
+    "conv_shortcut": {
+      "exists": false
+    }
+  },
+  "existing_tester_compatibility": {
+    "tester": "UNetResnetBlock2DTester",
+    "compatible": true,
+    "reason": "Uses the same ResnetBlock2D operation order and can be selected with prefix=mid_block_resnets_0.",
+    "channel_change": false,
+    "has_conv_shortcut": false,
+    "time_embedding_norm": "default",
+    "groups": 32,
+    "groups_out": 32,
+    "output_scale_factor": 1,
+    "required_code_changes": []
+  },
+  "entry_context_shapes": {
+    "sample": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "timestep": [
+      1
+    ],
+    "encoder_hidden_states": [
+      1,
+      77,
+      1024
+    ],
+    "conv_in": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "time_embedding": [
+      1,
+      1280
+    ],
+    "downblock0_output": [
+      1,
+      320,
+      16,
+      16
+    ],
+    "downblock0_output_states": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ]
+    ],
+    "downblock1_output": [
+      1,
+      640,
+      8,
+      8
+    ],
+    "downblock1_output_states": [
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ]
+    ],
+    "downblock2_output": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "downblock2_output_states": [
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "downblock3_output": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "downblock3_output_states": [
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "accumulated_down_block_res_sample_shapes": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "accumulated_down_block_res_sample_count": 12,
+    "mid_block_resnets_0_consumes": [
+      "hidden_states",
+      "temb"
+    ],
+    "mid_block_resnets_0_consumes_accumulated_residuals": false
+  },
+  "downstream_attention_preview": {
+    "exists": true,
+    "class": "diffusers.models.transformer_2d.Transformer2DModel",
+    "expected_input_shape_from_resnet0": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "expected_encoder_hidden_states_shape": [
+      1,
+      77,
+      1024
+    ],
+    "transformer_blocks": 1,
+    "norm_num_groups": 32,
+    "inner_dim": null,
+    "num_attention_heads": 20,
+    "attention_head_dim": 64,
+    "cross_attention_dim": 1024,
+    "use_linear_projection": true,
+    "analogous_to_previous_attention_modules": true,
+    "not_ported_this_stage": true,
+    "transformer0_class": "diffusers.models.attention.BasicTransformerBlock",
+    "attn1_class": "diffusers.models.attention_processor.Attention",
+    "attn2_class": "diffusers.models.attention_processor.Attention"
+  },
+  "markers": {
+    "TADSR_UNET_MIDBLOCK_AUDIT": "PASS",
+    "TADSR_UNET_MIDBLOCK_RESNET0_AUDIT": "PASS",
+    "TADSR_UNET_MIDBLOCK_RESNET0_LORA_AUDIT": "PASS"
+  },
+  "scope_boundaries": {
+    "ported_this_stage": "mid_block.resnets.0 only",
+    "not_ported_this_stage": [
+      "mid_block.attentions.0",
+      "mid_block.resnets.1",
+      "up_blocks",
+      "full UNet forward",
+      "full TADSR inference"
+    ]
+  }
+}

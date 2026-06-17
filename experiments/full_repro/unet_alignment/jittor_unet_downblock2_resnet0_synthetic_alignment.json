@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "synthetic_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 8.118152618408203e-05,
+      "mean_abs_error": 1.3766117834279613e-05,
+      "relative_error": 1.3500070940498983e-05,
+      "cosine_similarity": 0.9999999999168652,
+      "tolerance": 0.0002
+    },
+    "synthetic_shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.7657876014709473e-06,
+      "mean_abs_error": 1.0067037994332396e-07,
+      "relative_error": 4.339627854245507e-07,
+      "cosine_similarity": 0.999999999999876,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Synthetic isolated hidden/temb path for down_blocks.2.resnets.0."
+}

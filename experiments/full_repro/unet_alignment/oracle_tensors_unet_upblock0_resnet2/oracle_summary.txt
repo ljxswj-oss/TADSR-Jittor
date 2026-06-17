@@ -1,0 +1,14 @@
+# TADSR UNet up_blocks.0.resnets.2 oracle export
+
+TADSR_UNET_UPBLOCK0_RESNET2_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK0_RESNET2_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_UPBLOCK0_RESNET2_RESIDUAL_CONTRACT_ORACLE: PASS
+
+effective weights: experiments/full_repro/unet_alignment/converted_unet_upblock0_resnet2_effective_weights.npz
+oracle tensors: experiments/full_repro/unet_alignment/oracle_tensors_unet_upblock0_resnet2
+resnet2 consumed residual source: down_blocks.2.output_state_2
+resnet2 consumed residual index: 9
+concat shape: [1, 2560, 4, 4]
+synthetic manual/offical max abs diff: 0.0
+entry manual/offical max abs diff: 0.0
+previous resnet1 compare: {'previous_upblock0_resnet1_oracle_tensor_available': True, 'max_abs_diff': 0.0, 'mean_abs_diff': 0.0}

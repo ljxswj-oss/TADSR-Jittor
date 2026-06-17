@@ -1,0 +1,59 @@
+{
+  "status": "BLOCKED_DECODER_HOOK_CONTRACT",
+  "reason": "Official _init_tiled_vae installs a decoder VAEHook, but the hook is constructed with time_vae=False and the VAEHook.__call__ source dispatches to net.original_forward instead of vae_tile_forward for decoder inputs. Therefore a truthful official tiled encode/decode oracle cannot claim tiled decode was triggered.",
+  "source_audit": "experiments/full_repro/vae_alignment/audit_tadsr_vae_tiled_boundary.json",
+  "VAEHook_class": "/mnt/data/sj/projects/TADSR_official_pytorch/my_utils/vaehook.py",
+  "patch_targets": {
+    "vae.encoder.forward": "replaced with VAEHook(encoder, encoder_tile_size, is_decoder=False, time_vae=True)",
+    "vae.decoder.forward": "replaced with VAEHook(decoder, decoder_tile_size, is_decoder=True, time_vae=False)",
+    "vae.encode": "not directly patched; encode internally calls the patched encoder.forward",
+    "vae.decode": "not directly patched; decode internally calls the patched decoder.forward",
+    "other_functions": "no other VAE functions are patched by _init_tiled_vae",
+    "original_forward_saved": {
+      "encoder": "self.vae.encoder.original_forward stores the previous encoder.forward if absent",
+      "decoder": "self.vae.decoder.original_forward stores the previous decoder.forward if absent"
+    },
+    "restore_api": "no explicit restore method found in TADSR_test._init_tiled_vae"
+  },
+  "tile_params": {
+    "encoder": {
+      "tile_size_arg": "args.vae_encoder_tiled_size",
+      "default_from_test_tadsr": 1024,
+      "is_decoder": false,
+      "fast_decoder": false,
+      "fast_encoder": false,
+      "color_fix": false,
+      "to_gpu": true,
+      "time_vae": true,
+      "pad": 32
+    },
+    "decoder": {
+      "tile_size_arg": "args.vae_decoder_tiled_size",
+      "default_from_test_tadsr": 224,
+      "is_decoder": true,
+      "fast_decoder": false,
+      "fast_encoder": false,
+      "color_fix": false,
+      "to_gpu": true,
+      "time_vae": false,
+      "pad": 11
+    }
+  },
+  "input_shape": null,
+  "timestep_shape": null,
+  "latent_shape": null,
+  "output_shape": null,
+  "scaling_factor": 0.18215,
+  "deterministic_policy": "not exported because official tiled encode/decode oracle feasibility is blocked",
+  "fixed_epsilon_policy": "not applicable",
+  "tiled_path_triggered": false,
+  "encode_tiled_path_triggered": false,
+  "decode_tiled_path_triggered": false,
+  "nontiled_reference_available": false,
+  "scheduler_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false,
+  "jittor_tiled_implementation_done": false,
+  "timevae_full_alignment_candidate": false,
+  "recommended_next_stage": "Resolve whether the Jittor port should mirror official decoder.original_forward dispatch or intentionally implement a corrected decoder tiled path; until then implement only an audit/export blocker, not Jittor tiled VAE."
+}

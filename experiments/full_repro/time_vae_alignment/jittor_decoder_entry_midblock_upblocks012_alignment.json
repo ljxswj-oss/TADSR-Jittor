@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "target": "latent z -> decoder entry -> mid_block -> up_blocks.0 -> up_blocks.1 -> up_blocks.2",
+  "note": "bridge test from decoder entry through upblock2; decoder tail and upblock3 remain intentionally unported",
+  "diagnostics": {
+    "post_quant_conv": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "max_abs_error": 5.960464477539063e-08,
+      "mean_abs_error": 4.190951585769653e-09,
+      "relative_error": 1.4472931614908453e-08,
+      "cosine_similarity": 0.9999999999999994,
+      "tolerance": 0.001
+    },
+    "decoder_conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 2.384185791015625e-07,
+      "mean_abs_error": 1.1058745030823047e-08,
+      "relative_error": 5.798317694904203e-08,
+      "cosine_similarity": 0.9999999999999974,
+      "tolerance": 0.001
+    },
+    "decoder_midblock": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 2.384185791015625e-06,
+      "mean_abs_error": 3.6261644709156826e-07,
+      "relative_error": 3.73693783753209e-07,
+      "cosine_similarity": 0.9999999999999295,
+      "tolerance": 0.001
+    },
+    "decoder_upblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 1.33514404296875e-05,
+      "mean_abs_error": 1.7265455696247045e-06,
+      "relative_error": 5.789675771425907e-07,
+      "cosine_similarity": 0.9999999999998436,
+      "tolerance": 0.001
+    },
+    "decoder_upblock1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 9.1552734375e-05,
+      "mean_abs_error": 8.123663750581045e-06,
+      "relative_error": 7.502074734579309e-07,
+      "cosine_similarity": 0.9999999999997227,
+      "tolerance": 0.001
+    },
+    "decoder_upblock2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "max_abs_error": 0.00037384033203125,
+      "mean_abs_error": 1.9698307040627583e-05,
+      "relative_error": 1.386328893226877e-06,
+      "cosine_similarity": 0.999999999998697,
+      "tolerance": 0.001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      256,
+      32,
+      32
+    ],
+    "max_abs_error": 0.00037384033203125,
+    "mean_abs_error": 1.9698307040627583e-05,
+    "relative_error": 1.386328893226877e-06,
+    "cosine_similarity": 0.999999999998697,
+    "tolerance": 0.001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

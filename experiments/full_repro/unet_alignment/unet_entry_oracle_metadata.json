@@ -1,0 +1,267 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "oracle_dir": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry",
+  "effective_weights": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+  "official_class": "models.unet_2d_condition.UNet2DConditionModel",
+  "config": {
+    "sample_size": 64,
+    "in_channels": 4,
+    "out_channels": 4,
+    "center_input_sample": false,
+    "flip_sin_to_cos": true,
+    "freq_shift": 0,
+    "down_block_types": [
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "DownBlock2D"
+    ],
+    "mid_block_type": "UNetMidBlock2DCrossAttn",
+    "up_block_types": [
+      "UpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D"
+    ],
+    "only_cross_attention": false,
+    "block_out_channels": [
+      320,
+      640,
+      1280,
+      1280
+    ],
+    "layers_per_block": 2,
+    "downsample_padding": 1,
+    "mid_block_scale_factor": 1,
+    "dropout": 0.0,
+    "act_fn": "silu",
+    "norm_num_groups": 32,
+    "norm_eps": 1e-05,
+    "cross_attention_dim": 1024,
+    "transformer_layers_per_block": 1,
+    "reverse_transformer_layers_per_block": null,
+    "encoder_hid_dim": null,
+    "encoder_hid_dim_type": null,
+    "attention_head_dim": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "num_attention_heads": null,
+    "dual_cross_attention": false,
+    "use_linear_projection": true,
+    "class_embed_type": null,
+    "addition_embed_type": null,
+    "addition_time_embed_dim": null,
+    "num_class_embeds": null,
+    "upcast_attention": false,
+    "resnet_time_scale_shift": "default",
+    "resnet_skip_time_act": false,
+    "resnet_out_scale_factor": 1.0,
+    "time_embedding_type": "positional",
+    "time_embedding_dim": null,
+    "time_embedding_act_fn": null,
+    "timestep_post_act": null,
+    "time_cond_proj_dim": null,
+    "conv_in_kernel": 3,
+    "conv_out_kernel": 3,
+    "projection_class_embeddings_input_dim": null,
+    "attention_type": "default",
+    "class_embeddings_concat": false,
+    "mid_block_only_cross_attention": null,
+    "cross_attention_norm": null,
+    "addition_embed_type_num_heads": 64,
+    "_use_default_values": [
+      "addition_time_embed_dim",
+      "encoder_hid_dim",
+      "cross_attention_norm",
+      "conv_out_kernel",
+      "class_embeddings_concat",
+      "attention_type",
+      "conv_in_kernel",
+      "encoder_hid_dim_type",
+      "dropout",
+      "time_embedding_type",
+      "mid_block_type",
+      "reverse_transformer_layers_per_block",
+      "time_embedding_dim",
+      "transformer_layers_per_block",
+      "projection_class_embeddings_input_dim",
+      "upcast_attention",
+      "mid_block_only_cross_attention",
+      "resnet_skip_time_act",
+      "addition_embed_type",
+      "class_embed_type",
+      "time_cond_proj_dim",
+      "num_attention_heads",
+      "time_embedding_act_fn",
+      "addition_embed_type_num_heads",
+      "resnet_time_scale_shift",
+      "timestep_post_act",
+      "resnet_out_scale_factor"
+    ],
+    "_class_name": "UNet2DConditionModel",
+    "_diffusers_version": "0.10.0.dev0",
+    "_name_or_path": "/mnt/data/sj/checkpoints/TADSR/preset/weights"
+  },
+  "path_a_synthetic_latent_entry": {
+    "status": "PASS",
+    "sample_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "timestep": [
+      1
+    ],
+    "center_input_sample": false,
+    "saved_tensors": {
+      "synthetic_sample": {
+        "shape": [
+          1,
+          4,
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "mean": 0.0,
+        "std": 0.577491225120402,
+        "min": -1.0,
+        "max": 1.0
+      },
+      "unet_centered_sample": {
+        "shape": [
+          1,
+          4,
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "mean": 0.0,
+        "std": 0.577491225120402,
+        "min": -1.0,
+        "max": 1.0
+      },
+      "unet_conv_in_output": {
+        "shape": [
+          1,
+          320,
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "mean": 0.009378110880123991,
+        "std": 0.24807758577950303,
+        "min": -1.9214454889297485,
+        "max": 2.051663398742676
+      },
+      "unet_time_proj_output": {
+        "shape": [
+          1,
+          320
+        ],
+        "dtype": "float32",
+        "mean": 0.5389276413728339,
+        "std": 0.45777396088383415,
+        "min": 0.00010592537000775337,
+        "max": 1.0
+      },
+      "unet_time_embedding_linear1_output": {
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "float32",
+        "mean": -0.1528441777921671,
+        "std": 1.0115258567271515,
+        "min": -8.109460830688477,
+        "max": 7.0681352615356445
+      },
+      "unet_time_embedding_act_output": {
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "float32",
+        "mean": 0.011491716709787858,
+        "std": 0.40297482382325467,
+        "min": -0.27846449613571167,
+        "max": 7.062119483947754
+      },
+      "unet_time_embedding_output": {
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "float32",
+        "mean": -0.00029221720545251627,
+        "std": 0.1708280877860561,
+        "min": -1.4923566579818726,
+        "max": 3.7227675914764404
+      },
+      "unet_time_embedding_full_output": {
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "float32",
+        "mean": -0.00029221720545251627,
+        "std": 0.1708280877860561,
+        "min": -1.4923566579818726,
+        "max": 3.7227675914764404
+      },
+      "unet_conv_in_manual_effective_output": {
+        "shape": [
+          1,
+          320,
+          32,
+          32
+        ],
+        "dtype": "float32",
+        "mean": 0.0093781108249269,
+        "std": 0.24807758663618126,
+        "min": -1.9214454889297485,
+        "max": 2.0516631603240967
+      }
+    }
+  },
+  "path_b_vae_mode_latent_contract": {
+    "status": "NOT_APPLICABLE",
+    "reason": "Full TimeAware VAE API / stochastic encode-decode pipeline is intentionally not complete; this stage avoids full TADSR inference and exports only synthetic UNet entry tensors."
+  },
+  "effective_weight_validation": {
+    "status": "PASS",
+    "manual_effective_conv_vs_unet_conv_in_max_abs_error": 9.5367431640625e-07,
+    "manual_effective_conv_vs_unet_conv_in_mean_abs_error": 1.650445291545566e-08,
+    "conv_in_lora_delta_records": [
+      {
+        "adapter": "default_encoder",
+        "shape": [
+          320,
+          4,
+          3,
+          3
+        ],
+        "max_abs": 0.043385569006204605
+      }
+    ],
+    "loaded_lora_param_count": 516,
+    "copied_entry_weight_keys": [],
+    "lora_runtime_integration_status": "DEFERRED; Jittor consumes static effective entry weights for this stage"
+  },
+  "markers": {
+    "TADSR_UNET_ENTRY_ORACLE_TENSORS": "PASS",
+    "TADSR_UNET_ENTRY_EFFECTIVE_WEIGHTS": "PASS"
+  },
+  "not_in_scope": [
+    "full UNet forward",
+    "down/up/mid blocks",
+    "cross-attention",
+    "full TADSR inference"
+  ]
+}

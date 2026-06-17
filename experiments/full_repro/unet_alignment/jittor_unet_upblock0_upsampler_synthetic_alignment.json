@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "interpolation": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 0.9999999999999999,
+      "tolerance": 0.0002
+    },
+    "conv": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.0132789611816406e-06,
+      "mean_abs_error": 6.735440400973403e-08,
+      "relative_error": 3.0383122587571913e-07,
+      "cosine_similarity": 0.9999999999999548,
+      "tolerance": 0.0002
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.0132789611816406e-06,
+      "mean_abs_error": 6.735440400973403e-08,
+      "relative_error": 3.0383122587571913e-07,
+      "cosine_similarity": 0.9999999999999548,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic isolated upsampler check; no downblocks/midblock/full UNet are executed."
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "branch": "codex/tadsr-production-completion",
+  "guard_output_tail": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\jittor_tadsr_full\\tadsr_full.py\", line 46, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\jittor_tadsr_full\\tadsr_full.py\", line 33, in main\n    raise NotImplementedError(\"Full Jittor TADSR inference is not complete. This CLI only supports migration checks.\")\nNotImplementedError: Full Jittor TADSR inference is not complete. This CLI only supports migration checks.",
+  "checks": [
+    {
+      "name": "current_branch",
+      "status": "PASS",
+      "detail": "codex/tadsr-production-completion"
+    },
+    {
+      "name": "submission_freeze_ref",
+      "status": "PASS",
+      "detail": "submission-freeze-fb3b820"
+    },
+    {
+      "name": "baseline_markers",
+      "status": "PASS",
+      "detail": "{}"
+    },
+    {
+      "name": "must_remain_statuses",
+      "status": "PASS",
+      "detail": "{}"
+    },
+    {
+      "name": "directory_readiness",
+      "status": "PASS",
+      "detail": "all required directories/files exist"
+    },
+    {
+      "name": "full_inference_guard",
+      "status": "PASS",
+      "detail": "NotImplementedError guard preserved"
+    },
+    {
+      "name": "staged_raw_tensors",
+      "status": "PASS",
+      "detail": "none"
+    },
+    {
+      "name": "runtime_torch_import_scan",
+      "status": "PASS",
+      "detail": "0 hit(s)"
+    },
+    {
+      "name": "false_claim_scan",
+      "status": "PASS",
+      "detail": "none"
+    }
+  ],
+  "markers": {
+    "TADSR_PRODUCTION_COMPLETION_READINESS": "PASS",
+    "TADSR_PRODUCTION_COMPLETION_BRANCH_READY": "PASS",
+    "TADSR_PRODUCTION_COMPLETION_BASELINE_PRESERVED": "PASS"
+  }
+}

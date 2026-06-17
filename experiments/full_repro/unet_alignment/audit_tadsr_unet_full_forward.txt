@@ -1,0 +1,9 @@
+# TADSR UNet official full forward audit
+
+TADSR_UNET_OFFICIAL_FULL_FORWARD_AUDIT: PASS
+TADSR_UNET_FULL_FORWARD_CONTRACT_AUDIT: PASS
+TADSR_UNET_MANUAL_VS_OFFICIAL_FULL_FORWARD_AUDIT: PASS
+
+official output shape: [1, 4, 32, 32]
+manual vs official: {'shape_match': True, 'shape': [1, 4, 32, 32], 'max_abs_error': 0.0, 'mean_abs_error': 0.0, 'cosine_similarity': 1.0000000000000002}
+scope: official UNet.forward was called only in tools; scheduler/VAE/full TADSR inference were not executed.

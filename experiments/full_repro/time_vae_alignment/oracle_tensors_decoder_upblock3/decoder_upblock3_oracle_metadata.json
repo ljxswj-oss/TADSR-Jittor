@@ -1,0 +1,636 @@
+{
+  "status": "PASS",
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "decoder_class": "diffusers.models.autoencoders.vae.Decoder",
+  "decoder_upblock3_class": "diffusers.models.unet_2d_blocks.UpDecoderBlock2D",
+  "uses_sampling": false,
+  "decoder_side_temb_is_none": true,
+  "upblock3_resnet_count": 3,
+  "upblock3_upsampler_count": 0,
+  "upblock3_has_upsampler": false,
+  "upblock3_upsampler0_status": "NOT_APPLICABLE",
+  "upblock3_attention_count": 0,
+  "upblock3_module_order": [
+    "resnets.0",
+    "resnets.1",
+    "resnets.2"
+  ],
+  "upblock3_input_shape": [
+    1,
+    256,
+    32,
+    32
+  ],
+  "upblock3_output_shape": [
+    1,
+    128,
+    32,
+    32
+  ],
+  "upblock3_channel_change": true,
+  "upblock3_shortcut_modules": [
+    {
+      "index": 0,
+      "conv_shortcut_exists": true,
+      "conv_shortcut_weight_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "in_channels": 256,
+      "out_channels": 128
+    },
+    {
+      "index": 1,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "in_channels": 128,
+      "out_channels": 128
+    },
+    {
+      "index": 2,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "in_channels": 128,
+      "out_channels": 128
+    }
+  ],
+  "real_input_image_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "real_moments_shape": [
+    1,
+    8,
+    4,
+    4
+  ],
+  "real_posterior_mode_shape": [
+    1,
+    4,
+    4,
+    4
+  ],
+  "real_decoder_midblock_output_shape": [
+    1,
+    512,
+    4,
+    4
+  ],
+  "real_decoder_upblock0_output_shape": [
+    1,
+    512,
+    8,
+    8
+  ],
+  "real_decoder_upblock1_output_shape": [
+    1,
+    512,
+    16,
+    16
+  ],
+  "real_decoder_upblock2_output_shape": [
+    1,
+    256,
+    32,
+    32
+  ],
+  "real_decoder_upblock3_output_shape": [
+    1,
+    128,
+    32,
+    32
+  ],
+  "max_abs_diff_between_real_decoder_upblock2_output_and_previous_decoder_upblock2_oracle": 0.0,
+  "tensor_stats": [
+    {
+      "name": "synthetic_decoder_upblock3_input",
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.5773524641990662,
+      "sha256": "e877ca64dea5c646bcdcf65824f50c977326a3efaa68c8a333226a180866f2c2",
+      "source": "path_a.synthetic_linspace_hidden"
+    },
+    {
+      "name": "synthetic_decoder_upblock3_resnet0_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -81.5903091430664,
+      "max": 91.30418395996094,
+      "mean": -3.7701289653778076,
+      "std": 12.24487018585205,
+      "sha256": "71ecf7eb930c9dc7ae04732c052454f8b99bb810aaca27ae074439d68749acdc",
+      "source": "decoder.up_blocks.3.resnets.0(synthetic)"
+    },
+    {
+      "name": "synthetic_decoder_upblock3_resnet1_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -101.3179931640625,
+      "max": 138.17454528808594,
+      "mean": -3.2568867206573486,
+      "std": 15.770834922790527,
+      "sha256": "07c685f9658de9dc633024789fcdbd99561131d648be7920ab2514e00ae6009d",
+      "source": "decoder.up_blocks.3.resnets.1(synthetic)"
+    },
+    {
+      "name": "synthetic_decoder_upblock3_resnet2_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -102.45316314697266,
+      "max": 207.11923217773438,
+      "mean": -1.3055135011672974,
+      "std": 21.1895694732666,
+      "sha256": "7efea927f3e6c0723ef329b33cb280ba300156dfe83aa8fed2d12b74b70fea2c",
+      "source": "decoder.up_blocks.3.resnets.2(synthetic)"
+    },
+    {
+      "name": "synthetic_decoder_upblock3_pre_upsampler_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -102.45316314697266,
+      "max": 207.11923217773438,
+      "mean": -1.3055135011672974,
+      "std": 21.1895694732666,
+      "sha256": "7efea927f3e6c0723ef329b33cb280ba300156dfe83aa8fed2d12b74b70fea2c",
+      "source": "decoder.up_blocks.3.pre_upsampler(synthetic)"
+    },
+    {
+      "name": "synthetic_decoder_upblock3_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -102.45316314697266,
+      "max": 207.11923217773438,
+      "mean": -1.3055135011672974,
+      "std": 21.1895694732666,
+      "sha256": "7efea927f3e6c0723ef329b33cb280ba300156dfe83aa8fed2d12b74b70fea2c",
+      "source": "decoder.up_blocks.3(synthetic)"
+    },
+    {
+      "name": "entry_synthetic_latent_z",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -1.1175870895385742e-08,
+      "std": 0.5864429473876953,
+      "sha256": "a55e8cee55116b534e87fc710ab1c03820d1351b5db1ff85321067f2efbd3a77",
+      "source": "path_b.synthetic_latent_z"
+    },
+    {
+      "name": "entry_post_quant_conv_output",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -0.34384605288505554,
+      "max": 0.7243701815605164,
+      "mean": 0.06931253522634506,
+      "std": 0.36815720796585083,
+      "sha256": "c493ec097b1f08cbdc4cdece73f369c45dbb2499228fefacdb790875169a3389",
+      "source": "post_quant_conv(entry_z)"
+    },
+    {
+      "name": "entry_decoder_conv_in_output",
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -1.1143345832824707,
+      "max": 1.028753638267517,
+      "mean": 0.014478100463747978,
+      "std": 0.23122207820415497,
+      "sha256": "dfa7e9ac4174494e3197d5b6fa8ddf42c9b7a2a3c4e5761bdbd444d9a283583d",
+      "source": "decoder.conv_in(entry_post_quant)"
+    },
+    {
+      "name": "entry_decoder_midblock_output",
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -5.793145179748535,
+      "max": 4.914164066314697,
+      "mean": 0.04832778498530388,
+      "std": 1.2526851892471313,
+      "sha256": "dc7dafd9dd13032befebc78d9fee419b4c4b6bff7be30b27831db3bd9adf7dee",
+      "source": "decoder.mid_block(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock0_output",
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -27.352046966552734,
+      "max": 20.952491760253906,
+      "mean": 0.6244359016418457,
+      "std": 4.021035671234131,
+      "sha256": "f813ffa5a69ec8c9fe05badfcf838822c946a2e2cdab9a3d78e9424f9012958b",
+      "source": "decoder.up_blocks.0(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock1_output",
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -101.75423431396484,
+      "max": 88.33131408691406,
+      "mean": 0.01805362105369568,
+      "std": 14.478876113891602,
+      "sha256": "5a1eacccee343297426bd17dd1a9fb04e7d38e0bed5db054825af51d9618aa04",
+      "source": "decoder.up_blocks.1(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock2_output",
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -153.5867462158203,
+      "max": 103.37015533447266,
+      "mean": -1.4866914749145508,
+      "std": 19.832096099853516,
+      "sha256": "d8b9be5fc4e7696eee98eab9bee284b0a77957b9a49532f24241184820d5e9b4",
+      "source": "decoder.up_blocks.2(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock3_resnet0_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -355.8985290527344,
+      "max": 305.28533935546875,
+      "mean": -7.973419666290283,
+      "std": 33.273929595947266,
+      "sha256": "c4ec10138f8d71aa8fbbffd466f711a3ab36b2297ecd12fab405ecc2cfa38fbd",
+      "source": "decoder.up_blocks.3.resnets.0(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock3_resnet1_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -449.1375732421875,
+      "max": 397.7449951171875,
+      "mean": -8.370299339294434,
+      "std": 37.34946823120117,
+      "sha256": "c1444e3ea78426c5bf6e0780174a2e5c6f9741175b23782734095f0fb72fd389",
+      "source": "decoder.up_blocks.3.resnets.1(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock3_resnet2_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -465.97369384765625,
+      "max": 446.3798828125,
+      "mean": -5.82891845703125,
+      "std": 41.34089660644531,
+      "sha256": "50e89a354a67163e3e77af76cdacd3e42c83359aaa36b6adda40b9542740d8d3",
+      "source": "decoder.up_blocks.3.resnets.2(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock3_pre_upsampler_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -465.97369384765625,
+      "max": 446.3798828125,
+      "mean": -5.82891845703125,
+      "std": 41.34089660644531,
+      "sha256": "50e89a354a67163e3e77af76cdacd3e42c83359aaa36b6adda40b9542740d8d3",
+      "source": "decoder.up_blocks.3.pre_upsampler(entry)"
+    },
+    {
+      "name": "entry_decoder_upblock3_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -465.97369384765625,
+      "max": 446.3798828125,
+      "mean": -5.82891845703125,
+      "std": 41.34089660644531,
+      "sha256": "50e89a354a67163e3e77af76cdacd3e42c83359aaa36b6adda40b9542740d8d3",
+      "source": "decoder.up_blocks.3(entry)"
+    },
+    {
+      "name": "real_input_image",
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 1.9868215517249155e-08,
+      "std": 0.577538251876831,
+      "sha256": "12872e9486f091b1f9d09870651a3a85b6ba3edf8018a0668251eec19565129c",
+      "source": "path_c.synthetic_image"
+    },
+    {
+      "name": "real_encoder_temb",
+      "shape": [
+        1,
+        256
+      ],
+      "dtype": "float32",
+      "min": -0.3728765547275543,
+      "max": 0.376655638217926,
+      "mean": 0.007826587185263634,
+      "std": 0.12567417323589325,
+      "sha256": "64864bde0474580e735c6b51d5c879aadaeca34655e4b40c728c5c12a5a85bea",
+      "source": "encoder.time_embedding"
+    },
+    {
+      "name": "real_moments",
+      "shape": [
+        1,
+        8,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -20.689298629760742,
+      "max": 11.76608943939209,
+      "mean": -7.798523902893066,
+      "std": 8.925009727478027,
+      "sha256": "9ec3dd0f02b050d4f053d319cb519f6566524212a38e007838efd104beda6148",
+      "source": "quant_conv(path_c)"
+    },
+    {
+      "name": "real_latent_dist_mode",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -11.507828712463379,
+      "max": 11.76608943939209,
+      "mean": -0.30984964966773987,
+      "std": 6.413482666015625,
+      "sha256": "c526b8ec59addbe651360842b9634c0c849fb63c8436c7d5f089bf045b0d2276",
+      "source": "DiagonalGaussianDistribution.mode(path_c)"
+    },
+    {
+      "name": "real_post_quant_conv_output",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -7.428730010986328,
+      "max": 3.7529494762420654,
+      "mean": -0.1324595957994461,
+      "std": 3.273059606552124,
+      "sha256": "ea405c9018e1690718958f33bdd4b99809db61dd801e251e1e5ac09a8dbc8c68",
+      "source": "post_quant_conv(path_c)"
+    },
+    {
+      "name": "real_decoder_conv_in_output",
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -11.125244140625,
+      "max": 7.831345081329346,
+      "mean": 0.010124243795871735,
+      "std": 1.413603663444519,
+      "sha256": "fadeffeb2cb296a5b173ee3763bf61ffa85e4aee1a4dd219621b1ff61e30f784",
+      "source": "decoder.conv_in(path_c)"
+    },
+    {
+      "name": "real_decoder_midblock_output",
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -16.299503326416016,
+      "max": 10.984437942504883,
+      "mean": 0.03932945802807808,
+      "std": 1.73893404006958,
+      "sha256": "775e05edbb774518f89d093d2696c01dbcfe7bc9fd3b1ca7767af5d1f5c658e3",
+      "source": "decoder.mid_block(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock0_output",
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -62.48147964477539,
+      "max": 58.765995025634766,
+      "mean": 0.9745668172836304,
+      "std": 6.431634902954102,
+      "sha256": "067b87a5334f7f424519befb3870f1f380dbe9aa0dbc7b780cbec397a71b915a",
+      "source": "decoder.up_blocks.0(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock1_output",
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -162.37521362304688,
+      "max": 157.58804321289062,
+      "mean": 0.7237040996551514,
+      "std": 21.395069122314453,
+      "sha256": "40dc49dd2fefe822396b6fb1e59b08b7dcfab670e3ea5f8df9d07c23496e1984",
+      "source": "decoder.up_blocks.1(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock2_output",
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -225.14599609375,
+      "max": 220.27700805664062,
+      "mean": -0.12474146485328674,
+      "std": 34.55450439453125,
+      "sha256": "8627e64ef5aaa7e69e4f50809eb25e55f1816f24c1cf12bd1409552625856e62",
+      "source": "decoder.up_blocks.2(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock3_resnet0_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -258.3523864746094,
+      "max": 271.54962158203125,
+      "mean": -3.9801056385040283,
+      "std": 37.42759704589844,
+      "sha256": "2e4a6a9b86f2bdcfd5e977091ac4ed6ae77434324cbb2118dfd68854f01b63e9",
+      "source": "decoder.up_blocks.3.resnets.0(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock3_resnet1_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -335.99664306640625,
+      "max": 338.3089599609375,
+      "mean": -4.468631744384766,
+      "std": 38.79035949707031,
+      "sha256": "76e8cf3889dee505141de2802bd2318cb24e2f357b3001e71bb6c559345ad2e7",
+      "source": "decoder.up_blocks.3.resnets.1(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock3_resnet2_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -359.40240478515625,
+      "max": 423.9293212890625,
+      "mean": -2.3045332431793213,
+      "std": 41.6646842956543,
+      "sha256": "6d52b6153c15ad1cf5680f511bc79a46731408f39af7a670f15e359a954f3cd8",
+      "source": "decoder.up_blocks.3.resnets.2(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock3_pre_upsampler_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -359.40240478515625,
+      "max": 423.9293212890625,
+      "mean": -2.3045332431793213,
+      "std": 41.6646842956543,
+      "sha256": "6d52b6153c15ad1cf5680f511bc79a46731408f39af7a670f15e359a954f3cd8",
+      "source": "decoder.up_blocks.3.pre_upsampler(path_c)"
+    },
+    {
+      "name": "real_decoder_upblock3_output",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -359.40240478515625,
+      "max": 423.9293212890625,
+      "mean": -2.3045332431793213,
+      "std": 41.6646842956543,
+      "sha256": "6d52b6153c15ad1cf5680f511bc79a46731408f39af7a670f15e359a954f3cd8",
+      "source": "decoder.up_blocks.3(path_c)"
+    }
+  ]
+}

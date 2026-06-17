@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "loaded_lora_parameter_count": 516,
+  "upblock0_resnet_count": 3,
+  "upblock0_upsampler_count": 1,
+  "sample_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "encoder_hidden_states_shape": [
+    1,
+    77,
+    1024
+  ],
+  "downblock_output_state_shapes": {
+    "down_blocks.0": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ]
+    ],
+    "down_blocks.1": [
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ]
+    ],
+    "down_blocks.2": [
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "down_blocks.3": [
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ]
+  },
+  "downblock_output_hidden_shapes": {
+    "down_blocks.0": [
+      1,
+      320,
+      16,
+      16
+    ],
+    "down_blocks.1": [
+      1,
+      640,
+      8,
+      8
+    ],
+    "down_blocks.2": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "down_blocks.3": [
+      1,
+      1280,
+      4,
+      4
+    ]
+  },
+  "accumulated_down_block_res_sample_sources": [
+    "conv_in",
+    "down_blocks.0.output_state_0",
+    "down_blocks.0.output_state_1",
+    "down_blocks.0.output_state_2",
+    "down_blocks.1.output_state_0",
+    "down_blocks.1.output_state_1",
+    "down_blocks.1.output_state_2",
+    "down_blocks.2.output_state_0",
+    "down_blocks.2.output_state_1",
+    "down_blocks.2.output_state_2",
+    "down_blocks.3.output_state_0",
+    "down_blocks.3.output_state_1"
+  ],
+  "accumulated_down_block_res_sample_shapes": [
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      16,
+      16
+    ],
+    [
+      1,
+      640,
+      16,
+      16
+    ],
+    [
+      1,
+      640,
+      16,
+      16
+    ],
+    [
+      1,
+      640,
+      8,
+      8
+    ],
+    [
+      1,
+      1280,
+      8,
+      8
+    ],
+    [
+      1,
+      1280,
+      8,
+      8
+    ],
+    [
+      1,
+      1280,
+      4,
+      4
+    ],
+    [
+      1,
+      1280,
+      4,
+      4
+    ],
+    [
+      1,
+      1280,
+      4,
+      4
+    ]
+  ],
+  "global_remaining_residual_count_after_slice": 9,
+  "upblock0_resnet0_consumed_residual_index_in_accumulated_tuple": 11,
+  "upblock0_resnet0_consumed_residual_source": "down_blocks.3.output_state_1",
+  "upblock0_resnet0_consumed_residual_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "upblock0_resnet1_consumed_residual_index_in_accumulated_tuple": 10,
+  "upblock0_resnet1_consumed_residual_source": "down_blocks.3.output_state_0",
+  "upblock0_resnet1_consumed_residual_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "upblock0_resnet2_consumed_residual_index_in_accumulated_tuple": 9,
+  "upblock0_resnet2_consumed_residual_source": "down_blocks.2.output_state_2",
+  "upblock0_resnet2_consumed_residual_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "internal_remaining_residual_count_after_resnet2_pop": 0,
+  "upblock0_resnet2_hidden_input_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "upblock0_resnet2_concat_input_shape": [
+    1,
+    2560,
+    4,
+    4
+  ],
+  "upblock0_resnet2_output_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "resnet2_config": {
+    "prefix": "up_blocks_0_resnets_2",
+    "class": "diffusers.models.resnet.ResnetBlock2D",
+    "forward_signature": "(input_tensor: torch.FloatTensor, temb: torch.FloatTensor, scale: float = 1.0) -> torch.FloatTensor",
+    "in_channels": 2560,
+    "out_channels": 1280,
+    "temb_channels": 1280,
+    "groups": 32,
+    "groups_out": 32,
+    "eps": 1e-05,
+    "eps_out": 1e-05,
+    "non_linearity": "SiLU",
+    "time_embedding_norm": "default",
+    "output_scale_factor": 1.0,
+    "use_in_shortcut": true,
+    "use_conv_shortcut": false,
+    "up": false,
+    "down": false,
+    "dropout": 0.0,
+    "skip_time_act": false,
+    "pre_norm": true,
+    "has_time_emb_proj": true,
+    "time_emb_proj_out_features": 1280,
+    "has_shortcut": true,
+    "has_conv_shortcut": true,
+    "channel_change": true,
+    "operation_order": [
+      "input_tensor -> norm1",
+      "norm1 -> nonlinearity",
+      "act1 -> conv1",
+      "temb -> nonlinearity unless skip_time_act",
+      "temb -> time_emb_proj -> NCHW broadcast",
+      "default: conv1 + temb_proj before norm2",
+      "scale_shift: norm2 then scale/shift",
+      "norm2 -> nonlinearity -> dropout -> conv2",
+      "optional conv_shortcut on input_tensor",
+      "(shortcut + conv2) / output_scale_factor"
+    ]
+  },
+  "resnet2_output_stats": {
+    "shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "dtype": "float32",
+    "min": -8.710519790649414,
+    "max": 15.266363143920898,
+    "mean": -0.006587411305940804,
+    "std": 0.8592945631194299,
+    "nbytes": 81920
+  },
+  "next_unopened_module": "up_blocks.0.upsamplers.0",
+  "markers": {
+    "TADSR_UNET_UPBLOCK0_RESNET2_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK0_RESNET2_RESIDUAL_CONTRACT_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK0_RESNET2_LORA_AUDIT": "PASS"
+  },
+  "scope_boundaries": {
+    "audited_this_stage": "up_blocks.0.resnets.2 residual pop/concat only",
+    "not_audited_this_stage": [
+      "up_blocks.0.upsamplers.0",
+      "full up_blocks.0",
+      "full UNet forward",
+      "generic runtime LoRA",
+      "full TADSR inference"
+    ]
+  }
+}

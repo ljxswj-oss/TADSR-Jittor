@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "post_quant_conv synthetic latent path",
+  "note": "",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      4,
+      4,
+      4
+    ],
+    "max_abs_error": 5.960464477539063e-08,
+    "mean_abs_error": 4.190951585769653e-09,
+    "relative_error": 1.4472931614908453e-08,
+    "cosine_similarity": 0.9999999999999994,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

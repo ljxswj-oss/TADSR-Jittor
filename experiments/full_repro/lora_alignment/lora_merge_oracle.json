@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "selected_pair": {
+    "a_key": "state_dict_unet__conv_in__lora_A__default_encoder__weight",
+    "b_key": "state_dict_unet__conv_in__lora_B__default_encoder__weight",
+    "a_shape": [
+      4,
+      4,
+      3,
+      3
+    ],
+    "b_shape": [
+      320,
+      4,
+      1,
+      1
+    ],
+    "kind": "conv"
+  },
+  "delta_shape": [
+    320,
+    4,
+    3,
+    3
+  ],
+  "scale": 1.0,
+  "formula": "linear: B @ A; conv: einsum over rank dimension"
+}

@@ -1,0 +1,37 @@
+{
+  "status_marker": "TADSR_FULL_INFERENCE_CONTROLLED_VALIDATION_PLAN",
+  "status": "PASS",
+  "executed_full_inference": false,
+  "generated_final_images_or_videos": false,
+  "stages": [
+    {
+      "stage": "4.1 metadata-only dry run",
+      "executed_this_round": false,
+      "goal": "Validate CLI/config/module/tensor contracts without denoising loop."
+    },
+    {
+      "stage": "4.2 one-step tensor alignment",
+      "executed_this_round": false,
+      "goal": "Compare PyTorch oracle and Jittor outputs for one denoising step."
+    },
+    {
+      "stage": "4.3 tiny multi-step alignment",
+      "executed_this_round": false,
+      "goal": "Check short scheduler-loop error accumulation on tiny input."
+    },
+    {
+      "stage": "4.4 image smoke alignment",
+      "executed_this_round": false,
+      "goal": "Run diagnostic image-level smoke comparison only after tensor stages pass."
+    },
+    {
+      "stage": "4.5 production claim gate",
+      "executed_this_round": false,
+      "goal": "Allow status upgrade only after all prior stages pass."
+    }
+  ],
+  "must_remain_statuses": {
+    "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+    "JITTOR_FULL_PORT": "PARTIAL"
+  }
+}

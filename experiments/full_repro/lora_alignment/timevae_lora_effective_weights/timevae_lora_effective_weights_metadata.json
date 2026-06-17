@@ -1,0 +1,3509 @@
+{
+  "status": "PASS",
+  "timevae_lora_effective_weights_audit": "PASS",
+  "timevae_lora_effective_weights_export": "PASS",
+  "timevae_lora_effective_weight_manual_verify": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "checkpoint": "/mnt/data/sj/checkpoints/TADSR/preset/weights/tadsr.pkl",
+  "npz_path": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/converted_timevae_lora_effective_weights.npz",
+  "npz_size_bytes": 380694872,
+  "timevae_active_lora_pair_count": 32,
+  "expected_timevae_active_lora_pair_count": 32,
+  "loaded_lora_parameter_count": 64,
+  "adapter_counts": {
+    "default_encoder": 32
+  },
+  "base_layer_class_counts": {
+    "Conv2d": 3,
+    "LoRACompatibleConv": 25,
+    "LoRACompatibleLinear": 4
+  },
+  "manual_verify_status_counts": {
+    "PASS": 32
+  },
+  "manual_verify_max_abs_error_max": 1.0013580322265625e-05,
+  "manual_verify_max_abs_error_mean": 3.2151583582162857e-06,
+  "rows": [
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.conv_in",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "Conv2d",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        3,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        3,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        3,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.conv_in::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.conv_in::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.conv_in::default_encoder::effective_weight",
+        "bias": "timevae::encoder.conv_in::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_conv_in_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          3,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 3456,
+        "mean": -0.0023866828996688128,
+        "std": 0.11752490699291229,
+        "min": -0.2671366035938263,
+        "max": 0.2802097797393799,
+        "max_abs": 0.2802097797393799
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          3,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 3456,
+        "mean": 1.0270029633829836e-05,
+        "std": 0.0026587003376334906,
+        "min": -0.022178689017891884,
+        "max": 0.02016313001513481,
+        "max_abs": 0.022178689017891884
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          3,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 3456,
+        "mean": -0.0023764122743159533,
+        "std": 0.117344431579113,
+        "min": -0.2613734006881714,
+        "max": 0.2817232608795166,
+        "max_abs": 0.2817232608795166
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          8,
+          8
+        ],
+        "max_abs_error": 7.152557373046875e-07,
+        "mean_abs_error": 5.303937200551445e-08,
+        "cosine_similarity": 1.0000001192092896,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.0.resnets.0.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.0.resnets.0.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.0.resnets.0.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.0.resnets.0.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.0.resnets.0.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_0_resnets_0_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -0.001630675862543285,
+        "std": 0.03661452233791351,
+        "min": -0.3601166307926178,
+        "max": 0.22448821365833282,
+        "max_abs": 0.3601166307926178
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -1.3815775673720054e-05,
+        "std": 0.0032987685408443213,
+        "min": -0.029563363641500473,
+        "max": 0.027905330061912537,
+        "max_abs": 0.029563363641500473
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -0.0016444915672764182,
+        "std": 0.03678099066019058,
+        "min": -0.3618854284286499,
+        "max": 0.22745056450366974,
+        "max_abs": 0.3618854284286499
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          8,
+          8
+        ],
+        "max_abs_error": 2.6226043701171875e-06,
+        "mean_abs_error": 2.596053718662006e-07,
+        "cosine_similarity": 1.000000238418579,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.0.resnets.0.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.0.resnets.0.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.0.resnets.0.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.0.resnets.0.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.0.resnets.0.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_0_resnets_0_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.00031009738449938595,
+        "std": 0.03021460771560669,
+        "min": -0.3106032907962799,
+        "max": 0.25112274289131165,
+        "max_abs": 0.3106032907962799
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -4.51552386948606e-06,
+        "std": 0.003893489483743906,
+        "min": -0.03377409651875496,
+        "max": 0.038705043494701385,
+        "max_abs": 0.038705043494701385
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.00030558189610019326,
+        "std": 0.03047652542591095,
+        "min": -0.31207218766212463,
+        "max": 0.24999642372131348,
+        "max_abs": 0.31207218766212463
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          8,
+          8
+        ],
+        "max_abs_error": 1.6689300537109375e-06,
+        "mean_abs_error": 2.1332294863896095e-07,
+        "cosine_similarity": 1.0,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.0.resnets.1.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.0.resnets.1.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.0.resnets.1.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.0.resnets.1.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.0.resnets.1.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_0_resnets_1_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -0.0006140095647424459,
+        "std": 0.03698897361755371,
+        "min": -0.5015809535980225,
+        "max": 0.19496813416481018,
+        "max_abs": 0.5015809535980225
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 1.7929378373082727e-05,
+        "std": 0.003764191409572959,
+        "min": -0.027970239520072937,
+        "max": 0.02999730408191681,
+        "max_abs": 0.02999730408191681
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -0.0005960802081972361,
+        "std": 0.03719661012291908,
+        "min": -0.5007787346839905,
+        "max": 0.19319826364517212,
+        "max_abs": 0.5007787346839905
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          8,
+          8
+        ],
+        "max_abs_error": 2.384185791015625e-06,
+        "mean_abs_error": 2.646202403866482e-07,
+        "cosine_similarity": 1.0000001192092896,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.0.resnets.1.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.0.resnets.1.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.0.resnets.1.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.0.resnets.1.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.0.resnets.1.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_0_resnets_1_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.00021249984274618328,
+        "std": 0.0294630229473114,
+        "min": -0.18308833241462708,
+        "max": 0.14630194008350372,
+        "max_abs": 0.18308833241462708
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": -4.985011401004158e-06,
+        "std": 0.002776222536340356,
+        "min": -0.019446982070803642,
+        "max": 0.023069148883223534,
+        "max_abs": 0.023069148883223534
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.00020751483680214733,
+        "std": 0.029589898884296417,
+        "min": -0.182234987616539,
+        "max": 0.14537601172924042,
+        "max_abs": 0.182234987616539
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          8,
+          8
+        ],
+        "max_abs_error": 1.519918441772461e-06,
+        "mean_abs_error": 2.0921916643601435e-07,
+        "cosine_similarity": 1.0,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.0.downsamplers.0.conv",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        128
+      ],
+      "delta_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.0.downsamplers.0.conv::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.0.downsamplers.0.conv::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.0.downsamplers.0.conv::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.0.downsamplers.0.conv::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_0_downsamplers_0_conv_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.0003522885963320732,
+        "std": 0.02659912034869194,
+        "min": -0.23823003470897675,
+        "max": 0.1187647208571434,
+        "max_abs": 0.23823003470897675
+      },
+      "delta_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 7.787541107973084e-06,
+        "std": 0.00304269976913929,
+        "min": -0.024719126522541046,
+        "max": 0.02138514071702957,
+        "max_abs": 0.024719126522541046
+      },
+      "effective_weight_stats": {
+        "shape": [
+          128,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 147456,
+        "mean": 0.0003600761410780251,
+        "std": 0.026764703914523125,
+        "min": -0.2383919507265091,
+        "max": 0.1190667450428009,
+        "max_abs": 0.2383919507265091
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          128,
+          3,
+          3
+        ],
+        "max_abs_error": 1.3709068298339844e-06,
+        "mean_abs_error": 2.2683464351302973e-07,
+        "cosine_similarity": 1.0000001192092896,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.resnets.0.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        256,
+        128,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.resnets.0.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.resnets.0.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.resnets.0.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.resnets.0.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_resnets_0_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 294912,
+        "mean": 0.0011337515898048878,
+        "std": 0.0387800894677639,
+        "min": -0.4476661682128906,
+        "max": 0.251645028591156,
+        "max_abs": 0.4476661682128906
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 294912,
+        "mean": -8.156123840308283e-06,
+        "std": 0.003843072336167097,
+        "min": -0.02656691148877144,
+        "max": 0.028034519404172897,
+        "max_abs": 0.028034519404172897
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 294912,
+        "mean": 0.0011255955323576927,
+        "std": 0.0389905609190464,
+        "min": -0.45818835496902466,
+        "max": 0.2508305609226227,
+        "max_abs": 0.45818835496902466
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          8,
+          8
+        ],
+        "max_abs_error": 2.4437904357910156e-06,
+        "mean_abs_error": 2.7529671342563233e-07,
+        "cosine_similarity": 0.9999995827674866,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.resnets.0.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.resnets.0.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.resnets.0.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.resnets.0.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.resnets.0.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_resnets_0_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": -9.814587974688038e-05,
+        "std": 0.0315571092069149,
+        "min": -0.22062863409519196,
+        "max": 0.286735862493515,
+        "max_abs": 0.286735862493515
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": -6.391718216036679e-06,
+        "std": 0.004448177292943001,
+        "min": -0.03592971712350845,
+        "max": 0.04132189229130745,
+        "max_abs": 0.04132189229130745
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": -0.00010453761206008494,
+        "std": 0.0318654365837574,
+        "min": -0.22041939198970795,
+        "max": 0.2882460951805115,
+        "max_abs": 0.2882460951805115
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          8,
+          8
+        ],
+        "max_abs_error": 2.86102294921875e-06,
+        "mean_abs_error": 3.28188974663135e-07,
+        "cosine_similarity": 0.9999997615814209,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.resnets.0.conv_shortcut",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "effective_weight_shape": [
+        256,
+        128,
+        1,
+        1
+      ],
+      "lora_A_shape": [
+        4,
+        128,
+        1,
+        1
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.resnets.0.conv_shortcut::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.resnets.0.conv_shortcut::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.resnets.0.conv_shortcut::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.resnets.0.conv_shortcut::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_resnets_0_conv_shortcut_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          128,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 32768,
+        "mean": 0.0008272248669527471,
+        "std": 0.04737799987196922,
+        "min": -0.17341330647468567,
+        "max": 0.13887108862400055,
+        "max_abs": 0.17341330647468567
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          128,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 32768,
+        "mean": 4.119512959732674e-05,
+        "std": 0.0036317885387688875,
+        "min": -0.03041531890630722,
+        "max": 0.03007875196635723,
+        "max_abs": 0.03041531890630722
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          128,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 32768,
+        "mean": 0.0008684199419803917,
+        "std": 0.04749826714396477,
+        "min": -0.17217950522899628,
+        "max": 0.14229868352413177,
+        "max_abs": 0.17217950522899628
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          8,
+          8
+        ],
+        "max_abs_error": 1.430511474609375e-06,
+        "mean_abs_error": 1.0974392949947287e-07,
+        "cosine_similarity": 0.9999997019767761,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.resnets.1.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.resnets.1.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.resnets.1.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.resnets.1.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.resnets.1.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_resnets_1_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 0.0012938693398609757,
+        "std": 0.03655359894037247,
+        "min": -0.5100505352020264,
+        "max": 0.3152136504650116,
+        "max_abs": 0.5100505352020264
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 5.8672412706073374e-08,
+        "std": 0.004079441539943218,
+        "min": -0.03263194113969803,
+        "max": 0.034304242581129074,
+        "max_abs": 0.034304242581129074
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 0.0012939280131831765,
+        "std": 0.03678343817591667,
+        "min": -0.5125121474266052,
+        "max": 0.31465238332748413,
+        "max_abs": 0.5125121474266052
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          8,
+          8
+        ],
+        "max_abs_error": 4.0531158447265625e-06,
+        "mean_abs_error": 3.7900920801803295e-07,
+        "cosine_similarity": 1.000000238418579,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.resnets.1.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.resnets.1.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.resnets.1.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.resnets.1.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.resnets.1.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_resnets_1_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 0.0001487798144808039,
+        "std": 0.031748656183481216,
+        "min": -0.23950034379959106,
+        "max": 0.20478413999080658,
+        "max_abs": 0.23950034379959106
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": -6.851405487395823e-06,
+        "std": 0.00478019006550312,
+        "min": -0.03937942534685135,
+        "max": 0.04258999228477478,
+        "max_abs": 0.04258999228477478
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 0.0001419284235453233,
+        "std": 0.0321134589612484,
+        "min": -0.23884142935276031,
+        "max": 0.20653143525123596,
+        "max_abs": 0.23884142935276031
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          8,
+          8
+        ],
+        "max_abs_error": 2.384185791015625e-06,
+        "mean_abs_error": 3.336491261052288e-07,
+        "cosine_similarity": 0.9999998807907104,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.1.downsamplers.0.conv",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "bias_shape": [
+        256
+      ],
+      "delta_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.1.downsamplers.0.conv::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.1.downsamplers.0.conv::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.1.downsamplers.0.conv::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.1.downsamplers.0.conv::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_1_downsamplers_0_conv_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 8.46069015096873e-05,
+        "std": 0.024628151208162308,
+        "min": -0.1524861454963684,
+        "max": 0.1622888296842575,
+        "max_abs": 0.1622888296842575
+      },
+      "delta_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 7.408888450299855e-06,
+        "std": 0.0039027053862810135,
+        "min": -0.040254220366477966,
+        "max": 0.049467865377664566,
+        "max_abs": 0.049467865377664566
+      },
+      "effective_weight_stats": {
+        "shape": [
+          256,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 589824,
+        "mean": 9.201579814543948e-05,
+        "std": 0.02492351084947586,
+        "min": -0.15633291006088257,
+        "max": 0.16041378676891327,
+        "max_abs": 0.16041378676891327
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          256,
+          3,
+          3
+        ],
+        "max_abs_error": 1.9073486328125e-06,
+        "mean_abs_error": 3.152773899728345e-07,
+        "cosine_similarity": 0.9999997019767761,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.resnets.0.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        256,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.resnets.0.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.resnets.0.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.resnets.0.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.resnets.0.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_resnets_0_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 1179648,
+        "mean": 0.0026950547471642494,
+        "std": 0.03611971437931061,
+        "min": -0.4475471079349518,
+        "max": 0.2748548984527588,
+        "max_abs": 0.4475471079349518
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 1179648,
+        "mean": -5.259411409497261e-06,
+        "std": 0.004612213000655174,
+        "min": -0.03647125884890556,
+        "max": 0.04206627979874611,
+        "max_abs": 0.04206627979874611
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          256,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 1179648,
+        "mean": 0.002689795568585396,
+        "std": 0.03641562536358833,
+        "min": -0.4481109082698822,
+        "max": 0.27093082666397095,
+        "max_abs": 0.4481109082698822
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 4.291534423828125e-06,
+        "mean_abs_error": 3.792633265220502e-07,
+        "cosine_similarity": 1.0000004768371582,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.resnets.0.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.resnets.0.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.resnets.0.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.resnets.0.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.resnets.0.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_resnets_0_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.00045378433424048126,
+        "std": 0.03283980116248131,
+        "min": -0.4184890389442444,
+        "max": 0.2400680035352707,
+        "max_abs": 0.4184890389442444
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 2.3071541477293067e-07,
+        "std": 0.004803475923836231,
+        "min": -0.052742719650268555,
+        "max": 0.054809633642435074,
+        "max_abs": 0.054809633642435074
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.00045355368638411164,
+        "std": 0.03319688141345978,
+        "min": -0.4203234910964966,
+        "max": 0.24354687333106995,
+        "max_abs": 0.4203234910964966
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 4.0531158447265625e-06,
+        "mean_abs_error": 5.186171279092378e-07,
+        "cosine_similarity": 1.0000007152557373,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.resnets.0.conv_shortcut",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "effective_weight_shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "lora_A_shape": [
+        4,
+        256,
+        1,
+        1
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.resnets.0.conv_shortcut::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.resnets.0.conv_shortcut::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.resnets.0.conv_shortcut::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.resnets.0.conv_shortcut::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_resnets_0_conv_shortcut_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          256,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 131072,
+        "mean": 0.0010462116915732622,
+        "std": 0.03254620358347893,
+        "min": -0.15413950383663177,
+        "max": 0.18651172518730164,
+        "max_abs": 0.18651172518730164
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          256,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 131072,
+        "mean": -3.128199023194611e-05,
+        "std": 0.004694162867963314,
+        "min": -0.03749936446547508,
+        "max": 0.03494438901543617,
+        "max_abs": 0.03749936446547508
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          256,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 131072,
+        "mean": 0.0010149297304451466,
+        "std": 0.0328814834356308,
+        "min": -0.15390045940876007,
+        "max": 0.19027400016784668,
+        "max_abs": 0.19027400016784668
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 2.6226043701171875e-06,
+        "mean_abs_error": 1.523328165831117e-07,
+        "cosine_similarity": 1.0,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.resnets.1.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.resnets.1.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.resnets.1.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.resnets.1.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.resnets.1.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_resnets_1_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.003608167637139559,
+        "std": 0.03415722772479057,
+        "min": -0.5655386447906494,
+        "max": 0.465198814868927,
+        "max_abs": 0.5655386447906494
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 2.853161959137651e-06,
+        "std": 0.005143070127815008,
+        "min": -0.06633329391479492,
+        "max": 0.0787423625588417,
+        "max_abs": 0.0787423625588417
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0036110212095081806,
+        "std": 0.034546587616205215,
+        "min": -0.5713214874267578,
+        "max": 0.46265900135040283,
+        "max_abs": 0.5713214874267578
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 4.76837158203125e-06,
+        "mean_abs_error": 5.457274596665229e-07,
+        "cosine_similarity": 1.0000003576278687,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.resnets.1.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.resnets.1.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.resnets.1.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.resnets.1.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.resnets.1.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_resnets_1_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.00022138877830002457,
+        "std": 0.03419782593846321,
+        "min": -0.26299431920051575,
+        "max": 0.3066515326499939,
+        "max_abs": 0.3066515326499939
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -7.19813897376298e-07,
+        "std": 0.0044028861448168755,
+        "min": -0.036809325218200684,
+        "max": 0.03576195240020752,
+        "max_abs": 0.036809325218200684
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0002206689678132534,
+        "std": 0.03447955101728439,
+        "min": -0.26715394854545593,
+        "max": 0.30730852484703064,
+        "max_abs": 0.30730852484703064
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 4.291534423828125e-06,
+        "mean_abs_error": 5.402116585173644e-07,
+        "cosine_similarity": 1.0000011920928955,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.2.downsamplers.0.conv",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.2.downsamplers.0.conv::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.2.downsamplers.0.conv::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.2.downsamplers.0.conv::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.2.downsamplers.0.conv::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_2_downsamplers_0_conv_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.000642458675429225,
+        "std": 0.028213156387209892,
+        "min": -0.25336432456970215,
+        "max": 0.2419377863407135,
+        "max_abs": 0.25336432456970215
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 1.3176555739846663e-06,
+        "std": 0.005027656443417072,
+        "min": -0.07748369127511978,
+        "max": 0.07078532874584198,
+        "max_abs": 0.07748369127511978
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.000643776380456984,
+        "std": 0.02864418737590313,
+        "min": -0.2462708055973053,
+        "max": 0.25087660551071167,
+        "max_abs": 0.25087660551071167
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          3,
+          3
+        ],
+        "max_abs_error": 3.814697265625e-06,
+        "mean_abs_error": 5.13690736170247e-07,
+        "cosine_similarity": 0.9999998807907104,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.3.resnets.0.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.3.resnets.0.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.3.resnets.0.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.3.resnets.0.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.3.resnets.0.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_3_resnets_0_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0010841538896784186,
+        "std": 0.03253709152340889,
+        "min": -0.48834583163261414,
+        "max": 0.32729899883270264,
+        "max_abs": 0.48834583163261414
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -1.1904331813639146e-06,
+        "std": 0.005275032017379999,
+        "min": -0.05856650695204735,
+        "max": 0.05418906360864639,
+        "max_abs": 0.05856650695204735
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0010829634265974164,
+        "std": 0.03295478597283363,
+        "min": -0.4896372854709625,
+        "max": 0.3237014412879944,
+        "max_abs": 0.4896372854709625
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 3.814697265625e-06,
+        "mean_abs_error": 5.204079798204475e-07,
+        "cosine_similarity": 0.9999995827674866,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.3.resnets.0.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.3.resnets.0.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.3.resnets.0.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.3.resnets.0.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.3.resnets.0.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_3_resnets_0_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.0013782153837382793,
+        "std": 0.03921275585889816,
+        "min": -0.8813191056251526,
+        "max": 0.3773467242717743,
+        "max_abs": 0.8813191056251526
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -1.862330691437819e-06,
+        "std": 0.004308030474931002,
+        "min": -0.043585363775491714,
+        "max": 0.043014269322156906,
+        "max_abs": 0.043585363775491714
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.0013800779124721885,
+        "std": 0.03945443406701088,
+        "min": -0.8893395662307739,
+        "max": 0.378278911113739,
+        "max_abs": 0.8893395662307739
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 5.7220458984375e-06,
+        "mean_abs_error": 5.871797270629031e-07,
+        "cosine_similarity": 1.0000003576278687,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.3.resnets.1.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.3.resnets.1.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.3.resnets.1.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.3.resnets.1.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.3.resnets.1.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_3_resnets_1_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.00353828864172101,
+        "std": 0.03281734883785248,
+        "min": -0.5935624837875366,
+        "max": 0.3897797167301178,
+        "max_abs": 0.5935624837875366
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 1.4881253562748498e-08,
+        "std": 0.004742900840938091,
+        "min": -0.04080916941165924,
+        "max": 0.03953370079398155,
+        "max_abs": 0.04080916941165924
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.003538303542882204,
+        "std": 0.033156488090753555,
+        "min": -0.5912083983421326,
+        "max": 0.3912241756916046,
+        "max_abs": 0.5912083983421326
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 3.814697265625e-06,
+        "mean_abs_error": 5.307076094140939e-07,
+        "cosine_similarity": 0.9999997615814209,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.down_blocks.3.resnets.1.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.down_blocks.3.resnets.1.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.down_blocks.3.resnets.1.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.down_blocks.3.resnets.1.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.down_blocks.3.resnets.1.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_down_blocks_3_resnets_1_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.0015103282639756799,
+        "std": 0.04130246862769127,
+        "min": -1.0796294212341309,
+        "max": 0.5225009918212891,
+        "max_abs": 1.0796294212341309
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -2.820810038883792e-07,
+        "std": 0.004857907071709633,
+        "min": -0.04729805886745453,
+        "max": 0.045818082988262177,
+        "max_abs": 0.04729805886745453
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.0015106105711311102,
+        "std": 0.04160105809569359,
+        "min": -1.082624912261963,
+        "max": 0.5241817235946655,
+        "max_abs": 1.082624912261963
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 6.67572021484375e-06,
+        "mean_abs_error": 6.182636411722342e-07,
+        "cosine_similarity": 0.9999999403953552,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.attentions.0.to_q",
+      "adapter_name": "default_encoder",
+      "module_class": "Linear",
+      "base_layer_class": "LoRACompatibleLinear",
+      "weight_type": "Linear",
+      "base_weight_shape": [
+        512,
+        512
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512
+      ],
+      "effective_weight_shape": [
+        512,
+        512
+      ],
+      "lora_A_shape": [
+        4,
+        512
+      ],
+      "lora_B_shape": [
+        512,
+        4
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.attentions.0.to_q::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.attentions.0.to_q::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.attentions.0.to_q::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.attentions.0.to_q::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_attentions_0_to_q_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -6.796525121899322e-05,
+        "std": 0.03764482960104942,
+        "min": -0.19777852296829224,
+        "max": 0.20358839631080627,
+        "max_abs": 0.20358839631080627
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": 5.434567810880253e-06,
+        "std": 0.004259705543518066,
+        "min": -0.03206010162830353,
+        "max": 0.03280695155262947,
+        "max_abs": 0.03280695155262947
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -6.253067112993449e-05,
+        "std": 0.037894487380981445,
+        "min": -0.1963384598493576,
+        "max": 0.20278999209403992,
+        "max_abs": 0.20278999209403992
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          3,
+          512
+        ],
+        "max_abs_error": 5.960464477539062e-07,
+        "mean_abs_error": 9.569581749246936e-08,
+        "cosine_similarity": 1.0,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.attentions.0.to_k",
+      "adapter_name": "default_encoder",
+      "module_class": "Linear",
+      "base_layer_class": "LoRACompatibleLinear",
+      "weight_type": "Linear",
+      "base_weight_shape": [
+        512,
+        512
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512
+      ],
+      "effective_weight_shape": [
+        512,
+        512
+      ],
+      "lora_A_shape": [
+        4,
+        512
+      ],
+      "lora_B_shape": [
+        512,
+        4
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.attentions.0.to_k::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.attentions.0.to_k::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.attentions.0.to_k::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.attentions.0.to_k::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_attentions_0_to_k_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -2.7860649424837902e-05,
+        "std": 0.037704311311244965,
+        "min": -0.17555709183216095,
+        "max": 0.17488710582256317,
+        "max_abs": 0.17555709183216095
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": 4.0633854041516315e-06,
+        "std": 0.004668512847274542,
+        "min": -0.03817559406161308,
+        "max": 0.03382677212357521,
+        "max_abs": 0.03817559406161308
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -2.3797265384928323e-05,
+        "std": 0.038000915199518204,
+        "min": -0.17792479693889618,
+        "max": 0.18375204503536224,
+        "max_abs": 0.18375204503536224
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          3,
+          512
+        ],
+        "max_abs_error": 4.917383193969727e-07,
+        "mean_abs_error": 9.570794645696878e-08,
+        "cosine_similarity": 0.9999998807907104,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.attentions.0.to_v",
+      "adapter_name": "default_encoder",
+      "module_class": "Linear",
+      "base_layer_class": "LoRACompatibleLinear",
+      "weight_type": "Linear",
+      "base_weight_shape": [
+        512,
+        512
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512
+      ],
+      "effective_weight_shape": [
+        512,
+        512
+      ],
+      "lora_A_shape": [
+        4,
+        512
+      ],
+      "lora_B_shape": [
+        512,
+        4
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.attentions.0.to_v::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.attentions.0.to_v::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.attentions.0.to_v::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.attentions.0.to_v::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_attentions_0_to_v_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": 0.00011299477046122774,
+        "std": 0.042763348668813705,
+        "min": -0.28837788105010986,
+        "max": 0.22810259461402893,
+        "max_abs": 0.28837788105010986
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": 2.798264176817611e-06,
+        "std": 0.004426616709679365,
+        "min": -0.040616344660520554,
+        "max": 0.035894326865673065,
+        "max_abs": 0.040616344660520554
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": 0.00011579304555198178,
+        "std": 0.04305218532681465,
+        "min": -0.28731968998908997,
+        "max": 0.23282110691070557,
+        "max_abs": 0.28731968998908997
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          3,
+          512
+        ],
+        "max_abs_error": 6.258487701416016e-07,
+        "mean_abs_error": 1.0529493010835722e-07,
+        "cosine_similarity": 1.0,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.attentions.0.to_out.0",
+      "adapter_name": "default_encoder",
+      "module_class": "Linear",
+      "base_layer_class": "LoRACompatibleLinear",
+      "weight_type": "Linear",
+      "base_weight_shape": [
+        512,
+        512
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512
+      ],
+      "effective_weight_shape": [
+        512,
+        512
+      ],
+      "lora_A_shape": [
+        4,
+        512
+      ],
+      "lora_B_shape": [
+        512,
+        4
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.attentions.0.to_out.0::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.attentions.0.to_out.0::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.attentions.0.to_out.0::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.attentions.0.to_out.0::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_attentions_0_to_out_0_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -0.00045941496500745416,
+        "std": 0.04505074769258499,
+        "min": -0.40649959444999695,
+        "max": 0.32805895805358887,
+        "max_abs": 0.40649959444999695
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -1.9007467926712707e-05,
+        "std": 0.0039559039287269115,
+        "min": -0.03402228653430939,
+        "max": 0.030680915340781212,
+        "max_abs": 0.03402228653430939
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "numel": 262144,
+        "mean": -0.0004784224438481033,
+        "std": 0.04522811248898506,
+        "min": -0.4104152023792267,
+        "max": 0.332077294588089,
+        "max_abs": 0.4104152023792267
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          3,
+          512
+        ],
+        "max_abs_error": 7.078051567077637e-07,
+        "mean_abs_error": 1.0718243714791242e-07,
+        "cosine_similarity": 1.0000001192092896,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.resnets.0.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.resnets.0.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.resnets.0.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.resnets.0.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.resnets.0.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_resnets_0_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.005210313946008682,
+        "std": 0.03337680175900459,
+        "min": -0.7568174004554749,
+        "max": 0.4720073342323303,
+        "max_abs": 0.7568174004554749
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 7.249030318234873e-07,
+        "std": 0.005267555359750986,
+        "min": -0.06251157820224762,
+        "max": 0.07907754182815552,
+        "max_abs": 0.07907754182815552
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.00521103898063302,
+        "std": 0.0337856225669384,
+        "min": -0.7554677128791809,
+        "max": 0.4919985234737396,
+        "max_abs": 0.7554677128791809
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 4.76837158203125e-06,
+        "mean_abs_error": 5.469350981002208e-07,
+        "cosine_similarity": 0.9999994039535522,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.resnets.0.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.resnets.0.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.resnets.0.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.resnets.0.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.resnets.0.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_resnets_0_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.0013441083719953895,
+        "std": 0.0449594222009182,
+        "min": -1.657342553138733,
+        "max": 0.5493965744972229,
+        "max_abs": 1.657342553138733
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -1.286098631680943e-05,
+        "std": 0.004653839860111475,
+        "min": -0.05568913742899895,
+        "max": 0.056706760078668594,
+        "max_abs": 0.056706760078668594
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": -0.00135696935467422,
+        "std": 0.04521438106894493,
+        "min": -1.6489920616149902,
+        "max": 0.5479418039321899,
+        "max_abs": 1.6489920616149902
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 7.152557373046875e-06,
+        "mean_abs_error": 6.64422259433195e-07,
+        "cosine_similarity": 1.0000011920928955,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.resnets.1.conv1",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.resnets.1.conv1::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.resnets.1.conv1::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.resnets.1.conv1::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.resnets.1.conv1::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_resnets_1_conv1_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.005178628023713827,
+        "std": 0.033965785056352615,
+        "min": -0.7459891438484192,
+        "max": 0.6606078743934631,
+        "max_abs": 0.7459891438484192
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 3.132340111733356e-07,
+        "std": 0.005965871270745993,
+        "min": -0.06133069097995758,
+        "max": 0.06366494297981262,
+        "max_abs": 0.06366494297981262
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.005178940948098898,
+        "std": 0.034485768526792526,
+        "min": -0.7471994757652283,
+        "max": 0.6551684737205505,
+        "max_abs": 0.7471994757652283
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 5.0067901611328125e-06,
+        "mean_abs_error": 5.556055384658976e-07,
+        "cosine_similarity": 1.0000007152557373,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.mid_block.resnets.1.conv2",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "LoRACompatibleConv",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        512
+      ],
+      "delta_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.mid_block.resnets.1.conv2::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.mid_block.resnets.1.conv2::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.mid_block.resnets.1.conv2::default_encoder::effective_weight",
+        "bias": "timevae::encoder.mid_block.resnets.1.conv2::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_mid_block_resnets_1_conv2_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0006579431938007474,
+        "std": 0.04959797114133835,
+        "min": -2.705352783203125,
+        "max": 0.5273074507713318,
+        "max_abs": 2.705352783203125
+      },
+      "delta_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 1.2326127034612e-05,
+        "std": 0.004544212017208338,
+        "min": -0.05445518344640732,
+        "max": 0.05589218810200691,
+        "max_abs": 0.05589218810200691
+      },
+      "effective_weight_stats": {
+        "shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 2359296,
+        "mean": 0.0006702693644911051,
+        "std": 0.04982932284474373,
+        "min": -2.706376552581787,
+        "max": 0.5244984030723572,
+        "max_abs": 2.706376552581787
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          512,
+          8,
+          8
+        ],
+        "max_abs_error": 1.0013580322265625e-05,
+        "mean_abs_error": 7.344470418502169e-07,
+        "cosine_similarity": 1.0000004768371582,
+        "tolerance": 0.0001,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "encoder.conv_out",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "Conv2d",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        8,
+        512,
+        3,
+        3
+      ],
+      "bias_shape": [
+        8
+      ],
+      "delta_weight_shape": [
+        8,
+        512,
+        3,
+        3
+      ],
+      "effective_weight_shape": [
+        8,
+        512,
+        3,
+        3
+      ],
+      "lora_A_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "lora_B_shape": [
+        8,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::encoder.conv_out::default_encoder::base_weight",
+        "delta_weight": "timevae::encoder.conv_out::default_encoder::delta_weight",
+        "effective_weight": "timevae::encoder.conv_out::default_encoder::effective_weight",
+        "bias": "timevae::encoder.conv_out::default_encoder::bias"
+      },
+      "normalized_key": "timevae_encoder_conv_out_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          8,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 36864,
+        "mean": -0.00011751524289138615,
+        "std": 0.02999747171998024,
+        "min": -0.24579408764839172,
+        "max": 0.2543589770793915,
+        "max_abs": 0.2543589770793915
+      },
+      "delta_weight_stats": {
+        "shape": [
+          8,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 36864,
+        "mean": -1.1956920388911385e-05,
+        "std": 0.0031841860618442297,
+        "min": -0.019330842420458794,
+        "max": 0.015472730621695518,
+        "max_abs": 0.019330842420458794
+      },
+      "effective_weight_stats": {
+        "shape": [
+          8,
+          512,
+          3,
+          3
+        ],
+        "dtype": "float32",
+        "numel": 36864,
+        "mean": -0.00012947211507707834,
+        "std": 0.030163928866386414,
+        "min": -0.24617783725261688,
+        "max": 0.2562613785266876,
+        "max_abs": 0.2562613785266876
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          8,
+          8,
+          8
+        ],
+        "max_abs_error": 2.384185791015625e-06,
+        "mean_abs_error": 4.902976797893643e-07,
+        "cosine_similarity": 0.9999999403953552,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    },
+    {
+      "component": "TimeVAE",
+      "module_path": "quant_conv",
+      "adapter_name": "default_encoder",
+      "module_class": "Conv2d",
+      "base_layer_class": "Conv2d",
+      "weight_type": "Conv2d",
+      "base_weight_shape": [
+        8,
+        8,
+        1,
+        1
+      ],
+      "bias_shape": [
+        8
+      ],
+      "delta_weight_shape": [
+        8,
+        8,
+        1,
+        1
+      ],
+      "effective_weight_shape": [
+        8,
+        8,
+        1,
+        1
+      ],
+      "lora_A_shape": [
+        4,
+        8,
+        1,
+        1
+      ],
+      "lora_B_shape": [
+        8,
+        4,
+        1,
+        1
+      ],
+      "rank": 4,
+      "alpha": "not serialized in converted NPZ; official PEFT module applies its configured scale",
+      "scaling": 2.0,
+      "active_in_official_inference_path": true,
+      "npz_keys": {
+        "base_weight": "timevae::quant_conv::default_encoder::base_weight",
+        "delta_weight": "timevae::quant_conv::default_encoder::delta_weight",
+        "effective_weight": "timevae::quant_conv::default_encoder::effective_weight",
+        "bias": "timevae::quant_conv::default_encoder::bias"
+      },
+      "normalized_key": "timevae_quant_conv_default_encoder_effective_weight",
+      "base_weight_stats": {
+        "shape": [
+          8,
+          8,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 64,
+        "mean": 0.07514689862728119,
+        "std": 0.7118493318557739,
+        "min": -1.4975112676620483,
+        "max": 1.4489572048187256,
+        "max_abs": 1.4975112676620483
+      },
+      "delta_weight_stats": {
+        "shape": [
+          8,
+          8,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 64,
+        "mean": 0.0014584555756300688,
+        "std": 0.0064813485369086266,
+        "min": -0.016975529491901398,
+        "max": 0.023284031078219414,
+        "max_abs": 0.023284031078219414
+      },
+      "effective_weight_stats": {
+        "shape": [
+          8,
+          8,
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "numel": 64,
+        "mean": 0.07660536468029022,
+        "std": 0.7114868760108948,
+        "min": -1.492554783821106,
+        "max": 1.4504026174545288,
+        "max_abs": 1.492554783821106
+      },
+      "manual_verify": {
+        "shape_match": true,
+        "output_shape": [
+          2,
+          8,
+          8,
+          8
+        ],
+        "max_abs_error": 1.9073486328125e-06,
+        "mean_abs_error": 1.3236838469765644e-07,
+        "cosine_similarity": 0.9999998807907104,
+        "tolerance": 1e-05,
+        "status": "PASS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "markers": {
+    "TADSR_FULL_ENGINEERING_COMPLETION_ROADMAP": "PASS",
+    "TADSR_CONTROLLED_EXTENSION_PLAN_READY": "PASS"
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "name": "metadata / shape / dtype / range contract",
+      "current_status": "mostly_pass",
+      "status_upgrade_policy": "metadata-only evidence does not upgrade full inference"
+    },
+    {
+      "stage": 2,
+      "name": "TimeVAE full encode/decode alignment",
+      "current_status": "TIME_VAE_FULL_ALIGNMENT_NOT_COMPLETE",
+      "status_upgrade_policy": "requires full encode/decode tensor or stats alignment"
+    },
+    {
+      "stage": 3,
+      "name": "runtime LoRA isolated alignment",
+      "current_status": "NOT_IMPLEMENTED_BY_DESIGN",
+      "status_upgrade_policy": "requires isolated formula/layer/module proof before integration"
+    },
+    {
+      "stage": 4,
+      "name": "tiny controlled full pipeline smoke",
+      "current_status": "future",
+      "status_upgrade_policy": "tiny smoke is not production full inference"
+    },
+    {
+      "stage": 5,
+      "name": "experimental full inference CLI",
+      "current_status": "future",
+      "status_upgrade_policy": "must be experimental entrypoint and must not replace guarded CLI"
+    }
+  ]
+}

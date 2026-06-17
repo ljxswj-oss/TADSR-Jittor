@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "target": "moments -> posterior mode -> decoder up_blocks.1",
+  "note": "deterministic quant bridge uses posterior mode, not sampling",
+  "diagnostics": {
+    "posterior_mode": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 0.0001
+    },
+    "post_quant_conv": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 4.516914486885071e-08,
+      "relative_error": 1.6216094289621725e-08,
+      "cosine_similarity": 0.9999999999999997,
+      "tolerance": 0.0001
+    },
+    "decoder_conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 9.555520819048979e-08,
+      "relative_error": 9.694945281911466e-08,
+      "cosine_similarity": 0.9999999999999947,
+      "tolerance": 0.0001
+    },
+    "decoder_midblock": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        4,
+        4
+      ],
+      "max_abs_error": 3.814697265625e-06,
+      "mean_abs_error": 5.609419702068408e-07,
+      "relative_error": 4.7478154466565144e-07,
+      "cosine_similarity": 0.999999999999912,
+      "tolerance": 0.0001
+    },
+    "decoder_upblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 1.52587890625e-05,
+      "mean_abs_error": 2.0016136375033966e-06,
+      "relative_error": 4.828802072938136e-07,
+      "cosine_similarity": 0.9999999999999187,
+      "tolerance": 0.0001
+    },
+    "decoder_upblock1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 6.866455078125e-05,
+      "mean_abs_error": 7.4422425981879314e-06,
+      "relative_error": 5.452115853200274e-07,
+      "cosine_similarity": 0.9999999999998994,
+      "tolerance": 0.0001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      16,
+      16
+    ],
+    "max_abs_error": 6.866455078125e-05,
+    "mean_abs_error": 7.4422425981879314e-06,
+    "relative_error": 5.452115853200274e-07,
+    "cosine_similarity": 0.9999999999998994,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

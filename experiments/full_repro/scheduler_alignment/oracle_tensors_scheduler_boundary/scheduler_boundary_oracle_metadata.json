@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "tadsr_scheduler_oracle_tensors": "PASS",
+  "tadsr_unet_scheduler_one_step_oracle": "PASS",
+  "scheduler_class": "DDPMScheduler",
+  "config": {
+    "num_train_timesteps": 1000,
+    "beta_start": 0.00085,
+    "beta_end": 0.012,
+    "beta_schedule": "scaled_linear",
+    "trained_betas": null,
+    "variance_type": "fixed_small",
+    "clip_sample": false,
+    "prediction_type": "epsilon",
+    "thresholding": false,
+    "dynamic_thresholding_ratio": 0.995,
+    "clip_sample_range": 1.0,
+    "sample_max_value": 1.0,
+    "timestep_spacing": "leading",
+    "steps_offset": 1,
+    "rescale_betas_zero_snr": false,
+    "_use_default_values": [
+      "thresholding",
+      "dynamic_thresholding_ratio",
+      "variance_type",
+      "rescale_betas_zero_snr",
+      "timestep_spacing",
+      "clip_sample_range",
+      "sample_max_value"
+    ],
+    "_class_name": "PNDMScheduler",
+    "_diffusers_version": "0.10.0.dev0",
+    "set_alpha_to_one": false,
+    "skip_prk_steps": true
+  },
+  "num_inference_steps": 1,
+  "timesteps": [
+    1
+  ],
+  "chosen_timestep": 1,
+  "step_signature": "(model_output: torch.FloatTensor, timestep: int, sample: torch.FloatTensor, generator=None, return_dict: bool = True) -> Union[diffusers.schedulers.scheduling_ddpm.DDPMSchedulerOutput, Tuple]",
+  "scale_model_input_used": true,
+  "scale_model_input_is_noop": true,
+  "scheduler_only_sample": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.0,
+    "max": 1.0,
+    "mean": 0.0,
+    "std": 0.5774912238121033
+  },
+  "scheduler_only_model_output": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -0.5,
+    "max": 0.5,
+    "mean": 0.0,
+    "std": 0.28874561190605164
+  },
+  "scheduler_scaled_model_input": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.0,
+    "max": 1.0,
+    "mean": 0.0,
+    "std": 0.5774912238121033
+  },
+  "scheduler_prev_sample": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.021510362625122,
+    "max": 1.021510362625122,
+    "mean": 0.0,
+    "std": 0.5899132490158081
+  },
+  "scheduler_pred_original_sample": {
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "min": -1.021510362625122,
+    "max": 1.021510362625122,
+    "mean": 0.0,
+    "std": 0.5899132490158081
+  },
+  "step_output_fields": [
+    "prev_sample",
+    "pred_original_sample"
+  ],
+  "optional_unet_scheduler_one_step_available": true,
+  "optional_unet_scheduler_one_step_reason": "reused existing official UNet full-forward oracle tensors; no UNet or full pipeline run in this export",
+  "optional_unet_scheduler_summaries": {
+    "unet_scheduler_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.5774912238121033
+    },
+    "unet_scheduler_model_output": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5024965405464172,
+      "max": 0.9271302223205566,
+      "mean": -0.022930094972252846,
+      "std": 0.10461559146642685
+    },
+    "unet_scheduler_prev_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0154422521591187,
+      "max": 0.999618649482727,
+      "mean": 0.0009473264217376709,
+      "std": 0.5785784125328064
+    },
+    "unet_scheduler_pred_original_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0154422521591187,
+      "max": 0.999618649482727,
+      "mean": 0.0009473264217376709,
+      "std": 0.5785784125328064
+    }
+  },
+  "scheduler_loop_executed": false,
+  "vae_decode_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false,
+  "recommended_next_stage": "Run Jittor scheduler boundary alignment test; if PASS, plan minimal latent-only integration dry-run while keeping full inference NotImplemented."
+}

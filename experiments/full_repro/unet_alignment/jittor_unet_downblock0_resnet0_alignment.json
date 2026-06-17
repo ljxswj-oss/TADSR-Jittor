@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "target": "entry conv_in/time_embedding hidden -> down_blocks.0.resnets.0 only",
+  "note": "Does not enter attentions.0, resnets.1, downsampler, full down_blocks.0, or full UNet.",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.152557373046875e-07,
+      "mean_abs_error": 2.7601924224539276e-08,
+      "relative_error": 8.777170917065951e-08,
+      "cosine_similarity": 0.9999999999999957,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 2.86102294921875e-06,
+      "mean_abs_error": 1.9809070472831536e-07,
+      "relative_error": 1.2165873140556353e-07,
+      "cosine_similarity": 0.9999999999999928,
+      "tolerance": 0.0001
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "mean_abs_error": 5.54980942979455e-08,
+      "relative_error": 1.2099655286620712e-07,
+      "cosine_similarity": 0.9999999999999892,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 1.0156748757594869e-07,
+      "relative_error": 2.2909321921173648e-07,
+      "cosine_similarity": 0.9999999999999778,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "mean_abs_error": 1.0156065641808709e-07,
+      "relative_error": 2.205985929432103e-07,
+      "cosine_similarity": 0.99999999999998,
+      "tolerance": 0.0001
+    }
+  },
+  "weights": "experiments/full_repro/unet_alignment/converted_unet_downblock0_resnet0_effective_weights.npz"
+}

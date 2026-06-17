@@ -1,0 +1,60 @@
+{
+  "status_marker": "TADSR_TIMEVAE_LIVE_METADATA_COMPLETION",
+  "status": "PASS",
+  "source": "experiments/production_completion/timevae_full/timevae_production_oracle_metadata.json",
+  "oracle_status": "PASS",
+  "required_field_count": 69,
+  "present_required_field_count": 69,
+  "missing_required_fields": [],
+  "bad_required_fields": [],
+  "groups": {
+    "dependency": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "encode_input": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "posterior": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "latent": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "scaling": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "decode": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "clamp": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    },
+    "safety": {
+      "status": "PASS",
+      "missing_fields": [],
+      "bad_fields": []
+    }
+  },
+  "ready_for_timevae_preflight": true,
+  "ready_for_one_step_contract": true,
+  "markers": {
+    "TADSR_TIMEVAE_LIVE_METADATA_COMPLETION": "PASS",
+    "TADSR_TIMEVAE_LIVE_ENCODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_DECODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_SAFETY_FLAGS": "PASS"
+  }
+}

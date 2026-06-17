@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "target": "down_blocks.3 local: resnet0 -> resnet1",
+  "note": "Completes local down_blocks.3 hidden output and residual output_states tuple only. mid_block, up_blocks and full UNet forward remain NotImplemented.",
+  "diagnostics": {
+    "downblock3_resnet0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 6.143059181340504e-07,
+      "relative_error": 2.3127072980770804e-07,
+      "cosine_similarity": 0.9999999999999732,
+      "tolerance": 0.002
+    },
+    "downblock3_resnet1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 7.068809281918221e-07,
+      "relative_error": 2.6628398236413027e-07,
+      "cosine_similarity": 0.9999999999999654,
+      "tolerance": 0.002
+    },
+    "downblock3_hidden_states_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 7.068809281918221e-07,
+      "relative_error": 2.6628398236413027e-07,
+      "cosine_similarity": 0.9999999999999654,
+      "tolerance": 0.002
+    },
+    "output_state_0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 6.143059181340504e-07,
+      "relative_error": 2.3127072980770804e-07,
+      "cosine_similarity": 0.9999999999999732,
+      "tolerance": 0.002
+    },
+    "output_state_1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 7.068809281918221e-07,
+      "relative_error": 2.6628398236413027e-07,
+      "cosine_similarity": 0.9999999999999654,
+      "tolerance": 0.002
+    }
+  }
+}

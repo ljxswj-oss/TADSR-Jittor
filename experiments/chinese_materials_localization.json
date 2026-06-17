@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-09T22:31:09",
+  "repo": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths",
+  "materials": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Final_Materials_20260609_213457",
+  "changed_markdown_files": [
+    "deliverables/TADSR-Jittor_final_presentation.md",
+    "deliverables/TADSR-Jittor_video_recording_guide.md",
+    "deliverables/TADSR-Jittor_submission_readme.md",
+    "deliverables/TADSR-Jittor_final_checklist.md",
+    "docs/03_ppt_outline.md",
+    "docs/04_video_script.md",
+    "docs/video_recording_preflight_checklist.md",
+    "docs/final_submission_checklist.md",
+    "docs/final_demo_runbook.md",
+    "docs/final_presentation_handoff.md",
+    "docs/repository_handoff_guide.md",
+    "docs/github_submission_handoff.md",
+    "docs/github_release_slimming_decision.md",
+    "jittor_tadsr_full/README_FULL_PORT_STATUS.md",
+    "experiments/full_repro/jittor_alignment/jittor_migration_report.md",
+    "README.md",
+    "docs/00_pytorch_audit.md",
+    "docs/01_algorithm_explanation.md",
+    "docs/02_migration_notes.md",
+    "docs/blockers.md",
+    "docs/data_plan.md",
+    "docs/full_jittor_migration_status.md",
+    "docs/gpu_blocker_report.md",
+    "docs/jittor_gpu_blocker_notes.md",
+    "docs/jittor_migration_final_review.md",
+    "docs/lora_policy_decision.md",
+    "docs/manual_asset_download.md",
+    "docs/manual_cudnn8_usage.md",
+    "docs/official_full_audit_plan.md",
+    "docs/official_pytorch_audit_report.md",
+    "docs/paper_metrics_target.md",
+    "docs/production_cli_design.md",
+    "docs/pytorch_env_blocker_report.md",
+    "docs/roadmap_full_repro.md",
+    "docs/timevae_tiled_policy.md",
+    "experiments\\final_deliverables_validation.md",
+    "experiments\\final_presentation_package_validation.md"
+  ],
+  "key_checks": {
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\README.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\deliverables\\TADSR-Jittor_final_presentation.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\deliverables\\TADSR-Jittor_video_recording_guide.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\deliverables\\TADSR-Jittor_submission_readme.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\docs\\04_video_script.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Final_Materials_20260609_213457\\README.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    },
+    "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Final_Materials_20260609_213457\\本地提交材料说明.md": {
+      "exists": true,
+      "contains_chinese": true,
+      "keeps_not_complete": true
+    }
+  },
+  "pptx": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\deliverables\\TADSR-Jittor_final_presentation.pptx",
+  "pdf": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_GitHub_Repo_20260609_213457_longpaths\\deliverables\\TADSR-Jittor_final_presentation.pdf"
+}

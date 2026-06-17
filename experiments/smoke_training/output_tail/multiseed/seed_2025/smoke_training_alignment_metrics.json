@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-06-09T12:46:05.167759+00:00",
+  "metadata": {
+    "num_samples": 32,
+    "train_samples": 24,
+    "val_samples": 8,
+    "trainable_module": "output_tail_conv_out"
+  },
+  "prediction_alignment_status": "PASS",
+  "validation_alignment_status": "PASS",
+  "pytorch_vs_jittor_prediction": {
+    "mse": 1.5889559952846747e-09,
+    "mae": 2.0862926241704827e-05,
+    "max_abs_diff": 0.0001404881477355957,
+    "mean_abs_diff": 2.0862926241704827e-05,
+    "cosine_similarity": 0.9999999119893078,
+    "relative_l2_diff": 0.0004404154841507399
+  },
+  "pytorch_prediction_vs_target": {
+    "mse": 0.00021354198342733488,
+    "mae": 0.011301324961877413,
+    "max_abs_diff": 0.1415035016834736,
+    "mean_abs_diff": 0.011301324961877413,
+    "cosine_similarity": 0.986890056223721,
+    "relative_l2_diff": 0.1627745925587542
+  },
+  "jittor_prediction_vs_target": {
+    "mse": 0.00021356441443890338,
+    "mae": 0.01130211675871351,
+    "max_abs_diff": 0.14157456532120705,
+    "mean_abs_diff": 0.01130211675871351,
+    "cosine_similarity": 0.9868915207628811,
+    "relative_l2_diff": 0.16278314146991504
+  },
+  "loss_curve_alignment": {
+    "final_train_loss_gap": 8.13888618722558e-08,
+    "final_val_loss_gap": 2.153683453798294e-08,
+    "final_train_loss_relative_gap": 0.0004379281309277484,
+    "final_val_loss_relative_gap": 0.00010084509552824229,
+    "train_loss_correlation": 0.9999997760943546,
+    "val_loss_correlation": 0.9999999434279977,
+    "no_nan_inf": true
+  },
+  "full_tadsr_training": false,
+  "full_inference_executed": false,
+  "image_saved": false,
+  "video_saved": false
+}

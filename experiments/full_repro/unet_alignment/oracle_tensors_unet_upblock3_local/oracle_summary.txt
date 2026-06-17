@@ -1,0 +1,12 @@
+# TADSR UNet up_blocks.3 local aggregate oracle
+
+TADSR_UNET_UPBLOCK3_LOCAL_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK3_RESIDUAL_CONTRACT_ORACLE: PASS
+TADSR_UNET_OUTPUT_TAIL_BOUNDARY_AUDIT: PASS
+
+manual vs official max_abs_error: 0.0
+manual vs official mean_abs_error: 0.0
+manual vs official cosine: 1.0
+output_states_status: NOT_APPLICABLE
+output-tail boundary: output_tail
+scope: local up_blocks.3 only; output tail/full UNet/full inference were not executed.

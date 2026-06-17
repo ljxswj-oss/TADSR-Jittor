@@ -1,0 +1,12 @@
+TADSR UNet down_blocks.1.attentions.0 audit
+status: PASS
+attention class: diffusers.models.transformer_2d.Transformer2DModel
+in_channels: 640
+inner_dim: None
+heads: 10
+head_dim: 64
+transformer blocks: 1
+input shape: [1, 640, 16, 16]
+output shape: [1, 640, 16, 16]
+LoRA wrapped modules: ['proj_in', 'proj_out', 'transformer0_attn1_to_q', 'transformer0_attn1_to_k', 'transformer0_attn1_to_v', 'transformer0_attn1_to_out_0', 'transformer0_attn2_to_q', 'transformer0_attn2_to_k', 'transformer0_attn2_to_v', 'transformer0_attn2_to_out_0', 'transformer0_ff_geglu_proj', 'transformer0_ff_out']
+next module: resnets.1

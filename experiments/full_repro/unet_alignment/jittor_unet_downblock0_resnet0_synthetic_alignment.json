@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "target": "isolated synthetic hidden + synthetic temb -> down_blocks.0.resnets.0",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "max_abs_error": 6.67572021484375e-06,
+    "mean_abs_error": 1.3346434215577574e-06,
+    "relative_error": 1.6979084467233759e-06,
+    "cosine_similarity": 0.9999999999987884,
+    "tolerance": 0.0001
+  },
+  "note": "No UNet entry, attention, downsampler, or full UNet forward."
+}

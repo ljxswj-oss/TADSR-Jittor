@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "boundary_type": "encode_sample_scale_decode_clamp",
+  "official_vae_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights/time_vae",
+  "input_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "input_dtype": "float32",
+  "input_range": [
+    -1.0,
+    1.0
+  ],
+  "timestep": 50,
+  "latent_shape": [
+    1,
+    4,
+    4,
+    4
+  ],
+  "latent_dtype": "float32",
+  "scaling_factor": 0.18215,
+  "output_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "output_range": [
+    -1.0,
+    1.0
+  ],
+  "layout": "NCHW",
+  "deterministic_policy": "Official TADSR calls latent_dist.sample() without exposing its random epsilon. The alignment boundary therefore exports a fixed epsilon tensor and reproduces z = mean + std * epsilon deterministically. This validates the encode/sample/scale/decode/clamp contract without running scheduler or full inference.",
+  "stochastic_sampling_avoided_or_fixed": "fixed exported epsilon tensor",
+  "existing_full_decoder_oracle_reused": false,
+  "this_boundary_is_sufficient_for_non_tiled_api": true,
+  "this_boundary_is_sufficient_for_full_tadsr_pipeline": false,
+  "scheduler_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false,
+  "timevae_full_alignment_candidate": false,
+  "remaining_timevae_gaps": [
+    "official TADSR_test monkey-patches VAE encoder/decoder with VAEHook tiling for real-size inference; this boundary uses the non-tiled small-tensor path",
+    "official pipeline uses stochastic posterior sample; this boundary uses exported fixed epsilon instead of an internal runtime RNG",
+    "generic runtime LoRA integration remains partial; current Jittor checks use converted/static weights",
+    "full scheduler/UNet/VAE image inference CLI remains intentionally NotImplemented"
+  ],
+  "recommended_next_stage": "If this boundary aligns, audit VAEHook tiled encode/decode and runtime VAE LoRA policy before opening full TADSR inference.",
+  "tensor_stats": [
+    {
+      "name": "timevae_full_boundary_timestep",
+      "shape": [
+        1
+      ],
+      "dtype": "int64",
+      "min": 50.0,
+      "max": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "sha256": "0cbbab9d99fb661a1686f17ccaaf8a9d069aa8cb755925045a1d049c060b9e67",
+      "source": "deterministic timestep passed to encode",
+      "nbytes": 8
+    },
+    {
+      "name": "timevae_full_boundary_input",
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577538251876831,
+      "sha256": "a3f2c1dd0b63cb0deeaaf675541e6f059099fbd4c7737ea223cdaecfce1844c5",
+      "source": "deterministic image tensor in [-1,1]",
+      "nbytes": 12288
+    },
+    {
+      "name": "timevae_full_boundary_encoder_temb",
+      "shape": [
+        1,
+        256
+      ],
+      "dtype": "float32",
+      "min": -0.3728765547275543,
+      "max": 0.376655638217926,
+      "mean": 0.007826587185263634,
+      "std": 0.12567417323589325,
+      "sha256": "64864bde0474580e735c6b51d5c879aadaeca34655e4b40c728c5c12a5a85bea",
+      "source": "encoder.time_proj + encoder.time_embedding(timestep)",
+      "nbytes": 1024
+    },
+    {
+      "name": "timevae_full_boundary_moments",
+      "shape": [
+        1,
+        8,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -20.689298629760742,
+      "max": 11.766088485717773,
+      "mean": -7.798523902893066,
+      "std": 8.925009727478027,
+      "sha256": "65a239705ec249e3ea558ba17a36c4fce46189144dde9e6391b9878ef9d54ab5",
+      "source": "TimeAwareAutoencoderKL.encode(...).latent_dist.parameters",
+      "nbytes": 512
+    },
+    {
+      "name": "timevae_full_boundary_posterior_mean",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -11.507828712463379,
+      "max": 11.766088485717773,
+      "mean": -0.30984970927238464,
+      "std": 6.413482666015625,
+      "sha256": "08b0592d1c9026ceae050a0b653ee83af737407dae7bd60e463dbf01f2f934d7",
+      "source": "latent_dist.mean",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_posterior_logvar",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -20.689298629760742,
+      "max": -11.112323760986328,
+      "mean": -15.287199020385742,
+      "std": 2.4532320499420166,
+      "sha256": "bb0536662c6089ee22824354ab4862b46a04d97a09d279728be15bbd2027a4d5",
+      "source": "latent_dist.logvar after official clamp",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_posterior_std",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": 3.2164432923309505e-05,
+      "max": 0.0038635767996311188,
+      "mean": 0.0008968712645582855,
+      "std": 0.0009495390695519745,
+      "sha256": "0d256a30f1d67d02cb24bb539d40d33f71fcdc416211f1531fb78b7e87fc1b00",
+      "source": "latent_dist.std",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_sample_epsilon",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -0.75,
+      "max": 0.75,
+      "mean": -3.725290298461914e-09,
+      "std": 0.4398322105407715,
+      "sha256": "6667bd95badeb5709b92ce25d4eafbc15fd1f3367e835d85879063b423a622fa",
+      "source": "exported deterministic epsilon for sample reproduction",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_posterior_sample",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -11.507941246032715,
+      "max": 11.766167640686035,
+      "mean": -0.3098199963569641,
+      "std": 6.413562297821045,
+      "sha256": "f26050c61212d46e866bc1b9b20b90b979acdc6142f42f1291c516e4a6c6c169",
+      "source": "mean + std * exported epsilon",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_scaled_latent",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -2.0961716175079346,
+      "max": 2.143207550048828,
+      "mean": -0.05643372982740402,
+      "std": 1.168230414390564,
+      "sha256": "e344268de6516d2ea7da13ef98c4967e90b5906b4960063d14f9dd040cccbfa8",
+      "source": "posterior_sample * scaling_factor",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_decode_input",
+      "shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -11.507941246032715,
+      "max": 11.766167640686035,
+      "mean": -0.3098199963569641,
+      "std": 6.413562297821045,
+      "sha256": "2c143d35c90e2a992a3244d69222f71ca2d714f54b0c580980bafb4bf337816a",
+      "source": "scaled_latent / scaling_factor, passed to decode",
+      "nbytes": 256
+    },
+    {
+      "name": "timevae_full_boundary_decoded_output",
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.417569875717163,
+      "max": 1.9518191814422607,
+      "mean": 0.05228579044342041,
+      "std": 0.9545112252235413,
+      "sha256": "ded6f5845d78bc9eed762dafb43634f3b71daa39cba2c11560fc313e24b64438",
+      "source": "TimeAwareAutoencoderKL.decode(...).sample",
+      "nbytes": 12288
+    },
+    {
+      "name": "timevae_full_boundary_final_clamped_output",
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.011285861022770405,
+      "std": 0.7968026399612427,
+      "sha256": "0095cae451210104978ef1cb0b85dd454a5690fa25ce0a5371d83b35d7e99ca8",
+      "source": "decoded sample clamped to [-1,1]",
+      "nbytes": 12288
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+TADSR_UNET_UPBLOCK0_AUDIT: PASS
+TADSR_UNET_UPBLOCK0_RESNET0_AUDIT: PASS
+TADSR_UNET_UPBLOCK0_RESNET0_RESIDUAL_CONTRACT_AUDIT: PASS
+TADSR_UNET_UPBLOCK0_RESNET0_LORA_AUDIT: PASS
+up_blocks.0 class: diffusers.models.unet_2d_blocks.UpBlock2D
+resnet_count: 3
+upsampler_count: 1
+consumed residual source: down_blocks.3.output_state_1
+consumed residual index: 11
+hidden shape before concat: [1, 1280, 4, 4]
+residual shape: [1, 1280, 4, 4]
+concat shape: [1, 2560, 4, 4]
+output shape: [1, 1280, 4, 4]
+actual_next_module_after_resnets_0: up_blocks.0.resnets.1
+full up_blocks.0/full UNet/full inference remain unopened.

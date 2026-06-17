@@ -1,0 +1,1033 @@
+{
+  "preprocess": {
+    "status": "PASS",
+    "metadata": {
+      "original_size": [
+        128,
+        128
+      ],
+      "resized_size": [
+        512,
+        512
+      ],
+      "resize_flag": false
+    },
+    "lq_shape": [
+      1,
+      3,
+      512,
+      512
+    ]
+  },
+  "scheduler": {
+    "status": "PASS",
+    "betas_shape": [
+      1000
+    ],
+    "alpha_cumprod_0": 0.9991499781608582,
+    "alpha_cumprod_last": 0.004660089500248432
+  },
+  "weights": {
+    "status": "PASS",
+    "components": {
+      "tadsr": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/tadsr_weights.npz",
+        "status": "PASS",
+        "key_count": 606,
+        "keys": [
+          "state_dict_vae_time__encoder__time_embedding__linear_1__weight",
+          "state_dict_vae_time__encoder__time_embedding__linear_1__bias",
+          "state_dict_vae_time__encoder__time_embedding__linear_2__weight",
+          "state_dict_vae_time__encoder__time_embedding__linear_2__bias",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__bias",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__weight",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__bias"
+        ],
+        "shapes": {
+          "state_dict_vae_time__encoder__time_embedding__linear_1__weight": [
+            256,
+            128
+          ],
+          "state_dict_vae_time__encoder__time_embedding__linear_1__bias": [
+            256
+          ],
+          "state_dict_vae_time__encoder__time_embedding__linear_2__weight": [
+            256,
+            256
+          ],
+          "state_dict_vae_time__encoder__time_embedding__linear_2__bias": [
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__weight": [
+            256,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__bias": [
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__weight": [
+            256,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__bias": [
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__weight": [
+            512,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__bias": [
+            512
+          ],
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__weight": [
+            512,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__bias": [
+            512
+          ],
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__weight": [
+            1024,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__bias": [
+            1024
+          ],
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__weight": [
+            1024,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__bias": [
+            1024
+          ],
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__weight": [
+            1024,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__bias": [
+            1024
+          ],
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__weight": [
+            1024,
+            256
+          ],
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__bias": [
+            1024
+          ]
+        },
+        "dtypes": {
+          "state_dict_vae_time__encoder__time_embedding__linear_1__weight": "float32",
+          "state_dict_vae_time__encoder__time_embedding__linear_1__bias": "float32",
+          "state_dict_vae_time__encoder__time_embedding__linear_2__weight": "float32",
+          "state_dict_vae_time__encoder__time_embedding__linear_2__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__0__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__0__resnets__1__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__0__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__1__resnets__1__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__0__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__2__resnets__1__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__0__time_emb_proj__bias": "float32",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__weight": "float32",
+          "state_dict_vae_time__encoder__down_blocks__3__resnets__1__time_emb_proj__bias": "float32"
+        }
+      },
+      "DAPE": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/DAPE_weights.npz",
+        "status": "PASS",
+        "key_count": 248,
+        "keys": [
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_A",
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_B",
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_A",
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_B",
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_A",
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_B",
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_A",
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_B",
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_A",
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_B"
+        ],
+        "shapes": {
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_A": [
+            16,
+            192
+          ],
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_B": [
+            384,
+            8
+          ],
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_A": [
+            16,
+            192
+          ],
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_B": [
+            384,
+            8
+          ],
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_A": [
+            16,
+            384
+          ],
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_B": [
+            768,
+            8
+          ],
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_A": [
+            16,
+            384
+          ],
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_B": [
+            768,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_B": [
+            1536,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_B": [
+            1536,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_B": [
+            1536,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_B": [
+            1536,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_B": [
+            1536,
+            8
+          ],
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_A": [
+            16,
+            768
+          ],
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_B": [
+            1536,
+            8
+          ]
+        },
+        "dtypes": {
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__0__blocks__0__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__0__blocks__1__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__1__blocks__0__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__1__blocks__1__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__0__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__1__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__2__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__3__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__4__attn__qkv__lora_B": "float32",
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_A": "float32",
+          "visual_encoder__layers__2__blocks__5__attn__qkv__lora_B": "float32"
+        }
+      },
+      "RAM": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/ram_swin_large_14m_weights.npz",
+        "status": "PASS",
+        "key_count": 2982,
+        "keys": [
+          "model__label_embed",
+          "model__visual_encoder__patch_embed__proj__weight",
+          "model__visual_encoder__patch_embed__proj__bias",
+          "model__visual_encoder__patch_embed__norm__weight",
+          "model__visual_encoder__patch_embed__norm__bias",
+          "model__visual_encoder__layers__0__blocks__0__norm1__weight",
+          "model__visual_encoder__layers__0__blocks__0__norm1__bias",
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_bias_table",
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_index",
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__weight",
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__bias",
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__weight",
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__bias",
+          "model__visual_encoder__layers__0__blocks__0__norm2__weight",
+          "model__visual_encoder__layers__0__blocks__0__norm2__bias",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__weight",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__bias",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__weight",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__bias",
+          "model__visual_encoder__layers__0__blocks__1__attn_mask"
+        ],
+        "shapes": {
+          "model__label_embed": [
+            4585,
+            512
+          ],
+          "model__visual_encoder__patch_embed__proj__weight": [
+            192,
+            3,
+            4,
+            4
+          ],
+          "model__visual_encoder__patch_embed__proj__bias": [
+            192
+          ],
+          "model__visual_encoder__patch_embed__norm__weight": [
+            192
+          ],
+          "model__visual_encoder__patch_embed__norm__bias": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__norm1__weight": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__norm1__bias": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_bias_table": [
+            529,
+            6
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_index": [
+            144,
+            144
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__weight": [
+            576,
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__bias": [
+            576
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__weight": [
+            192,
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__bias": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__norm2__weight": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__norm2__bias": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__weight": [
+            768,
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__bias": [
+            768
+          ],
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__weight": [
+            192,
+            768
+          ],
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__bias": [
+            192
+          ],
+          "model__visual_encoder__layers__0__blocks__1__attn_mask": [
+            64,
+            144,
+            144
+          ]
+        },
+        "dtypes": {
+          "model__label_embed": "float32",
+          "model__visual_encoder__patch_embed__proj__weight": "float32",
+          "model__visual_encoder__patch_embed__proj__bias": "float32",
+          "model__visual_encoder__patch_embed__norm__weight": "float32",
+          "model__visual_encoder__patch_embed__norm__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__norm1__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__norm1__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_bias_table": "float32",
+          "model__visual_encoder__layers__0__blocks__0__attn__relative_position_index": "int64",
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__attn__qkv__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__attn__proj__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__norm2__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__norm2__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc1__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__weight": "float32",
+          "model__visual_encoder__layers__0__blocks__0__mlp__fc2__bias": "float32",
+          "model__visual_encoder__layers__0__blocks__1__attn_mask": "float32"
+        }
+      },
+      "unet": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/unet_weights.npz",
+        "status": "PASS",
+        "key_count": 686,
+        "keys": [
+          "conv_in__bias",
+          "conv_in__weight",
+          "conv_norm_out__bias",
+          "conv_norm_out__weight",
+          "conv_out__bias",
+          "conv_out__weight",
+          "down_blocks__0__attentions__0__norm__bias",
+          "down_blocks__0__attentions__0__norm__weight",
+          "down_blocks__0__attentions__0__proj_in__bias",
+          "down_blocks__0__attentions__0__proj_in__weight",
+          "down_blocks__0__attentions__0__proj_out__bias",
+          "down_blocks__0__attentions__0__proj_out__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_k__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__bias",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_q__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_v__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_k__weight",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__bias",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__weight"
+        ],
+        "shapes": {
+          "conv_in__bias": [
+            320
+          ],
+          "conv_in__weight": [
+            320,
+            4,
+            3,
+            3
+          ],
+          "conv_norm_out__bias": [
+            320
+          ],
+          "conv_norm_out__weight": [
+            320
+          ],
+          "conv_out__bias": [
+            4
+          ],
+          "conv_out__weight": [
+            4,
+            320,
+            3,
+            3
+          ],
+          "down_blocks__0__attentions__0__norm__bias": [
+            320
+          ],
+          "down_blocks__0__attentions__0__norm__weight": [
+            320
+          ],
+          "down_blocks__0__attentions__0__proj_in__bias": [
+            320
+          ],
+          "down_blocks__0__attentions__0__proj_in__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__proj_out__bias": [
+            320
+          ],
+          "down_blocks__0__attentions__0__proj_out__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_k__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__bias": [
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_q__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_v__weight": [
+            320,
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_k__weight": [
+            320,
+            1024
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__bias": [
+            320
+          ],
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__weight": [
+            320,
+            320
+          ]
+        },
+        "dtypes": {
+          "conv_in__bias": "float32",
+          "conv_in__weight": "float32",
+          "conv_norm_out__bias": "float32",
+          "conv_norm_out__weight": "float32",
+          "conv_out__bias": "float32",
+          "conv_out__weight": "float32",
+          "down_blocks__0__attentions__0__norm__bias": "float32",
+          "down_blocks__0__attentions__0__norm__weight": "float32",
+          "down_blocks__0__attentions__0__proj_in__bias": "float32",
+          "down_blocks__0__attentions__0__proj_in__weight": "float32",
+          "down_blocks__0__attentions__0__proj_out__bias": "float32",
+          "down_blocks__0__attentions__0__proj_out__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_k__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__bias": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_q__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_v__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_k__weight": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__bias": "float32",
+          "down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__weight": "float32"
+        }
+      },
+      "vae": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/vae_weights.npz",
+        "status": "PASS",
+        "key_count": 248,
+        "keys": [
+          "encoder__conv_in__weight",
+          "encoder__conv_in__bias",
+          "encoder__down_blocks__0__resnets__0__norm1__weight",
+          "encoder__down_blocks__0__resnets__0__norm1__bias",
+          "encoder__down_blocks__0__resnets__0__conv1__weight",
+          "encoder__down_blocks__0__resnets__0__conv1__bias",
+          "encoder__down_blocks__0__resnets__0__norm2__weight",
+          "encoder__down_blocks__0__resnets__0__norm2__bias",
+          "encoder__down_blocks__0__resnets__0__conv2__weight",
+          "encoder__down_blocks__0__resnets__0__conv2__bias",
+          "encoder__down_blocks__0__resnets__1__norm1__weight",
+          "encoder__down_blocks__0__resnets__1__norm1__bias",
+          "encoder__down_blocks__0__resnets__1__conv1__weight",
+          "encoder__down_blocks__0__resnets__1__conv1__bias",
+          "encoder__down_blocks__0__resnets__1__norm2__weight",
+          "encoder__down_blocks__0__resnets__1__norm2__bias",
+          "encoder__down_blocks__0__resnets__1__conv2__weight",
+          "encoder__down_blocks__0__resnets__1__conv2__bias",
+          "encoder__down_blocks__0__downsamplers__0__conv__weight",
+          "encoder__down_blocks__0__downsamplers__0__conv__bias"
+        ],
+        "shapes": {
+          "encoder__conv_in__weight": [
+            128,
+            3,
+            3,
+            3
+          ],
+          "encoder__conv_in__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm1__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__conv1__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__0__conv1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm2__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__conv2__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__0__conv2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm1__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__conv1__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__1__conv1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm2__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__conv2__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__1__conv2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__downsamplers__0__conv__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__downsamplers__0__conv__bias": [
+            128
+          ]
+        },
+        "dtypes": {
+          "encoder__conv_in__weight": "float32",
+          "encoder__conv_in__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__norm1__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__norm1__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__conv1__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__conv1__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__norm2__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__norm2__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__conv2__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__conv2__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__norm1__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__norm1__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__conv1__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__conv1__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__norm2__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__norm2__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__conv2__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__conv2__bias": "float32",
+          "encoder__down_blocks__0__downsamplers__0__conv__weight": "float32",
+          "encoder__down_blocks__0__downsamplers__0__conv__bias": "float32"
+        }
+      },
+      "time_vae": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz",
+        "status": "PASS",
+        "key_count": 272,
+        "keys": [
+          "encoder__conv_in__weight",
+          "encoder__conv_in__bias",
+          "encoder__down_blocks__0__resnets__0__norm1__weight",
+          "encoder__down_blocks__0__resnets__0__norm1__bias",
+          "encoder__down_blocks__0__resnets__0__conv1__weight",
+          "encoder__down_blocks__0__resnets__0__conv1__bias",
+          "encoder__down_blocks__0__resnets__0__norm2__weight",
+          "encoder__down_blocks__0__resnets__0__norm2__bias",
+          "encoder__down_blocks__0__resnets__0__conv2__weight",
+          "encoder__down_blocks__0__resnets__0__conv2__bias",
+          "encoder__down_blocks__0__resnets__1__norm1__weight",
+          "encoder__down_blocks__0__resnets__1__norm1__bias",
+          "encoder__down_blocks__0__resnets__1__conv1__weight",
+          "encoder__down_blocks__0__resnets__1__conv1__bias",
+          "encoder__down_blocks__0__resnets__1__norm2__weight",
+          "encoder__down_blocks__0__resnets__1__norm2__bias",
+          "encoder__down_blocks__0__resnets__1__conv2__weight",
+          "encoder__down_blocks__0__resnets__1__conv2__bias",
+          "encoder__down_blocks__0__downsamplers__0__conv__weight",
+          "encoder__down_blocks__0__downsamplers__0__conv__bias"
+        ],
+        "shapes": {
+          "encoder__conv_in__weight": [
+            128,
+            3,
+            3,
+            3
+          ],
+          "encoder__conv_in__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm1__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__conv1__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__0__conv1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm2__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__norm2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__0__conv2__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__0__conv2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm1__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__conv1__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__1__conv1__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm2__weight": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__norm2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__resnets__1__conv2__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__resnets__1__conv2__bias": [
+            128
+          ],
+          "encoder__down_blocks__0__downsamplers__0__conv__weight": [
+            128,
+            128,
+            3,
+            3
+          ],
+          "encoder__down_blocks__0__downsamplers__0__conv__bias": [
+            128
+          ]
+        },
+        "dtypes": {
+          "encoder__conv_in__weight": "float32",
+          "encoder__conv_in__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__norm1__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__norm1__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__conv1__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__conv1__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__norm2__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__norm2__bias": "float32",
+          "encoder__down_blocks__0__resnets__0__conv2__weight": "float32",
+          "encoder__down_blocks__0__resnets__0__conv2__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__norm1__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__norm1__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__conv1__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__conv1__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__norm2__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__norm2__bias": "float32",
+          "encoder__down_blocks__0__resnets__1__conv2__weight": "float32",
+          "encoder__down_blocks__0__resnets__1__conv2__bias": "float32",
+          "encoder__down_blocks__0__downsamplers__0__conv__weight": "float32",
+          "encoder__down_blocks__0__downsamplers__0__conv__bias": "float32"
+        }
+      },
+      "text_encoder": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/text_encoder_weights.npz",
+        "status": "PASS",
+        "key_count": 373,
+        "keys": [
+          "text_model__embeddings__position_embedding__weight",
+          "text_model__embeddings__position_ids",
+          "text_model__embeddings__token_embedding__weight",
+          "text_model__encoder__layers__0__layer_norm1__bias",
+          "text_model__encoder__layers__0__layer_norm1__weight",
+          "text_model__encoder__layers__0__layer_norm2__bias",
+          "text_model__encoder__layers__0__layer_norm2__weight",
+          "text_model__encoder__layers__0__mlp__fc1__bias",
+          "text_model__encoder__layers__0__mlp__fc1__weight",
+          "text_model__encoder__layers__0__mlp__fc2__bias",
+          "text_model__encoder__layers__0__mlp__fc2__weight",
+          "text_model__encoder__layers__0__self_attn__k_proj__bias",
+          "text_model__encoder__layers__0__self_attn__k_proj__weight",
+          "text_model__encoder__layers__0__self_attn__out_proj__bias",
+          "text_model__encoder__layers__0__self_attn__out_proj__weight",
+          "text_model__encoder__layers__0__self_attn__q_proj__bias",
+          "text_model__encoder__layers__0__self_attn__q_proj__weight",
+          "text_model__encoder__layers__0__self_attn__v_proj__bias",
+          "text_model__encoder__layers__0__self_attn__v_proj__weight",
+          "text_model__encoder__layers__1__layer_norm1__bias"
+        ],
+        "shapes": {
+          "text_model__embeddings__position_embedding__weight": [
+            77,
+            1024
+          ],
+          "text_model__embeddings__position_ids": [
+            1,
+            77
+          ],
+          "text_model__embeddings__token_embedding__weight": [
+            49408,
+            1024
+          ],
+          "text_model__encoder__layers__0__layer_norm1__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__layer_norm1__weight": [
+            1024
+          ],
+          "text_model__encoder__layers__0__layer_norm2__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__layer_norm2__weight": [
+            1024
+          ],
+          "text_model__encoder__layers__0__mlp__fc1__bias": [
+            4096
+          ],
+          "text_model__encoder__layers__0__mlp__fc1__weight": [
+            4096,
+            1024
+          ],
+          "text_model__encoder__layers__0__mlp__fc2__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__mlp__fc2__weight": [
+            1024,
+            4096
+          ],
+          "text_model__encoder__layers__0__self_attn__k_proj__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__k_proj__weight": [
+            1024,
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__out_proj__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__out_proj__weight": [
+            1024,
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__q_proj__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__q_proj__weight": [
+            1024,
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__v_proj__bias": [
+            1024
+          ],
+          "text_model__encoder__layers__0__self_attn__v_proj__weight": [
+            1024,
+            1024
+          ],
+          "text_model__encoder__layers__1__layer_norm1__bias": [
+            1024
+          ]
+        },
+        "dtypes": {
+          "text_model__embeddings__position_embedding__weight": "float32",
+          "text_model__embeddings__position_ids": "int64",
+          "text_model__embeddings__token_embedding__weight": "float32",
+          "text_model__encoder__layers__0__layer_norm1__bias": "float32",
+          "text_model__encoder__layers__0__layer_norm1__weight": "float32",
+          "text_model__encoder__layers__0__layer_norm2__bias": "float32",
+          "text_model__encoder__layers__0__layer_norm2__weight": "float32",
+          "text_model__encoder__layers__0__mlp__fc1__bias": "float32",
+          "text_model__encoder__layers__0__mlp__fc1__weight": "float32",
+          "text_model__encoder__layers__0__mlp__fc2__bias": "float32",
+          "text_model__encoder__layers__0__mlp__fc2__weight": "float32",
+          "text_model__encoder__layers__0__self_attn__k_proj__bias": "float32",
+          "text_model__encoder__layers__0__self_attn__k_proj__weight": "float32",
+          "text_model__encoder__layers__0__self_attn__out_proj__bias": "float32",
+          "text_model__encoder__layers__0__self_attn__out_proj__weight": "float32",
+          "text_model__encoder__layers__0__self_attn__q_proj__bias": "float32",
+          "text_model__encoder__layers__0__self_attn__q_proj__weight": "float32",
+          "text_model__encoder__layers__0__self_attn__v_proj__bias": "float32",
+          "text_model__encoder__layers__0__self_attn__v_proj__weight": "float32",
+          "text_model__encoder__layers__1__layer_norm1__bias": "float32"
+        }
+      },
+      "bert_base_uncased": {
+        "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/bert_base_uncased_weights.npz",
+        "status": "PASS",
+        "key_count": 207,
+        "keys": [
+          "bert__embeddings__word_embeddings__weight",
+          "bert__embeddings__position_embeddings__weight",
+          "bert__embeddings__token_type_embeddings__weight",
+          "bert__embeddings__LayerNorm__gamma",
+          "bert__embeddings__LayerNorm__beta",
+          "bert__encoder__layer__0__attention__self__query__weight",
+          "bert__encoder__layer__0__attention__self__query__bias",
+          "bert__encoder__layer__0__attention__self__key__weight",
+          "bert__encoder__layer__0__attention__self__key__bias",
+          "bert__encoder__layer__0__attention__self__value__weight",
+          "bert__encoder__layer__0__attention__self__value__bias",
+          "bert__encoder__layer__0__attention__output__dense__weight",
+          "bert__encoder__layer__0__attention__output__dense__bias",
+          "bert__encoder__layer__0__attention__output__LayerNorm__gamma",
+          "bert__encoder__layer__0__attention__output__LayerNorm__beta",
+          "bert__encoder__layer__0__intermediate__dense__weight",
+          "bert__encoder__layer__0__intermediate__dense__bias",
+          "bert__encoder__layer__0__output__dense__weight",
+          "bert__encoder__layer__0__output__dense__bias",
+          "bert__encoder__layer__0__output__LayerNorm__gamma"
+        ],
+        "shapes": {
+          "bert__embeddings__word_embeddings__weight": [
+            30522,
+            768
+          ],
+          "bert__embeddings__position_embeddings__weight": [
+            512,
+            768
+          ],
+          "bert__embeddings__token_type_embeddings__weight": [
+            2,
+            768
+          ],
+          "bert__embeddings__LayerNorm__gamma": [
+            768
+          ],
+          "bert__embeddings__LayerNorm__beta": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__query__weight": [
+            768,
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__query__bias": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__key__weight": [
+            768,
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__key__bias": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__value__weight": [
+            768,
+            768
+          ],
+          "bert__encoder__layer__0__attention__self__value__bias": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__output__dense__weight": [
+            768,
+            768
+          ],
+          "bert__encoder__layer__0__attention__output__dense__bias": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__output__LayerNorm__gamma": [
+            768
+          ],
+          "bert__encoder__layer__0__attention__output__LayerNorm__beta": [
+            768
+          ],
+          "bert__encoder__layer__0__intermediate__dense__weight": [
+            3072,
+            768
+          ],
+          "bert__encoder__layer__0__intermediate__dense__bias": [
+            3072
+          ],
+          "bert__encoder__layer__0__output__dense__weight": [
+            768,
+            3072
+          ],
+          "bert__encoder__layer__0__output__dense__bias": [
+            768
+          ],
+          "bert__encoder__layer__0__output__LayerNorm__gamma": [
+            768
+          ]
+        },
+        "dtypes": {
+          "bert__embeddings__word_embeddings__weight": "float32",
+          "bert__embeddings__position_embeddings__weight": "float32",
+          "bert__embeddings__token_type_embeddings__weight": "float32",
+          "bert__embeddings__LayerNorm__gamma": "float32",
+          "bert__embeddings__LayerNorm__beta": "float32",
+          "bert__encoder__layer__0__attention__self__query__weight": "float32",
+          "bert__encoder__layer__0__attention__self__query__bias": "float32",
+          "bert__encoder__layer__0__attention__self__key__weight": "float32",
+          "bert__encoder__layer__0__attention__self__key__bias": "float32",
+          "bert__encoder__layer__0__attention__self__value__weight": "float32",
+          "bert__encoder__layer__0__attention__self__value__bias": "float32",
+          "bert__encoder__layer__0__attention__output__dense__weight": "float32",
+          "bert__encoder__layer__0__attention__output__dense__bias": "float32",
+          "bert__encoder__layer__0__attention__output__LayerNorm__gamma": "float32",
+          "bert__encoder__layer__0__attention__output__LayerNorm__beta": "float32",
+          "bert__encoder__layer__0__intermediate__dense__weight": "float32",
+          "bert__encoder__layer__0__intermediate__dense__bias": "float32",
+          "bert__encoder__layer__0__output__dense__weight": "float32",
+          "bert__encoder__layer__0__output__dense__bias": "float32",
+          "bert__encoder__layer__0__output__LayerNorm__gamma": "float32"
+        }
+      }
+    }
+  }
+}

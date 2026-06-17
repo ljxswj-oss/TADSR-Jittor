@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "loaded_lora_parameter_count": 516,
+  "input_contract": {
+    "sample_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "sample_dtype": "torch.float32",
+    "timestep_shape": [
+      1
+    ],
+    "timestep_dtype": "torch.int64",
+    "timestep_value": [
+      1
+    ],
+    "encoder_hidden_states_shape": [
+      1,
+      77,
+      1024
+    ],
+    "encoder_hidden_states_dtype": "torch.float32",
+    "center_input_sample": false,
+    "attention_mask": null,
+    "encoder_attention_mask": null,
+    "cross_attention_kwargs": null,
+    "class_labels_unused": true,
+    "added_cond_kwargs_unused": true,
+    "return_dict_irrelevant_for_manual_wrapper": true,
+    "lora_scale_strategy": "static effective weights in Jittor tests; no runtime LoRA"
+  },
+  "manual_chain_order": [
+    "center_input_sample_if_enabled",
+    "conv_in",
+    "time_proj",
+    "time_embedding",
+    "down_blocks.0",
+    "down_blocks.1",
+    "down_blocks.2",
+    "down_blocks.3",
+    "mid_block",
+    "up_blocks.0",
+    "up_blocks.1",
+    "up_blocks.2",
+    "up_blocks.3",
+    "conv_norm_out",
+    "conv_act",
+    "conv_out"
+  ],
+  "stage_shapes": {
+    "centered": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "conv_in": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "time_proj": [
+      1,
+      320
+    ],
+    "time_embedding": [
+      1,
+      1280
+    ],
+    "down_blocks": [
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "mid_block": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "upblock0": [
+      1,
+      1280,
+      8,
+      8
+    ],
+    "upblock1": [
+      1,
+      1280,
+      16,
+      16
+    ],
+    "upblock2": [
+      1,
+      640,
+      32,
+      32
+    ],
+    "upblock3": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output_tail_norm": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output_tail_act": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output": [
+      1,
+      4,
+      32,
+      32
+    ]
+  },
+  "residual_tuple_counts": {
+    "after_down_blocks": 12,
+    "before_upblock0": 12,
+    "after_upblock0": 9,
+    "before_upblock1": 3,
+    "after_upblock1": 6,
+    "before_upblock2": 3,
+    "after_upblock2": 3,
+    "before_upblock3": 3,
+    "after_upblock3": 0
+  },
+  "down_residual_cumulative_counts": [
+    1,
+    4,
+    7,
+    10,
+    12
+  ],
+  "upblock2_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "upblock3_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "previous_output_tail_compare": {
+    "previous_output_tail_oracle_available": true,
+    "shape_match": true,
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0000000000000002
+  },
+  "wrapper_output_contract": {
+    "status": "PASS",
+    "output_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "expected_out_channels": 4,
+    "spatial_matches_sample": true,
+    "return_format": "tensor for final output; optional intermediates for audit/debug"
+  },
+  "official_forward_signature": "(sample: torch.FloatTensor, timestep: Union[torch.Tensor, float, int], encoder_hidden_states: torch.Tensor, class_labels: Optional[torch.Tensor] = None, timestep_cond: Optional[torch.Tensor] = None, attention_mask: Optional[torch.Tensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, added_cond_kwargs: Optional[Dict[str, torch.Tensor]] = None, down_block_additional_residuals: Optional[Tuple[torch.Tensor]] = None, mid_block_additional_residual: Optional[torch.Tensor] = None, down_intrablock_additional_residuals: Optional[Tuple[torch.Tensor]] = None, encoder_attention_mask: Optional[torch.Tensor] = None, return_dict: bool = True) -> Union[models.unet_2d_condition.UNet2DConditionOutput, Tuple]",
+  "official_full_forward_executed": false,
+  "full_tadsr_inference_executed": false,
+  "manual_wrapper_only": true,
+  "manual_wrapper_alignment_is_not_official_full_forward": true,
+  "reason_official_full_forward_deferred": "deferred to next stage after manual wrapper alignment",
+  "markers": {
+    "TADSR_UNET_MANUAL_FULL_WRAPPER_AUDIT": "PASS",
+    "TADSR_UNET_MANUAL_FULL_WRAPPER_CONTRACT_AUDIT": "PASS",
+    "TADSR_UNET_MANUAL_FULL_CHAIN_TO_TAIL_AUDIT": "PASS"
+  },
+  "scope_boundaries": {
+    "ported_this_stage": "manual full-chain wrapper contract/audit only",
+    "not_ported_this_stage": [
+      "official unet.forward",
+      "production Jittor UNet forward",
+      "scheduler denoising",
+      "VAE integration",
+      "image generation",
+      "generic runtime LoRA"
+    ]
+  }
+}

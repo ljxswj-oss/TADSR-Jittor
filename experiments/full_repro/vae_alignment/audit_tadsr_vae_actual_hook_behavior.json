@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "policy_decision": "mirror_official_actual_behavior",
+  "decision_status": "PASS",
+  "official_mirror_policy_status": "PASS",
+  "previous_tiled_audit": "experiments/full_repro/vae_alignment/audit_tadsr_vae_tiled_boundary.json",
+  "previous_decoder_hook_blocker": "BLOCKED_DECODER_HOOK_CONTRACT",
+  "device": "cuda",
+  "input_shape": [
+    1,
+    3,
+    96,
+    96
+  ],
+  "timestep": 50,
+  "encoder_hook": {
+    "installed": true,
+    "time_vae": true,
+    "tile_size": 16,
+    "pad": 32,
+    "input_height": 96,
+    "input_width": 96,
+    "tile_count_h": 2,
+    "tile_count_w": 2,
+    "total_tile_count": 4,
+    "vae_tile_forward_called": true,
+    "vae_tile_forward_call_count": 1,
+    "tiled_oracle_feasibility": "PASS",
+    "encoded_parameters_shape": [
+      1,
+      8,
+      12,
+      12
+    ],
+    "posterior_mean_shape": [
+      1,
+      4,
+      12,
+      12
+    ]
+  },
+  "decoder_hook": {
+    "installed": true,
+    "time_vae": false,
+    "tile_size": 16,
+    "pad": 11,
+    "decoder_input_shape": [
+      1,
+      4,
+      12,
+      12
+    ],
+    "original_forward_called": true,
+    "original_forward_call_count": 1,
+    "vae_tile_forward_called": false,
+    "vae_tile_forward_call_count": 0,
+    "tiled_path_status": "BLOCKED_DECODER_HOOK_CONTRACT",
+    "actual_behavior": "patched decoder hook installed, but official dispatch uses decoder.original_forward",
+    "decoded_output_shape": [
+      1,
+      3,
+      96,
+      96
+    ],
+    "final_clamped_output_shape": [
+      1,
+      3,
+      96,
+      96
+    ]
+  },
+  "scaling_factor": 0.18215,
+  "scheduler_executed": false,
+  "full_tadsr_inference_executed": false,
+  "image_saved": false,
+  "jittor_tiled_implementation_done": false,
+  "timevae_full_alignment_candidate": false,
+  "error": null,
+  "recommended_next_stage": "Continue with Jittor official-actual VAEHook behavior wrapper/tester alignment; mirror official decoder original_forward behavior and do not implement corrected tiled decoder on the mainline."
+}

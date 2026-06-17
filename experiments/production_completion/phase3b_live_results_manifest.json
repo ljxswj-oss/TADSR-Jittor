@@ -1,0 +1,238 @@
+{
+  "status_marker": "TADSR_PHASE3B_LIVE_RESULTS_PACKAGE",
+  "status": "PASS",
+  "created_at": "2026-06-13T04:40:43.228811+00:00",
+  "output": "/mnt/data/sj/projects/TADSR-Jittor/experiments/production_completion/phase3b_live_results_package.zip",
+  "file_count": 45,
+  "total_size_mb": 1.57312,
+  "contains_raw_tensors": false,
+  "contains_local_tensors": false,
+  "contains_checkpoints": false,
+  "included_files": [
+    {
+      "path": "experiments/final_audit_report.json",
+      "size_bytes": 411764,
+      "sha256": "5a67fe597ecb7064c56de7bf46c2fb6ea827d303221e050a98c0339ee7c87748"
+    },
+    {
+      "path": "experiments/final_audit_report.md",
+      "size_bytes": 460785,
+      "sha256": "581ff8c722243eaff2a6368ee9978b37717586b13678be256bc1d16f12ff0e43"
+    },
+    {
+      "path": "experiments/production_completion/blockers/production_completion_blockers.json",
+      "size_bytes": 3763,
+      "sha256": "5ae4290d6f4f6389f2a40005b330719fbb9ca7cea807fa2c778c7a4d9845f16c"
+    },
+    {
+      "path": "experiments/production_completion/blockers/production_completion_blockers.md",
+      "size_bytes": 825,
+      "sha256": "063cb2d62e20a13d78bae5b32d8e787c16e000f85143d0829a31283158df7124"
+    },
+    {
+      "path": "experiments/production_completion/env/official_env_resolution.json",
+      "size_bytes": 3041,
+      "sha256": "13f674ce95f58ab090995d23d4b420835d24518316b50f75b45566ea14a09ef3"
+    },
+    {
+      "path": "experiments/production_completion/env/official_env_resolution.md",
+      "size_bytes": 1247,
+      "sha256": "fb71aefc981c96b964a9f0a28d9f663a685e4e374312e9df3d4d1a0741008339"
+    },
+    {
+      "path": "experiments/production_completion/env/official_runtime_dependency_diagnosis.json",
+      "size_bytes": 4530,
+      "sha256": "3d191a770e1dee2a96d507b5b3349d9f894f2539378f4af5697cef26094fe34b"
+    },
+    {
+      "path": "experiments/production_completion/env/official_runtime_dependency_diagnosis.md",
+      "size_bytes": 2611,
+      "sha256": "963f97c1b83d430924fb41e8c2ec0d5428a9f56920af4f4e9e432f041b17888a"
+    },
+    {
+      "path": "experiments/production_completion/env/official_runtime_dependency_overlay.json",
+      "size_bytes": 2317,
+      "sha256": "5e35df0b9dec86a17ec71be11115d5aa5573affc1d6bcb8c19ceb33d0ac63bbe"
+    },
+    {
+      "path": "experiments/production_completion/env/official_runtime_dependency_overlay.md",
+      "size_bytes": 1100,
+      "sha256": "587356804f9e6e903196c957ff4e8387be0c15b1c077632dee770a058eccf6d9"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/actual_inference_path_audit.json",
+      "size_bytes": 10214,
+      "sha256": "7b642bd7ea9b8a1916dba359acb582807f78d4c8cd7c68505d2476c6eb1fd315"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/actual_inference_path_audit.md",
+      "size_bytes": 890,
+      "sha256": "610c146f1e2a85d614466fa4d3f8a239e8338bb2feca4bed678b7e3abb73c982"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/experimental_cli_metadata_only_plan.json",
+      "size_bytes": 605,
+      "sha256": "8f4bef230dc4743f4a6b01f1ce2f8e17891649060d90611bc348e92b1cc9d1bb"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/experimental_cli_metadata_only_plan.md",
+      "size_bytes": 571,
+      "sha256": "9807e9fa71455109b9a428e3b576b47512787ffce5e78408f9eb9e77e2397680"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/metadata_dry_run_contract.json",
+      "size_bytes": 2315,
+      "sha256": "3bb8e1ba5a230373f2b6560792f4ca95c38deca41ae86e83ad1dcde1d559f5b2"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/metadata_dry_run_contract.md",
+      "size_bytes": 1363,
+      "sha256": "2498ce679a1a05741a7227e5bdba4be4ad83b41f1c96b9a606b29dcc6c483e03"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/multistep_applicability_decision.json",
+      "size_bytes": 1227,
+      "sha256": "50d157c6f6b060dbf66e343c0f36e03806296b733f5fec088330e89ba7eef07b"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/multistep_applicability_decision.md",
+      "size_bytes": 771,
+      "sha256": "d77dbfedc019926a1e0d265be3b5d2ba091f11e005911dbe87ddf216e495f3b7"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/jittor_one_step_alignment.json",
+      "size_bytes": 7204,
+      "sha256": "d6c8c8eca969ef82733b24a2ff49b843785b5bfa9414bb1fa7a56b3738a68b5e"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/jittor_one_step_alignment.md",
+      "size_bytes": 1605,
+      "sha256": "8b5b32689c346faaa45ceaa723e95331ca0faa0b55d2bbcc8a69e6d5510ff51b"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/official_one_step_oracle_metadata.json",
+      "size_bytes": 7924,
+      "sha256": "40fb3ad7aadf3a57e94eaa9e7a2e70de919b457b4be816bb8890efeb66737472"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/official_one_step_oracle_metadata.md",
+      "size_bytes": 2758,
+      "sha256": "faa0545d36061ddeae1a9b5e2f092e443316bfa5799b358f72c0fbb5974f8d4c"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/one_step_official_path_audit.json",
+      "size_bytes": 2974,
+      "sha256": "672f922e3e8e7bd6e2676a80beac68ebf627c0a9da61ec6393c8ccb7775e1315"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/one_step_official_path_audit.md",
+      "size_bytes": 1594,
+      "sha256": "fd916ce6366d1b2aac2ce866ab76790647086673b5948b7df03ad47cfee88ab5"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/one_step_tensor_alignment_validation.json",
+      "size_bytes": 971,
+      "sha256": "7cc13e4ebb69ff613812b58f34615b379334d14c3576bad2bc321af14b655ea6"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step/one_step_tensor_alignment_validation.md",
+      "size_bytes": 353,
+      "sha256": "60bf2d96ed48d36b41ea126b13c107fe364e1da5f59c48b6aac9e2ba29925049"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step_gate_blocker_summary.json",
+      "size_bytes": 699,
+      "sha256": "22af17ae43616e692b0633a9d3c42ce640942bf678fa54b2907e5dead4098a8e"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/one_step_gate_blocker_summary.md",
+      "size_bytes": 579,
+      "sha256": "5822853d1237e83be94dd7804560b0b32bab0dc25313faa03c0b204af996c6e7"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/postprocess_contract_audit.json",
+      "size_bytes": 1498,
+      "sha256": "82edbd2fae8971c163ac428ed327f614955472646cf7ac2250b26e48a87f894f"
+    },
+    {
+      "path": "experiments/production_completion/full_inference/postprocess_contract_audit.md",
+      "size_bytes": 822,
+      "sha256": "78fd260ba730a9510609cd2f4226cf8e801b31be18510541fd2848ade3e4f833"
+    },
+    {
+      "path": "experiments/production_completion/live_audit_logs/phase3b_live_audit_20260612_140557.log",
+      "size_bytes": 669435,
+      "sha256": "803a9ea6840ee6c4a4430f27c77fb874318e96fda1a753835129bf3dbd16bfa6"
+    },
+    {
+      "path": "experiments/production_completion/phase3_validation.json",
+      "size_bytes": 9169,
+      "sha256": "704fdd9dad17bcdcd166a73e8448460dafb30acdc893941b517dae0c8f178546"
+    },
+    {
+      "path": "experiments/production_completion/phase3_validation.md",
+      "size_bytes": 3335,
+      "sha256": "3ae2bd6be70afb792bfee3e0e44aeb983e2dc588522628095ee819c6b9505308"
+    },
+    {
+      "path": "experiments/production_completion/runtime_lora/official_runtime_lora_behavior_audit.json",
+      "size_bytes": 1835,
+      "sha256": "ab1ca5879bdc53af050a8c796b278a20d05740506d3d14a9862c3ae40edb4db5"
+    },
+    {
+      "path": "experiments/production_completion/runtime_lora/official_runtime_lora_behavior_audit.md",
+      "size_bytes": 675,
+      "sha256": "4870b74d53caf27b085a7b18e09898eb2670ea6da10cca4948d4ee0b3e522295"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/jittor_timevae_production_alignment_preflight.json",
+      "size_bytes": 2316,
+      "sha256": "098bd4c5742dcb1826f6cd7b95b5d20013f441a30dc2b718ce306a1ab4b43368"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/jittor_timevae_production_alignment_preflight.md",
+      "size_bytes": 1213,
+      "sha256": "dfeec646e8ac71dfa7f170df648a0848402c474ebb5bdde9a9fbbeda5f8e5307"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/official_timevae_full_path_audit.json",
+      "size_bytes": 3517,
+      "sha256": "b50963f09e5f7f72e0eba67901d89f0d610e06a2817ac7b2c9d4a22590c4625f"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/official_timevae_full_path_audit.md",
+      "size_bytes": 551,
+      "sha256": "b87a034ec882c4c7d793d060cce1b8a9bdfc3dab6671de4f3a2bb4fed9da138d"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_live_metadata_completion.json",
+      "size_bytes": 1455,
+      "sha256": "b22aae7406242784a4d2b45aaa149f4e70c77ca7669728b7b9d4a49d81a911c5"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_live_metadata_completion.md",
+      "size_bytes": 843,
+      "sha256": "2098b9c393a5781a7fa9df94e478c36e32f8d08aa82fde85b171a56a149ec81d"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_metadata_partial_diagnosis.json",
+      "size_bytes": 1776,
+      "sha256": "8ba7b7133729a969bf57a98435d5ff17868a93f7e2f0c156ebc53c4e5aae575c"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_metadata_partial_diagnosis.md",
+      "size_bytes": 1277,
+      "sha256": "b984392b509cd9c0046d62d15d83f230b9fc26069adbe61325b576beb83c299d"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_production_oracle_metadata.json",
+      "size_bytes": 11752,
+      "sha256": "a09f59717040855a4ae12b23f18b99819ad9b7924133d1dca8c13be2134e7e38"
+    },
+    {
+      "path": "experiments/production_completion/timevae_full/timevae_production_oracle_metadata.md",
+      "size_bytes": 1467,
+      "sha256": "992767bedc0c3936fc7e17b8e4b4a1c680ec85bbb65cdf8863f9cffde66507a5"
+    }
+  ]
+}

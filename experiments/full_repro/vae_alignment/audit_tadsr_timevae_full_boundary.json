@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights/time_vae",
+  "official_vae_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "encoder_class": "diffusers.models.autoencoders.vae.TimeAwareEncoder",
+  "decoder_class": "diffusers.models.autoencoders.vae.Decoder",
+  "posterior_class": "diffusers.models.autoencoders.vae.DiagonalGaussianDistribution",
+  "vae_hook_class": "my_utils.vaehook.VAEHook",
+  "config": {
+    "in_channels": 3,
+    "out_channels": 3,
+    "down_block_types": [
+      "DownEncoderBlock2D",
+      "DownEncoderBlock2D",
+      "DownEncoderBlock2D",
+      "DownEncoderBlock2D"
+    ],
+    "up_block_types": [
+      "UpDecoderBlock2D",
+      "UpDecoderBlock2D",
+      "UpDecoderBlock2D",
+      "UpDecoderBlock2D"
+    ],
+    "block_out_channels": [
+      128,
+      256,
+      512,
+      512
+    ],
+    "layers_per_block": 2,
+    "act_fn": "silu",
+    "latent_channels": 4,
+    "norm_num_groups": 32,
+    "sample_size": 768,
+    "scaling_factor": 0.18215,
+    "force_upcast": true,
+    "time_scale_shift": "scale_shift",
+    "_use_default_values": [
+      "time_scale_shift",
+      "scaling_factor",
+      "force_upcast"
+    ],
+    "_class_name": "TimeAwareAutoencoderKL",
+    "_diffusers_version": "0.10.0.dev0",
+    "_name_or_path": "/mnt/data/sj/checkpoints/TADSR/preset/weights/time_vae"
+  },
+  "available_methods": {
+    "encode": true,
+    "decode": true,
+    "forward": true,
+    "_decode": true,
+    "enable_tiling": true,
+    "disable_tiling": true,
+    "enable_slicing": true,
+    "disable_slicing": true
+  },
+  "module_presence": {
+    "quant_conv": true,
+    "post_quant_conv": true,
+    "encoder_time_proj": true,
+    "encoder_time_embedding": true
+  },
+  "pipeline_usage": {
+    "requires_encode": true,
+    "requires_decode": true,
+    "uses_posterior_sample": true,
+    "uses_posterior_mode": false,
+    "uses_scaling_factor": true,
+    "scaling_factor": 0.18215,
+    "postprocess_clamp_minus1_1": true,
+    "installs_tiled_vae_hook": true,
+    "tensor_layout": "NCHW image tensors and NCHW latents",
+    "input_range": "image tensor is converted from [0,1] to [-1,1] before TADSR_test.forward",
+    "output_range": "decode sample is clamped to [-1,1], then caller maps to [0,1] for PIL",
+    "timesteps_contract": "TADSR passes the caller timestep tensor into TimeAwareAutoencoderKL.encode; decode has no timestep argument",
+    "snippets": {
+      "tadsr_encode_snippets": [
+        {
+          "line": 202,
+          "text": "encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+          "context": "200:         neg_prompt_embeds = self.encode_prompt(batch[\"neg_prompt\"])\n201: \n202:         encoded_control = self.vae.encode(c_t, timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)"
+        },
+        {
+          "line": 205,
+          "text": "output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds"
+        },
+        {
+          "line": 430,
+          "text": "lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor",
+          "context": "428:         prompt_embeds = self.encode_prompt([prompt])\n429:         \n430:         lq_latent = self.vae.encode(lq.to(self.weight_dtype), timesteps).latent_dist.sample() * self.vae.config.scaling_factor\n431:         ## add tile function\n432:         _, _, h, w = lq_latent.size()"
+        },
+        {
+          "line": 514,
+          "text": "output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: \n516:         return output_image"
+        },
+        {
+          "line": 519,
+          "text": "output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image\n521:     "
+        }
+      ],
+      "tadsr_decode_snippets": [
+        {
+          "line": 205,
+          "text": "output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "203:         model_pred = self.unet(encoded_control, timesteps, encoder_hidden_states=prompt_embeds.to(torch.float32),).sample\n204:         x_denoised = self.get_x0_from_res(encoded_control, model_pred, timesteps)\n205:         output_image = (self.vae.decode(x_denoised / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n206: \n207:         return output_image, x_denoised, prompt_embeds, neg_prompt_embeds"
+        },
+        {
+          "line": 514,
+          "text": "output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "512: \n513:         x_denoised = self.get_x0_from_res(lq_latent, model_pred, timesteps)\n514:         output_image = (self.vae.decode(x_denoised.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n515: \n516:         return output_image"
+        },
+        {
+          "line": 518,
+          "text": "def decode_latent(self, latent):",
+          "context": "516:         return output_image\n517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image"
+        },
+        {
+          "line": 519,
+          "text": "output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)",
+          "context": "517: \n518:     def decode_latent(self, latent):\n519:         output_image = (self.vae.decode(latent.to(self.weight_dtype) / self.vae.config.scaling_factor).sample).clamp(-1, 1)\n520:         return output_image\n521:     "
+        }
+      ],
+      "tadsr_tiled_vae_snippets": [
+        {
+          "line": 15,
+          "text": "from my_utils.vaehook import VAEHook, perfcount",
+          "context": "13: from diffusers import TimeAwareAutoencoderKL\n14: \n15: from my_utils.vaehook import VAEHook, perfcount\n16: \n17: "
+        },
+        {
+          "line": 342,
+          "text": "self._init_tiled_vae(encoder_tile_size=args.vae_encoder_tiled_size, decoder_tile_size=args.vae_decoder_tiled_size)",
+          "context": "340: \n341:         # vae tile\n342:         self._init_tiled_vae(encoder_tile_size=args.vae_encoder_tiled_size, decoder_tile_size=args.vae_decoder_tiled_size)\n343: \n344:         self.weight_dtype = torch.float32"
+        },
+        {
+          "line": 522,
+          "text": "def _init_tiled_vae(self,",
+          "context": "520:         return output_image\n521:     \n522:     def _init_tiled_vae(self,\n523:             encoder_tile_size = 256,\n524:             decoder_tile_size = 256,"
+        },
+        {
+          "line": 538,
+          "text": "self.vae.encoder.forward = VAEHook(",
+          "context": "536:         decoder = self.vae.decoder\n537: \n538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook("
+        },
+        {
+          "line": 540,
+          "text": "self.vae.decoder.forward = VAEHook(",
+          "context": "538:         self.vae.encoder.forward = VAEHook(\n539:             encoder, encoder_tile_size, is_decoder=False, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu, time_vae=True)\n540:         self.vae.decoder.forward = VAEHook(\n541:             decoder, decoder_tile_size, is_decoder=True, fast_decoder=fast_decoder, fast_encoder=fast_encoder, color_fix=color_fix, to_gpu=vae_to_gpu)\n542: "
+        }
+      ],
+      "test_script_vae_snippets": [
+        {
+          "line": 66,
+          "text": "parser.add_argument(\"--timesteps\", type=int, default=500)",
+          "context": "64:     parser.add_argument(\"--latent_tiled_size\", type=int, default=96) \n65:     parser.add_argument(\"--latent_tiled_overlap\", type=int, default=32) \n66:     parser.add_argument(\"--timesteps\", type=int, default=500)\n67: \n68:     args = parser.parse_args()"
+        },
+        {
+          "line": 137,
+          "text": "output_image = model(lq, prompt=validation_prompt, timesteps=args.timesteps)",
+          "context": "135:         with torch.no_grad():\n136:             lq = lq*2-1\n137:             output_image = model(lq, prompt=validation_prompt, timesteps=args.timesteps)\n138:             output_pil = transforms.ToPILImage()(output_image[0].cpu() * 0.5 + 0.5)\n139:             if args.align_method == 'adain':"
+        }
+      ]
+    }
+  },
+  "full_boundary_contract": {
+    "status": "PASS",
+    "boundary_type": "encode_sample_scale_decode_clamp",
+    "steps": [
+      "input image tensor in NCHW float32 range [-1,1]",
+      "TimeAwareAutoencoderKL.encode(x, timesteps)",
+      "DiagonalGaussianDistribution mean/logvar/std",
+      "deterministic posterior sample with exported epsilon",
+      "scaled latent = sample * scaling_factor",
+      "decode input = scaled latent / scaling_factor",
+      "TimeAwareAutoencoderKL.decode(decode_input).sample",
+      "clamp decoded sample to [-1,1]"
+    ],
+    "deterministic_policy": "Official TADSR calls latent_dist.sample() without exposing its random epsilon. The alignment boundary therefore exports a fixed epsilon tensor and reproduces z = mean + std * epsilon deterministically. This validates the encode/sample/scale/decode/clamp contract without running scheduler or full inference.",
+    "scheduler_executed": false,
+    "full_tadsr_inference_executed": false,
+    "image_saved": false,
+    "sufficient_for_non_tiled_small_tensor_api": true,
+    "sufficient_for_full_tadsr_pipeline": false,
+    "timevae_full_alignment_candidate": false,
+    "remaining_timevae_gaps": [
+      "official TADSR_test monkey-patches VAE encoder/decoder with VAEHook tiling for real-size inference; this boundary uses the non-tiled small-tensor path",
+      "official pipeline uses stochastic posterior sample; this boundary uses exported fixed epsilon instead of an internal runtime RNG",
+      "generic runtime LoRA integration remains partial; current Jittor checks use converted/static weights",
+      "full scheduler/UNet/VAE image inference CLI remains intentionally NotImplemented"
+    ],
+    "recommended_next_stage": "If this boundary aligns, audit VAEHook tiled encode/decode and runtime VAE LoRA policy before opening full TADSR inference."
+  },
+  "existing_decoder_relation": {
+    "TIME_VAE_FULL_DECODER_ALIGNMENT": "covers post_quant_conv -> decoder stack -> tail only",
+    "this_boundary_adds": [
+      "encode API",
+      "posterior sample formula with fixed epsilon",
+      "scaling_factor",
+      "decode API wrapper",
+      "clamp postprocess"
+    ]
+  }
+}

@@ -1,0 +1,1921 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:24.060493+00:00",
+  "status": "PASS",
+  "git": {
+    "branch": "codex/tadsr-production-completion",
+    "latest_commit": "a072df9 Prepare TADSR-Jittor public release and human submission package",
+    "remotes": "origin\tsj@10.195.21.2:/mnt/data/sj/projects/TADSR-Jittor (fetch)\norigin\tsj@10.195.21.2:/mnt/data/sj/projects/TADSR-Jittor (push)",
+    "remote_configured": true
+  },
+  "head_tracked_tensors": {
+    "count": 174,
+    "total_size_bytes": 99458559,
+    "total_size_mb": 94.85107326507568,
+    "largest_50": [
+      {
+        "path": "experiments/full_repro/oracle_tensors/smoke/preprocess_tensors.npz",
+        "size_bytes": 32247054,
+        "size_mb": 30.75318717956543,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+        "size_bytes": 7670557,
+        "size_mb": 7.315213203430176,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/time_vae_decoder_upblock1_outputs.npz",
+        "size_bytes": 4742712,
+        "size_mb": 4.523002624511719,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_inputs.npz",
+        "size_bytes": 1904130,
+        "size_mb": 1.8159198760986328,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_outputs.npz",
+        "size_bytes": 1783673,
+        "size_mb": 1.7010431289672852,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_outputs.npz",
+        "size_bytes": 1317015,
+        "size_mb": 1.2560033798217773,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_shortcut_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_synthetic_unet_conv_in_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_shortcut_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry/unet_conv_in_manual_effective_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry/unet_conv_in_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_inputs.npz",
+        "size_bytes": 1225535,
+        "size_mb": 1.1687612533569336,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock0/time_vae_decoder_upblock0_outputs.npz",
+        "size_bytes": 1221853,
+        "size_mb": 1.1652498245239258,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_outputs.npz",
+        "size_bytes": 1060738,
+        "size_mb": 1.0115985870361328,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock2/time_vae_downblock2_outputs.npz",
+        "size_bytes": 1013781,
+        "size_mb": 0.9668169021606445,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_midblock/time_vae_midblock_outputs.npz",
+        "size_bytes": 892647,
+        "size_mb": 0.8512945175170898,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock3/time_vae_downblock3_outputs.npz",
+        "size_bytes": 831412,
+        "size_mb": 0.7928962707519531,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_encoder_tail/time_vae_encoder_tail_outputs.npz",
+        "size_bytes": 803738,
+        "size_mb": 0.7665042877197266,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/entry_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/entry_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/real_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/real_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/synthetic_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/synthetic_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_inputs.npz",
+        "size_bytes": 485655,
+        "size_mb": 0.46315670013427734,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_midblock/time_vae_decoder_midblock_outputs.npz",
+        "size_bytes": 429845,
+        "size_mb": 0.40993213653564453,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock2/time_vae_downblock2_inputs.npz",
+        "size_bytes": 400591,
+        "size_mb": 0.3820333480834961,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/time_vae_decoder_upblock1_inputs.npz",
+        "size_bytes": 309055,
+        "size_mb": 0.2947378158569336,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_midblock/time_vae_midblock_inputs.npz",
+        "size_bytes": 157482,
+        "size_mb": 0.15018653869628906,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_encoder_tail/time_vae_encoder_tail_inputs.npz",
+        "size_bytes": 137904,
+        "size_mb": 0.1315155029296875,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      }
+    ]
+  },
+  "ignored_local_tensors": {
+    "count": 22,
+    "largest_50": [
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/clamped_output.npy",
+        "size_bytes": 786560,
+        "size_mb": 0.7501220703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/clamped_output_got.npy",
+        "size_bytes": 786560,
+        "size_mb": 0.7501220703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/decode_output.npy",
+        "size_bytes": 786560,
+        "size_mb": 0.7501220703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/decode_output_got.npy",
+        "size_bytes": 786560,
+        "size_mb": 0.7501220703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/input_tensor.npy",
+        "size_bytes": 786560,
+        "size_mb": 0.7501220703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/encoder_hidden_states.npy",
+        "size_bytes": 315520,
+        "size_mb": 0.3009033203125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/decode_input.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/decode_input_got.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/encoded_latent.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/encoded_latent_got.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/sample_epsilon.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/scaled_latent.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/scaled_latent_got.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/unet_model_pred.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/unet_model_pred_got.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/x0_from_res.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/x0_from_res_got.npy",
+        "size_bytes": 16512,
+        "size_mb": 0.0157470703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/scheduler_timestep.npy",
+        "size_bytes": 136,
+        "size_mb": 0.00012969970703125
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/alpha_prod_t.npy",
+        "size_bytes": 132,
+        "size_mb": 0.000125885009765625
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/alpha_prod_t_got.npy",
+        "size_bytes": 132,
+        "size_mb": 0.000125885009765625
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/sqrt_alpha_prod_t.npy",
+        "size_bytes": 132,
+        "size_mb": 0.000125885009765625
+      },
+      {
+        "path": "experiments/production_completion/full_inference/one_step/local_tensors/sqrt_alpha_prod_t_got.npy",
+        "size_bytes": 132,
+        "size_mb": 0.000125885009765625
+      }
+    ]
+  },
+  "worktree_large_artifacts": {
+    "status_tensor_lines": [],
+    "staged_tensor_paths": [],
+    "staged_tensor_count": 0,
+    "worktree_tensor_status_count": 0
+  },
+  "deliverables": {
+    "total_size_bytes": 326694,
+    "total_size_mb": 0.31155967712402344,
+    "pptx_size_bytes": 200298,
+    "pptx_size_mb": 0.19101905822753906,
+    "pdf_size_bytes": 79524,
+    "pdf_size_mb": 0.07583999633789062,
+    "under_100mb": true
+  },
+  "repository_size": {
+    "git_size_bytes": 65512049,
+    "git_size_mb": 62.477158546447754,
+    "working_tree_excluding_git_size_bytes": 141257798,
+    "working_tree_excluding_git_size_mb": 134.71393394470215,
+    "total_estimate_bytes": 206769847,
+    "total_estimate_mb": 197.1910924911499
+  },
+  "history": {
+    "status": "PASS",
+    "history_blob_count": 4572,
+    "max_blob_size_bytes": 32247054,
+    "max_blob_size_mb": 30.75318717956543,
+    "largest_100_blobs": [
+      {
+        "object": "e38071511729636ca655e968d1cb90f22557fb14",
+        "path": "experiments/full_repro/oracle_tensors/smoke/preprocess_tensors.npz",
+        "size_bytes": 32247054,
+        "size_mb": 30.75318717956543,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "4d3056e5330862da92a9e1b8c80836a0a2cc99e6",
+        "path": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+        "size_bytes": 7670557,
+        "size_mb": 7.315213203430176,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f92c2c4813eb0ed1e2387c33b32915d8ff6ba163",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/time_vae_decoder_upblock1_outputs.npz",
+        "size_bytes": 4742712,
+        "size_mb": 4.523002624511719,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7d4c36eae149bde4a3e4101894713d4fe407da22",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_inputs.npz",
+        "size_bytes": 1904130,
+        "size_mb": 1.8159198760986328,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "5511916eef1d41e765d4dba1b8d51738d037d223",
+        "path": "experiments/full_repro/weights/weight_conversion_report.json",
+        "size_bytes": 1825355,
+        "size_mb": 1.7407941818237305,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "b612cd06c3a24262d755b23f6887a99c8cd84ccb",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_outputs.npz",
+        "size_bytes": 1783673,
+        "size_mb": 1.7010431289672852,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "5a624d4dc55d6d29e89aa5a479544a063df53268",
+        "path": "experiments/full_repro/weights/diffusers_weight_verification.json",
+        "size_bytes": 1733223,
+        "size_mb": 1.6529302597045898,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d99cda6784fff9702e4c08bfb5a813b2cc544604",
+        "path": "experiments/full_repro/weights/conversion_manifest.json",
+        "size_bytes": 1634333,
+        "size_mb": 1.5586214065551758,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "103b03e86d021f9ab754e88ac3901554050116e5",
+        "path": "experiments/full_repro/weights/key_mapping.json",
+        "size_bytes": 1604114,
+        "size_mb": 1.5298023223876953,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d7473e0dc79a472315cc5203b39da9d63d014155",
+        "path": "experiments/full_repro/weights/official_weight_inspection.json",
+        "size_bytes": 1602355,
+        "size_mb": 1.5281248092651367,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7ab41897ef6aaf32247c66942a5bb36334eccd5d",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_outputs.npz",
+        "size_bytes": 1317015,
+        "size_mb": 1.2560033798217773,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "8f73d947627960e98853f1e99ed5e12d939af3b7",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "70d2a86660ebf469412121ebe5add3678533f306",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "eeca1ff30b9f0c95628eac7206d71b62cf55f579",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "acf081d5bfd18d3036b9531e4edd1b8a7a86c5f0",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "628679a820e4d27647443f8ed89c127178472778",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d54ff85feaafd686bcccf9a4181d23c45d54d0cc",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "926172b10c6f1188e710831055f4b930eef46f21",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "3743801c8412ab1f1505f7e7892b917440d0fd51",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f0a8037e8e2be5ec5cbc9063a6c51b1f5feefb62",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d649b449f78b25499b418838eb1bbbfbc4fb2022",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "62e2a10f49eb3801881b883b82e33e00c41d1e54",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d88de05c415dfb1430d16e67c2bce44e981a9c58",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "202367f18ea5007d66e3a56698199c8071ba4ae8",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "3572c125ec653eb48c8661d8b9071213da899f37",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f47e2413d64ec7556f7f2e7fd8ff73120d3c10a6",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7f88ff0bccdbb6a95c26145e970f99ea6939a94d",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "a01a6ff7a02bd29dbf0feacf29cd7c86279abb0b",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "1932447b1bd6e918b5e621fe36dc77a9e261c56d",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "416944d0d2d9b0d9dbdebce3bce8528c82cef1f4",
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry/unet_conv_in_manual_effective_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "2403cc0cc2f40fba7b4fe6ef254325ad9860cd41",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_inputs.npz",
+        "size_bytes": 1225535,
+        "size_mb": 1.1687612533569336,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "109530658f602d03b578b43b196a56d07ec87f54",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock0/time_vae_decoder_upblock0_outputs.npz",
+        "size_bytes": 1221853,
+        "size_mb": 1.1652498245239258,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "815907e66a424bf35df2c43ed47bf1dc23511a02",
+        "path": "experiments/full_repro/weights/diffusers_key_mapping.json",
+        "size_bytes": 1153019,
+        "size_mb": 1.099604606628418,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "be02b5a4cc5a3adfc5877ed1c9eaefb410206797",
+        "path": "experiments/full_repro/weights/official_weight_keys.json",
+        "size_bytes": 1150391,
+        "size_mb": 1.0970983505249023,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "9932597765d6c9a2f03cad9f7918b079745f4e0a",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_outputs.npz",
+        "size_bytes": 1060738,
+        "size_mb": 1.0115985870361328,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "dc962bd3cad27824b1ac34acdd2d9826582d6f86",
+        "path": "experiments/full_repro/weights/diffusers_conversion_manifest.json",
+        "size_bytes": 1037451,
+        "size_mb": 0.9893903732299805,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "9bab7260c7c74c156652dfd749593f89d3ae1a7c",
+        "path": "experiments/jittor_tiny/checkpoints/latest.pkl",
+        "size_bytes": 1026827,
+        "size_mb": 0.9792585372924805,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "adf026e9ee2446a8614012dfe88187e5910c9ea5",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock2/time_vae_downblock2_outputs.npz",
+        "size_bytes": 1013781,
+        "size_mb": 0.9668169021606445,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d89d567e0f2d0ed06979b93693597181d54f9e3d",
+        "path": "experiments/pytorch_tiny/checkpoints/step_0030.pt",
+        "size_bytes": 1004616,
+        "size_mb": 0.9580764770507812,
+        "kind": "checkpoint",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "a33238a72d06159232a3a3c27d6b1d3c78ab13ab",
+        "path": "experiments/pytorch_tiny/checkpoints/latest.pt",
+        "size_bytes": 1002113,
+        "size_mb": 0.9556894302368164,
+        "kind": "checkpoint",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "4a1a8a6d0c065e6f32556351941c0d9e25b6cede",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_midblock/time_vae_midblock_outputs.npz",
+        "size_bytes": 892647,
+        "size_mb": 0.8512945175170898,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "26f77460bc5c6aca4cb69ce0e6ba901e8d75ab8c",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock3/time_vae_downblock3_outputs.npz",
+        "size_bytes": 831412,
+        "size_mb": 0.7928962707519531,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "4fea174069c8ab5371e19b4709f56821fcab306a",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_encoder_tail/time_vae_encoder_tail_outputs.npz",
+        "size_bytes": 803738,
+        "size_mb": 0.7665042877197266,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "b9dd6b33d654d0618880d31bf64aa6f75491863e",
+        "path": "experiments/production_completion/live_audit_logs/phase3b_live_audit_20260612_140557.log",
+        "size_bytes": 666433,
+        "size_mb": 0.6355600357055664,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "e296c86ff6d9381b88d417a80031a3cf218d1cd9",
+        "path": "experiments/full_repro/lora_alignment/audit_tadsr_lora_policy.json",
+        "size_bytes": 642295,
+        "size_mb": 0.6125402450561523,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "ee4a8aa4956900a5251db1c84e94970903b8064a",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/entry_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "37a9a968287890637bfdc5dd41f88d3ec7661c96",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/real_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "6ebd14aa39ff473eedac80341d43e1a1f2460389",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/synthetic_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "43b6b9a51a5ad0a6d1d4e36c3840db5ccf7dc66e",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_inputs.npz",
+        "size_bytes": 485655,
+        "size_mb": 0.46315670013427734,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "8095ef87080d63ad51d38afbd13d0e0d9089d83b",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 483531,
+        "size_mb": 0.46113109588623047,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "3d5f3e933d7320f3962367ac1223931a205e903b",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 479829,
+        "size_mb": 0.45760059356689453,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "33d71421a5115ffae9dca3021cdc35964b72d70e",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 476291,
+        "size_mb": 0.4542264938354492,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "be6248abd2833e5f43fd8ceaa277661a89212f89",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 474857,
+        "size_mb": 0.45285892486572266,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "e96e23b855dc489fbffdacaeb200b98d32c946b9",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 468768,
+        "size_mb": 0.447052001953125,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "8bbda91857e326d2fb2eeead585ff44b4b8aaa15",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 468630,
+        "size_mb": 0.44692039489746094,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "6b580470312228be3a0f4dac97cf847bf2bb4679",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 464379,
+        "size_mb": 0.44286632537841797,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f8fede01b196143bce2a1cf883a64f0c4167a3a2",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 461827,
+        "size_mb": 0.4404325485229492,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "00c37e022e70a580af0f7a94ec9d8a222ab13e3c",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 458601,
+        "size_mb": 0.43735599517822266,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "3ed7ba58d3c405fdad2892602de60847199f70b0",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 455768,
+        "size_mb": 0.43465423583984375,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "fd7f515d3f2349961a2370b46f54f160129e9b3b",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 454516,
+        "size_mb": 0.4334602355957031,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "8b3d7da3bc2634c96bd7c0ce6b587bc394054ed6",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 453410,
+        "size_mb": 0.4324054718017578,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "006eabbb542b8e73db72f18986a7b5e2cac4b96c",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 451461,
+        "size_mb": 0.43054676055908203,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "be3d8c98cc3b7f99f1627c96dcb3140c25a05167",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 450975,
+        "size_mb": 0.4300832748413086,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "3d7d5f8602fcb6de3e619606e658ff175d9d0fe6",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 448808,
+        "size_mb": 0.42801666259765625,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "b4a00f9e24545ab1f6f50a65d797fcabd28645d3",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 445824,
+        "size_mb": 0.4251708984375,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "aac2d5391867b986f0a11f0da2ad4057e41b4807",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 445331,
+        "size_mb": 0.4247007369995117,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7944f8c445c5661322666f92fae6df0fc04ceb9c",
+        "path": "experiments/full_repro/pytorch_official/smoke/output/0000.png",
+        "size_bytes": 444396,
+        "size_mb": 0.4238090515136719,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "236e1958e62b4263c71fbb7649b349b0b4b80c60",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 443517,
+        "size_mb": 0.4229707717895508,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d6a5886f71dccb23cdc31dc387210ed43850d19d",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 441602,
+        "size_mb": 0.4211444854736328,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "91df6c00f38ffee5290a943c9854ebd7a66e10fd",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 438081,
+        "size_mb": 0.4177865982055664,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7506ff2bf27ae0b7a5ef04a1088acbd4e12afb2d",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 435288,
+        "size_mb": 0.41512298583984375,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7626d3c684adafd7ff05ce11ba17758abdf0dfd2",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 432307,
+        "size_mb": 0.4122800827026367,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "9faf350d8474d3622a83f682d23e2c0ce5b128a3",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 431549,
+        "size_mb": 0.4115571975708008,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "dc697281d988a3b67413284109272939bb55908d",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 430796,
+        "size_mb": 0.4108390808105469,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "014ed89f714266234d0d53e7b2c81dcd73fd22e1",
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_midblock/time_vae_decoder_midblock_outputs.npz",
+        "size_bytes": 429845,
+        "size_mb": 0.40993213653564453,
+        "kind": "tensor",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "6edb5880b83e9dc5f15c3dc0693fd5992948d89e",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 428275,
+        "size_mb": 0.4084348678588867,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f7e092ff644653aa75f72803f97aefcf66294993",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 427453,
+        "size_mb": 0.4076509475708008,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "bd9b5d87bcbd8ee7ad5df521e94880ccd087758a",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 426253,
+        "size_mb": 0.4065065383911133,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "197f7d7747e786a77c100510249162f4d47424a7",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 425021,
+        "size_mb": 0.4053316116333008,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "762828f3421ffbd3095064a3e0a92585d345d63d",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 424054,
+        "size_mb": 0.40440940856933594,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7b7200644b251e74273e85d5adcb102f296a1385",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 423749,
+        "size_mb": 0.40411853790283203,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "23a465f315229ba63e2b754c82cb1fe880292bff",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 422003,
+        "size_mb": 0.4024534225463867,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "27c30fcb54f3052b5bb3808f65f3a312b4eb1ac8",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 421852,
+        "size_mb": 0.4023094177246094,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "e8c6b4df27f11721ea17cdc47922bef625628a4e",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 419098,
+        "size_mb": 0.39968299865722656,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d21636ea6de0e945efef41e1087c4c4f5fb66ad1",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 418463,
+        "size_mb": 0.3990774154663086,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "7e2416b0bc2360f1000eb6577eab6aa9245f7d7d",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 418290,
+        "size_mb": 0.3989124298095703,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d5556c33ae9b884de3b53bea27c294d05b1b6726",
+        "path": "experiments/full_repro/pytorch_official/smoke/output/0002.png",
+        "size_bytes": 418245,
+        "size_mb": 0.39886951446533203,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "83eb9f1a6cfcdc28b60195dd731b6adc4c41f809",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 418221,
+        "size_mb": 0.3988466262817383,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "0e7a8aaab2b6ebce0cbdfa8f08426f32ffe56068",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 417311,
+        "size_mb": 0.3979787826538086,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d1e0acaa5f43b06fadbbad904dc59e6acc5c93ac",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 417095,
+        "size_mb": 0.39777278900146484,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "2117a0af44b7a6c0bed3fc323a3c04c744d8728f",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 415746,
+        "size_mb": 0.3964862823486328,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "9184f88d6ead46002a72ebc342c9815c29f96bf5",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 414484,
+        "size_mb": 0.3952827453613281,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "71c64e522e0327016bbd8a5e36291b68c91a9aed",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 414120,
+        "size_mb": 0.39493560791015625,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "9b53b92386513fb7bf47062e5b07ca9b1311c0c1",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 412516,
+        "size_mb": 0.3934059143066406,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "91363420cad63bf58e01839c4dc45386b5916346",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 412295,
+        "size_mb": 0.39319515228271484,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "f7780686d25cae46fdaceebefd69472d5134ab8f",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 410834,
+        "size_mb": 0.3918018341064453,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "d964151f1f67303eaf87010c67b821105720c2c4",
+        "path": "scripts/final_audit.py",
+        "size_bytes": 410410,
+        "size_mb": 0.39139747619628906,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "af478275ecfd17f39891064c2d10ea3297c7088d",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 409655,
+        "size_mb": 0.39067745208740234,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "45880ca1ef8a16c50feddbd3ae158d9da9180f8d",
+        "path": "experiments/final_audit_report.md",
+        "size_bytes": 408714,
+        "size_mb": 0.38978004455566406,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      },
+      {
+        "object": "beb1a05a0c72fb5ef6ae994cc9ae7adc7666cf3a",
+        "path": "experiments/final_audit_report.json",
+        "size_bytes": 407240,
+        "size_mb": 0.38837432861328125,
+        "kind": "other",
+        "exists_in_head": true,
+        "historical_only": false
+      }
+    ],
+    "blobs_over_100mb": [],
+    "blobs_over_50mb": [],
+    "github_hard_limit_risk": false,
+    "github_large_repo_risk": false,
+    "git_size_bytes": 65512049,
+    "git_size_mb": 62.477158546447754
+  },
+  "phase5b_after_release_ready": {
+    "required_paths": [
+      "docs\\final_phase5b_submission_freeze_summary.md",
+      "docs\\production_completion\\diagnostic_image_smoke_plan.md",
+      "experiments\\final_phase5b_submission_freeze_summary.json",
+      "experiments\\production_completion\\full_inference\\diagnostic_image_smoke_plan.json",
+      "experiments\\production_completion\\full_inference\\actual_inference_path_audit.json",
+      "experiments\\production_completion\\full_inference\\postprocess_contract_audit.json",
+      "experiments\\production_completion\\full_inference\\multistep_applicability_decision.json",
+      "experiments\\production_completion\\diagnostic_image_smoke\\diagnostic_image_smoke_metrics.json",
+      "experiments\\production_completion\\diagnostic_image_smoke\\diagnostic_image_smoke_validation.json",
+      "experiments\\production_completion\\diagnostic_cli\\one_step_diagnostic_cli_test.json",
+      "docs\\timevae_full_alignment_closure_plan.md",
+      "experiments\\timevae_full_alignment_closure_summary.json",
+      "docs\\runtime_lora_final_decision_proof.md",
+      "experiments\\runtime_lora_final_decision_proof.json"
+    ],
+    "missing_paths": [],
+    "status": "PASS"
+  },
+  "evidence_dependency": {
+    "cleanup_candidate_tracked_tensors_count": 174,
+    "cleanup_candidate_tracked_tensors_largest_50": [
+      {
+        "path": "experiments/full_repro/oracle_tensors/smoke/preprocess_tensors.npz",
+        "size_bytes": 32247054,
+        "size_mb": 30.75318717956543,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+        "size_bytes": 7670557,
+        "size_mb": 7.315213203430176,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/time_vae_decoder_upblock1_outputs.npz",
+        "size_bytes": 4742712,
+        "size_mb": 4.523002624511719,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_inputs.npz",
+        "size_bytes": 1904130,
+        "size_mb": 1.8159198760986328,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock0/time_vae_downblock0_outputs.npz",
+        "size_bytes": 1783673,
+        "size_mb": 1.7010431289672852,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_outputs.npz",
+        "size_bytes": 1317015,
+        "size_mb": 1.2560033798217773,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_downblock0_resnet0_shortcut_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/entry_synthetic_unet_conv_in_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_act2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_after_temb_add_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_conv2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_input.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_manual_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm1_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_norm2_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet0/synthetic_downblock0_resnet0_shortcut_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry/unet_conv_in_manual_effective_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/unet_alignment/oracle_tensors_unet_entry/unet_conv_in_output.npy",
+        "size_bytes": 1310848,
+        "size_mb": 1.2501220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock1/time_vae_downblock1_inputs.npz",
+        "size_bytes": 1225535,
+        "size_mb": 1.1687612533569336,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock0/time_vae_decoder_upblock0_outputs.npz",
+        "size_bytes": 1221853,
+        "size_mb": 1.1652498245239258,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_outputs.npz",
+        "size_bytes": 1060738,
+        "size_mb": 1.0115985870361328,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock2/time_vae_downblock2_outputs.npz",
+        "size_bytes": 1013781,
+        "size_mb": 0.9668169021606445,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_midblock/time_vae_midblock_outputs.npz",
+        "size_bytes": 892647,
+        "size_mb": 0.8512945175170898,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock3/time_vae_downblock3_outputs.npz",
+        "size_bytes": 831412,
+        "size_mb": 0.7928962707519531,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_encoder_tail/time_vae_encoder_tail_outputs.npz",
+        "size_bytes": 803738,
+        "size_mb": 0.7665042877197266,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/entry_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/entry_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/real_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/real_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/synthetic_decoder_upblock1_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/synthetic_decoder_upblock1_upsampler0_output.npy",
+        "size_bytes": 524416,
+        "size_mb": 0.5001220703125,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors/time_vae_oracle_inputs.npz",
+        "size_bytes": 485655,
+        "size_mb": 0.46315670013427734,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_midblock/time_vae_decoder_midblock_outputs.npz",
+        "size_bytes": 429845,
+        "size_mb": 0.40993213653564453,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_downblock2/time_vae_downblock2_inputs.npz",
+        "size_bytes": 400591,
+        "size_mb": 0.3820333480834961,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_decoder_upblock1/time_vae_decoder_upblock1_inputs.npz",
+        "size_bytes": 309055,
+        "size_mb": 0.2947378158569336,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_midblock/time_vae_midblock_inputs.npz",
+        "size_bytes": 157482,
+        "size_mb": 0.15018653869628906,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      },
+      {
+        "path": "experiments/full_repro/time_vae_alignment/oracle_tensors_encoder_tail/time_vae_encoder_tail_inputs.npz",
+        "size_bytes": 137904,
+        "size_mb": 0.1315155029296875,
+        "under_experiments_full_repro": true,
+        "referenced_by_final_evidence_or_audit": false,
+        "likely_safe_to_untrack_future_cleanup": true
+      }
+    ],
+    "keep_required_metadata_files": [
+      "README.md",
+      "deliverables/TADSR-Jittor_submission_readme.md",
+      "docs/github_submission_handoff.md",
+      "docs/github_release_slimming_decision.md",
+      "experiments/final_audit_report.md",
+      "experiments/final_evidence_manifest.md",
+      "experiments/github_release_readiness_audit.md"
+    ],
+    "evidence_manifest_requires_tensor_files": false,
+    "proposed_cleanup_strategy": [
+      "Keep metadata JSON/Markdown/report files.",
+      "If the user chooses a cleanup pass, git rm --cached tracked .npy/.npz files instead of deleting local evidence.",
+      "Regenerate final evidence manifest and final audit after cleanup.",
+      "Use history rewrite only in a separate explicitly authorized stage if >100MB historical blobs block GitHub."
+    ]
+  },
+  "markers": {
+    "TADSR_GITHUB_HEAD_ARTIFACT_AUDIT": "PASS",
+    "TADSR_GITHUB_DELIVERABLE_SIZE_AUDIT": "PASS",
+    "TADSR_GITHUB_WORKTREE_LARGE_ARTIFACT_AUDIT": "PASS",
+    "TADSR_GIT_HISTORY_LARGE_BLOB_AUDIT": "PASS",
+    "TADSR_EVIDENCE_DEPENDENCY_AUDIT": "PASS",
+    "TADSR_GITHUB_RELEASE_SLIMMING_DECISION": "PASS",
+    "TADSR_GITHUB_RELEASE_READINESS_AUDIT": "PASS",
+    "TADSR_GITHUB_RELEASE_AFTER_PHASE5B_READY": "PASS"
+  },
+  "recommendation": "Manual push is safe from GitHub hard-limit and large-blob perspectives; a separate cleanup pass is optional."
+}

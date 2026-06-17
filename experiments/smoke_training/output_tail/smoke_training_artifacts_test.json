@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "missing": [],
+  "split_ok": true,
+  "flags_ok": true,
+  "metrics_flags_ok": true,
+  "loss_logs_ok": true,
+  "validation_logs_ok": true,
+  "performance_logs_ok": true,
+  "jittor_full_inference_marker": "NOT_COMPLETE",
+  "staged_tensor_artifacts": [],
+  "trend_alignment_status": "PASS",
+  "prediction_alignment_status": "PASS",
+  "validation_alignment_status": "PASS",
+  "multiseed_status": "PASS",
+  "reasons": []
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "target": "isolated synthetic hidden/temb -> down_blocks.0.resnets.1",
+  "note": "Does not enter entry, resnet0, attention0, attention1, downsampler, full down_blocks.0, or full UNet.",
+  "diagnostics": {
+    "synthetic_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.62939453125e-06,
+      "mean_abs_error": 1.7682200564195227e-06,
+      "relative_error": 2.6964280764575637e-06,
+      "cosine_similarity": 0.9999999999963636,
+      "tolerance": 0.0001
+    }
+  }
+}

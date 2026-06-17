@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "target": "UNet Timesteps positional projection",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      320
+    ],
+    "max_abs_error": 1.1920928955078125e-07,
+    "mean_abs_error": 4.547564458334819e-09,
+    "relative_error": 8.438172602820315e-09,
+    "cosine_similarity": 0.9999999999999998,
+    "tolerance": 1e-05
+  },
+  "note": "Diffusers Timesteps NumPy bridge only; no UNet forward."
+}

@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "tadsr_pkl": "/mnt/data/sj/checkpoints/TADSR/preset/weights/tadsr.pkl",
+  "official_unet_class": "models.unet_2d_condition.UNet2DConditionModel",
+  "official_unet_source": "/mnt/data/sj/projects/TADSR_official_pytorch/models/unet_2d_condition.py",
+  "config": {
+    "sample_size": 64,
+    "in_channels": 4,
+    "out_channels": 4,
+    "center_input_sample": false,
+    "flip_sin_to_cos": true,
+    "freq_shift": 0,
+    "down_block_types": [
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "DownBlock2D"
+    ],
+    "mid_block_type": "UNetMidBlock2DCrossAttn",
+    "up_block_types": [
+      "UpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D"
+    ],
+    "only_cross_attention": false,
+    "block_out_channels": [
+      320,
+      640,
+      1280,
+      1280
+    ],
+    "layers_per_block": 2,
+    "downsample_padding": 1,
+    "mid_block_scale_factor": 1,
+    "dropout": 0.0,
+    "act_fn": "silu",
+    "norm_num_groups": 32,
+    "norm_eps": 1e-05,
+    "cross_attention_dim": 1024,
+    "transformer_layers_per_block": 1,
+    "reverse_transformer_layers_per_block": null,
+    "encoder_hid_dim": null,
+    "encoder_hid_dim_type": null,
+    "attention_head_dim": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "num_attention_heads": null,
+    "dual_cross_attention": false,
+    "use_linear_projection": true,
+    "class_embed_type": null,
+    "addition_embed_type": null,
+    "addition_time_embed_dim": null,
+    "num_class_embeds": null,
+    "upcast_attention": false,
+    "resnet_time_scale_shift": "default",
+    "resnet_skip_time_act": false,
+    "resnet_out_scale_factor": 1.0,
+    "time_embedding_type": "positional",
+    "time_embedding_dim": null,
+    "time_embedding_act_fn": null,
+    "timestep_post_act": null,
+    "time_cond_proj_dim": null,
+    "conv_in_kernel": 3,
+    "conv_out_kernel": 3,
+    "projection_class_embeddings_input_dim": null,
+    "attention_type": "default",
+    "class_embeddings_concat": false,
+    "mid_block_only_cross_attention": null,
+    "cross_attention_norm": null,
+    "addition_embed_type_num_heads": 64,
+    "_use_default_values": [
+      "reverse_transformer_layers_per_block",
+      "time_embedding_dim",
+      "addition_time_embed_dim",
+      "cross_attention_norm",
+      "encoder_hid_dim_type",
+      "conv_out_kernel",
+      "conv_in_kernel",
+      "upcast_attention",
+      "mid_block_type",
+      "num_attention_heads",
+      "resnet_time_scale_shift",
+      "transformer_layers_per_block",
+      "timestep_post_act",
+      "time_embedding_type",
+      "time_cond_proj_dim",
+      "addition_embed_type_num_heads",
+      "projection_class_embeddings_input_dim",
+      "resnet_out_scale_factor",
+      "resnet_skip_time_act",
+      "addition_embed_type",
+      "attention_type",
+      "time_embedding_act_fn",
+      "mid_block_only_cross_attention",
+      "dropout",
+      "class_embed_type",
+      "class_embeddings_concat",
+      "encoder_hid_dim"
+    ],
+    "_class_name": "UNet2DConditionModel",
+    "_diffusers_version": "0.10.0.dev0",
+    "_name_or_path": "/mnt/data/sj/checkpoints/TADSR/preset/weights"
+  },
+  "input_contract": {
+    "sample": [
+      "batch",
+      4,
+      "height",
+      "width"
+    ],
+    "recommended_synthetic_sample_shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "official_sample_size": 64,
+    "timestep_dtype": "torch.long",
+    "default_tadsr_inference_timestep": [
+      1
+    ],
+    "encoder_hidden_states": [
+      "batch",
+      "sequence_length",
+      1024
+    ],
+    "center_input_sample": false,
+    "full_unet_forward_in_scope": false
+  },
+  "lora_state": {
+    "target_module_counts": {
+      "encoder": 94,
+      "decoder": 148,
+      "others": 16
+    },
+    "peft_config_keys": [
+      "default_encoder",
+      "default_decoder",
+      "default_others"
+    ],
+    "conv_in_module_class": "peft.tuners.lora.layer.Conv2d",
+    "conv_in_active_adapters": [
+      "default_encoder",
+      "default_decoder",
+      "default_others"
+    ],
+    "conv_in_lora_shapes": {
+      "lora_A": {
+        "default_encoder": [
+          4,
+          4,
+          3,
+          3
+        ]
+      },
+      "lora_B": {
+        "default_encoder": [
+          320,
+          4,
+          1,
+          1
+        ]
+      }
+    },
+    "loaded_lora_param_count": 516,
+    "copied_entry_weight_keys": [],
+    "checkpoint_top_level_keys": [
+      "state_dict_vae_time",
+      "vae_lora_encoder_modules",
+      "unet_lora_encoder_modules",
+      "unet_lora_decoder_modules",
+      "unet_lora_others_modules",
+      "rank_unet",
+      "rank_vae",
+      "state_dict_unet",
+      "state_dict_vae"
+    ],
+    "runtime_lora_integration_status": "DEFERRED; this stage exports effective entry weights only"
+  },
+  "conv_in": {
+    "effective_base_class": "torch.nn.modules.conv.Conv2d",
+    "weight_shape": [
+      320,
+      4,
+      3,
+      3
+    ],
+    "bias_shape": [
+      320
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ],
+    "dilation": [
+      1,
+      1
+    ],
+    "groups": 1
+  },
+  "time_proj": {
+    "class": "diffusers.models.embeddings.Timesteps",
+    "attrs": {
+      "num_channels": 320,
+      "flip_sin_to_cos": true,
+      "downscale_freq_shift": 0,
+      "scale": null,
+      "max_period": null
+    }
+  },
+  "time_embedding": {
+    "class": "diffusers.models.embeddings.TimestepEmbedding",
+    "state_shapes": {
+      "linear_1.weight": [
+        1280,
+        320
+      ],
+      "linear_1.bias": [
+        1280
+      ],
+      "linear_2.weight": [
+        1280,
+        1280
+      ],
+      "linear_2.bias": [
+        1280
+      ]
+    },
+    "activation": "SiLU"
+  },
+  "downstream_overview_only": {
+    "down_blocks": [
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "DownBlock2D"
+    ],
+    "up_blocks": [
+      "UpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D"
+    ],
+    "mid_block": "UNetMidBlock2DCrossAttn"
+  },
+  "not_in_scope": [
+    "full UNet forward",
+    "down_blocks",
+    "mid_block",
+    "up_blocks",
+    "cross-attention",
+    "runtime LoRA integration",
+    "full VAE pipeline",
+    "full TADSR inference"
+  ],
+  "audit_markers": {
+    "TADSR_UNET_OVERVIEW_AUDIT": "PASS",
+    "TADSR_UNET_ENTRY_AUDIT": "PASS"
+  }
+}

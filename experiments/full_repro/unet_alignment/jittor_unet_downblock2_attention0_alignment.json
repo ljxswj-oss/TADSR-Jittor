@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.8371810913085938e-05,
+      "mean_abs_error": 6.067162507861212e-06,
+      "relative_error": 4.695095687968562e-06,
+      "cosine_similarity": 0.9999999999889778,
+      "tolerance": 0.002
+    },
+    "official_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 2.8371810913085938e-05,
+      "mean_abs_error": 6.067162507861212e-06,
+      "relative_error": 4.695095687968562e-06,
+      "cosine_similarity": 0.9999999999889778,
+      "tolerance": 0.002
+    }
+  },
+  "note": "Only down_blocks.2.attentions.0 is executed; full down_blocks.2 remains unopened."
+}

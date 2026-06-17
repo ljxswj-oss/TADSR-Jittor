@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "decoder.mid_block.attentions.0 synthetic hidden",
+  "note": "",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      4,
+      4
+    ],
+    "max_abs_error": 1.9073486328125e-06,
+    "mean_abs_error": 1.8667833501240239e-07,
+    "relative_error": 1.637261195040271e-07,
+    "cosine_similarity": 0.9999999999999849,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

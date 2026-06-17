@@ -1,0 +1,18 @@
+# TimeAware VAE Decoder UpBlock2 Oracle Export
+
+Status: **PASS**
+
+Decoder upblock2 class: `diffusers.models.unet_2d_blocks.UpDecoderBlock2D`
+Module order: `['resnets.0', 'resnets.1', 'resnets.2', 'upsamplers.0']`
+ResNet count: `3`
+Upsampler count: `1`
+Channel change: `True`
+Shortcuts: `[{'index': 0, 'conv_shortcut_exists': True, 'conv_shortcut_weight_shape': [256, 512, 1, 1], 'in_channels': 512, 'out_channels': 256}, {'index': 1, 'conv_shortcut_exists': False, 'conv_shortcut_weight_shape': None, 'in_channels': 256, 'out_channels': 256}, {'index': 2, 'conv_shortcut_exists': False, 'conv_shortcut_weight_shape': None, 'in_channels': 256, 'out_channels': 256}]`
+Decoder-side temb is None: `True`
+Previous decoder-upblock1 real output diff: `0.0`
+
+## Paths
+
+- Path A: synthetic hidden -> decoder.up_blocks.2.
+- Path B: synthetic latent -> post_quant_conv -> decoder.conv_in -> decoder.mid_block -> decoder.up_blocks.0 -> decoder.up_blocks.1 -> decoder.up_blocks.2.
+- Path C: synthetic image -> encoder -> quant_conv -> posterior mode -> post_quant_conv -> decoder.conv_in -> decoder.mid_block -> decoder.up_blocks.0 -> decoder.up_blocks.1 -> decoder.up_blocks.2.

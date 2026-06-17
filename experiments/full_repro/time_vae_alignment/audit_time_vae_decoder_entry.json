@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "model_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "vae_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "quant_conv": {
+    "module_name": "quant_conv",
+    "exists": true,
+    "class": "Conv2d",
+    "module": "torch.nn.modules.conv",
+    "weight_shape": [
+      8,
+      8,
+      1,
+      1
+    ],
+    "bias_shape": [
+      8
+    ],
+    "in_channels": 8,
+    "out_channels": 8,
+    "kernel_size": [
+      1,
+      1
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ]
+  },
+  "post_quant_conv": {
+    "module_name": "post_quant_conv",
+    "exists": true,
+    "class": "Conv2d",
+    "module": "torch.nn.modules.conv",
+    "weight_shape": [
+      4,
+      4,
+      1,
+      1
+    ],
+    "bias_shape": [
+      4
+    ],
+    "in_channels": 4,
+    "out_channels": 4,
+    "kernel_size": [
+      1,
+      1
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ]
+  },
+  "decoder_conv_in": {
+    "module_name": "decoder.conv_in",
+    "exists": true,
+    "class": "Conv2d",
+    "module": "torch.nn.modules.conv",
+    "weight_shape": [
+      512,
+      4,
+      3,
+      3
+    ],
+    "bias_shape": [
+      512
+    ],
+    "in_channels": 4,
+    "out_channels": 512,
+    "kernel_size": [
+      3,
+      3
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ]
+  },
+  "diagonal_gaussian_distribution": {
+    "class_name": "DiagonalGaussianDistribution",
+    "source_file": "/mnt/data/sj/projects/TADSR_official_pytorch/diffusers/models/autoencoders/vae.py",
+    "split_rule": "torch.chunk(parameters, 2, dim=1)",
+    "split_dim": 1,
+    "mean_channel_count_for_time_vae": 4,
+    "logvar_channel_count_for_time_vae": 4,
+    "logvar_is_clamped": true,
+    "logvar_clamp_min": -30.0,
+    "logvar_clamp_max": 20.0,
+    "mode_behavior": "returns self.mean",
+    "sample_behavior": "mean + std * random normal; not used in deterministic alignment"
+  },
+  "official_encode_path": {
+    "encode_latent_dist_exists": true,
+    "latent_dist_mean_exists": true,
+    "latent_dist_logvar_exists": true,
+    "latent_dist_mode_exists": true,
+    "source_excerpt": "    def wrapper(self, *args, **kwargs):\n        if hasattr(self, \"_hf_hook\") and hasattr(self._hf_hook, \"pre_forward\"):\n            self._hf_hook.pre_forward(self)\n        return method(self, *args, **kwargs)\n"
+  },
+  "official_decode_entry": {
+    "decode_calls_post_quant_conv_before_decoder": true,
+    "decoder_conv_in_first_decoder_module_after_post_quant_conv": true,
+    "source_excerpt": "    def _decode(self, z: torch.FloatTensor, return_dict: bool = True) -> Union[DecoderOutput, torch.FloatTensor]:\n        if self.use_tiling and (z.shape[-1] > self.tile_latent_min_size or z.shape[-2] > self.tile_latent_min_size):\n            return self.tiled_decode(z, return_dict=return_dict)\n\n        z = self.post_quant_conv(z)\n        dec = self.decoder(z)\n\n        if not return_dict:\n            return (dec,)\n\n        return DecoderOutput(sample=dec)\n"
+  },
+  "scaling_factor_note": "No scaling_factor was applied inside this TimeAwareAutoencoderKL decoder-entry audit/export path; pipeline-level scaling, if any, is out of scope."
+}

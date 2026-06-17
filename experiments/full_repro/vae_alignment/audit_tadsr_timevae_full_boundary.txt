@@ -1,0 +1,18 @@
+TIME_VAE_FULL_API_AUDIT: PASS
+TIME_VAE_PIPELINE_USAGE_AUDIT: PASS
+TIME_VAE_FULL_BOUNDARY_CONTRACT_AUDIT: PASS
+
+official_vae_class: diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL
+boundary_type: encode_sample_scale_decode_clamp
+requires_encode: True
+requires_decode: True
+uses_posterior_sample: True
+scaling_factor: 0.18215
+postprocess: clamp[-1,1]=True
+tiled_hook_present: True
+timevae_full_alignment_candidate: False
+remaining_timevae_gaps:
+- official TADSR_test monkey-patches VAE encoder/decoder with VAEHook tiling for real-size inference; this boundary uses the non-tiled small-tensor path
+- official pipeline uses stochastic posterior sample; this boundary uses exported fixed epsilon instead of an internal runtime RNG
+- generic runtime LoRA integration remains partial; current Jittor checks use converted/static weights
+- full scheduler/UNet/VAE image inference CLI remains intentionally NotImplemented

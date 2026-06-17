@@ -1,0 +1,12 @@
+# TADSR UNet up_blocks.2 local forward audit
+
+TADSR_UNET_UPBLOCK2_LOCAL_FORWARD_AUDIT: PASS
+TADSR_UNET_UPBLOCK2_RESIDUAL_CONTRACT_AUDIT: PASS
+
+upblock2 class: diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D
+forward signature: (hidden_states: torch.FloatTensor, res_hidden_states_tuple: Tuple[torch.FloatTensor, ...], temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, upsample_size: Optional[int] = None, attention_mask: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor
+manual vs official max_abs_error: 0.0
+manual vs official mean_abs_error: 0.0
+manual vs official cosine: 1.0
+output shape: [1, 640, 32, 32]
+scope: local up_blocks.2 only; up_blocks.3/full UNet/full inference were not executed.

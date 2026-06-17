@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "loss_decrease_status": "PASS",
+  "framework": "pytorch",
+  "device": "cpu",
+  "selected_gpu": "none",
+  "cpu_fallback": true,
+  "steps": 300,
+  "batch_size": 2,
+  "lr": 0.001,
+  "eval_interval": 10,
+  "trainable_parameters": 11524,
+  "initial_loss": 0.005236602388322353,
+  "final_loss": 0.00014055753126740456,
+  "loss_drop_ratio": 0.973158639735404,
+  "train_initial_loss": 0.005236602388322353,
+  "train_final_loss": 0.00014055753126740456,
+  "train_loss_drop_ratio": 0.973158639735404,
+  "val_initial_loss": 0.004814614076167345,
+  "val_final_loss": 0.00017854910402093083,
+  "val_loss_drop_ratio": 0.9629151784138296,
+  "no_nan_inf": true,
+  "step_time_mean": 0.0011538982391357422,
+  "samples_per_sec_mean": 2141.824768246735,
+  "training_scope": "output_tail_conv_out_only",
+  "full_tadsr_training": false,
+  "full_inference_executed": false,
+  "image_saved": false,
+  "video_saved": false,
+  "data_metadata": {
+    "task_name": "tadsr_output_tail_conv_out_smoke_training",
+    "created_at_utc": "2026-06-09T12:45:47.605006+00:00",
+    "num_samples": 32,
+    "train_samples": 24,
+    "val_samples": 8,
+    "train_indices": [
+      0,
+      1,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      30
+    ],
+    "val_indices": [
+      2,
+      3,
+      5,
+      10,
+      12,
+      19,
+      29,
+      31
+    ],
+    "feature_shape": [
+      32,
+      320,
+      32,
+      32
+    ],
+    "target_shape": [
+      32,
+      4,
+      32,
+      32
+    ],
+    "train_feature_shape": [
+      24,
+      320,
+      32,
+      32
+    ],
+    "val_feature_shape": [
+      8,
+      320,
+      32,
+      32
+    ],
+    "train_target_shape": [
+      24,
+      4,
+      32,
+      32
+    ],
+    "val_target_shape": [
+      8,
+      4,
+      32,
+      32
+    ],
+    "seed": 1234,
+    "perturb_std": 0.02,
+    "trainable_module": "output_tail_conv_out",
+    "trainable_parameters": 11524,
+    "conv_weight_shape": [
+      4,
+      320,
+      3,
+      3
+    ],
+    "conv_bias_shape": [
+      4
+    ],
+    "full_tadsr_training": false,
+    "full_inference_executed": false,
+    "full_denoising_loop_executed": false,
+    "image_saved": false,
+    "video_saved": false,
+    "data_source": "deterministic_feature_target_pairs_from_official_output_tail",
+    "source_weight_file": "experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz",
+    "source_feature_files": [
+      "experiments/full_repro/unet_alignment/oracle_tensors_unet_output_tail/synthetic_output_tail_act_output.npy",
+      "experiments/full_repro/unet_alignment/oracle_tensors_unet_output_tail/entry_output_tail_act_output.npy"
+    ],
+    "limitation": "Smoke training validates the small training loop, not full TADSR training or production inference."
+  },
+  "prediction_summary": {
+    "val_mse": 0.00017854908171673325,
+    "val_mae": 0.010340261388886829,
+    "val_max_abs_error": 0.10569822788238525,
+    "val_l2_error": 2.4188212645199343,
+    "prediction_mean": -0.021208269521594048,
+    "prediction_std": 0.09328367561101913,
+    "target_mean": -0.019127393141388893,
+    "target_std": 0.09206287562847137
+  }
+}

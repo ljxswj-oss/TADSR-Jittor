@@ -1,0 +1,80 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:23.280098+00:00",
+  "status": "PASS",
+  "files": {
+    "risk_pack": {
+      "path": "docs/final_defense_risk_response_pack.md",
+      "exists": true,
+      "size_bytes": 13333
+    },
+    "short_answers": {
+      "path": "docs/defense_short_answers_zh.md",
+      "exists": true,
+      "size_bytes": 2585
+    },
+    "long_answers": {
+      "path": "docs/defense_long_answers_zh.md",
+      "exists": true,
+      "size_bytes": 6363
+    },
+    "do_not_say": {
+      "path": "docs/defense_do_not_say.md",
+      "exists": true,
+      "size_bytes": 2171
+    },
+    "evidence_lookup": {
+      "path": "docs/defense_evidence_lookup_table.md",
+      "exists": true,
+      "size_bytes": 3172
+    },
+    "readme": {
+      "path": "README.md",
+      "exists": true,
+      "size_bytes": 38538
+    },
+    "ppt_outline": {
+      "path": "docs/03_ppt_outline.md",
+      "exists": true,
+      "size_bytes": 24733
+    },
+    "video_script": {
+      "path": "docs/04_video_script.md",
+      "exists": true,
+      "size_bytes": 24784
+    },
+    "submission_readme": {
+      "path": "deliverables/TADSR-Jittor_submission_readme.md",
+      "exists": true,
+      "size_bytes": 18082
+    }
+  },
+  "topic_status": {
+    "full_inference_boundary": true,
+    "timevae_boundary": true,
+    "runtime_lora_boundary": true,
+    "training_alignment": true,
+    "diagnostic_image_boundary": true,
+    "evidence_lookup": true,
+    "future_roadmap": true
+  },
+  "required_marker_presence": {
+    "TADSR_UNET_FULL_FORWARD_ALIGNMENT": true,
+    "TIME_VAE_ACTUAL_VAEHOOK_FULL_BOUNDARY_ALIGNMENT": true,
+    "TADSR_STATIC_EFFECTIVE_LORA_COVERAGE_AUDIT": true,
+    "TADSR_SCHEDULER_BOUNDARY_ALIGNMENT": true,
+    "TADSR_MINIMAL_ONE_STEP_DECODE_DRY_RUN": true,
+    "TADSR_SMALL_DATA_TRAINING_ALIGNMENT": true,
+    "JITTOR_FULL_INFERENCE": true,
+    "JITTOR_FULL_PORT": true,
+    "TIME_VAE_FULL_ALIGNMENT": true,
+    "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": true
+  },
+  "false_claim_hits": [],
+  "markers": {
+    "TADSR_DEFENSE_RISK_RESPONSE_PACK": "PASS",
+    "TADSR_DEFENSE_SHORT_ANSWERS_READY": "PASS",
+    "TADSR_DEFENSE_LONG_ANSWERS_READY": "PASS",
+    "TADSR_DEFENSE_FALSE_CLAIM_GUARD": "PASS",
+    "TADSR_DEFENSE_EVIDENCE_LOOKUP_READY": "PASS"
+  }
+}

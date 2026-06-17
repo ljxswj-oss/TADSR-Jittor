@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "target": "encoder.down_blocks.0.resnets.0",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "max_abs_error": 1.430511474609375e-06,
+    "mean_abs_error": 1.1833916602199679e-07,
+    "relative_error": 2.0397433283820883e-07,
+    "cosine_similarity": 0.9999999999999832,
+    "tolerance": 0.0002
+  },
+  "implemented_components": [
+    "GroupNorm",
+    "SiLU",
+    "Conv2d",
+    "time_emb_proj",
+    "scale_shift",
+    "residual"
+  ],
+  "not_claimed": [
+    "full down block",
+    "mid block",
+    "decoder",
+    "full TimeAware VAE forward"
+  ],
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

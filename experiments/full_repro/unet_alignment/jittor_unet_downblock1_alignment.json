@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "target": "down_blocks.1 local: resnet0 -> attention0 -> resnet1 -> attention1 -> downsampler",
+  "note": "Completes local down_blocks.1 only. Full UNet forward, down_blocks.2, mid_block, up_blocks and full TADSR inference remain NotImplemented.",
+  "diagnostics": {
+    "downblock1_resnet0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 4.0531158447265625e-06,
+      "mean_abs_error": 3.108353894276661e-07,
+      "relative_error": 3.203363142094117e-07,
+      "cosine_similarity": 0.9999999999999482,
+      "tolerance": 0.002
+    },
+    "downblock1_attention0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 6.9141387939453125e-06,
+      "mean_abs_error": 9.39450683290488e-07,
+      "relative_error": 8.868342742026402e-07,
+      "cosine_similarity": 0.9999999999996102,
+      "tolerance": 0.002
+    },
+    "downblock1_resnet1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 6.318092346191406e-06,
+      "mean_abs_error": 1.0323331792960745e-06,
+      "relative_error": 9.94641730344596e-07,
+      "cosine_similarity": 0.9999999999995235,
+      "tolerance": 0.002
+    },
+    "downblock1_attention1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 3.4332275390625e-05,
+      "mean_abs_error": 1.066969463181522e-06,
+      "relative_error": 1.1697552748512852e-06,
+      "cosine_similarity": 0.9999999999993859,
+      "tolerance": 0.002
+    },
+    "downblock1_downsampler_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 1.2636184692382812e-05,
+      "mean_abs_error": 2.071532463787662e-06,
+      "relative_error": 8.653053221313012e-07,
+      "cosine_similarity": 0.9999999999996687,
+      "tolerance": 0.002
+    },
+    "downblock1_hidden_states_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 1.2636184692382812e-05,
+      "mean_abs_error": 2.071532463787662e-06,
+      "relative_error": 8.653053221313012e-07,
+      "cosine_similarity": 0.9999999999996687,
+      "tolerance": 0.002
+    },
+    "output_state_0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 6.9141387939453125e-06,
+      "mean_abs_error": 9.39450683290488e-07,
+      "relative_error": 8.868342742026402e-07,
+      "cosine_similarity": 0.9999999999996102,
+      "tolerance": 0.002
+    },
+    "output_state_1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 3.4332275390625e-05,
+      "mean_abs_error": 1.066969463181522e-06,
+      "relative_error": 1.1697552748512852e-06,
+      "cosine_similarity": 0.9999999999993859,
+      "tolerance": 0.002
+    },
+    "output_state_2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 1.2636184692382812e-05,
+      "mean_abs_error": 2.071532463787662e-06,
+      "relative_error": 8.653053221313012e-07,
+      "cosine_similarity": 0.9999999999996687,
+      "tolerance": 0.002
+    }
+  }
+}

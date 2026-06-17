@@ -1,0 +1,54 @@
+{
+  "status_marker": "TADSR_OFFICIAL_DIFFUSERS_OVERLAY_READY",
+  "status": "PASS",
+  "markers": {
+    "TADSR_OFFICIAL_DIFFUSERS_OVERLAY_READY": "PASS",
+    "TADSR_OFFICIAL_RUNTIME_DEPENDENCY_REPAIR_READINESS": "PASS"
+  },
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "overlay_dir": "/mnt/data/sj/tmp/tadsr_official_dependency_overlay_diffusers",
+  "package": "diffusers",
+  "requested_version": "0.30.3",
+  "diffusers_version": "0.30.3",
+  "version_source": "cli",
+  "official_import_torch": {
+    "module": "torch",
+    "status": "PASS",
+    "version": "2.0.1+cu118",
+    "error": null
+  },
+  "official_import_diffusers_before": {
+    "module": "diffusers",
+    "status": "MISSING",
+    "version": null,
+    "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'"
+  },
+  "overlay_required": true,
+  "execute": true,
+  "install_command": [
+    "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--target",
+    "/mnt/data/sj/tmp/tadsr_official_dependency_overlay_diffusers",
+    "--no-deps",
+    "diffusers==0.30.3"
+  ],
+  "install_status": "PASS",
+  "install_returncode": 0,
+  "install_output_tail": "Collecting diffusers==0.30.3\n  Using cached diffusers-0.30.3-py3-none-any.whl.metadata (18 kB)\nUsing cached diffusers-0.30.3-py3-none-any.whl (2.7 MB)\nInstalling collected packages: diffusers\nSuccessfully installed diffusers-0.30.3",
+  "official_import_diffusers_after_with_overlay": {
+    "module": "diffusers",
+    "status": "PASS",
+    "version": "0.30.3",
+    "error": null
+  },
+  "no_deps": true,
+  "allow_deps": false,
+  "blocker_reason": "",
+  "safe_to_use_overlay_for_timevae_metadata": true,
+  "strict_env_modified": false
+}

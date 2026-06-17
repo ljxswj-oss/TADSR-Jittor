@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "target": "UNet center_input_sample + conv_in with exported effective conv weights",
+  "note": "Static effective conv_in weights include the official loaded conv_in weights and active conv_in LoRA delta. No downstream UNet blocks are executed.",
+  "diagnostics": {
+    "center_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0000000000000002,
+      "tolerance": 0.0
+    },
+    "conv_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "mean_abs_error": 1.2484131417522804e-08,
+      "relative_error": 8.945803719865577e-08,
+      "cosine_similarity": 0.9999999999999959,
+      "tolerance": 0.0001
+    }
+  },
+  "weights": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz"
+}

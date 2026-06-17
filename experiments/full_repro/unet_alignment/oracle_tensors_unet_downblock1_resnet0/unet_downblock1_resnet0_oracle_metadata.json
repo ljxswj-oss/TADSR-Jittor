@@ -1,0 +1,769 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "oracle_dir": "experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock1_resnet0",
+  "effective_weights": "experiments/full_repro/unet_alignment/converted_unet_downblock1_resnet0_effective_weights.npz",
+  "selected_timestep": [
+    1
+  ],
+  "entry_sample_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "encoder_hidden_states_shape": [
+    1,
+    77,
+    1024
+  ],
+  "downblock0_output_state_shapes": [
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      320,
+      16,
+      16
+    ]
+  ],
+  "resnet0_input_shape": [
+    1,
+    320,
+    16,
+    16
+  ],
+  "resnet0_output_shape": [
+    1,
+    640,
+    16,
+    16
+  ],
+  "temb_shape": [
+    1,
+    1280
+  ],
+  "resnet0_config": {
+    "prefix": "down_blocks_1_resnets_0",
+    "eps": 1e-05,
+    "groups": 32,
+    "groups_out": 32,
+    "activation": "SiLU",
+    "time_embedding_norm": "default",
+    "output_scale_factor": 1.0,
+    "dropout": 0.0,
+    "has_shortcut": true,
+    "use_in_shortcut": true,
+    "skip_time_act": false,
+    "pre_norm": true,
+    "in_channels": 320,
+    "out_channels": 640,
+    "temb_channels": 1280
+  },
+  "saved_tensors": {
+    "synthetic_downblock1_resnet0_input": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577357309265992,
+      "nbytes": 327680
+    },
+    "synthetic_downblock1_resnet0_temb": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.28890074751317085,
+      "nbytes": 5120
+    },
+    "synthetic_downblock1_resnet0_norm1_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.9252113103866577,
+      "max": 0.7592903971672058,
+      "mean": -0.017026350949553227,
+      "std": 0.276975953717245,
+      "nbytes": 327680
+    },
+    "synthetic_downblock1_resnet0_act1_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.26266494393348694,
+      "max": 0.517228364944458,
+      "mean": 0.010423993398823782,
+      "std": 0.1363447420448184,
+      "nbytes": 327680
+    },
+    "synthetic_downblock1_resnet0_conv1_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -6.9001264572143555,
+      "max": 2.436933994293213,
+      "mean": -0.01483267923207201,
+      "std": 0.6013425387863447,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_time_emb_proj_output": {
+      "shape": [
+        1,
+        640,
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "min": -0.3187481164932251,
+      "max": 0.1637737900018692,
+      "mean": 0.012369676533853634,
+      "std": 0.06117977477064477,
+      "nbytes": 2560
+    },
+    "synthetic_downblock1_resnet0_after_temb_add_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -7.045371055603027,
+      "max": 2.4768004417419434,
+      "mean": -0.00246300252552345,
+      "std": 0.6185407202713028,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_norm2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -8.20799446105957,
+      "max": 2.9495697021484375,
+      "mean": -0.19747845909296738,
+      "std": 0.5916738834735337,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_act2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.27846455574035645,
+      "max": 2.8028085231781006,
+      "mean": -0.0250603675931661,
+      "std": 0.19544186143048622,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_dropout_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.27846455574035645,
+      "max": 2.8028085231781006,
+      "mean": -0.0250603675931661,
+      "std": 0.19544186143048622,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_conv2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -4.271284103393555,
+      "max": 5.085115432739258,
+      "mean": 0.023952216376860493,
+      "std": 0.8070560507106777,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_shortcut_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -1.0958671569824219,
+      "max": 1.0122469663619995,
+      "mean": 0.0022997680114123396,
+      "std": 0.2979730094410994,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_manual_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -4.022978782653809,
+      "max": 4.887356758117676,
+      "mean": 0.026251984293217134,
+      "std": 0.871543334053086,
+      "nbytes": 655360
+    },
+    "synthetic_downblock1_resnet0_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -4.022978782653809,
+      "max": 4.887356758117676,
+      "mean": 0.026251984293217134,
+      "std": 0.871543334053086,
+      "nbytes": 655360
+    },
+    "entry_synthetic_unet_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "entry_synthetic_unet_timestep": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "nbytes": 4
+    },
+    "entry_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.2886787944380361,
+      "nbytes": 315392
+    },
+    "entry_synthetic_unet_sample_after_center": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "entry_synthetic_unet_conv_in_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.9214454889297485,
+      "max": 2.051663398742676,
+      "mean": 0.009378110880123991,
+      "std": 0.24807758577950303,
+      "nbytes": 1310720
+    },
+    "entry_synthetic_unet_time_proj_output": {
+      "shape": [
+        1,
+        320
+      ],
+      "dtype": "float32",
+      "min": 0.00010592537000775337,
+      "max": 1.0,
+      "mean": 0.5389276413728339,
+      "std": 0.45777396088383415,
+      "nbytes": 1280
+    },
+    "entry_synthetic_unet_time_embedding_output": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -1.4923566579818726,
+      "max": 3.7227675914764404,
+      "mean": -0.00029221720545251627,
+      "std": 0.1708280877860561,
+      "nbytes": 5120
+    },
+    "entry_downblock0_block_forward_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "entry_downblock0_output_state_0": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.6430697441101074,
+      "max": 2.688417673110962,
+      "mean": 0.08611325352106007,
+      "std": 0.6066678784633245,
+      "nbytes": 1310720
+    },
+    "entry_downblock0_output_state_1": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.791571617126465,
+      "max": 3.83322811126709,
+      "mean": 0.14057920170933827,
+      "std": 0.7920613701085149,
+      "nbytes": 1310720
+    },
+    "entry_downblock0_output_state_2": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "entry_downblock1_resnet0_input": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "entry_downblock1_resnet0_temb": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -1.4923566579818726,
+      "max": 3.7227675914764404,
+      "mean": -0.00029221720545251627,
+      "std": 0.1708280877860561,
+      "nbytes": 5120
+    },
+    "entry_downblock1_resnet0_norm1_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -1.9349794387817383,
+      "max": 1.6228076219558716,
+      "mean": -0.022914401003836505,
+      "std": 0.2933838110362549,
+      "nbytes": 327680
+    },
+    "entry_downblock1_resnet0_act1_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.27846449613571167,
+      "max": 1.3553396463394165,
+      "mean": 0.009287478265264711,
+      "std": 0.14491340642088232,
+      "nbytes": 327680
+    },
+    "entry_downblock1_resnet0_conv1_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -3.9527523517608643,
+      "max": 3.241851568222046,
+      "mean": 0.11620749230525895,
+      "std": 0.6639024396759277,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_time_emb_proj_output": {
+      "shape": [
+        1,
+        640,
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "min": -15.642182350158691,
+      "max": 2.2648446559906006,
+      "mean": -0.005865178200474474,
+      "std": 0.7829724154936095,
+      "nbytes": 2560
+    },
+    "entry_downblock1_resnet0_after_temb_add_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -19.594934463500977,
+      "max": 4.535517692565918,
+      "mean": 0.1103423142723372,
+      "std": 1.1183898676279183,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_norm2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -7.387876510620117,
+      "max": 3.0259060859680176,
+      "mean": -0.23567398469031545,
+      "std": 0.6758114734680838,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_act2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.27846455574035645,
+      "max": 2.885899782180786,
+      "mean": -0.03102409623373075,
+      "std": 0.17361434949928042,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_dropout_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -0.27846455574035645,
+      "max": 2.885899782180786,
+      "mean": -0.03102409623373075,
+      "std": 0.17361434949928042,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_conv2_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -2.6919548511505127,
+      "max": 3.764989137649536,
+      "mean": -0.03554756521869677,
+      "std": 0.806003863617078,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_shortcut_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -7.212614059448242,
+      "max": 5.712832450866699,
+      "mean": -0.01563983434320022,
+      "std": 1.1263208233337203,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_manual_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -6.525765895843506,
+      "max": 6.735159873962402,
+      "mean": -0.051187399528339485,
+      "std": 1.278191328981639,
+      "nbytes": 655360
+    },
+    "entry_downblock1_resnet0_output": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -6.525765895843506,
+      "max": 6.735159873962402,
+      "mean": -0.051187399528339485,
+      "std": 1.278191328981639,
+      "nbytes": 655360
+    }
+  },
+  "effective_weight_metadata": {
+    "down_blocks_1_resnets_0_norm1": {
+      "is_lora_wrapped": false,
+      "weight_shape": [
+        320
+      ],
+      "bias_shape": [
+        320
+      ]
+    },
+    "down_blocks_1_resnets_0_norm2": {
+      "is_lora_wrapped": false,
+      "weight_shape": [
+        640
+      ],
+      "bias_shape": [
+        640
+      ]
+    },
+    "down_blocks_1_resnets_0_conv1": {
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "delta_records": [
+        {
+          "adapter": "default_encoder",
+          "shape": [
+            640,
+            320,
+            3,
+            3
+          ],
+          "max_abs": 0.048520464450120926
+        }
+      ],
+      "weight_key": "down_blocks_1_resnets_0_conv1_weight",
+      "bias_key": "down_blocks_1_resnets_0_conv1_bias",
+      "weight_shape": [
+        640,
+        320,
+        3,
+        3
+      ],
+      "bias_shape": [
+        640
+      ]
+    },
+    "down_blocks_1_resnets_0_time_emb_proj": {
+      "class": "diffusers.models.lora.LoRACompatibleLinear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": false,
+      "active_adapters": [],
+      "delta_records": [],
+      "weight_key": "down_blocks_1_resnets_0_time_emb_proj_weight",
+      "bias_key": "down_blocks_1_resnets_0_time_emb_proj_bias",
+      "weight_shape": [
+        640,
+        1280
+      ],
+      "bias_shape": [
+        640
+      ]
+    },
+    "down_blocks_1_resnets_0_conv2": {
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "delta_records": [
+        {
+          "adapter": "default_encoder",
+          "shape": [
+            640,
+            640,
+            3,
+            3
+          ],
+          "max_abs": 0.039708323776721954
+        }
+      ],
+      "weight_key": "down_blocks_1_resnets_0_conv2_weight",
+      "bias_key": "down_blocks_1_resnets_0_conv2_bias",
+      "weight_shape": [
+        640,
+        640,
+        3,
+        3
+      ],
+      "bias_shape": [
+        640
+      ]
+    },
+    "down_blocks_1_resnets_0_conv_shortcut": {
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "delta_records": [
+        {
+          "adapter": "default_encoder",
+          "shape": [
+            640,
+            320,
+            1,
+            1
+          ],
+          "max_abs": 0.04288170114159584
+        }
+      ],
+      "weight_key": "down_blocks_1_resnets_0_conv_shortcut_weight",
+      "bias_key": "down_blocks_1_resnets_0_conv_shortcut_bias",
+      "weight_shape": [
+        640,
+        320,
+        1,
+        1
+      ],
+      "bias_shape": [
+        640
+      ]
+    }
+  },
+  "manual_vs_official": {
+    "synthetic_max_abs_diff": 0.0,
+    "synthetic_mean_abs_diff": 0.0,
+    "entry_max_abs_diff": 0.0,
+    "entry_mean_abs_diff": 0.0
+  },
+  "previous_downblock0_compare": {
+    "previous_downblock0_oracle_tensor_available": true,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0
+  },
+  "scope_boundaries": {
+    "ported_this_stage": "down_blocks.1.resnets.0",
+    "not_ported_this_stage": [
+      "down_blocks.1.attentions.0",
+      "down_blocks.1.resnets.1",
+      "down_blocks.1.attentions.1",
+      "down_blocks.1.downsamplers.0",
+      "mid_block",
+      "up_blocks",
+      "full UNet forward"
+    ]
+  }
+}

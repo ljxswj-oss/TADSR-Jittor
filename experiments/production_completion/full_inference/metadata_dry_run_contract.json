@@ -1,0 +1,77 @@
+{
+  "status_marker": "TADSR_FULL_INFERENCE_METADATA_DRY_RUN_CONTRACT",
+  "status": "PARTIAL",
+  "checks": [
+    {
+      "stage": "preprocess contract",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "stage": "condition/control contract",
+      "status": "PARTIAL",
+      "detail": "missing feasibility summary"
+    },
+    {
+      "stage": "TimeVAE encode metadata",
+      "status": "PASS",
+      "detail": "production oracle metadata"
+    },
+    {
+      "stage": "scheduler timesteps evidence",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "stage": "UNet full forward evidence",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "stage": "get_x0_from_res evidence",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "stage": "TimeVAE decode metadata",
+      "status": "PASS",
+      "detail": "production oracle metadata"
+    },
+    {
+      "stage": "postprocess contract",
+      "status": "PARTIAL",
+      "detail": "documented in controlled plan"
+    },
+    {
+      "stage": "dynamic LoRA status",
+      "status": "PASS",
+      "detail": "Existing evidence supports the static effective-weight policy for fixed adapter / fixed scale inference. Generic dynamic runtime LoRA adapter switching remains NOT_IMPLEMENTED_BY_DESIGN and is not upgraded in Phase 1."
+    },
+    {
+      "stage": "full inference guard",
+      "status": "PASS",
+      "detail": "NotImplementedError preserved"
+    },
+    {
+      "stage": "final image/video output",
+      "status": "NOT_EXECUTED",
+      "detail": "no image/video generated in this metadata contract"
+    }
+  ],
+  "missing_timevae_metadata_fields": [],
+  "markers": {
+    "TADSR_TIMEVAE_METADATA_REPAIR_ATTEMPT": "PASS",
+    "TADSR_TIMEVAE_METADATA_FIELDS_COMPLETE": "PASS",
+    "TADSR_TIMEVAE_METADATA_READY_FOR_ONE_STEP": "PASS",
+    "TADSR_TIMEVAE_LIVE_METADATA_COMPLETION": "PASS",
+    "TADSR_TIMEVAE_LIVE_ENCODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_DECODE_METADATA": "PASS",
+    "TADSR_TIMEVAE_LIVE_SAFETY_FLAGS": "PASS"
+  },
+  "ready_for_one_step_tensor_alignment": false,
+  "timevae_live_metadata_completion_status": "PASS",
+  "full_inference_executed": false,
+  "denoising_loop_executed": false,
+  "image_or_video_output_generated": false,
+  "jittor_full_inference_status": "NOT_COMPLETE"
+}

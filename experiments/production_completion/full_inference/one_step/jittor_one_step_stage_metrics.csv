@@ -1,0 +1,10 @@
+stage,status,shape_match,dtype_match,got_shape,expected_shape,got_dtype,expected_dtype,max_abs_error,mean_abs_error,relative_l2,cosine_similarity,tolerance
+encoded_latent,PASS,True,True,"[1, 4, 32, 32]","[1, 4, 32, 32]",float32,float32,2.193450927734375e-05,1.5060560372148757e-06,3.1294610760952705e-07,0.999999999999964,0.002
+scaled_latent,PASS,True,True,"[1, 4, 32, 32]","[1, 4, 32, 32]",float32,float32,4.0531158447265625e-06,2.737951945164241e-07,3.1505096742408385e-07,0.999999999999963,0.002
+unet_model_pred,PASS,True,True,"[1, 4, 32, 32]","[1, 4, 32, 32]",float32,float32,1.0319054126739502e-05,8.475522434991944e-07,5.6136108566425206e-06,0.9999999999845075,0.002
+alpha_prod_t,PASS,True,True,[1],[1],float32,float32,0.0,0.0,0.0,1.0,1e-08
+sqrt_alpha_prod_t,PASS,True,True,[1],[1],float32,float32,0.0,0.0,0.0,1.0,1e-08
+x0_from_res,PASS,True,True,"[1, 4, 32, 32]","[1, 4, 32, 32]",float32,float32,1.0609626770019531e-05,8.539923328498844e-07,9.34630595667223e-07,0.9999999999995691,0.002
+decode_input,PASS,True,True,"[1, 4, 32, 32]","[1, 4, 32, 32]",float32,float32,5.817413330078125e-05,4.6951951162554906e-06,9.361250363444269e-07,0.9999999999995672,0.002
+decode_output,PASS,True,True,"[1, 3, 256, 256]","[1, 3, 256, 256]",float32,float32,4.308298230171204e-06,2.53211103048064e-07,5.829088563472534e-07,0.9999999999997996,0.002
+clamped_output,PASS,True,True,"[1, 3, 256, 256]","[1, 3, 256, 256]",float32,float32,4.308298230171204e-06,2.4488862019704055e-07,5.783607204842348e-07,0.9999999999998049,0.002

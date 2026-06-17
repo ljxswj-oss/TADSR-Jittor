@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm3": {
+      "shape_match": true,
+      "shape": [
+        1,
+        16,
+        1280
+      ],
+      "max_abs_error": 4.291534423828125e-06,
+      "mean_abs_error": 7.484986999095611e-07,
+      "relative_error": 2.7605142376262093e-06,
+      "cosine_similarity": 0.9999999999962225,
+      "tolerance": 0.0001
+    },
+    "ff_geglu_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        16,
+        10240
+      ],
+      "max_abs_error": 7.987022399902344e-06,
+      "mean_abs_error": 2.866831593895114e-07,
+      "relative_error": 2.5802941651942983e-06,
+      "cosine_similarity": 0.9999999999972098,
+      "tolerance": 0.0002
+    },
+    "ff_geglu_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        16,
+        5120
+      ],
+      "max_abs_error": 1.6450881958007812e-05,
+      "mean_abs_error": 9.099587128073104e-08,
+      "relative_error": 4.228398768495942e-06,
+      "cosine_similarity": 0.9999999999921229,
+      "tolerance": 0.001
+    },
+    "ff_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        16,
+        1280
+      ],
+      "max_abs_error": 5.4836273193359375e-06,
+      "mean_abs_error": 1.2595708653861948e-06,
+      "relative_error": 3.917807288660054e-06,
+      "cosine_similarity": 0.9999999999928697,
+      "tolerance": 0.001
+    },
+    "transformer0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        16,
+        1280
+      ],
+      "max_abs_error": 1.385807991027832e-05,
+      "mean_abs_error": 2.720778047660133e-06,
+      "relative_error": 3.06416541760476e-06,
+      "cosine_similarity": 0.9999999999954702,
+      "tolerance": 0.001
+    }
+  }
+}

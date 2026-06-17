@@ -1,0 +1,11 @@
+TIME_VAE_ACTUAL_VAEHOOK_BEHAVIOR_DECISION: PASS
+TIME_VAE_ACTUAL_VAEHOOK_BEHAVIOR_AUDIT: PASS
+TIME_VAE_OFFICIAL_MIRROR_POLICY: PASS
+TIME_VAE_DECODER_TILED_PATH_STATUS: BLOCKED_DECODER_HOOK_CONTRACT
+TIME_VAE_ACTUAL_ENCODER_TILED_ORACLE_FEASIBILITY: PASS
+
+encoder_vae_tile_forward_called: True
+encoder_tile_count: 2x2
+decoder_original_forward_called: True
+decoder_vae_tile_forward_called: False
+corrected_tiled_decoder: deferred as beyond-official behavior

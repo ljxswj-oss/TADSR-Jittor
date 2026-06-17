@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-06-13T11:59:24.377909+00:00",
+  "status": "PASS",
+  "release_dir": "D:\\HuaweiMoveData\\Users\\wangh\\Documents\\Playground\\TADSR-Jittor_Public_Release_Clean",
+  "missing_required_files": [],
+  "readme_honest_statuses_present": true,
+  "file_count": 2023,
+  "total_size_bytes": 17793651,
+  "total_size_mb": 16.969347953796387,
+  "forbidden_files": [],
+  "large_files": [],
+  "false_claim_hits": [],
+  "markers": {
+    "TADSR_CLEAN_PUBLIC_RELEASE_PACKAGE_VALIDATION": "PASS",
+    "TADSR_CLEAN_PUBLIC_RELEASE_GITHUB_READY": "PASS",
+    "TADSR_CLEAN_PUBLIC_RELEASE_FALSE_CLAIM_GUARD": "PASS"
+  }
+}

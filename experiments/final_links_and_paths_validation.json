@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-06-13T11:57:59.606528+00:00",
+  "status": "PASS",
+  "markdown_file_count": 522,
+  "missing_critical_paths": [],
+  "broken_links": [],
+  "placeholder_hits": [],
+  "markers": {
+    "TADSR_FINAL_LINKS_AND_PATHS_VALIDATION": "PASS",
+    "TADSR_FINAL_MARKDOWN_LINKS_VALIDATION": "PASS",
+    "TADSR_FINAL_PLACEHOLDER_SCAN": "PASS"
+  }
+}

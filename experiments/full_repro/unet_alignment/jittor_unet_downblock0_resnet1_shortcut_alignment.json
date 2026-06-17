@@ -1,0 +1,5 @@
+{
+  "status": "NOT_APPLICABLE",
+  "target": "down_blocks.0.resnets.1 shortcut",
+  "note": "Identity shortcut is expected when no conv_shortcut exists."
+}

@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm1__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.time_emb_proj.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__time_emb_proj__weight",
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.time_emb_proj.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__time_emb_proj__bias",
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm2__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.norm2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__norm2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.0.conv2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__0__conv2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm1__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv1.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv1.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv1__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.time_emb_proj.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__time_emb_proj__weight",
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.time_emb_proj.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__time_emb_proj__bias",
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm2__weight",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.norm2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__norm2__bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv2.weight",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ]
+    },
+    {
+      "pytorch_key": "encoder.down_blocks.3.resnets.1.conv2.bias",
+      "jittor_npz_key": "encoder__down_blocks__3__resnets__1__conv2__bias",
+      "shape": [
+        512
+      ]
+    }
+  ]
+}

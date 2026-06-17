@@ -1,0 +1,66 @@
+{
+  "status_marker": "TADSR_TIMEVAE_FULL_PRODUCTION_PATH_AUDIT",
+  "audit_status": "PASS",
+  "evidence_source": "official_runtime",
+  "metadata_only": true,
+  "official_env_resolution_status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_environment_available": true,
+  "timevae_class_name": "requires official runtime source introspection",
+  "vae_hook_class_name": "requires official runtime source introspection",
+  "timevae_class_or_module_path": "requires official runtime source introspection",
+  "vae_hook_class_or_patch_point": "requires official runtime source introspection",
+  "encoder_hook_installed": "metadata_only_not_forward_executed",
+  "decoder_hook_installed": "metadata_only_not_forward_executed",
+  "encoder_uses_vae_hook": "metadata_only_not_forward_executed",
+  "decoder_uses_vae_hook": "metadata_only_not_forward_executed",
+  "encoder_tiled_path_reachable": "metadata_only_not_forward_executed",
+  "decoder_tiled_path_reachable": "metadata_only_not_forward_executed",
+  "decoder_original_forward_used": "metadata_only_not_forward_executed",
+  "original_forward_called": "metadata_only_not_forward_executed",
+  "original_forward_patch_points": [
+    "decoder VAEHook original_forward path requires live metadata"
+  ],
+  "encode_method_path": "requires live source introspection",
+  "decode_method_path": "requires live source introspection",
+  "posterior_sample_policy": "requires production-path oracle before full status upgrade",
+  "posterior_mode_policy": "requires production-path oracle before full status upgrade",
+  "stochastic_sampling_policy": "requires production-path oracle before full status upgrade",
+  "posterior_sample_mode_policy": "requires production-path oracle before full status upgrade",
+  "scaling_factor": "requires live production metadata",
+  "clamp_policy": "requires live production metadata",
+  "expected_encode_input_shape": "not_exported_in_phase2_metadata_audit",
+  "expected_latent_shape": "not_exported_in_phase2_metadata_audit",
+  "expected_decode_input_shape": "not_exported_in_phase2_metadata_audit",
+  "expected_decode_output_shape": "not_exported_in_phase2_metadata_audit",
+  "actual_vaehook_boundary_consistent_with_reports": false,
+  "sampling_policy": "requires production-path oracle before full status upgrade",
+  "scaling_policy": "requires production-path oracle before full status upgrade",
+  "coupled_tadsr_path": "not executed in Phase 3-A",
+  "coupled_tadsr_path_assumptions": [
+    "metadata-only audit does not execute full denoising loop",
+    "TimeVAE metadata oracle is prerequisite for controlled one-step tensor alignment"
+  ],
+  "completed_subpaths": [],
+  "not_complete_subpaths": [
+    "full production TimeVAE path not audited",
+    "full TADSR-coupled TimeVAE path not audited"
+  ],
+  "not_applicable_subpaths": [],
+  "required_next_oracle_exports": [
+    "official TimeVAE production encode metadata",
+    "official TimeVAE production decode metadata",
+    "full TADSR-coupled TimeVAE input/output tensor contracts",
+    "sampling/scaling/clamp policy metadata"
+  ],
+  "prior_reports_loaded": {
+    "timevae_gap_analysis": false,
+    "actual_hook_alignment": false,
+    "full_boundary_alignment": false
+  },
+  "blocker_reason": "",
+  "safe_to_attempt_timevae_oracle_metadata_export": true,
+  "safe_to_attempt_jittor_alignment": true
+}

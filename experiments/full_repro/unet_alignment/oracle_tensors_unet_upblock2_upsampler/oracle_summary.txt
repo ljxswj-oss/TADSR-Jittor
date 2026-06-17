@@ -1,0 +1,10 @@
+# TADSR UNet up_blocks.2.upsamplers.0 PyTorch oracle
+
+TADSR_UNET_UPBLOCK2_UPSAMPLER_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK2_UPSAMPLER_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_UPBLOCK2_UPSAMPLER_RESIDUAL_CONTRACT_ORACLE: PASS
+
+attention2 output / upsampler input shape: [1, 640, 16, 16]
+upsampler output shape: [1, 640, 32, 32]
+effective weights: experiments/full_repro/unet_alignment/converted_unet_upblock2_upsampler_effective_weights.npz
+scope: stops after up_blocks.2.upsamplers.0; full up_blocks.2 aggregate and up_blocks.3 remain unopened.

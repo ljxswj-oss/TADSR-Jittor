@@ -1,0 +1,243 @@
+{
+  "status": "PASS",
+  "reasons": [],
+  "official_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "time_vae_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "vae_class": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+  "decoder_class": "diffusers.models.autoencoders.vae.Decoder",
+  "decoder_forward_signature": "(sample: torch.FloatTensor, latent_embeds: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+  "decoder_forward_source_excerpt": "    def forward(\n        self,\n        sample: torch.FloatTensor,\n        latent_embeds: Optional[torch.FloatTensor] = None,\n    ) -> torch.FloatTensor:\n        r\"\"\"The forward method of the `Decoder` class.\"\"\"\n\n        sample = self.conv_in(sample)\n\n        upscale_dtype = next(iter(self.up_blocks.parameters())).dtype\n        if self.training and self.gradient_checkpointing:\n\n            def create_custom_forward(module):\n                def custom_forward(*inputs):\n                    return module(*inputs)\n\n                return custom_forward\n\n            if is_torch_version(\">=\", \"1.11.0\"):\n                # middle\n                sample = torch.utils.checkpoint.checkpoint(\n                    create_custom_forward(self.mid_block),\n                    sample,\n                    latent_embeds,\n                    use_reentrant=False,\n                )\n                sample = sample.to(upscale_dtype)\n\n                # up\n                for up_block in self.up_blocks:\n                    sample = torch.utils.checkpoint.checkpoint(\n                        create_custom_forward(up_block),\n                        sample,\n                        latent_embeds,\n                        use_reentrant=False,\n                    )\n            else:\n                # middle\n                sample = torch.utils.checkpoint.checkpoint(\n                    create_custom_forward(self.mid_block), sample, latent_embeds\n                )\n                sample = sample.to(upscale_dtype)\n\n                # up\n                for up_block in self.up_blocks:\n                    sample = torch.utils.checkpoint.checkpoint(create_custom_forward(up_block), sample, latent_embeds)\n        else:\n            # middle\n            sample = self.mid_block(sample, latent_embeds)\n            sample = sample.to(upscale_dtype)\n\n            # up\n            for up_block in self.up_blocks:\n                sample = up_block(sample, latent_embeds)\n\n        # post-process\n        if latent_embeds is None:\n            sample = self.conv_norm_out(sample)\n        else:\n            sample = self.conv_norm_out(sample, latent_embeds)\n        sample = self.conv_act(sample)\n        sample = self.conv_out(sample)\n\n        return sample\n",
+  "decoder_children_order": [
+    {
+      "name": "conv_in",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv"
+    },
+    {
+      "name": "up_blocks",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container"
+    },
+    {
+      "name": "mid_block",
+      "class": "UNetMidBlock2D",
+      "module": "diffusers.models.unet_2d_blocks"
+    },
+    {
+      "name": "conv_norm_out",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization"
+    },
+    {
+      "name": "conv_act",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation"
+    },
+    {
+      "name": "conv_out",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv"
+    }
+  ],
+  "decoder_full_execution_order": "post_quant_conv -> decoder.conv_in -> decoder.mid_block -> decoder.up_blocks.0~3 -> decoder.conv_norm_out -> decoder.conv_act -> decoder.conv_out",
+  "decoder_tail_module_order": [
+    "decoder.conv_norm_out",
+    "decoder.conv_act",
+    "decoder.conv_out"
+  ],
+  "tail_inside_decoder_forward": true,
+  "tail_uses_latent_embeds": true,
+  "decoder_side_temb_default": null,
+  "decoder_tail_dtype_differs_from_upstream": false,
+  "norm": {
+    "exists": true,
+    "module_name": "decoder.conv_norm_out",
+    "class": "GroupNorm",
+    "module": "torch.nn.modules.normalization",
+    "num_groups": 32,
+    "num_channels": 128,
+    "eps": 1e-06,
+    "affine": true,
+    "weight_shape": [
+      128
+    ],
+    "bias_shape": [
+      128
+    ],
+    "npz_mapping": {
+      "weight": "decoder__conv_norm_out__weight",
+      "bias": "decoder__conv_norm_out__bias"
+    }
+  },
+  "activation": {
+    "exists": true,
+    "module_name": "decoder.conv_act",
+    "class": "SiLU",
+    "module": "torch.nn.modules.activation",
+    "inplace": false,
+    "exact_operation": "SiLU = x * sigmoid(x)",
+    "npz_mapping": {}
+  },
+  "conv_out": {
+    "exists": true,
+    "module_name": "decoder.conv_out",
+    "class": "Conv2d",
+    "module": "torch.nn.modules.conv",
+    "weight_shape": [
+      3,
+      128,
+      3,
+      3
+    ],
+    "bias_shape": [
+      3
+    ],
+    "in_channels": 128,
+    "out_channels": 3,
+    "kernel_size": [
+      3,
+      3
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ],
+    "dilation": [
+      1,
+      1
+    ],
+    "groups": 1,
+    "npz_mapping": {
+      "weight": "decoder__conv_out__weight",
+      "bias": "decoder__conv_out__bias"
+    }
+  },
+  "tail_input_shape": [
+    1,
+    128,
+    32,
+    32
+  ],
+  "tail_output_shape": [
+    1,
+    3,
+    32,
+    32
+  ],
+  "stage_stats": {
+    "tail_input": {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -465.97369384765625,
+      "max": 446.3798828125,
+      "mean": -5.82891845703125,
+      "std": 41.34089660644531
+    },
+    "norm_out": {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -7.925390243530273,
+      "max": 3.0441834926605225,
+      "mean": -0.10340918600559235,
+      "std": 0.7100749611854553
+    },
+    "act_out": {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.27846455574035645,
+      "max": 2.905766725540161,
+      "mean": 0.03520563244819641,
+      "std": 0.19916047155857086
+    },
+    "conv_out": {
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.7286383509635925,
+      "max": 0.13715824484825134,
+      "mean": -0.2878594696521759,
+      "std": 0.15899968147277832
+    },
+    "decoder_forward_output": {
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.7286383509635925,
+      "max": 0.13715824484825134,
+      "mean": -0.2878594696521759,
+      "std": 0.15899968147277832
+    },
+    "manual_vs_decoder_forward_max_abs_diff": 0.0
+  },
+  "npz_keys": {
+    "status": "PASS",
+    "path": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz",
+    "keys": {
+      "decoder__conv_norm_out__weight": {
+        "exists": true,
+        "shape": [
+          128
+        ],
+        "dtype": "float32"
+      },
+      "decoder__conv_norm_out__bias": {
+        "exists": true,
+        "shape": [
+          128
+        ],
+        "dtype": "float32"
+      },
+      "decoder__conv_out__weight": {
+        "exists": true,
+        "shape": [
+          3,
+          128,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "decoder__conv_out__bias": {
+        "exists": true,
+        "shape": [
+          3
+        ],
+        "dtype": "float32"
+      }
+    }
+  },
+  "scaling_factor_exists": true,
+  "scaling_factor_value": 0.18215,
+  "scaling_factor_applied_inside_decoder": false,
+  "scaling_factor_note": "TimeAwareAutoencoderKL has config.scaling_factor, but decoder.forward tail does not apply scaling_factor; pipeline-level scaling is out of scope for this tail alignment.",
+  "decoder_output_is_raw_sample_tensor": true,
+  "output_clamp_or_tanh_inside_decoder": false,
+  "pipeline_postprocess_implemented_this_round": false
+}

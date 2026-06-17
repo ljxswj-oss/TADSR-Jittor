@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "concat_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1920,
+        16,
+        16
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 1e-06
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 3.814697265625e-05,
+      "mean_abs_error": 7.778327926644124e-06,
+      "relative_error": 3.2657431097368263e-06,
+      "cosine_similarity": 0.9999999999947845,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic isolated check for only up_blocks.2.resnets.0. It stops before up_blocks.2.attentions.0, full up_blocks.2, full UNet forward, and full TADSR inference."
+}

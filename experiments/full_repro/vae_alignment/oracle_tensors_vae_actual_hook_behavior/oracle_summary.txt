@@ -1,0 +1,11 @@
+TIME_VAE_ACTUAL_VAEHOOK_ORACLE_TENSORS: PASS
+TIME_VAE_ACTUAL_ENCODER_TILED_ORACLE_TENSORS: PASS
+TIME_VAE_ACTUAL_DECODER_HOOK_ORIGINAL_FORWARD_ORACLE: PASS
+TIME_VAE_TILED_ORACLE_TENSORS: BLOCKED_DECODER_HOOK_CONTRACT
+
+encoder_tiled_path_triggered: True
+decoder_original_forward_used: True
+decoder_tiled_path_triggered: False
+actual_encoder_raw_quant_vs_encoded_max_abs: 0.0
+actual_hook_vs_nontiled_decode_max_abs: 0.0
+actual_hook_vs_nontiled_final_max_abs: 0.0

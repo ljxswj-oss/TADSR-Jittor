@@ -1,0 +1,11 @@
+# TADSR UNet output tail official audit
+
+TADSR_UNET_OUTPUT_TAIL_AUDIT: PASS
+TADSR_UNET_OUTPUT_TAIL_TOPOLOGY_AUDIT: PASS
+TADSR_UNET_OUTPUT_TAIL_LORA_AUDIT: PASS
+TADSR_UNET_OUTPUT_TAIL_LOCAL_EXECUTION_AUDIT: PASS
+
+tail input shape: [1, 320, 32, 32]
+tail output shape: [1, 4, 32, 32]
+conv_out lora wrapped: True
+scope: output tail only; official unet.forward/full inference were not executed.

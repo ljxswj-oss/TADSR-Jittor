@@ -1,0 +1,391 @@
+{
+  "status": "PASS",
+  "scope": "down_blocks.3.resnets.1 and complete local down_blocks.3 output tuple; mid_block/up_blocks/full UNet remain intentionally unopened.",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "loaded_lora_parameter_count": 516,
+  "downblock3_overview": {
+    "class": "diffusers.models.unet_2d_blocks.DownBlock2D",
+    "forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None, scale: float = 1.0) -> Tuple[torch.FloatTensor, Tuple[torch.FloatTensor, ...]]",
+    "resnet_count": 2,
+    "attention_count": 0,
+    "downsampler_count": 0,
+    "has_cross_attention": false,
+    "children": [
+      {
+        "name": "resnets",
+        "class": "torch.nn.modules.container.ModuleList"
+      }
+    ]
+  },
+  "resnet0_output_stats": {
+    "shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "dtype": "torch.float32",
+    "min": -49.779640197753906,
+    "max": 21.262269973754883,
+    "mean": -0.1354789435863495,
+    "std": 3.670546531677246
+  },
+  "resnet1_input_shape": [
+    1,
+    1280,
+    4,
+    4
+  ],
+  "resnet1_output_stats": {
+    "shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "dtype": "torch.float32",
+    "min": -50.87424850463867,
+    "max": 20.980514526367188,
+    "mean": -0.08692453801631927,
+    "std": 3.624305248260498
+  },
+  "resnet1_config": {
+    "prefix": "down_blocks_3_resnets_1",
+    "class": "diffusers.models.resnet.ResnetBlock2D",
+    "forward_signature": "(input_tensor: torch.FloatTensor, temb: torch.FloatTensor, scale: float = 1.0) -> torch.FloatTensor",
+    "in_channels": 1280,
+    "out_channels": 1280,
+    "temb_channels": 1280,
+    "groups": 32,
+    "groups_out": 32,
+    "eps": 1e-05,
+    "eps_out": 1e-05,
+    "non_linearity": "SiLU",
+    "time_embedding_norm": "default",
+    "output_scale_factor": 1.0,
+    "use_in_shortcut": false,
+    "use_conv_shortcut": false,
+    "up": false,
+    "down": false,
+    "dropout": 0.0,
+    "skip_time_act": false,
+    "pre_norm": true,
+    "has_time_emb_proj": true,
+    "time_emb_proj_out_features": 1280,
+    "has_shortcut": false,
+    "has_conv_shortcut": false,
+    "channel_change": false,
+    "operation_order": [
+      "input_tensor -> norm1",
+      "norm1 -> nonlinearity",
+      "act1 -> conv1",
+      "temb -> nonlinearity unless skip_time_act",
+      "temb -> time_emb_proj -> NCHW broadcast",
+      "default: conv1 + temb_proj before norm2",
+      "scale_shift: norm2 then scale/shift",
+      "norm2 -> nonlinearity -> dropout -> conv2",
+      "optional conv_shortcut on input_tensor",
+      "(shortcut + conv2) / output_scale_factor"
+    ]
+  },
+  "resnet1_submodules": {
+    "norm1": {
+      "exists": true,
+      "class": "torch.nn.modules.normalization.GroupNorm",
+      "weight_shape": [
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "num_groups": 32,
+      "eps": 1e-05,
+      "is_lora_wrapped": false
+    },
+    "conv1": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        1280,
+        1280,
+        3,
+        3
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_encoder": [
+          4,
+          1280,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_encoder": [
+          1280,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_encoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": 0.02776811458170414,
+        "default_decoder": "ERROR: 'default_decoder'",
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "time_emb_proj": {
+      "exists": true,
+      "class": "diffusers.models.lora.LoRACompatibleLinear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": false,
+      "weight_shape": [
+        1280,
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [],
+      "lora_A_shapes": {},
+      "lora_B_shapes": {},
+      "scaling": {},
+      "delta_weight_max_abs": {}
+    },
+    "norm2": {
+      "exists": true,
+      "class": "torch.nn.modules.normalization.GroupNorm",
+      "weight_shape": [
+        1280
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "num_groups": 32,
+      "eps": 1e-05,
+      "is_lora_wrapped": false
+    },
+    "conv2": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Conv2d",
+      "base_class": "diffusers.models.lora.LoRACompatibleConv",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        1280,
+        1280,
+        3,
+        3
+      ],
+      "bias_shape": [
+        1280
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_encoder": [
+          4,
+          1280,
+          3,
+          3
+        ]
+      },
+      "lora_B_shapes": {
+        "default_encoder": [
+          1280,
+          4,
+          1,
+          1
+        ]
+      },
+      "scaling": {
+        "default_encoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": 0.02440284937620163,
+        "default_decoder": "ERROR: 'default_decoder'",
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "conv_shortcut": {
+      "exists": false
+    }
+  },
+  "local_downblock3_forward": {
+    "hidden_output_shape": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "manual_resnet1_vs_official_hidden_max_abs_diff": 0.0,
+    "output_state_count": 2,
+    "output_state_shapes": [
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "manual_output_state_diffs": [
+      {
+        "index": 0,
+        "manual_shape": [
+          1,
+          1280,
+          4,
+          4
+        ],
+        "official_shape": [
+          1,
+          1280,
+          4,
+          4
+        ],
+        "max_abs_diff": 0.0
+      },
+      {
+        "index": 1,
+        "manual_shape": [
+          1,
+          1280,
+          4,
+          4
+        ],
+        "official_shape": [
+          1,
+          1280,
+          4,
+          4
+        ],
+        "max_abs_diff": 0.0
+      }
+    ]
+  },
+  "entry_context_shapes": {
+    "conv_in": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "downblock0_output": [
+      1,
+      320,
+      16,
+      16
+    ],
+    "downblock1_output": [
+      1,
+      640,
+      8,
+      8
+    ],
+    "downblock2_output": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "downblock0_output_states": [
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        32,
+        32
+      ],
+      [
+        1,
+        320,
+        16,
+        16
+      ]
+    ],
+    "downblock1_output_states": [
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ]
+    ],
+    "downblock2_output_states": [
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "temb": [
+      1,
+      1280
+    ]
+  },
+  "markers": {
+    "TADSR_UNET_DOWNBLOCK3_RESNET1_AUDIT": "PASS",
+    "TADSR_UNET_DOWNBLOCK3_LOCAL_FORWARD_AUDIT": "PASS",
+    "TADSR_UNET_DOWNBLOCK3_OUTPUT_STATES_AUDIT": "PASS"
+  },
+  "next_unopened_module": "mid_block",
+  "scope_boundaries": {
+    "ported_this_stage": "down_blocks.3.resnets.1 plus local down_blocks.3 output tuple",
+    "not_ported_this_stage": [
+      "mid_block",
+      "up_blocks",
+      "full UNet forward",
+      "full TADSR inference"
+    ]
+  }
+}

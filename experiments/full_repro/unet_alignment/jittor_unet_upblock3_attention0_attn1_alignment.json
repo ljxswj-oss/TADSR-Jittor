@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.0251998901367188e-05,
+      "mean_abs_error": 2.0808374606759437e-06,
+      "relative_error": 3.468797656676461e-06,
+      "cosine_similarity": 0.9999999999940837,
+      "tolerance": 0.0001
+    },
+    "attn1_q": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.823902130126953e-05,
+      "mean_abs_error": 3.9998861847634345e-06,
+      "relative_error": 3.208550310951657e-06,
+      "cosine_similarity": 0.9999999999947617,
+      "tolerance": 0.0001
+    },
+    "attn1_k": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.9758939743041992e-05,
+      "mean_abs_error": 3.566494032201245e-06,
+      "relative_error": 3.2535743349319975e-06,
+      "cosine_similarity": 0.9999999999947072,
+      "tolerance": 0.0001
+    },
+    "attn1_v": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.0728836059570312e-05,
+      "mean_abs_error": 2.847667425141115e-06,
+      "relative_error": 3.0564097445915037e-06,
+      "cosine_similarity": 0.9999999999955053,
+      "tolerance": 0.0001
+    },
+    "attn1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.3828277587890625e-05,
+      "mean_abs_error": 1.8167584244110912e-06,
+      "relative_error": 3.256072331618726e-06,
+      "cosine_similarity": 0.9999999999941157,
+      "tolerance": 0.001
+    },
+    "after_attn1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.3589859008789062e-05,
+      "mean_abs_error": 1.9071803933456977e-06,
+      "relative_error": 3.294009331816638e-06,
+      "cosine_similarity": 0.9999999999940453,
+      "tolerance": 0.001
+    }
+  }
+}

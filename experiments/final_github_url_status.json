@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-06-13T11:57:43.760999+00:00",
+  "status": "PARTIAL_GITHUB_URL_PENDING",
+  "url": "",
+  "dry_run": true,
+  "valid_url": false,
+  "updated_files": [],
+  "reason": "No URL was provided. Create the GitHub repository manually, then rerun with --url.",
+  "next_action": "Create the GitHub repository manually, then run this script with --url and --dry-run 0.",
+  "markers": {
+    "TADSR_FINAL_GITHUB_URL_STATUS": "PARTIAL_GITHUB_URL_PENDING",
+    "TADSR_FINAL_GITHUB_URL_UPDATE_SCRIPT_READY": "PASS"
+  }
+}

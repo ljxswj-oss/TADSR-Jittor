@@ -1,0 +1,11 @@
+# TADSR UNet up_blocks.0.upsamplers.0 PyTorch oracle
+
+TADSR_UNET_UPBLOCK0_UPSAMPLER_ORACLE_TENSORS: PASS
+TADSR_UNET_UPBLOCK0_UPSAMPLER_EFFECTIVE_WEIGHTS: PASS
+TADSR_UNET_UPBLOCK0_LOCAL_FORWARD_ORACLE: PASS
+
+pre-upsample shape: [1, 1280, 4, 4]
+upsampler output shape: [1, 1280, 8, 8]
+local upblock0 vs manual max_abs_diff: 0.0
+effective weights: experiments/full_repro/unet_alignment/converted_unet_upblock0_upsampler_effective_weights.npz
+scope: stops after local up_blocks.0 hidden output; full UNet forward remains unopened.

@@ -1,0 +1,1162 @@
+{
+  "status": "PASS",
+  "scope": "up_blocks.2.attentions.0 audit only; up_blocks.2.resnets.1 and later modules remain intentionally unopened.",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "loaded_lora_parameter_count": 516,
+  "upblock2_overview": {
+    "class": "diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D",
+    "forward_signature": "(hidden_states: torch.FloatTensor, res_hidden_states_tuple: Tuple[torch.FloatTensor, ...], temb: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, cross_attention_kwargs: Optional[Dict[str, Any]] = None, upsample_size: Optional[int] = None, attention_mask: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+    "children": [
+      {
+        "name": "attentions",
+        "class": "torch.nn.modules.container.ModuleList"
+      },
+      {
+        "name": "resnets",
+        "class": "torch.nn.modules.container.ModuleList"
+      },
+      {
+        "name": "upsamplers",
+        "class": "torch.nn.modules.container.ModuleList"
+      }
+    ],
+    "resnet_count": 3,
+    "attention_count": 3,
+    "upsampler_count": 1,
+    "has_cross_attention": true,
+    "known_completed_modules_before_this_stage": [
+      "full local up_blocks.1",
+      "up_blocks.2.resnets.0"
+    ],
+    "target_module": "up_blocks.2.attentions.0",
+    "actual_next_module_after_attention0": "up_blocks.2.resnets.1",
+    "remaining_modules_after_this_stage": [
+      "up_blocks.2.resnets.1",
+      "up_blocks.2.attentions.1",
+      "up_blocks.2.resnets.2",
+      "up_blocks.2.attentions.2",
+      "up_blocks.2.upsamplers.0",
+      "up_blocks.3",
+      "full UNet forward"
+    ],
+    "expected_operation_order_until_target": [
+      "full local up_blocks.1 output enters up_blocks.2",
+      "up_blocks.2.resnets.0 consumes down_blocks.1.output_state_1 residual",
+      "run up_blocks.2.attentions.0 with encoder_hidden_states",
+      "stop before up_blocks.2.resnets.1"
+    ]
+  },
+  "attention0_config": {
+    "prefix": "up_blocks_2_attentions_0",
+    "class": "diffusers.models.transformer_2d.Transformer2DModel",
+    "source_module_path": "unet.up_blocks.2.attentions.0",
+    "forward_signature": "(hidden_states: torch.Tensor, encoder_hidden_states: Optional[torch.Tensor] = None, timestep: Optional[torch.LongTensor] = None, added_cond_kwargs: Dict[str, torch.Tensor] = None, class_labels: Optional[torch.LongTensor] = None, cross_attention_kwargs: Dict[str, Any] = None, attention_mask: Optional[torch.Tensor] = None, encoder_attention_mask: Optional[torch.Tensor] = None, return_dict: bool = True)",
+    "in_channels": 640,
+    "out_channels": 640,
+    "num_attention_heads": 10,
+    "attention_head_dim": 64,
+    "inner_dim": 640,
+    "cross_attention_dim": 1024,
+    "use_linear_projection": true,
+    "norm_class": "torch.nn.modules.normalization.GroupNorm",
+    "norm_num_groups": 32,
+    "norm_eps": 1e-06,
+    "proj_in_class": "peft.tuners.lora.layer.Linear",
+    "proj_in_base_class": "diffusers.models.lora.LoRACompatibleLinear",
+    "proj_in_weight_shape": [
+      640,
+      640
+    ],
+    "proj_in_bias_shape": [
+      640
+    ],
+    "proj_out_class": "peft.tuners.lora.layer.Linear",
+    "proj_out_base_class": "diffusers.models.lora.LoRACompatibleLinear",
+    "proj_out_weight_shape": [
+      640,
+      640
+    ],
+    "proj_out_bias_shape": [
+      640
+    ],
+    "residual_connection": "proj_out_nchw + input hidden_states",
+    "reshape_order": "NCHW -> NHWC -> BNC before transformer; BNC -> NHWC -> NCHW after proj_out",
+    "official_return_dict_false_supported": true
+  },
+  "attention_config": {
+    "prefix": "up_blocks_2_attentions_0",
+    "class": "diffusers.models.transformer_2d.Transformer2DModel",
+    "source_module_path": "unet.up_blocks.2.attentions.0",
+    "forward_signature": "(hidden_states: torch.Tensor, encoder_hidden_states: Optional[torch.Tensor] = None, timestep: Optional[torch.LongTensor] = None, added_cond_kwargs: Dict[str, torch.Tensor] = None, class_labels: Optional[torch.LongTensor] = None, cross_attention_kwargs: Dict[str, Any] = None, attention_mask: Optional[torch.Tensor] = None, encoder_attention_mask: Optional[torch.Tensor] = None, return_dict: bool = True)",
+    "in_channels": 640,
+    "out_channels": 640,
+    "num_attention_heads": 10,
+    "attention_head_dim": 64,
+    "inner_dim": 640,
+    "cross_attention_dim": 1024,
+    "use_linear_projection": true,
+    "norm_class": "torch.nn.modules.normalization.GroupNorm",
+    "norm_num_groups": 32,
+    "norm_eps": 1e-06,
+    "proj_in_class": "peft.tuners.lora.layer.Linear",
+    "proj_in_base_class": "diffusers.models.lora.LoRACompatibleLinear",
+    "proj_in_weight_shape": [
+      640,
+      640
+    ],
+    "proj_in_bias_shape": [
+      640
+    ],
+    "proj_out_class": "peft.tuners.lora.layer.Linear",
+    "proj_out_base_class": "diffusers.models.lora.LoRACompatibleLinear",
+    "proj_out_weight_shape": [
+      640,
+      640
+    ],
+    "proj_out_bias_shape": [
+      640
+    ],
+    "residual_connection": "proj_out_nchw + input hidden_states",
+    "reshape_order": "NCHW -> NHWC -> BNC before transformer; BNC -> NHWC -> NCHW after proj_out",
+    "official_return_dict_false_supported": true
+  },
+  "transformer0_config": {
+    "heads": 10,
+    "head_dim": 64,
+    "inner_dim": 640,
+    "norm_eps": 1e-05,
+    "dropout": 0.0,
+    "transformer_block_count": 1
+  },
+  "transformer_blocks": [
+    {
+      "class": "diffusers.models.attention.BasicTransformerBlock",
+      "forward_signature": "(hidden_states: torch.FloatTensor, attention_mask: Optional[torch.FloatTensor] = None, encoder_hidden_states: Optional[torch.FloatTensor] = None, encoder_attention_mask: Optional[torch.FloatTensor] = None, timestep: Optional[torch.LongTensor] = None, cross_attention_kwargs: Dict[str, Any] = None, class_labels: Optional[torch.LongTensor] = None, added_cond_kwargs: Optional[Dict[str, torch.Tensor]] = None) -> torch.FloatTensor",
+      "norm1": {
+        "class": "torch.nn.modules.normalization.LayerNorm",
+        "shape": [
+          640
+        ],
+        "eps": 1e-05,
+        "elementwise_affine": true
+      },
+      "attn1": {
+        "exists": true,
+        "class": "diffusers.models.attention_processor.Attention",
+        "processor_class": "diffusers.models.attention_processor.AttnProcessor2_0",
+        "query_dim": 640,
+        "cross_attention_dim": 640,
+        "heads": 10,
+        "dim_head": 64,
+        "inner_dim": 640,
+        "scale": 0.125,
+        "upcast_attention": false,
+        "upcast_softmax": false,
+        "residual_connection": false,
+        "rescale_output_factor": 1.0,
+        "dropout": 0.0,
+        "attention_bias": null,
+        "to_q": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.021793071180582047,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_k": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.030423449352383614,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_v": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.020710762590169907,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_out_0": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": [
+            640
+          ],
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.030072176828980446,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_out_1_class": "torch.nn.modules.dropout.Dropout",
+        "official_processor_uses_sdpa": true,
+        "attention_mask_used_in_this_stage": false
+      },
+      "norm2": {
+        "class": "torch.nn.modules.normalization.LayerNorm",
+        "shape": [
+          640
+        ],
+        "eps": 1e-05,
+        "elementwise_affine": true
+      },
+      "attn2": {
+        "exists": true,
+        "class": "diffusers.models.attention_processor.Attention",
+        "processor_class": "diffusers.models.attention_processor.AttnProcessor2_0",
+        "query_dim": 640,
+        "cross_attention_dim": 1024,
+        "heads": 10,
+        "dim_head": 64,
+        "inner_dim": 640,
+        "scale": 0.125,
+        "upcast_attention": false,
+        "upcast_softmax": false,
+        "residual_connection": false,
+        "rescale_output_factor": 1.0,
+        "dropout": 0.0,
+        "attention_bias": null,
+        "to_q": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.022826435044407845,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_k": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            1024
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              1024
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.042890314012765884,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_v": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            1024
+          ],
+          "bias_shape": null,
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              1024
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.027011753991246223,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_out_0": {
+          "exists": true,
+          "class": "peft.tuners.lora.layer.Linear",
+          "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+          "is_lora_wrapped": true,
+          "weight_shape": [
+            640,
+            640
+          ],
+          "bias_shape": [
+            640
+          ],
+          "active_adapters": [
+            "default_encoder",
+            "default_decoder",
+            "default_others"
+          ],
+          "lora_A_shapes": {
+            "default_decoder": [
+              4,
+              640
+            ]
+          },
+          "lora_B_shapes": {
+            "default_decoder": [
+              640,
+              4
+            ]
+          },
+          "scaling": {
+            "default_decoder": 2.0
+          },
+          "delta_weight_max_abs": {
+            "default_encoder": "ERROR: 'default_encoder'",
+            "default_decoder": 0.030428960919380188,
+            "default_others": "ERROR: 'default_others'"
+          }
+        },
+        "to_out_1_class": "torch.nn.modules.dropout.Dropout",
+        "official_processor_uses_sdpa": true,
+        "attention_mask_used_in_this_stage": false
+      },
+      "norm3": {
+        "class": "torch.nn.modules.normalization.LayerNorm",
+        "shape": [
+          640
+        ],
+        "eps": 1e-05,
+        "elementwise_affine": true
+      },
+      "ff": {
+        "class": "diffusers.models.attention.FeedForward",
+        "module_order": [
+          {
+            "index": 0,
+            "class": "diffusers.models.activations.GEGLU",
+            "proj": {
+              "exists": true,
+              "class": "peft.tuners.lora.layer.Linear",
+              "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+              "is_lora_wrapped": true,
+              "weight_shape": [
+                5120,
+                640
+              ],
+              "bias_shape": [
+                5120
+              ],
+              "active_adapters": [
+                "default_encoder",
+                "default_decoder",
+                "default_others"
+              ],
+              "lora_A_shapes": {
+                "default_decoder": [
+                  4,
+                  640
+                ]
+              },
+              "lora_B_shapes": {
+                "default_decoder": [
+                  5120,
+                  4
+                ]
+              },
+              "scaling": {
+                "default_decoder": 2.0
+              },
+              "delta_weight_max_abs": {
+                "default_encoder": "ERROR: 'default_encoder'",
+                "default_decoder": 0.04260462522506714,
+                "default_others": "ERROR: 'default_others'"
+              }
+            }
+          },
+          {
+            "index": 1,
+            "class": "torch.nn.modules.dropout.Dropout"
+          },
+          {
+            "index": 2,
+            "class": "peft.tuners.lora.layer.Linear",
+            "linear": {
+              "exists": true,
+              "class": "peft.tuners.lora.layer.Linear",
+              "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+              "is_lora_wrapped": true,
+              "weight_shape": [
+                640,
+                2560
+              ],
+              "bias_shape": [
+                640
+              ],
+              "active_adapters": [
+                "default_encoder",
+                "default_decoder",
+                "default_others"
+              ],
+              "lora_A_shapes": {
+                "default_decoder": [
+                  4,
+                  2560
+                ]
+              },
+              "lora_B_shapes": {
+                "default_decoder": [
+                  640,
+                  4
+                ]
+              },
+              "scaling": {
+                "default_decoder": 2.0
+              },
+              "delta_weight_max_abs": {
+                "default_encoder": "ERROR: 'default_encoder'",
+                "default_decoder": 0.024456733837723732,
+                "default_others": "ERROR: 'default_others'"
+              }
+            }
+          }
+        ],
+        "activation_type": "diffusers.models.activations.GEGLU",
+        "dropout_values": [
+          0.0
+        ],
+        "final_dropout_noop_in_eval": true
+      },
+      "only_cross_attention": false,
+      "double_self_attention": null,
+      "upcast_attention": null,
+      "norm_type": null,
+      "requires_timestep": false,
+      "requires_class_labels": false,
+      "requires_added_cond_kwargs": false
+    }
+  ],
+  "entry_context_shapes": {
+    "sample": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "timestep": [
+      1
+    ],
+    "encoder_hidden_states": [
+      1,
+      77,
+      1024
+    ],
+    "upblock1_output": [
+      1,
+      1280,
+      16,
+      16
+    ],
+    "remaining_residual_count_before_upblock2_slice": 3,
+    "upblock2_resnet0_consumed_residual_source": "down_blocks.1.output_state_1",
+    "upblock2_resnet0_residual_shape": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "upblock2_resnet0_output": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "upblock2_attention0_input": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "upblock2_attention0_output": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "internal_remaining_residual_count_after_resnet0_pop": 2,
+    "internal_remaining_residual_count_after_attention0": 2,
+    "attention0_consumes_accumulated_residuals": false,
+    "attention_mask": null,
+    "encoder_attention_mask": null,
+    "cross_attention_kwargs": null
+  },
+  "attention0_input_stats": {
+    "shape": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "dtype": "torch.float32",
+    "min": -41.3499641418457,
+    "max": 25.86746597290039,
+    "mean": -0.355968177318573,
+    "std": 4.079318523406982
+  },
+  "attention0_output_stats": {
+    "shape": [
+      1,
+      640,
+      16,
+      16
+    ],
+    "dtype": "torch.float32",
+    "min": -40.95957565307617,
+    "max": 26.659170150756836,
+    "mean": 0.27946528792381287,
+    "std": 4.076136589050293
+  },
+  "encoder_hidden_states_stats": {
+    "shape": [
+      1,
+      77,
+      1024
+    ],
+    "dtype": "torch.float32",
+    "min": -0.5,
+    "max": 0.5,
+    "mean": 1.2385380721013917e-08,
+    "std": 0.2886787950992584
+  },
+  "existing_tester_compatibility": {
+    "tester": "UNetAttention0Transformer2DTester",
+    "compatible": true,
+    "reason": "Same Transformer2DModel + BasicTransformerBlock pattern; selected with prefix=up_blocks_2_attentions_0."
+  },
+  "lora_modules": {
+    "proj_in": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": [
+        640
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.026334548369050026,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "proj_out": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": [
+        640
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.026920152828097343,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn1_to_q": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.021793071180582047,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn1_to_k": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.030423449352383614,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn1_to_v": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.020710762590169907,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn1_to_out_0": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": [
+        640
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.030072176828980446,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn2_to_q": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.022826435044407845,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn2_to_k": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        1024
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          1024
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.042890314012765884,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn2_to_v": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        1024
+      ],
+      "bias_shape": null,
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          1024
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.027011753991246223,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_attn2_to_out_0": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        640
+      ],
+      "bias_shape": [
+        640
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.030428960919380188,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_ff_geglu_proj": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        5120,
+        640
+      ],
+      "bias_shape": [
+        5120
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          640
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          5120,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.04260462522506714,
+        "default_others": "ERROR: 'default_others'"
+      }
+    },
+    "transformer0_ff_out": {
+      "exists": true,
+      "class": "peft.tuners.lora.layer.Linear",
+      "base_class": "diffusers.models.lora.LoRACompatibleLinear",
+      "is_lora_wrapped": true,
+      "weight_shape": [
+        640,
+        2560
+      ],
+      "bias_shape": [
+        640
+      ],
+      "active_adapters": [
+        "default_encoder",
+        "default_decoder",
+        "default_others"
+      ],
+      "lora_A_shapes": {
+        "default_decoder": [
+          4,
+          2560
+        ]
+      },
+      "lora_B_shapes": {
+        "default_decoder": [
+          640,
+          4
+        ]
+      },
+      "scaling": {
+        "default_decoder": 2.0
+      },
+      "delta_weight_max_abs": {
+        "default_encoder": "ERROR: 'default_encoder'",
+        "default_decoder": 0.024456733837723732,
+        "default_others": "ERROR: 'default_others'"
+      }
+    }
+  },
+  "residual_contract": {
+    "status": "PASS",
+    "attention0_consumes_accumulated_residuals": false,
+    "remaining_residual_count_unchanged": 2
+  },
+  "lora_audit": {
+    "status": "PASS",
+    "lora_module_count": 12,
+    "effective_static_weight_export_required": true
+  },
+  "uses_full_unet_forward": false,
+  "uses_upblock2_resnet1": false,
+  "uses_upblocks3": false,
+  "uses_full_tadsr_inference": false,
+  "markers": {
+    "TADSR_UNET_UPBLOCK2_ATTENTION0_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK2_ATTENTION0_RESIDUAL_CONTRACT_AUDIT": "PASS",
+    "TADSR_UNET_UPBLOCK2_ATTENTION0_LORA_AUDIT": "PASS"
+  }
+}

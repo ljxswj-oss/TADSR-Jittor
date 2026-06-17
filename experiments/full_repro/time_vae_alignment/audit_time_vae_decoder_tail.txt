@@ -1,0 +1,12 @@
+TIME_VAE_DECODER_TAIL_AUDIT: PASS
+tail_module_order: ['decoder.conv_norm_out', 'decoder.conv_act', 'decoder.conv_out']
+tail_input_shape: [1, 128, 32, 32]
+tail_output_shape: [1, 3, 32, 32]
+norm_eps: 1e-06
+norm_groups: 32
+activation: SiLU
+conv_out_weight_shape: [3, 128, 3, 3]
+scaling_factor_value: 0.18215
+scaling_factor_applied_inside_decoder: False
+output_clamp_or_tanh_inside_decoder: False
+manual_vs_decoder_forward_max_abs_diff: 0.0

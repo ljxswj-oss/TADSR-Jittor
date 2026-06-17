@@ -1,0 +1,79 @@
+{
+  "rows": [
+    {
+      "env": "strict-pypi",
+      "venv": "/mnt/data/sj/venvs/tadsr_official_strict_pypi",
+      "install_status": "PASS",
+      "install_exit_code": "0",
+      "import_smoke": "PASS",
+      "torch": "2.0.1",
+      "torch_cuda": "11.7",
+      "cuda_available": true,
+      "missing_packages": [],
+      "critical_missing": [],
+      "version_mismatches": [],
+      "check_status": "PASS",
+      "log": "experiments/full_repro/pytorch_official/env_matrix/install_strict-pypi.log"
+    },
+    {
+      "env": "strict-cu118",
+      "venv": "/mnt/data/sj/venvs/tadsr_official_strict_cu118",
+      "install_status": "PASS",
+      "install_exit_code": "0",
+      "import_smoke": "PASS",
+      "torch": "2.0.1+cu118",
+      "torch_cuda": "11.8",
+      "cuda_available": true,
+      "missing_packages": [],
+      "critical_missing": [],
+      "version_mismatches": [],
+      "check_status": "PASS",
+      "log": "experiments/full_repro/pytorch_official/env_matrix/install_strict-cu118.log"
+    },
+    {
+      "env": "relaxed-pypi",
+      "venv": "/mnt/data/sj/venvs/tadsr_official_relaxed_pypi",
+      "install_status": "PASS",
+      "install_exit_code": "0",
+      "import_smoke": "FAIL",
+      "torch": "2.12.0",
+      "torch_cuda": "13.0",
+      "cuda_available": false,
+      "missing_packages": [
+        "xformers",
+        "basicsr"
+      ],
+      "critical_missing": [],
+      "version_mismatches": [
+        {
+          "package": "torch",
+          "expected": "2.0.1",
+          "actual": "2.12.0"
+        },
+        {
+          "package": "torchvision",
+          "expected": "0.15.2",
+          "actual": "0.27.0"
+        }
+      ],
+      "check_status": "PARTIAL_CRITICAL_VERSION_MISMATCH",
+      "log": "experiments/full_repro/pytorch_official/env_matrix/install_relaxed-pypi.log"
+    }
+  ],
+  "selected_env": {
+    "env": "strict-cu118",
+    "venv": "/mnt/data/sj/venvs/tadsr_official_strict_cu118",
+    "install_status": "PASS",
+    "install_exit_code": "0",
+    "import_smoke": "PASS",
+    "torch": "2.0.1+cu118",
+    "torch_cuda": "11.8",
+    "cuda_available": true,
+    "missing_packages": [],
+    "critical_missing": [],
+    "version_mismatches": [],
+    "check_status": "PASS",
+    "log": "experiments/full_repro/pytorch_official/env_matrix/install_strict-cu118.log"
+  },
+  "selected_env_sh": "experiments/full_repro/pytorch_official/env_matrix/selected_env.sh"
+}

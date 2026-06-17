@@ -1,0 +1,420 @@
+{
+  "status_marker": "TADSR_TIMEVAE_PRODUCTION_ORACLE_METADATA",
+  "status": "PASS",
+  "official_env_status": "PASS",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "pythonpath_overlay": "/mnt/data/sj/tmp/tadsr_official_dependency_overlay_diffusers",
+  "overlay_used": true,
+  "strict_env_modified": false,
+  "official_torch_version": "2.0.1+cu118",
+  "diffusers_available": true,
+  "diffusers_available_without_overlay": false,
+  "dependency_status": "PASS",
+  "dependency_blockers": [],
+  "dependency_imports": {
+    "torch": {
+      "module": "torch",
+      "status": "PASS",
+      "version": "2.0.1+cu118",
+      "error": null
+    },
+    "diffusers": {
+      "module": "diffusers",
+      "status": "PASS",
+      "version": "0.25.0",
+      "error": null
+    },
+    "diffusers_without_overlay": {
+      "module": "diffusers",
+      "status": "MISSING",
+      "version": null,
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'"
+    }
+  },
+  "official_repo_timevae_candidates": [
+    "tadsr.py",
+    "test_tadsr.py",
+    "train_tadsr.py",
+    "__pycache__/tadsr.cpython-310.pyc",
+    "__pycache__/vae_my.cpython-310.pyc",
+    "__pycache__/test_tadsr.cpython-310.pyc",
+    "__pycache__/train_tadsr.cpython-310.pyc",
+    "diffusers/models/autoencoders",
+    "diffusers/models/vae_flax.py",
+    "diffusers/models/__pycache__/vae_flax.cpython-310.pyc",
+    "diffusers/models/autoencoders/__init__.py",
+    "diffusers/models/autoencoders/__pycache__",
+    "diffusers/models/autoencoders/autoencoder_asym_kl.py",
+    "diffusers/models/autoencoders/autoencoder_kl.py",
+    "diffusers/models/autoencoders/autoencoder_kl_temporal_decoder.py",
+    "diffusers/models/autoencoders/autoencoder_tiny.py",
+    "diffusers/models/autoencoders/consistency_decoder_vae.py",
+    "diffusers/models/autoencoders/time_autoencoder_kl.py",
+    "diffusers/models/autoencoders/vae.py",
+    "diffusers/models/autoencoders/__pycache__/__init__.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_asym_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_kl_temporal_decoder.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/autoencoder_tiny.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/consistency_decoder_vae.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/time_autoencoder_kl.cpython-310.pyc",
+    "diffusers/models/autoencoders/__pycache__/vae.cpython-310.pyc",
+    "diffusers/pipelines/deepfloyd_if/timesteps.py",
+    "diffusers/pipelines/deepfloyd_if/__pycache__/timesteps.cpython-310.pyc",
+    "models/autoencoder_kl.py"
+  ],
+  "official_weight_candidates": [
+    "time_vae",
+    "unet",
+    "vae",
+    "scheduler"
+  ],
+  "metadata_only": true,
+  "run_live_forward_metadata": true,
+  "num_samples": 1,
+  "height": 64,
+  "width": 64,
+  "seed": 1234,
+  "cpu_only": false,
+  "device": "auto",
+  "forward_executed": true,
+  "full_inference_executed": false,
+  "full_tadsr_inference_executed": false,
+  "denoising_loop_executed": false,
+  "raw_tensor_saved": false,
+  "raw_tensors_committed": false,
+  "image_or_video_output_generated": false,
+  "image_or_video_generated": false,
+  "local_tensor_dir_ignored": true,
+  "encode_input_shape": [
+    1,
+    3,
+    64,
+    64
+  ],
+  "encode_input_dtype": "torch.float32",
+  "encode_input_range": [
+    -0.9999203681945801,
+    0.9998066425323486
+  ],
+  "encode_input_stats": {
+    "shape": [
+      1,
+      3,
+      64,
+      64
+    ],
+    "dtype": "torch.float32",
+    "min": -0.9999203681945801,
+    "max": 0.9998066425323486,
+    "mean": -0.006159624084830284,
+    "std": 0.580244243144989,
+    "finite": true
+  },
+  "encoder_hook_path": "metadata_only_not_forward_executed",
+  "encoder_tiled_used": false,
+  "tiled_encoder_used": false,
+  "quant_conv_used": true,
+  "latent_distribution_type": "DiagonalGaussianDistribution",
+  "posterior_mean_shape": [
+    1,
+    4,
+    8,
+    8
+  ],
+  "posterior_logvar_shape": [
+    1,
+    4,
+    8,
+    8
+  ],
+  "posterior_sample_policy": "not used for decode; deterministic posterior.mode() used",
+  "fixed_epsilon_used": false,
+  "latent_shape": [
+    1,
+    4,
+    8,
+    8
+  ],
+  "latent_dtype": "torch.float32",
+  "latent_stats": {
+    "shape": [
+      1,
+      4,
+      8,
+      8
+    ],
+    "dtype": "torch.float32",
+    "min": -9.816947937011719,
+    "max": 6.585763931274414,
+    "mean": -1.1460117101669312,
+    "std": 3.7105205059051514,
+    "finite": true
+  },
+  "posterior_stats": {
+    "mean": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -9.816947937011719,
+      "max": 6.585763931274414,
+      "mean": -1.1460117101669312,
+      "std": 3.7105205059051514,
+      "finite": true
+    },
+    "logvar": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -16.243228912353516,
+      "max": -8.354839324951172,
+      "mean": -12.6515531539917,
+      "std": 1.9032925367355347,
+      "finite": true
+    }
+  },
+  "scaling_factor": 0.18215,
+  "scaled_latent_shape": [
+    1,
+    4,
+    8,
+    8
+  ],
+  "scaled_latent_stats": {
+    "shape": [
+      1,
+      4,
+      8,
+      8
+    ],
+    "dtype": "torch.float32",
+    "min": -1.7881571054458618,
+    "max": 1.1995970010757446,
+    "mean": -0.2087460458278656,
+    "std": 0.6758713126182556,
+    "finite": true
+  },
+  "decode_input_shape": [
+    1,
+    4,
+    8,
+    8
+  ],
+  "decode_input_dtype": "torch.float32",
+  "post_quant_conv_used": true,
+  "decoder_hook_path": "metadata_only_not_forward_executed",
+  "decoder_tiled_used": false,
+  "tiled_decoder_used": false,
+  "decoder_original_forward_used": false,
+  "original_forward_used": false,
+  "decode_output_shape": [
+    1,
+    3,
+    64,
+    64
+  ],
+  "decode_output_dtype": "torch.float32",
+  "decode_output_range": [
+    -0.6645100712776184,
+    0.7227476835250854
+  ],
+  "decode_output_stats": {
+    "shape": [
+      1,
+      3,
+      64,
+      64
+    ],
+    "dtype": "torch.float32",
+    "min": -0.6645100712776184,
+    "max": 0.7227476835250854,
+    "mean": 0.02268010936677456,
+    "std": 0.18181689083576202,
+    "finite": true
+  },
+  "clamp_policy": "torch.clamp(decoded, -1, 1), metadata only",
+  "summary_stats": {
+    "encode_input": {
+      "shape": [
+        1,
+        3,
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "min": -0.9999203681945801,
+      "max": 0.9998066425323486,
+      "mean": -0.006159624084830284,
+      "std": 0.580244243144989,
+      "finite": true
+    },
+    "posterior_mean": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -9.816947937011719,
+      "max": 6.585763931274414,
+      "mean": -1.1460117101669312,
+      "std": 3.7105205059051514,
+      "finite": true
+    },
+    "posterior_logvar": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -16.243228912353516,
+      "max": -8.354839324951172,
+      "mean": -12.6515531539917,
+      "std": 1.9032925367355347,
+      "finite": true
+    },
+    "latent": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -9.816947937011719,
+      "max": 6.585763931274414,
+      "mean": -1.1460117101669312,
+      "std": 3.7105205059051514,
+      "finite": true
+    },
+    "scaled_latent": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -1.7881571054458618,
+      "max": 1.1995970010757446,
+      "mean": -0.2087460458278656,
+      "std": 0.6758713126182556,
+      "finite": true
+    },
+    "decode_input": {
+      "shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "dtype": "torch.float32",
+      "min": -9.816947937011719,
+      "max": 6.585764408111572,
+      "mean": -1.1460117101669312,
+      "std": 3.7105205059051514,
+      "finite": true
+    },
+    "decode_output": {
+      "shape": [
+        1,
+        3,
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "min": -0.6645100712776184,
+      "max": 0.7227476835250854,
+      "mean": 0.02268010936677456,
+      "std": 0.18181689083576202,
+      "finite": true
+    },
+    "clamped_output": {
+      "shape": [
+        1,
+        3,
+        64,
+        64
+      ],
+      "dtype": "torch.float32",
+      "min": -0.6645100712776184,
+      "max": 0.7227476835250854,
+      "mean": 0.02268010936677456,
+      "std": 0.18181689083576202,
+      "finite": true
+    }
+  },
+  "sha256": {},
+  "local_tensor_paths": [],
+  "partial_reasons": [],
+  "blockers": [],
+  "ready_for_timevae_preflight": true,
+  "ready_for_one_step_contract": true,
+  "tensor_metadata_complete": true,
+  "save_local_tensors_requested": false,
+  "next_action": "Rerun TimeVAE preflight and full inference metadata contract.",
+  "unet_called": false,
+  "scheduler_loop_called": false,
+  "save_local_tensors": false,
+  "diffusers_version": "0.25.0",
+  "diffusers_file": "/mnt/data/sj/projects/TADSR_official_pytorch/diffusers/__init__.py",
+  "selected_device": "cuda",
+  "torch_version": "2.0.1+cu118",
+  "encode_input_min": -0.9999203681945801,
+  "encode_input_max": 0.9998066425323486,
+  "encode_input_mean": -0.006159624084830284,
+  "encode_input_std": 0.580244243144989,
+  "encode_input_finite": true,
+  "encode_input_seed": 1234,
+  "encode_input_generation_policy": "torch.rand uniform in [-1, 1], in memory only, no tensor file saved",
+  "encoder_forward_called": true,
+  "encoder_hook_used": false,
+  "posterior_object_type": "DiagonalGaussianDistribution",
+  "posterior_mean_dtype": "torch.float32",
+  "posterior_mean_min": -9.816947937011719,
+  "posterior_mean_max": 6.585763931274414,
+  "posterior_mean_mean": -1.1460117101669312,
+  "posterior_mean_std": 3.7105205059051514,
+  "posterior_logvar_dtype": "torch.float32",
+  "posterior_logvar_min": -16.243228912353516,
+  "posterior_logvar_max": -8.354839324951172,
+  "posterior_logvar_mean": -12.6515531539917,
+  "posterior_logvar_std": 1.9032925367355347,
+  "posterior_mode_policy": "posterior.mode() used to avoid stochastic tensor export",
+  "latent_min": -9.816947937011719,
+  "latent_max": 6.585763931274414,
+  "latent_mean": -1.1460117101669312,
+  "latent_std": 3.7105205059051514,
+  "latent_finite": true,
+  "scaled_latent_dtype": "torch.float32",
+  "scaled_latent_min": -1.7881571054458618,
+  "scaled_latent_max": 1.1995970010757446,
+  "scaled_latent_mean": -0.2087460458278656,
+  "scaled_latent_std": 0.6758713126182556,
+  "scaled_latent_finite": true,
+  "decoder_forward_called": true,
+  "decoder_hook_used": false,
+  "decode_output_min": -0.6645100712776184,
+  "decode_output_max": 0.7227476835250854,
+  "decode_output_mean": 0.02268010936677456,
+  "decode_output_std": 0.18181689083576202,
+  "decode_output_finite": true,
+  "clamped_output_min": -0.6645100712776184,
+  "clamped_output_max": 0.7227476835250854,
+  "clamped_output_mean": 0.02268010936677456,
+  "clamped_output_std": 0.18181689083576202,
+  "clamped_output_finite": true
+}

@@ -1,0 +1,11 @@
+# TADSR UNet down_blocks.2.resnets.1 audit
+
+TADSR_UNET_DOWNBLOCK2_RESNET1_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK2_RESNET1_LORA_AUDIT: PASS
+
+class: diffusers.models.resnet.ResnetBlock2D
+in/out: 1280 -> 1280
+has_shortcut: False
+input shape: [1, 1280, 8, 8]
+output shape: [1, 1280, 8, 8]
+next module: down_blocks.2.attentions.1

@@ -1,0 +1,23 @@
+# TimeAware VAE Decoder Entry Oracle Export
+
+Status: **PASS**
+
+## Deterministic rules
+
+- Posterior moments are split with `torch.chunk(moments, 2, dim=1)`.
+- `logvar` is clamped to `[-30, 20]`.
+- Deterministic alignment uses `DiagonalGaussianDistribution.mode()`, which returns the mean.
+- No sampling is used in this oracle.
+
+## Saved paths
+
+- Path A: synthetic latent -> post_quant_conv -> decoder.conv_in.
+- Path B: synthetic image -> encoder quant moments -> posterior mode -> post_quant_conv -> decoder.conv_in.
+
+## Consistency checks
+
+| Check | Max abs diff |
+|---|---:|
+| manual_mean_vs_distribution_mean_max_abs_diff | `0.0` |
+| manual_logvar_clamped_vs_distribution_logvar_max_abs_diff | `0.0` |
+| mode_vs_mean_max_abs_diff | `0.0` |

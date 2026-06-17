@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "document": "docs/final_human_submission_instructions.md",
+  "markers": {
+    "TADSR_FINAL_HUMAN_SUBMISSION_INSTRUCTIONS": "PASS"
+  },
+  "summary": {
+    "recommended_uploads": [
+      "GitHub repository URL",
+      "PPTX/PDF",
+      "recorded video",
+      "README",
+      "compact final materials if attachments are allowed"
+    ],
+    "scope_guard": {
+      "JITTOR_FULL_INFERENCE": "NOT_COMPLETE",
+      "JITTOR_FULL_PORT": "PARTIAL",
+      "TIME_VAE_FULL_ALIGNMENT": "NOT_COMPLETE",
+      "TADSR_DYNAMIC_RUNTIME_LORA_IMPLEMENTATION": "NOT_IMPLEMENTED_BY_DESIGN"
+    }
+  }
+}

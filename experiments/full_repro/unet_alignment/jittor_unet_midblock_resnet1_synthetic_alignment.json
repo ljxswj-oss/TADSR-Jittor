@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "max_abs_error": 6.341934204101562e-05,
+      "mean_abs_error": 5.4021678806748245e-06,
+      "relative_error": 3.926918170115845e-06,
+      "cosine_similarity": 0.9999999999925773,
+      "tolerance": 0.0002
+    }
+  },
+  "note": "Synthetic hidden/temb -> mid_block.resnets.1 only."
+}

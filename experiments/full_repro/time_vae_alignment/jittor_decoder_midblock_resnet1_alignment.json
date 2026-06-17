@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "decoder.mid_block.resnets.1 synthetic hidden",
+  "note": "decoder temb is None",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      4,
+      4
+    ],
+    "max_abs_error": 1.9073486328125e-06,
+    "mean_abs_error": 2.654055606399197e-07,
+    "relative_error": 2.1314866088685494e-07,
+    "cosine_similarity": 0.9999999999999766,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

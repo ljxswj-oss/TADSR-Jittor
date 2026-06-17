@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "target": "isolated down_blocks.1.downsamplers.0 only",
+  "note": "Single effective LoRA-merged stride-2 conv. Full UNet forward remains unopened.",
+  "diagnostics": {
+    "downsampler_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "mean_abs_error": 2.2016419052306446e-07,
+      "relative_error": 2.5552197248305665e-07,
+      "cosine_similarity": 0.9999999999999659,
+      "tolerance": 0.002
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "target": "synthetic hidden -> decoder.up_blocks.3",
+  "note": "isolated deterministic synthetic upblock3 pressure test; uses 1e-3 tolerance for large linspace activations and the 256->128 shortcut; official upblock3 has no upsampler",
+  "diagnostics": {
+    "resnet0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 8.58306884765625e-05,
+      "mean_abs_error": 1.7295496384406306e-05,
+      "relative_error": 2.2302023065617683e-06,
+      "cosine_similarity": 0.9999999999985113,
+      "tolerance": 0.001
+    },
+    "resnet1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 0.000152587890625,
+      "mean_abs_error": 2.0161251399031244e-05,
+      "relative_error": 1.9815713071947083e-06,
+      "cosine_similarity": 0.9999999999987447,
+      "tolerance": 0.001
+    },
+    "resnet2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0002288818359375,
+      "mean_abs_error": 2.627187774351114e-05,
+      "relative_error": 1.9539194299983966e-06,
+      "cosine_similarity": 0.9999999999989243,
+      "tolerance": 0.001
+    },
+    "pre_upsampler": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0002288818359375,
+      "mean_abs_error": 2.627187774351114e-05,
+      "relative_error": 1.9539194299983966e-06,
+      "cosine_similarity": 0.9999999999989243,
+      "tolerance": 0.001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0002288818359375,
+      "mean_abs_error": 2.627187774351114e-05,
+      "relative_error": 1.9539194299983966e-06,
+      "cosine_similarity": 0.9999999999989243,
+      "tolerance": 0.001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0002288818359375,
+    "mean_abs_error": 2.627187774351114e-05,
+    "relative_error": 1.9539194299983966e-06,
+    "cosine_similarity": 0.9999999999989243,
+    "tolerance": 0.001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

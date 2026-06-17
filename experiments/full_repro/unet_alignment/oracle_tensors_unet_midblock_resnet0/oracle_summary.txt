@@ -1,0 +1,10 @@
+# TADSR UNet mid_block.resnets.0 oracle export
+
+TADSR_UNET_MIDBLOCK_RESNET0_ORACLE_TENSORS: PASS
+TADSR_UNET_MIDBLOCK_RESNET0_EFFECTIVE_WEIGHTS: PASS
+
+effective weights: experiments/full_repro/unet_alignment/converted_unet_midblock_resnet0_effective_weights.npz
+oracle tensors: experiments/full_repro/unet_alignment/oracle_tensors_unet_midblock_resnet0
+synthetic manual/offical max abs diff: 0.0
+entry manual/offical max abs diff: 0.0
+previous downblock3 compare: {'previous_downblock3_oracle_tensor_available': True, 'max_abs_diff': 0.0, 'mean_abs_diff': 0.0}

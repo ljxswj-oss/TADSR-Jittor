@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "target": "attention1 transformer0 feed-forward and residual",
+  "note": "Stops before proj_out.",
+  "diagnostics": {
+    "norm3": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 5.543231964111328e-06,
+      "mean_abs_error": 1.1209657079469104e-06,
+      "relative_error": 3.245018149592327e-06,
+      "cosine_similarity": 0.9999999999947286,
+      "tolerance": 0.0001
+    },
+    "ff_geglu_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        2560
+      ],
+      "max_abs_error": 7.3909759521484375e-06,
+      "mean_abs_error": 1.1311207596897966e-06,
+      "relative_error": 2.7910648566816365e-06,
+      "cosine_similarity": 0.9999999999961972,
+      "tolerance": 0.0001
+    },
+    "ff_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 7.852911949157715e-06,
+      "mean_abs_error": 1.3259743690596792e-06,
+      "relative_error": 4.619417601054244e-06,
+      "cosine_similarity": 0.9999999999895703,
+      "tolerance": 0.001
+    },
+    "transformer0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 9.804964065551758e-06,
+      "mean_abs_error": 1.7393367642171142e-06,
+      "relative_error": 3.7833550818169824e-06,
+      "cosine_similarity": 0.9999999999931395,
+      "tolerance": 0.001
+    }
+  }
+}

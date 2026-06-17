@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "forbidden_upload_items": [
+    ".npy",
+    ".npz",
+    ".zip",
+    "local_tensors",
+    "weights",
+    "checkpoints",
+    "video files",
+    "secrets"
+  ],
+  "manual_fields": {
+    "github_url": "to be filled by user before submission",
+    "video_file_name": "to be filled by user before submission"
+  },
+  "markers": {
+    "TADSR_FINAL_GITHUB_UPLOAD_CHECKLIST": "PASS",
+    "TADSR_FINAL_UPLOAD_PACKAGE_READY": "PASS"
+  }
+}

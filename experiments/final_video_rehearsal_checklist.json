@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "document": "docs/final_video_rehearsal_checklist.md",
+  "markers": {
+    "TADSR_FINAL_VIDEO_REHEARSAL_CHECKLIST": "PASS",
+    "TADSR_FINAL_VIDEO_RECORDING_READY": "PASS"
+  },
+  "recommended_flow": [
+    "paper background",
+    "TADSR algorithm",
+    "Jittor migration strategy",
+    "UNet / TimeVAE / Scheduler / LoRA evidence",
+    "controlled one-step tensor alignment",
+    "diagnostic image smoke",
+    "small-data training",
+    "final audit",
+    "limitations and future work"
+  ],
+  "full_inference_guard_expected": "NotImplementedError"
+}

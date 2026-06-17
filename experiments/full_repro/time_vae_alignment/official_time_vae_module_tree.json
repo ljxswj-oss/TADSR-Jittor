@@ -1,0 +1,1494 @@
+{
+  "summary": {
+    "status": "PASS",
+    "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+    "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights/time_vae",
+    "class_name": "TimeAwareAutoencoderKL",
+    "class_module": "diffusers.models.autoencoders.time_autoencoder_kl",
+    "encoder_class": "TimeAwareEncoder",
+    "encoder_module": "diffusers.models.autoencoders.vae",
+    "module_count": 234,
+    "state_key_count": 272,
+    "config": {
+      "in_channels": 3,
+      "out_channels": 3,
+      "down_block_types": [
+        "DownEncoderBlock2D",
+        "DownEncoderBlock2D",
+        "DownEncoderBlock2D",
+        "DownEncoderBlock2D"
+      ],
+      "up_block_types": [
+        "UpDecoderBlock2D",
+        "UpDecoderBlock2D",
+        "UpDecoderBlock2D",
+        "UpDecoderBlock2D"
+      ],
+      "block_out_channels": [
+        128,
+        256,
+        512,
+        512
+      ],
+      "layers_per_block": 2,
+      "act_fn": "silu",
+      "latent_channels": 4,
+      "norm_num_groups": 32,
+      "sample_size": 768,
+      "scaling_factor": 0.18215,
+      "force_upcast": true,
+      "time_scale_shift": "scale_shift",
+      "_use_default_values": [
+        "force_upcast",
+        "scaling_factor",
+        "time_scale_shift"
+      ],
+      "_class_name": "TimeAwareAutoencoderKL",
+      "_diffusers_version": "0.10.0.dev0",
+      "_name_or_path": "/mnt/data/sj/checkpoints/TADSR/preset/weights/time_vae"
+    },
+    "priority_port_plan": [
+      {
+        "priority": 1,
+        "target": "encoder.conv_in",
+        "reason": "leaf Conv2d, no timestep dependency, smallest real forward alignment target"
+      },
+      {
+        "priority": 2,
+        "target": "encoder.time_proj + encoder.time_embedding",
+        "reason": "required before time-aware ResNet blocks"
+      },
+      {
+        "priority": 3,
+        "target": "encoder.down_blocks.0.resnets.0",
+        "reason": "first real TimeAware ResnetBlock2D with scale-shift timestep conditioning"
+      },
+      {
+        "priority": 4,
+        "target": "encoder.down_blocks.0",
+        "reason": "first DownEncoderBlock2D including two resnets and downsample"
+      },
+      {
+        "priority": 5,
+        "target": "encoder.mid_block",
+        "reason": "contains attention and time-aware ResNet blocks"
+      },
+      {
+        "priority": 6,
+        "target": "quant_conv / post_quant_conv",
+        "reason": "latent bottleneck conversion"
+      },
+      {
+        "priority": 7,
+        "target": "decoder blocks",
+        "reason": "decoder is standard VAE decoder after latent path is aligned"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "<root>",
+      "class": "TimeAwareAutoencoderKL",
+      "module": "diffusers.models.autoencoders.time_autoencoder_kl.TimeAwareAutoencoderKL",
+      "child_count": 4
+    },
+    {
+      "name": "encoder",
+      "class": "TimeAwareEncoder",
+      "module": "diffusers.models.autoencoders.vae.TimeAwareEncoder",
+      "child_count": 8
+    },
+    {
+      "name": "encoder.time_proj",
+      "class": "Timesteps",
+      "module": "diffusers.models.embeddings.Timesteps",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.time_embedding",
+      "class": "TimestepEmbedding",
+      "module": "diffusers.models.embeddings.TimestepEmbedding",
+      "child_count": 3
+    },
+    {
+      "name": "encoder.time_embedding.linear_1",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.time_embedding.act",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation.SiLU",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.time_embedding.linear_2",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.conv_in",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 4
+    },
+    {
+      "name": "encoder.down_blocks.0",
+      "class": "DownEncoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.DownEncoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.0.downsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.0.downsamplers.0",
+      "class": "Downsample2D",
+      "module": "diffusers.models.downsampling.Downsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.0.downsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1",
+      "class": "DownEncoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.DownEncoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 8
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.0.conv_shortcut",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.1.downsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.1.downsamplers.0",
+      "class": "Downsample2D",
+      "module": "diffusers.models.downsampling.Downsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.1.downsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2",
+      "class": "DownEncoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.DownEncoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 8
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.0.conv_shortcut",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.2.downsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.2.downsamplers.0",
+      "class": "Downsample2D",
+      "module": "diffusers.models.downsampling.Downsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.2.downsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3",
+      "class": "DownEncoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.DownEncoderBlock2D",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.down_blocks.3.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block",
+      "class": "UNetMidBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UNetMidBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.mid_block.attentions",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "encoder.mid_block.attentions.0",
+      "class": "Attention",
+      "module": "diffusers.models.attention_processor.Attention",
+      "child_count": 5
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.group_norm",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_q",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_k",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_v",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_out",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_out.0",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.attentions.0.to_out.1",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "encoder.mid_block.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.time_emb_proj",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.mid_block.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.conv_norm_out",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.conv_act",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation.SiLU",
+      "child_count": 0
+    },
+    {
+      "name": "encoder.conv_out",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    },
+    {
+      "name": "decoder",
+      "class": "Decoder",
+      "module": "diffusers.models.autoencoders.vae.Decoder",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.conv_in",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 4
+    },
+    {
+      "name": "decoder.up_blocks.0",
+      "class": "UpDecoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UpDecoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 3
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.resnets.2.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.0.upsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.0.upsamplers.0",
+      "class": "Upsample2D",
+      "module": "diffusers.models.upsampling.Upsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.0.upsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1",
+      "class": "UpDecoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UpDecoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 3
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.resnets.2.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.1.upsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.1.upsamplers.0",
+      "class": "Upsample2D",
+      "module": "diffusers.models.upsampling.Upsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.1.upsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2",
+      "class": "UpDecoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UpDecoderBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 3
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.0.conv_shortcut",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.resnets.2.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.2.upsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.2.upsamplers.0",
+      "class": "Upsample2D",
+      "module": "diffusers.models.upsampling.Upsample2D",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.2.upsamplers.0.conv",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3",
+      "class": "UpDecoderBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UpDecoderBlock2D",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 3
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 7
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.0.conv_shortcut",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.up_blocks.3.resnets.2.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block",
+      "class": "UNetMidBlock2D",
+      "module": "diffusers.models.unet_2d_blocks.UNetMidBlock2D",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.mid_block.attentions",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 1
+    },
+    {
+      "name": "decoder.mid_block.attentions.0",
+      "class": "Attention",
+      "module": "diffusers.models.attention_processor.Attention",
+      "child_count": 5
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.group_norm",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_q",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_k",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_v",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_out",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_out.0",
+      "class": "LoRACompatibleLinear",
+      "module": "diffusers.models.lora.LoRACompatibleLinear",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.attentions.0.to_out.1",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container.ModuleList",
+      "child_count": 2
+    },
+    {
+      "name": "decoder.mid_block.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.mid_block.resnets.0.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.0.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.0.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.0.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.0.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet.ResnetBlock2D",
+      "child_count": 6
+    },
+    {
+      "name": "decoder.mid_block.resnets.1.norm1",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.1.conv1",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.1.norm2",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.1.dropout",
+      "class": "Dropout",
+      "module": "torch.nn.modules.dropout.Dropout",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.mid_block.resnets.1.conv2",
+      "class": "LoRACompatibleConv",
+      "module": "diffusers.models.lora.LoRACompatibleConv",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.conv_norm_out",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization.GroupNorm",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.conv_act",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation.SiLU",
+      "child_count": 0
+    },
+    {
+      "name": "decoder.conv_out",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    },
+    {
+      "name": "quant_conv",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    },
+    {
+      "name": "post_quant_conv",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv.Conv2d",
+      "child_count": 0
+    }
+  ]
+}

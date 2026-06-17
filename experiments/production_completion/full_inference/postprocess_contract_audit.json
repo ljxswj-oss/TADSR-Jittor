@@ -1,0 +1,33 @@
+{
+  "generated_at_utc": "2026-06-13T04:40:11.886807+00:00",
+  "status": "PASS",
+  "official_env_status": {
+    "status": "PASS",
+    "returncode": 0,
+    "stdout_tail": "POSTPROCESS_IMPORT_OK\n"
+  },
+  "decoded_tensor_range": "TADSR_test.forward clamps decoded tensor to [-1, 1].",
+  "clamp_policy": {
+    "present": true,
+    "expression": ".clamp(-1, 1)"
+  },
+  "tensor_to_image_scaling_policy": {
+    "present": true,
+    "expression": "output_image[0].cpu() * 0.5 + 0.5 followed by transforms.ToPILImage()"
+  },
+  "channel_order_policy": "PIL RGB input is used; torchvision ToPILImage handles tensor channel order C,H,W to PIL image.",
+  "dtype_conversion_policy": "mixed_precision selects fp16/fp32 weight_dtype; postprocess converts CPU tensor through torchvision ToPILImage.",
+  "crop_resize_policy": "input image is resized/upscaled and cropped to multiples of 8 before model; resize_flag branch exists after inference.",
+  "color_fix_policy": "optional adain_color_fix or wavelet_color_fix after ToPILImage.",
+  "output_save_path_policy": "output_pil.save(os.path.join(args.output_dir, bname))",
+  "postprocess_required_for_production_full_inference": true,
+  "current_project_executed_postprocess": false,
+  "current_status": "documented_not_executed",
+  "image_video_generated": false,
+  "raw_tensor_saved": false,
+  "markers": {
+    "TADSR_POSTPROCESS_CONTRACT_AUDIT": "PASS",
+    "TADSR_OUTPUT_IMAGE_SAVE_POLICY_AUDIT": "PASS",
+    "TADSR_POSTPROCESS_NOT_EXECUTED_GUARD": "PASS"
+  }
+}

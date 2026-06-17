@@ -1,0 +1,76 @@
+# TimeAware VAE Decoder UpBlocks Audit
+
+Status: PASS
+TIME_VAE_DECODER_UPBLOCKS_AUDIT: PASS
+TIME_VAE_DECODER_UPBLOCK0_AUDIT: PASS
+TIME_VAE_DECODER_UPBLOCK1_AUDIT: PASS
+TIME_VAE_DECODER_UPBLOCK2_AUDIT: PASS
+TIME_VAE_DECODER_UPBLOCK3_AUDIT: PASS
+
+- decoder class: `diffusers.models.autoencoders.vae.Decoder`
+- up_blocks count: `4`
+- default decoder-side temb: `None`
+
+## UpBlock Overview
+
+| Index | Class | Input | Output | ResNets | Upsamplers | Attention | Spatial change | Channel change |
+|---:|---|---|---|---:|---:|---:|---|---|
+| 0 | `UpDecoderBlock2D` | `[1, 512, 4, 4]` | `[1, 512, 8, 8]` | 3 | 1 | 0 | True | False |
+| 1 | `UpDecoderBlock2D` | `[1, 512, 8, 8]` | `[1, 512, 16, 16]` | 3 | 1 | 0 | True | False |
+| 2 | `UpDecoderBlock2D` | `[1, 512, 16, 16]` | `[1, 256, 32, 32]` | 3 | 1 | 0 | True | True |
+| 3 | `UpDecoderBlock2D` | `[1, 256, 32, 32]` | `[1, 128, 32, 32]` | 3 | 0 | 0 | False | True |
+
+## UpBlock0 ResNets
+
+| Module | in | out | conv1 | conv2 | shortcut | time proj | npz prefix |
+|---|---:|---:|---|---|---|---|---|
+| `decoder.up_blocks.0.resnets.0` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__0__resnets__0` |
+| `decoder.up_blocks.0.resnets.1` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__0__resnets__1` |
+| `decoder.up_blocks.0.resnets.2` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__0__resnets__2` |
+
+## UpBlock0 Upsamplers
+
+| Module | Class | Use conv | Interpolate | Conv shape | Padding | NPZ conv key |
+|---|---|---|---|---|---|---|
+| `decoder.up_blocks.0.upsamplers.0` | `Upsample2D` | True | True | `[512, 512, 3, 3]` | `[1, 1]` | `decoder__up_blocks__0__upsamplers__0__conv__weight` |
+
+## UpBlock1 ResNets
+
+| Module | in | out | conv1 | conv2 | shortcut | time proj | npz prefix |
+|---|---:|---:|---|---|---|---|---|
+| `decoder.up_blocks.1.resnets.0` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__1__resnets__0` |
+| `decoder.up_blocks.1.resnets.1` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__1__resnets__1` |
+| `decoder.up_blocks.1.resnets.2` | 512 | 512 | `[512, 512, 3, 3]` | `[512, 512, 3, 3]` | False | False | `decoder__up_blocks__1__resnets__2` |
+
+## UpBlock1 Upsamplers
+
+| Module | Class | Use conv | Interpolate | Conv shape | Padding | NPZ conv key |
+|---|---|---|---|---|---|---|
+| `decoder.up_blocks.1.upsamplers.0` | `Upsample2D` | True | True | `[512, 512, 3, 3]` | `[1, 1]` | `decoder__up_blocks__1__upsamplers__0__conv__weight` |
+
+## UpBlock2 ResNets
+
+| Module | in | out | conv1 | conv2 | shortcut | time proj | npz prefix |
+|---|---:|---:|---|---|---|---|---|
+| `decoder.up_blocks.2.resnets.0` | 512 | 256 | `[256, 512, 3, 3]` | `[256, 256, 3, 3]` | True | False | `decoder__up_blocks__2__resnets__0` |
+| `decoder.up_blocks.2.resnets.1` | 256 | 256 | `[256, 256, 3, 3]` | `[256, 256, 3, 3]` | False | False | `decoder__up_blocks__2__resnets__1` |
+| `decoder.up_blocks.2.resnets.2` | 256 | 256 | `[256, 256, 3, 3]` | `[256, 256, 3, 3]` | False | False | `decoder__up_blocks__2__resnets__2` |
+
+## UpBlock2 Upsamplers
+
+| Module | Class | Use conv | Interpolate | Conv shape | Padding | NPZ conv key |
+|---|---|---|---|---|---|---|
+| `decoder.up_blocks.2.upsamplers.0` | `Upsample2D` | True | True | `[256, 256, 3, 3]` | `[1, 1]` | `decoder__up_blocks__2__upsamplers__0__conv__weight` |
+
+## UpBlock3 ResNets
+
+| Module | in | out | conv1 | conv2 | shortcut | time proj | npz prefix |
+|---|---:|---:|---|---|---|---|---|
+| `decoder.up_blocks.3.resnets.0` | 256 | 128 | `[128, 256, 3, 3]` | `[128, 128, 3, 3]` | True | False | `decoder__up_blocks__3__resnets__0` |
+| `decoder.up_blocks.3.resnets.1` | 128 | 128 | `[128, 128, 3, 3]` | `[128, 128, 3, 3]` | False | False | `decoder__up_blocks__3__resnets__1` |
+| `decoder.up_blocks.3.resnets.2` | 128 | 128 | `[128, 128, 3, 3]` | `[128, 128, 3, 3]` | False | False | `decoder__up_blocks__3__resnets__2` |
+
+## UpBlock3 Upsamplers
+
+| Module | Class | Use conv | Interpolate | Conv shape | Padding | NPZ conv key |
+|---|---|---|---|---|---|---|

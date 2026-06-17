@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 0.00014162063598632812,
+      "mean_abs_error": 3.293469692380313e-05,
+      "relative_error": 7.905992157502404e-06,
+      "cosine_similarity": 0.9999999999705826,
+      "tolerance": 0.002
+    },
+    "official_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 0.00014162063598632812,
+      "mean_abs_error": 3.293469692380313e-05,
+      "relative_error": 7.905992157502404e-06,
+      "cosine_similarity": 0.9999999999705826,
+      "tolerance": 0.002
+    }
+  },
+  "note": "Only up_blocks.2.attentions.0 is executed; full up_blocks.2 remains unopened."
+}

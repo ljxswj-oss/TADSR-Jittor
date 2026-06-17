@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "split": "smoke",
+  "input_dir": "/mnt/data/sj/datasets/TADSR/smoke/input",
+  "output_dir": "experiments/full_repro/oracle_tensors/smoke",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_repo_commit": "b0eaa30",
+  "selected_env": "/mnt/data/sj/venvs/tadsr_official_strict_cu118",
+  "scheduler_config": {
+    "_class_name": "PNDMScheduler",
+    "_diffusers_version": "0.10.0.dev0",
+    "beta_end": 0.012,
+    "beta_schedule": "scaled_linear",
+    "beta_start": 0.00085,
+    "clip_sample": false,
+    "num_train_timesteps": 1000,
+    "prediction_type": "epsilon",
+    "set_alpha_to_one": false,
+    "skip_prk_steps": true,
+    "steps_offset": 1,
+    "trained_betas": null
+  },
+  "exported": [
+    "preprocess_tensors",
+    "scheduler_tensors",
+    "final_outputs_manifest"
+  ],
+  "not_exported": {
+    "prompt_text_embeddings": "requires deeper hooks into official TADSR_test/DAPE pipeline",
+    "vae_unet_intermediates": "requires invasive module hooks; deferred to module-specific alignment"
+  }
+}

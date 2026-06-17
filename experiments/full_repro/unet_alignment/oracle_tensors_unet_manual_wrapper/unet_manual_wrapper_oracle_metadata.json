@@ -1,0 +1,585 @@
+{
+  "status": "PASS",
+  "python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "weights_dir": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "oracle_dir": "experiments/full_repro/unet_alignment/oracle_tensors_unet_manual_wrapper",
+  "loaded_lora_parameter_count": 516,
+  "sample_shape": [
+    1,
+    4,
+    32,
+    32
+  ],
+  "sample_dtype": "torch.float32",
+  "timestep_shape": [
+    1
+  ],
+  "timestep_dtype": "torch.int64",
+  "timestep_value": [
+    1
+  ],
+  "encoder_hidden_states_shape": [
+    1,
+    77,
+    1024
+  ],
+  "encoder_hidden_states_dtype": "torch.float32",
+  "stage_shapes": {
+    "conv_in": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "time_embedding": [
+      1,
+      1280
+    ],
+    "down_blocks": [
+      [
+        1,
+        320,
+        16,
+        16
+      ],
+      [
+        1,
+        640,
+        8,
+        8
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ],
+      [
+        1,
+        1280,
+        4,
+        4
+      ]
+    ],
+    "mid_block": [
+      1,
+      1280,
+      4,
+      4
+    ],
+    "upblock0": [
+      1,
+      1280,
+      8,
+      8
+    ],
+    "upblock1": [
+      1,
+      1280,
+      16,
+      16
+    ],
+    "upblock2": [
+      1,
+      640,
+      32,
+      32
+    ],
+    "upblock3": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output_tail_norm": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output_tail_act": [
+      1,
+      320,
+      32,
+      32
+    ],
+    "output": [
+      1,
+      4,
+      32,
+      32
+    ]
+  },
+  "residual_tuple_counts": {
+    "after_down_blocks": 12,
+    "before_upblock0": 12,
+    "after_upblock0": 9,
+    "before_upblock1": 3,
+    "after_upblock1": 6,
+    "before_upblock2": 3,
+    "after_upblock2": 3,
+    "before_upblock3": 3,
+    "after_upblock3": 0
+  },
+  "upblock2_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "upblock3_return_info": {
+    "return_type": "Tensor",
+    "output_states_status": "NOT_APPLICABLE"
+  },
+  "output_tail_config_summary": {
+    "conv_norm_out_num_groups": 32,
+    "conv_norm_out_eps": 1e-05,
+    "conv_out_padding": [
+      1,
+      1
+    ],
+    "conv_out_stride": [
+      1,
+      1
+    ]
+  },
+  "existing_effective_weight_paths": {
+    "entry_and_down_mid_up": "experiments/full_repro/unet_alignment/converted_unet_*_effective_weights.npz files from previous stages",
+    "output_tail": "experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz"
+  },
+  "saved_tensors": {
+    "manual_wrapper_sample": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "manual_wrapper_timestep": {
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "nbytes": 4
+    },
+    "manual_wrapper_encoder_hidden_states": {
+      "shape": [
+        1,
+        77,
+        1024
+      ],
+      "dtype": "float32",
+      "min": -0.5,
+      "max": 0.5,
+      "mean": 0.0,
+      "std": 0.2886787944380361,
+      "nbytes": 315392
+    },
+    "manual_wrapper_sample_after_center": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.0,
+      "std": 0.577491225120402,
+      "nbytes": 16384
+    },
+    "manual_wrapper_conv_in_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -1.9214454889297485,
+      "max": 2.051663398742676,
+      "mean": 0.009378110880123991,
+      "std": 0.24807758577950303,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_time_proj_output": {
+      "shape": [
+        1,
+        320
+      ],
+      "dtype": "float32",
+      "min": 0.00010592537000775337,
+      "max": 1.0,
+      "mean": 0.5389276413728339,
+      "std": 0.45777396088383415,
+      "nbytes": 1280
+    },
+    "manual_wrapper_time_embedding_output": {
+      "shape": [
+        1,
+        1280
+      ],
+      "dtype": "float32",
+      "min": -1.4923566579818726,
+      "max": 3.7227675914764404,
+      "mean": -0.00029221720545251627,
+      "std": 0.1708280877860561,
+      "nbytes": 5120
+    },
+    "manual_wrapper_downblock0_output": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "manual_wrapper_downblock0_state_0": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -3.6430697441101074,
+      "max": 2.688417673110962,
+      "mean": 0.08611325352106007,
+      "std": 0.6066678784633245,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_downblock0_state_1": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -4.791571617126465,
+      "max": 3.83322811126709,
+      "mean": 0.14057920170933827,
+      "std": 0.7920613701085149,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_downblock0_state_2": {
+      "shape": [
+        1,
+        320,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -9.543808937072754,
+      "max": 10.98232650756836,
+      "mean": -0.03640959549438207,
+      "std": 2.00960461684964,
+      "nbytes": 327680
+    },
+    "manual_wrapper_downblock1_output": {
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -20.893442153930664,
+      "max": 17.661746978759766,
+      "mean": 0.11107184369631681,
+      "std": 3.201900710778233,
+      "nbytes": 163840
+    },
+    "manual_wrapper_downblock1_state_0": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -5.852540016174316,
+      "max": 6.829677104949951,
+      "mean": 0.09395026862701457,
+      "std": 1.340116296552071,
+      "nbytes": 655360
+    },
+    "manual_wrapper_downblock1_state_1": {
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -54.59074783325195,
+      "max": 51.037071228027344,
+      "mean": 0.1184109847944967,
+      "std": 1.2152557409201579,
+      "nbytes": 655360
+    },
+    "manual_wrapper_downblock1_state_2": {
+      "shape": [
+        1,
+        640,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -20.893442153930664,
+      "max": 17.661746978759766,
+      "mean": 0.11107184369631681,
+      "std": 3.201900710778233,
+      "nbytes": 163840
+    },
+    "manual_wrapper_downblock2_output": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.04606053392669764,
+      "std": 3.788399588312576,
+      "nbytes": 81920
+    },
+    "manual_wrapper_downblock2_state_0": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -16.938003540039062,
+      "max": 12.33202075958252,
+      "mean": 0.16636927590230927,
+      "std": 1.775059550850683,
+      "nbytes": 327680
+    },
+    "manual_wrapper_downblock2_state_1": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -11.030681610107422,
+      "max": 13.805471420288086,
+      "mean": 0.25502749722619455,
+      "std": 1.596493510704457,
+      "nbytes": 327680
+    },
+    "manual_wrapper_downblock2_state_2": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -31.355649948120117,
+      "max": 26.06362533569336,
+      "mean": 0.04606053392669764,
+      "std": 3.788399588312576,
+      "nbytes": 81920
+    },
+    "manual_wrapper_downblock3_output": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -50.87424850463867,
+      "max": 20.980514526367188,
+      "mean": -0.08692454791371347,
+      "std": 3.6243053401819467,
+      "nbytes": 81920
+    },
+    "manual_wrapper_downblock3_state_0": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -49.779640197753906,
+      "max": 21.262269973754883,
+      "mean": -0.13547893905406455,
+      "std": 3.6705466199827392,
+      "nbytes": 81920
+    },
+    "manual_wrapper_downblock3_state_1": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -50.87424850463867,
+      "max": 20.980514526367188,
+      "mean": -0.08692454791371347,
+      "std": 3.6243053401819467,
+      "nbytes": 81920
+    },
+    "manual_wrapper_midblock_output": {
+      "shape": [
+        1,
+        1280,
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": -47.66788101196289,
+      "max": 38.62425994873047,
+      "mean": -0.11309421192281661,
+      "std": 3.6359635779740347,
+      "nbytes": 81920
+    },
+    "manual_wrapper_upblock0_output": {
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "dtype": "float32",
+      "min": -21.127756118774414,
+      "max": 32.81813430786133,
+      "mean": -0.04490450975673781,
+      "std": 1.165266711467924,
+      "nbytes": 327680
+    },
+    "manual_wrapper_upblock1_output": {
+      "shape": [
+        1,
+        1280,
+        16,
+        16
+      ],
+      "dtype": "float32",
+      "min": -35.499244689941406,
+      "max": 32.044715881347656,
+      "mean": -0.45227152770349266,
+      "std": 5.473237329966953,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_upblock2_output": {
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -29.284259796142578,
+      "max": 15.845993041992188,
+      "mean": -0.28327263057878527,
+      "std": 3.1755015011446845,
+      "nbytes": 2621440
+    },
+    "manual_wrapper_upblock3_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -10.36383056640625,
+      "max": 10.669912338256836,
+      "mean": 0.24665558699019102,
+      "std": 2.4391267199702846,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_output_tail_norm_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -10.910004615783691,
+      "max": 0.8770302534103394,
+      "mean": -0.29506087314767243,
+      "std": 1.4156225494133527,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_output_tail_act_output": {
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.2784202992916107,
+      "max": 0.6193643808364868,
+      "mean": -0.0035628923892749445,
+      "std": 0.08954425275501868,
+      "nbytes": 1310720
+    },
+    "manual_wrapper_output": {
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "min": -0.5024965405464172,
+      "max": 0.9271302223205566,
+      "mean": -0.022930096586293303,
+      "std": 0.10461559601983722,
+      "nbytes": 16384
+    }
+  },
+  "previous_output_tail_oracle_available": true,
+  "previous_output_tail_max_abs_diff": 0.0,
+  "previous_output_tail_compare": {
+    "previous_output_tail_oracle_available": true,
+    "shape_match": true,
+    "shape": [
+      1,
+      4,
+      32,
+      32
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "cosine_similarity": 1.0000000000000002
+  },
+  "official_full_forward_executed": false,
+  "full_tadsr_inference_executed": false,
+  "manual_wrapper_only": true,
+  "recommended_next_stage": "official full unet.forward alignment after manual wrapper alignment",
+  "markers": {
+    "TADSR_UNET_MANUAL_FULL_WRAPPER_ORACLE_TENSORS": "PASS"
+  }
+}

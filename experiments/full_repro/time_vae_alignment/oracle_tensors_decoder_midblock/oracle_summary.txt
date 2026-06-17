@@ -1,0 +1,15 @@
+# TimeAware VAE Decoder MidBlock Oracle Export
+
+Status: **PASS**
+
+Decoder mid_block class: `diffusers.models.unet_2d_blocks.UNetMidBlock2D`
+Module order: `['resnets.0', 'attentions.0', 'resnets.1']`
+Attention exists: `True`
+Decoder mid_block temb is None: `True`
+Previous decoder-entry real conv_in diff: `0.0`
+
+## Paths
+
+- Path A: synthetic hidden -> decoder.mid_block.
+- Path B: synthetic latent -> post_quant_conv -> decoder.conv_in -> decoder.mid_block.
+- Path C: synthetic image -> encoder -> quant_conv -> posterior mode -> post_quant_conv -> decoder.conv_in -> decoder.mid_block.

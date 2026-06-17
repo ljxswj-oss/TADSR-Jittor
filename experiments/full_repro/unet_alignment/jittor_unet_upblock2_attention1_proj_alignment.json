@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        16,
+        16
+      ],
+      "max_abs_error": 1.17570161819458e-05,
+      "mean_abs_error": 3.1542721548039054e-06,
+      "relative_error": 7.7392520066366e-06,
+      "cosine_similarity": 0.9999999999605619,
+      "tolerance": 0.0001
+    },
+    "sequence_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        256,
+        640
+      ],
+      "max_abs_error": 1.17570161819458e-05,
+      "mean_abs_error": 3.1542721548039054e-06,
+      "relative_error": 7.7392520066366e-06,
+      "cosine_similarity": 0.9999999999605617,
+      "tolerance": 0.0001
+    },
+    "proj_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        256,
+        640
+      ],
+      "max_abs_error": 7.915496826171875e-05,
+      "mean_abs_error": 6.261294005582841e-06,
+      "relative_error": 9.62709631711978e-06,
+      "cosine_similarity": 0.9999999999496834,
+      "tolerance": 0.0002
+    }
+  }
+}

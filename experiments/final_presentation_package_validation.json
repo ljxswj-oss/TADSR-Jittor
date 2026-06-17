@@ -1,0 +1,263 @@
+{
+  "generated_at_utc": "2026-06-13T11:57:59.543392+00:00",
+  "status": "PASS",
+  "files": {
+    "ppt_outline": {
+      "path": "docs/03_ppt_outline.md",
+      "exists": true,
+      "size_bytes": 24733
+    },
+    "video_script": {
+      "path": "docs/04_video_script.md",
+      "exists": true,
+      "size_bytes": 24784
+    },
+    "runbook": {
+      "path": "docs/final_demo_runbook.md",
+      "exists": true,
+      "size_bytes": 6663
+    },
+    "handoff": {
+      "path": "docs/repository_handoff_guide.md",
+      "exists": true,
+      "size_bytes": 9451
+    },
+    "checklist": {
+      "path": "docs/final_submission_checklist.md",
+      "exists": true,
+      "size_bytes": 17544
+    },
+    "presentation_md": {
+      "path": "deliverables/TADSR-Jittor_final_presentation.md",
+      "exists": true,
+      "size_bytes": 19047
+    },
+    "presentation_pptx": {
+      "path": "deliverables/TADSR-Jittor_final_presentation.pptx",
+      "exists": true,
+      "size_bytes": 200298
+    },
+    "presentation_pdf": {
+      "path": "deliverables/TADSR-Jittor_final_presentation.pdf",
+      "exists": true,
+      "size_bytes": 79524
+    },
+    "submission_readme": {
+      "path": "deliverables/TADSR-Jittor_submission_readme.md",
+      "exists": true,
+      "size_bytes": 18082
+    },
+    "feasibility_md": {
+      "path": "experiments/jittor_migration_feasibility_summary.md",
+      "exists": true,
+      "size_bytes": 18434
+    },
+    "feasibility_json": {
+      "path": "experiments/jittor_migration_feasibility_summary.json",
+      "exists": true,
+      "size_bytes": 30710
+    },
+    "final_audit_json": {
+      "path": "experiments/final_audit_report.json",
+      "exists": true,
+      "size_bytes": 439059
+    },
+    "full_inference_gap": {
+      "path": "docs/full_inference_gap_analysis.md",
+      "exists": true,
+      "size_bytes": 11009
+    },
+    "timevae_gap": {
+      "path": "docs/timevae_full_alignment_gap_analysis.md",
+      "exists": true,
+      "size_bytes": 8655
+    },
+    "lora_gap": {
+      "path": "docs/lora_runtime_gap_analysis.md",
+      "exists": true,
+      "size_bytes": 4872
+    },
+    "teacher_summary": {
+      "path": "docs/final_teacher_status_summary.md",
+      "exists": true,
+      "size_bytes": 20921
+    },
+    "timevae_closure": {
+      "path": "docs/timevae_full_alignment_closure_plan.md",
+      "exists": true,
+      "size_bytes": 1289
+    },
+    "runtime_lora_decision": {
+      "path": "docs/runtime_lora_final_decision_proof.md",
+      "exists": true,
+      "size_bytes": 946
+    },
+    "diagnostic_image_smoke_metrics": {
+      "path": "experiments/production_completion/diagnostic_image_smoke/diagnostic_image_smoke_metrics.md",
+      "exists": true,
+      "size_bytes": 1310
+    },
+    "diagnostic_image_smoke_validation": {
+      "path": "experiments/production_completion/diagnostic_image_smoke/diagnostic_image_smoke_validation.md",
+      "exists": true,
+      "size_bytes": 923
+    },
+    "diagnostic_cli": {
+      "path": "experiments/production_completion/diagnostic_cli/one_step_diagnostic_cli_test.md",
+      "exists": true,
+      "size_bytes": 285
+    },
+    "defense_risk_response_pack": {
+      "path": "docs/final_defense_risk_response_pack.md",
+      "exists": true,
+      "size_bytes": 13333
+    },
+    "defense_short_answers": {
+      "path": "docs/defense_short_answers_zh.md",
+      "exists": true,
+      "size_bytes": 2585
+    },
+    "defense_long_answers": {
+      "path": "docs/defense_long_answers_zh.md",
+      "exists": true,
+      "size_bytes": 6363
+    },
+    "defense_do_not_say": {
+      "path": "docs/defense_do_not_say.md",
+      "exists": true,
+      "size_bytes": 2171
+    },
+    "defense_evidence_lookup": {
+      "path": "docs/defense_evidence_lookup_table.md",
+      "exists": true,
+      "size_bytes": 3172
+    },
+    "release_candidate_signoff": {
+      "path": "docs/final_release_candidate_signoff.md",
+      "exists": true,
+      "size_bytes": 5602
+    },
+    "command_index": {
+      "path": "docs/final_command_index.md",
+      "exists": true,
+      "size_bytes": 6410
+    },
+    "github_upload_checklist": {
+      "path": "docs/final_github_upload_checklist.md",
+      "exists": true,
+      "size_bytes": 3134
+    },
+    "links_paths_validation": {
+      "path": "experiments/final_links_and_paths_validation.md",
+      "exists": true,
+      "size_bytes": 371
+    },
+    "chinese_materials_validation": {
+      "path": "experiments/final_chinese_materials_validation.md",
+      "exists": true,
+      "size_bytes": 1527
+    },
+    "human_submission_instructions": {
+      "path": "docs/final_human_submission_instructions.md",
+      "exists": true,
+      "size_bytes": 3969
+    },
+    "video_rehearsal_checklist": {
+      "path": "docs/final_video_rehearsal_checklist.md",
+      "exists": true,
+      "size_bytes": 3323
+    },
+    "submission_freeze_tag": {
+      "path": "docs/final_submission_freeze_tag.md",
+      "exists": true,
+      "size_bytes": 1295
+    },
+    "human_submission_lock_report": {
+      "path": "docs/final_human_submission_lock_report.md",
+      "exists": true,
+      "size_bytes": 4717
+    },
+    "video_submission_check": {
+      "path": "docs/final_video_submission_check.md",
+      "exists": true,
+      "size_bytes": 2905
+    },
+    "human_submission_instructions_marker": {
+      "path": "experiments/final_human_submission_instructions.md",
+      "exists": true,
+      "size_bytes": 401
+    },
+    "video_rehearsal_checklist_marker": {
+      "path": "experiments/final_video_rehearsal_checklist.md",
+      "exists": true,
+      "size_bytes": 404
+    },
+    "submission_freeze_tag_marker": {
+      "path": "experiments/final_submission_freeze_tag.md",
+      "exists": true,
+      "size_bytes": 312
+    },
+    "human_submission_lock_report_marker": {
+      "path": "experiments/final_human_submission_lock_report.md",
+      "exists": true,
+      "size_bytes": 553
+    },
+    "video_submission_check_marker": {
+      "path": "experiments/final_video_submission_check.md",
+      "exists": true,
+      "size_bytes": 390
+    },
+    "clean_public_release_manifest": {
+      "path": "experiments/clean_public_release_package_manifest.md",
+      "exists": true,
+      "size_bytes": 566
+    },
+    "clean_public_release_validation": {
+      "path": "experiments/clean_public_release_package_validation.md",
+      "exists": true,
+      "size_bytes": 551
+    },
+    "github_url_status": {
+      "path": "experiments/final_github_url_status.md",
+      "exists": true,
+      "size_bytes": 421
+    }
+  },
+  "missing_required_groups": [],
+  "false_claim_hits": [],
+  "feasibility_marker_status": {
+    "TADSR_JITTOR_MIGRATION_FEASIBILITY_VALIDATION": "PASS",
+    "TADSR_MODULE_COVERAGE_MATRIX": "PASS",
+    "TADSR_WEIGHT_LOADING_COVERAGE_MATRIX": "PASS",
+    "TADSR_LORA_EFFECTIVE_WEIGHT_COVERAGE_MATRIX": "PASS",
+    "TADSR_NUMERICAL_ALIGNMENT_COVERAGE_MATRIX": "PASS",
+    "TADSR_INTEGRATION_PATH_COVERAGE_MATRIX": "PASS",
+    "TADSR_TRAINING_PATH_FEASIBILITY_MATRIX": "PASS",
+    "TADSR_BOUNDARY_LEVEL_REPRODUCTION": "PASS",
+    "TADSR_SMALL_DATA_TRAINING_ALIGNMENT": "PASS",
+    "TADSR_FULL_INFERENCE_GUARD_VALIDATION": "PASS",
+    "TADSR_FULL_INFERENCE_GAP_ANALYSIS": "PASS",
+    "TADSR_TIMEVAE_FULL_ALIGNMENT_GAP_ANALYSIS": "PASS",
+    "TADSR_LORA_RUNTIME_GAP_ANALYSIS": "PASS",
+    "TADSR_RUNTIME_LORA_LAYER_FORMULA_ALIGNMENT": "PASS",
+    "TADSR_DIAGNOSTIC_IMAGE_SMOKE_NOT_FULL_INFERENCE": "PASS",
+    "TADSR_ONE_STEP_DIAGNOSTIC_CLI_READY": "PASS",
+    "TADSR_TIMEVAE_FULL_ALIGNMENT_CLOSURE_SUMMARY": "PASS",
+    "TADSR_RUNTIME_LORA_FINAL_DECISION_PROOF": "PASS",
+    "TADSR_FINAL_SUBMISSION_WITH_DIAGNOSTIC_SMOKE_READY": "PASS",
+    "TADSR_SUBMISSION_FACING_STATUS_SUMMARY": "PASS",
+    "TADSR_ENVIRONMENT_BLOCKERS_EXPLAINED": "PASS",
+    "TADSR_GAP_ANALYSIS_READINESS": "PASS"
+  },
+  "markers": {
+    "TADSR_FINAL_PRESENTATION_PACKAGE": "PASS",
+    "TADSR_VIDEO_SCRIPT_READY": "PASS",
+    "TADSR_DEMO_RUNBOOK_READY": "PASS",
+    "TADSR_REPOSITORY_HANDOFF_READY": "PASS",
+    "TADSR_FINAL_SUBMISSION_README_READY": "PASS",
+    "TADSR_DEFENSE_RISK_RESPONSE_PACK": "PASS",
+    "TADSR_FINAL_RELEASE_QA_READY": "PASS",
+    "TADSR_JITTOR_MIGRATION_FEASIBILITY_VALIDATION": "PASS",
+    "TADSR_FINAL_PRESENTATION_PACKAGE_VALIDATION": "PASS"
+  }
+}

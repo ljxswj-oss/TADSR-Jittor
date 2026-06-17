@@ -1,0 +1,13 @@
+# TADSR UNet down_blocks.0.resnets.1 Oracle Export
+
+TADSR_UNET_DOWNBLOCK0_RESNET1_ORACLE_TENSORS: PASS
+TADSR_UNET_DOWNBLOCK0_RESNET1_EFFECTIVE_WEIGHTS: PASS
+
+Oracle dir: `experiments/full_repro/unet_alignment/oracle_tensors_unet_downblock0_resnet1`
+Effective weights: `experiments/full_repro/unet_alignment/converted_unet_downblock0_resnet1_effective_weights.npz`
+Path A synthetic output shape: `[1, 320, 32, 32]`
+Path B entry->resnet0->attention0->resnet1 output shape: `[1, 320, 32, 32]`
+Synthetic manual/offical max abs error: `0.0`
+Entry manual/offical max abs error: `0.0`
+
+This export stops before down_blocks.0.attentions.1, downsampler, full down_blocks.0 and full UNet.

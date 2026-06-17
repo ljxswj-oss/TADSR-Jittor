@@ -1,0 +1,719 @@
+{
+  "status": "PASS",
+  "decoder_class": "Decoder",
+  "decoder_module": "diffusers.models.autoencoders.vae",
+  "decoder_forward_signature": "(sample: torch.FloatTensor, latent_embeds: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+  "decoder_forward_source_excerpt": "    def forward(\n        self,\n        sample: torch.FloatTensor,\n        latent_embeds: Optional[torch.FloatTensor] = None,\n    ) -> torch.FloatTensor:\n        r\"\"\"The forward method of the `Decoder` class.\"\"\"\n\n        sample = self.conv_in(sample)\n\n        upscale_dtype = next(iter(self.up_blocks.parameters())).dtype\n        if self.training and self.gradient_checkpointing:\n\n            def create_custom_forward(module):\n                def custom_forward(*inputs):\n                    return module(*inputs)\n\n                return custom_forward\n\n            if is_torch_version(\">=\", \"1.11.0\"):\n                # middle\n                sample = torch.utils.checkpoint.checkpoint(\n                    create_custom_forward(self.mid_block),\n                    sample,\n                    latent_embeds,\n                    use_reentrant=False,\n                )\n                sample = sample.to(upscale_dtype)\n\n                # up\n                for up_block in self.up_blocks:\n                    sample = torch.utils.checkpoint.checkpoint(\n                        create_custom_forward(up_block),\n                        sample,\n                        latent_embeds,\n                        use_reentrant=False,\n                    )\n            else:\n                # middle\n                sample = torch.utils.checkpoint.checkpoint(\n                    create_custom_forward(self.mid_block), sample, latent_embeds\n                )\n                sample = sample.to(upscale_dtype)\n\n                # up\n                for up_block in self.up_blocks:\n                    sample = torch.utils.checkpoint.checkpoint(create_custom_forward(up_block), sample, latent_embeds)\n        else:\n            # middle\n            sample = self.mid_block(sample, latent_embeds)\n            sample = sample.to(upscale_dtype)\n\n            # up\n            for up_block in self.up_blocks:\n                sample = up_block(sample, latent_embeds)\n\n        # post-process\n        if latent_embeds is None:\n            sample = self.conv_norm_out(sample)\n        else:\n            sample = self.conv_norm_out(sample, latent_embeds)\n        sample = self.conv_act(sample)\n        sample = self.conv_out(sample)\n\n        return sample\n",
+  "decoder_children_order": [
+    {
+      "name": "conv_in",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv"
+    },
+    {
+      "name": "up_blocks",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container"
+    },
+    {
+      "name": "mid_block",
+      "class": "UNetMidBlock2D",
+      "module": "diffusers.models.unet_2d_blocks"
+    },
+    {
+      "name": "conv_norm_out",
+      "class": "GroupNorm",
+      "module": "torch.nn.modules.normalization"
+    },
+    {
+      "name": "conv_act",
+      "class": "SiLU",
+      "module": "torch.nn.modules.activation"
+    },
+    {
+      "name": "conv_out",
+      "class": "Conv2d",
+      "module": "torch.nn.modules.conv"
+    }
+  ],
+  "conv_in_before_mid_block": true,
+  "mid_block_before_up_blocks": true,
+  "decoder_conv_in": {
+    "exists": true,
+    "class": "Conv2d",
+    "module": "torch.nn.modules.conv",
+    "weight_shape": [
+      512,
+      4,
+      3,
+      3
+    ],
+    "bias_shape": [
+      512
+    ],
+    "in_channels": 4,
+    "out_channels": 512,
+    "kernel_size": [
+      3,
+      3
+    ],
+    "stride": [
+      1,
+      1
+    ],
+    "padding": [
+      1,
+      1
+    ]
+  },
+  "decoder_mid_block_class": "UNetMidBlock2D",
+  "decoder_mid_block_module": "diffusers.models.unet_2d_blocks",
+  "decoder_mid_block_forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None) -> torch.FloatTensor",
+  "decoder_mid_block_forward_source_excerpt": "    def forward(self, hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None) -> torch.FloatTensor:\n        hidden_states = self.resnets[0](hidden_states, temb)\n        for attn, resnet in zip(self.attentions, self.resnets[1:]):\n            if attn is not None:\n                # print(temb.shape)\n                hidden_states = attn(hidden_states, temb=temb)\n            hidden_states = resnet(hidden_states, temb)\n\n        return hidden_states\n",
+  "mid_block_accepts_temb": true,
+  "official_decode_passes_temb_to_mid_block": true,
+  "decoder_mid_block_temb_is_none_in_default_decode": true,
+  "temb_shape": null,
+  "temb_dtype": null,
+  "temb_source": "decoder.forward optional latent_embeds; default decode path passes None",
+  "decoder_mid_block_input_shape": [
+    1,
+    512,
+    4,
+    4
+  ],
+  "decoder_mid_block_output_shape": [
+    1,
+    512,
+    4,
+    4
+  ],
+  "resnet_count": 2,
+  "attention_count": 1,
+  "attention_exists": true,
+  "module_order": [
+    "resnets.0",
+    "attentions.0",
+    "resnets.1"
+  ],
+  "resnet_info": [
+    {
+      "module_name": "decoder.mid_block.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "default",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1,
+      "norm1_weight_shape": [
+        512
+      ],
+      "norm1_bias_shape": [
+        512
+      ],
+      "norm2_weight_shape": [
+        512
+      ],
+      "norm2_bias_shape": [
+        512
+      ],
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        512
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        512
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null
+    },
+    {
+      "module_name": "decoder.mid_block.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "default",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1,
+      "norm1_weight_shape": [
+        512
+      ],
+      "norm1_bias_shape": [
+        512
+      ],
+      "norm2_weight_shape": [
+        512
+      ],
+      "norm2_bias_shape": [
+        512
+      ],
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        512
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        512
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null
+    }
+  ],
+  "attention_info": [
+    {
+      "module_name": "decoder.mid_block.attentions.0",
+      "exists": true,
+      "class": "Attention",
+      "module": "diffusers.models.attention_processor",
+      "heads": 1,
+      "head_dim": 512,
+      "inner_dim": 512,
+      "scale": 0.04419417382415922,
+      "scale_qk": true,
+      "upcast_attention": false,
+      "upcast_softmax": true,
+      "residual_connection": true,
+      "rescale_output_factor": 1,
+      "group_norm_exists": true,
+      "group_norm_num_groups": 32,
+      "group_norm_eps": 1e-06,
+      "group_norm_affine": true,
+      "group_norm_weight_shape": [
+        512
+      ],
+      "group_norm_bias_shape": [
+        512
+      ],
+      "spatial_norm_exists": false,
+      "to_q_weight_shape": [
+        512,
+        512
+      ],
+      "to_q_bias_shape": [
+        512
+      ],
+      "to_k_weight_shape": [
+        512,
+        512
+      ],
+      "to_k_bias_shape": [
+        512
+      ],
+      "to_v_weight_shape": [
+        512,
+        512
+      ],
+      "to_v_bias_shape": [
+        512
+      ],
+      "to_out_0_weight_shape": [
+        512,
+        512
+      ],
+      "to_out_0_bias_shape": [
+        512
+      ],
+      "npz_mapping": {
+        "to_q": "decoder__mid_block__attentions__0__query__weight",
+        "to_k": "decoder__mid_block__attentions__0__key__weight",
+        "to_v": "decoder__mid_block__attentions__0__value__weight",
+        "to_out.0": "decoder__mid_block__attentions__0__proj_attn__weight"
+      }
+    }
+  ],
+  "state_keys": [
+    {
+      "key": "decoder.mid_block.attentions.0.group_norm.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.group_norm.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_q.weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_q.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_k.weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_k.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_v.weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_v.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_out.0.weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder.mid_block.attentions.0.to_out.0.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.norm1.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.norm1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.conv1.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.conv1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.norm2.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.norm2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.conv2.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder.mid_block.resnets.0.conv2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.norm1.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.norm1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.conv1.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.conv1.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.norm2.weight",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.norm2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.conv2.weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "torch.float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder.mid_block.resnets.1.conv2.bias",
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "numel": 512
+    }
+  ],
+  "converted_npz_keys": [
+    {
+      "key": "decoder__mid_block__attentions__0__group_norm__weight",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__group_norm__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__query__weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__query__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__key__weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__key__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__value__weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__value__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__proj_attn__weight",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "numel": 262144
+    },
+    {
+      "key": "decoder__mid_block__attentions__0__proj_attn__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__norm1__weight",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__norm1__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__conv1__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__norm2__weight",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__norm2__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder__mid_block__resnets__0__conv2__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__norm1__weight",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__norm1__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__conv1__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__conv1__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__norm2__weight",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__norm2__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__conv2__weight",
+      "shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "numel": 2359296
+    },
+    {
+      "key": "decoder__mid_block__resnets__1__conv2__bias",
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "numel": 512
+    }
+  ]
+}

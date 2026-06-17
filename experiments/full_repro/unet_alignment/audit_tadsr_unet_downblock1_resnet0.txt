@@ -1,0 +1,7 @@
+TADSR UNet down_blocks.1.resnets.0 audit
+status: PASS
+resnet0 input/output: 320 -> 640
+has shortcut: True
+block0 bridge output shape: [1, 320, 16, 16]
+resnet0 output shape: [1, 640, 16, 16]
+remaining down_blocks.1 modules: ['attentions.0', 'resnets.1', 'attentions.1', 'downsamplers.0']

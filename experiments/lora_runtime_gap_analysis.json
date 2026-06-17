@@ -1,0 +1,13 @@
+{
+  "status_marker": "TADSR_LORA_RUNTIME_GAP_ANALYSIS",
+  "status": "PASS",
+  "total_active_lora_pairs": 290,
+  "unet_active_lora_pairs": 258,
+  "timevae_active_lora_pairs": 32,
+  "covered_active_lora_pairs": 290,
+  "static_effective_lora_status": "PASS",
+  "dynamic_runtime_lora_status": "NOT_IMPLEMENTED_BY_DESIGN",
+  "dynamic_runtime_adapter_switching_implemented": false,
+  "full_tadsr_runtime_lora_integrated": false,
+  "conclusion": "The project validates static effective LoRA for fixed adapter / fixed scale official boundaries. Generic dynamic runtime LoRA adapter switching remains future work."
+}

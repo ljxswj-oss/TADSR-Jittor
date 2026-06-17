@@ -1,0 +1,191 @@
+{
+  "generated_at_utc": "2026-06-13T11:57:59.676957+00:00",
+  "status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "exists": true,
+      "size_bytes": 38538,
+      "chinese_ratio": 0.1439149647677057,
+      "min_required_ratio": 0.08,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/03_ppt_outline.md",
+      "exists": true,
+      "size_bytes": 24733,
+      "chinese_ratio": 0.14839757080151525,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/04_video_script.md",
+      "exists": true,
+      "size_bytes": 24784,
+      "chinese_ratio": 0.20512636415852958,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_teacher_status_summary.md",
+      "exists": true,
+      "size_bytes": 20921,
+      "chinese_ratio": 0.1337865397688647,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_defense_risk_response_pack.md",
+      "exists": true,
+      "size_bytes": 13333,
+      "chinese_ratio": 0.21253471802922352,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/defense_short_answers_zh.md",
+      "exists": true,
+      "size_bytes": 2585,
+      "chinese_ratio": 0.19728729963008632,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/defense_long_answers_zh.md",
+      "exists": true,
+      "size_bytes": 6363,
+      "chinese_ratio": 0.2666112956810631,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/teacher_review_guide.md",
+      "exists": true,
+      "size_bytes": 5793,
+      "chinese_ratio": 0.17315284827975183,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_submission_checklist.md",
+      "exists": true,
+      "size_bytes": 17544,
+      "chinese_ratio": 0.1333443217405637,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_release_candidate_signoff.md",
+      "exists": true,
+      "size_bytes": 5602,
+      "chinese_ratio": 0.16656908665105385,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_command_index.md",
+      "exists": true,
+      "size_bytes": 6410,
+      "chinese_ratio": 0.21692969870875178,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_github_upload_checklist.md",
+      "exists": true,
+      "size_bytes": 3134,
+      "chinese_ratio": 0.23426838514025777,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_human_submission_instructions.md",
+      "exists": true,
+      "size_bytes": 3969,
+      "chinese_ratio": 0.2613995485327314,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_video_rehearsal_checklist.md",
+      "exists": true,
+      "size_bytes": 3323,
+      "chinese_ratio": 0.23872387238723872,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_submission_freeze_tag.md",
+      "exists": true,
+      "size_bytes": 1295,
+      "chinese_ratio": 0.31333333333333335,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_human_submission_lock_report.md",
+      "exists": true,
+      "size_bytes": 4717,
+      "chinese_ratio": 0.12144026186579378,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "docs/final_video_submission_check.md",
+      "exists": true,
+      "size_bytes": 2905,
+      "chinese_ratio": 0.214987714987715,
+      "min_required_ratio": 0.12,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "deliverables/TADSR-Jittor_submission_readme.md",
+      "exists": true,
+      "size_bytes": 18082,
+      "chinese_ratio": 0.09761978842563783,
+      "min_required_ratio": 0.08,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "deliverables/TADSR-Jittor_video_recording_guide.md",
+      "exists": true,
+      "size_bytes": 7097,
+      "chinese_ratio": 0.1890984241797985,
+      "min_required_ratio": 0.08,
+      "mojibake_hits": [],
+      "status": "PASS"
+    },
+    {
+      "path": "deliverables/TADSR-Jittor_final_presentation.md",
+      "exists": true,
+      "size_bytes": 19047,
+      "chinese_ratio": 0.13796275005748448,
+      "min_required_ratio": 0.08,
+      "mojibake_hits": [],
+      "status": "PASS"
+    }
+  ],
+  "markers": {
+    "TADSR_FINAL_CHINESE_MATERIALS_VALIDATION": "PASS",
+    "TADSR_FINAL_MOJIBAKE_SCAN": "PASS",
+    "TADSR_FINAL_CHINESE_READABILITY_READY": "PASS"
+  }
+}

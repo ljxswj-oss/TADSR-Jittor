@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "reason": "",
+  "block_index": 0,
+  "class": "UpDecoderBlock2D",
+  "module": "diffusers.models.unet_2d_blocks",
+  "forward_signature": "(hidden_states: torch.FloatTensor, temb: Optional[torch.FloatTensor] = None, scale: float = 1.0) -> torch.FloatTensor",
+  "children_order": [
+    {
+      "name": "resnets",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container"
+    },
+    {
+      "name": "upsamplers",
+      "class": "ModuleList",
+      "module": "torch.nn.modules.container"
+    }
+  ],
+  "input_shape": [
+    1,
+    512,
+    4,
+    4
+  ],
+  "output_shape": [
+    1,
+    512,
+    8,
+    8
+  ],
+  "resnet_count": 3,
+  "attention_count": 0,
+  "upsampler_count": 1,
+  "has_upsampler": true,
+  "has_attention": false,
+  "module_order": [
+    "resnets.0",
+    "resnets.1",
+    "resnets.2",
+    "upsamplers.0"
+  ],
+  "uses_temb": true,
+  "default_temb_is_none": true,
+  "spatial_size_changes": true,
+  "channel_count_changes": false,
+  "resnet_info": [
+    {
+      "module_name": "decoder.up_blocks.0.resnets.0",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        512
+      ],
+      "norm1_bias_shape": [
+        512
+      ],
+      "norm2_weight_shape": [
+        512
+      ],
+      "norm2_bias_shape": [
+        512
+      ],
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        512
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        512
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__0__resnets__0"
+    },
+    {
+      "module_name": "decoder.up_blocks.0.resnets.1",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        512
+      ],
+      "norm1_bias_shape": [
+        512
+      ],
+      "norm2_weight_shape": [
+        512
+      ],
+      "norm2_bias_shape": [
+        512
+      ],
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        512
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        512
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__0__resnets__1"
+    },
+    {
+      "module_name": "decoder.up_blocks.0.resnets.2",
+      "class": "ResnetBlock2D",
+      "module": "diffusers.models.resnet",
+      "in_channels": 512,
+      "out_channels": 512,
+      "time_embedding_norm": "group",
+      "temb_channels": null,
+      "groups": null,
+      "groups_out": null,
+      "eps": 1e-06,
+      "non_linearity": null,
+      "output_scale_factor": 1.0,
+      "norm1_weight_shape": [
+        512
+      ],
+      "norm1_bias_shape": [
+        512
+      ],
+      "norm2_weight_shape": [
+        512
+      ],
+      "norm2_bias_shape": [
+        512
+      ],
+      "conv1_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv1_bias_shape": [
+        512
+      ],
+      "conv2_weight_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "conv2_bias_shape": [
+        512
+      ],
+      "time_emb_proj_exists": false,
+      "time_emb_proj_weight_shape": null,
+      "time_emb_proj_bias_shape": null,
+      "conv_shortcut_exists": false,
+      "conv_shortcut_weight_shape": null,
+      "conv_shortcut_bias_shape": null,
+      "nin_shortcut_exists": false,
+      "nin_shortcut_weight_shape": null,
+      "npz_prefix": "decoder__up_blocks__0__resnets__2"
+    }
+  ],
+  "upsampler_info": [
+    {
+      "module_name": "decoder.up_blocks.0.upsamplers.0",
+      "class": "Upsample2D",
+      "module": "diffusers.models.upsampling",
+      "children_order": [
+        {
+          "name": "conv",
+          "class": "LoRACompatibleConv",
+          "module": "diffusers.models.lora"
+        }
+      ],
+      "channels": 512,
+      "out_channels": 512,
+      "use_conv": true,
+      "use_conv_transpose": false,
+      "interpolate": true,
+      "padding": null,
+      "expected_mode": "nearest",
+      "expected_scale_factor": 2.0,
+      "conv": {
+        "exists": true,
+        "class": "LoRACompatibleConv",
+        "module": "diffusers.models.lora",
+        "weight_shape": [
+          512,
+          512,
+          3,
+          3
+        ],
+        "bias_shape": [
+          512
+        ],
+        "in_channels": 512,
+        "out_channels": 512,
+        "kernel_size": [
+          3,
+          3
+        ],
+        "stride": [
+          1,
+          1
+        ],
+        "padding": [
+          1,
+          1
+        ]
+      },
+      "npz_mapping": {
+        "conv": "decoder__up_blocks__0__upsamplers__0__conv__weight"
+      }
+    }
+  ]
+}

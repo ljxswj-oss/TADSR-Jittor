@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "reason": "official smoke completed",
+  "input_count": 4,
+  "output_count": 4,
+  "all_inputs_have_outputs": true,
+  "runtime_sec": 15.0,
+  "avg_time_sec": 3.75,
+  "gpu_memory_before": "1639MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;35MiB /  24564MiB;",
+  "gpu_memory_after": "1941MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;27MiB /  24564MiB;35MiB /  24564MiB;"
+}

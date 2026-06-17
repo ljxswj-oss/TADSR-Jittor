@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "concat_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        2560,
+        8,
+        8
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0,
+      "tolerance": 1e-06
+    },
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        2560,
+        8,
+        8
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "mean_abs_error": 1.0535244333864657e-08,
+      "relative_error": 5.75338959334619e-08,
+      "cosine_similarity": 0.9999999999999972,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.049041748046875e-05,
+      "mean_abs_error": 3.1406108433884585e-07,
+      "relative_error": 2.3387209464557208e-07,
+      "cosine_similarity": 0.9999999999999662,
+      "tolerance": 0.0001
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 3.44745785696432e-08,
+      "relative_error": 1.1145897449215402e-07,
+      "cosine_similarity": 0.9999999999999958,
+      "tolerance": 0.0001
+    },
+    "after_temb_add": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 1.049041748046875e-05,
+      "mean_abs_error": 3.208896401929451e-07,
+      "relative_error": 2.308710734526467e-07,
+      "cosine_similarity": 0.999999999999969,
+      "tolerance": 0.0001
+    },
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 3.5762786865234375e-06,
+      "mean_abs_error": 1.5502459385086099e-07,
+      "relative_error": 2.300504564594788e-07,
+      "cosine_similarity": 0.9999999999999725,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 5.7220458984375e-06,
+      "mean_abs_error": 5.121170605804081e-07,
+      "relative_error": 3.4138195960803356e-07,
+      "cosine_similarity": 0.9999999999999429,
+      "tolerance": 0.0001
+    },
+    "shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 3.5762786865234375e-06,
+      "mean_abs_error": 4.0197511879114246e-07,
+      "relative_error": 2.700579010974065e-07,
+      "cosine_similarity": 0.9999999999999613,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1280,
+        8,
+        8
+      ],
+      "max_abs_error": 6.67572021484375e-06,
+      "mean_abs_error": 6.623772605962586e-07,
+      "relative_error": 3.037548255287608e-07,
+      "cosine_similarity": 0.9999999999999538,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Only up_blocks.1.resnets.0 is executed after official first up_blocks.1 residual concat; attention0/full upblock1/full UNet are not executed."
+}

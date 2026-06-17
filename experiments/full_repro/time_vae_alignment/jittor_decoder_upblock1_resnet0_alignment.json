@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "target": "decoder.up_blocks.1.resnet0",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      8,
+      8
+    ],
+    "max_abs_error": 3.814697265625e-06,
+    "mean_abs_error": 5.505788180926174e-07,
+    "relative_error": 1.270972112448151e-07,
+    "cosine_similarity": 0.999999999999994,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

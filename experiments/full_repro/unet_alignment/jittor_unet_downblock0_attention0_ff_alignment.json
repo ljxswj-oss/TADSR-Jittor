@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "target": "transformer_blocks.0 norm3 + GEGLU feed-forward",
+  "diagnostics": {
+    "norm3": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 5.9604644775390625e-06,
+      "mean_abs_error": 1.2569394206879414e-06,
+      "relative_error": 4.1097762583887145e-06,
+      "cosine_similarity": 0.9999999999914639,
+      "tolerance": 0.0001
+    },
+    "ff_geglu_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        2560
+      ],
+      "max_abs_error": 1.1682510375976562e-05,
+      "mean_abs_error": 1.1488335286691242e-06,
+      "relative_error": 2.691532892190253e-06,
+      "cosine_similarity": 0.9999999999964682,
+      "tolerance": 0.0001
+    },
+    "ff_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 3.6656856536865234e-06,
+      "mean_abs_error": 8.446310183707339e-07,
+      "relative_error": 4.160452273322196e-06,
+      "cosine_similarity": 0.9999999999916812,
+      "tolerance": 0.001
+    },
+    "transformer0_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 9.268522262573242e-06,
+      "mean_abs_error": 1.5968250266951145e-06,
+      "relative_error": 4.2742869299669646e-06,
+      "cosine_similarity": 0.9999999999908823,
+      "tolerance": 0.001
+    }
+  }
+}

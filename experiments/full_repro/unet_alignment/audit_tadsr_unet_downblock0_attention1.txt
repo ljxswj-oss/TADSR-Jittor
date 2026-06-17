@@ -1,0 +1,12 @@
+# TADSR UNet down_blocks.0.attentions.1 Audit
+
+TADSR_UNET_DOWNBLOCK0_ATTENTION1_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK0_ATTENTION1_TRANSFORMER_AUDIT: PASS
+TADSR_UNET_DOWNBLOCK0_ATTENTION1_LORA_AUDIT: PASS
+
+attention1 class: `diffusers.models.transformer_2d.Transformer2DModel`
+input shape: `[1, 320, 32, 32]`
+output shape: `[1, 320, 32, 32]`
+actual next module after attentions.1: `downsamplers.0`
+
+This audit stops before downsampler, down_blocks.1, full down_blocks.0 and full UNet.

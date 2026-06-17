@@ -1,0 +1,4154 @@
+{
+  "status": "PASS",
+  "weight_file": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/tadsr_weights.npz",
+  "lora_key_count": 580,
+  "pair_count": 290,
+  "pairs": [
+    {
+      "a_key": "state_dict_unet__conv_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__conv_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        2560,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__0__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__0__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        2560,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__attentions__1__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__attentions__1__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__0__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__0__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        5120,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        2560
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__0__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__0__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        5120,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        2560
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__attentions__1__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__attentions__1__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__resnets__0__conv_shortcut__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__resnets__0__conv_shortcut__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        320,
+        1,
+        1
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__1__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__1__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__0__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__0__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__proj_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__proj_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__attentions__1__proj_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__attentions__1__proj_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__resnets__0__conv_shortcut__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__resnets__0__conv_shortcut__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        640,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__2__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__2__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__3__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__3__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__3__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__3__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__3__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__3__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__down_blocks__3__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_unet__down_blocks__3__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__0__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__0__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__0__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__0__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__0__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__0__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__1__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__1__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__1__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__1__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__1__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__1__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__2__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__2__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__2__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__2__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__resnets__2__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__resnets__2__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__0__upsamplers__0__conv__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__0__upsamplers__0__conv__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__0__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__0__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__1__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__1__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__attentions__2__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__attentions__2__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__0__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__0__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__0__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__0__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__0__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__0__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__1__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__1__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__1__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__1__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__1__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__1__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__2__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__2__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1920,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__2__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__2__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__resnets__2__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__resnets__2__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1920,
+        1,
+        1
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__1__upsamplers__0__conv__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__1__upsamplers__0__conv__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        5120,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__0__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__0__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        5120,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__1__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__1__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        5120,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        2560
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__attentions__2__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__attentions__2__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640
+      ],
+      "b_shape": [
+        640,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__0__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__0__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1920,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__0__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__0__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__0__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__0__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1920,
+        1,
+        1
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__1__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__1__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__1__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__1__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__1__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__1__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280,
+        1,
+        1
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__2__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__2__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        960,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__2__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__2__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__resnets__2__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__resnets__2__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        960,
+        1,
+        1
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__2__upsamplers__0__conv__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__2__upsamplers__0__conv__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        640,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        2560,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__0__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__0__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        2560,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__1__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__1__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__proj_in__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__proj_in__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn1__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_q__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_q__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_k__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_k__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_v__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_v__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__attn2__to_out__0__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__ff__net__0__proj__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        2560,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__ff__net__2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__transformer_blocks__0__ff__net__2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__attentions__2__proj_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__attentions__2__proj_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320
+      ],
+      "b_shape": [
+        320,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__0__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__0__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        960,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__0__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__0__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__0__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__0__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        960,
+        1,
+        1
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__1__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__1__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__1__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__1__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__1__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__1__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        1,
+        1
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__2__conv1__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__2__conv1__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__2__conv2__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__2__conv2__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__up_blocks__3__resnets__2__conv_shortcut__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__up_blocks__3__resnets__2__conv_shortcut__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        640,
+        1,
+        1
+      ],
+      "b_shape": [
+        320,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__proj_in__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__proj_in__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_q__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_q__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_k__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_k__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_v__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_v__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn1__to_out__0__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_q__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_q__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_k__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_k__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_v__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_v__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1024
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__attn2__to_out__0__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__ff__net__0__proj__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        10240,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__ff__net__2__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__transformer_blocks__0__ff__net__2__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        5120
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__attentions__0__proj_out__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__attentions__0__proj_out__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280
+      ],
+      "b_shape": [
+        1280,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__resnets__0__conv1__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__resnets__0__conv1__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__resnets__0__conv2__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__resnets__0__conv2__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__resnets__1__conv1__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__resnets__1__conv1__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__mid_block__resnets__1__conv2__lora_A__default_others__weight",
+      "b_key": "state_dict_unet__mid_block__resnets__1__conv2__lora_B__default_others__weight",
+      "a_shape": [
+        4,
+        1280,
+        3,
+        3
+      ],
+      "b_shape": [
+        1280,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_unet__conv_out__lora_A__default_decoder__weight",
+      "b_key": "state_dict_unet__conv_out__lora_B__default_decoder__weight",
+      "a_shape": [
+        4,
+        320,
+        3,
+        3
+      ],
+      "b_shape": [
+        4,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__conv_in__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__conv_in__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__0__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__0__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__0__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__0__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__0__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__0__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__0__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__0__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__0__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__0__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        128,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        3,
+        3
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv_shortcut__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__resnets__0__conv_shortcut__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        128,
+        1,
+        1
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__1__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__1__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "b_shape": [
+        256,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv_shortcut__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__resnets__0__conv_shortcut__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        256,
+        1,
+        1
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__2__downsamplers__0__conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__2__downsamplers__0__conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__3__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__3__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__3__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__3__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__3__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__3__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__down_blocks__3__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__down_blocks__3__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__attentions__0__to_q__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__attentions__0__to_q__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512
+      ],
+      "b_shape": [
+        512,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__attentions__0__to_k__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__attentions__0__to_k__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512
+      ],
+      "b_shape": [
+        512,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__attentions__0__to_v__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__attentions__0__to_v__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512
+      ],
+      "b_shape": [
+        512,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__attentions__0__to_out__0__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__attentions__0__to_out__0__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512
+      ],
+      "b_shape": [
+        512,
+        4
+      ],
+      "kind": "linear"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__resnets__0__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__resnets__0__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__resnets__0__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__resnets__0__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__resnets__1__conv1__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__resnets__1__conv1__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__mid_block__resnets__1__conv2__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__mid_block__resnets__1__conv2__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        512,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__encoder__conv_out__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__encoder__conv_out__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        512,
+        3,
+        3
+      ],
+      "b_shape": [
+        8,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    },
+    {
+      "a_key": "state_dict_vae__quant_conv__lora_A__default_encoder__weight",
+      "b_key": "state_dict_vae__quant_conv__lora_B__default_encoder__weight",
+      "a_shape": [
+        4,
+        8,
+        1,
+        1
+      ],
+      "b_shape": [
+        8,
+        4,
+        1,
+        1
+      ],
+      "kind": "conv"
+    }
+  ]
+}

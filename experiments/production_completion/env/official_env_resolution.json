@@ -1,0 +1,95 @@
+{
+  "status_marker": "TADSR_PRODUCTION_OFFICIAL_ENV_RESOLUTION",
+  "status": "PASS",
+  "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.35",
+  "cwd": "/mnt/data/sj/projects/TADSR-Jittor",
+  "python_executable": "/usr/bin/python3",
+  "official_repo": "/mnt/data/sj/projects/TADSR_official_pytorch",
+  "official_weights": "/mnt/data/sj/checkpoints/TADSR/preset/weights",
+  "official_python": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python",
+  "official_python_version": "3.10.12",
+  "official_torch_version": "2.0.1+cu118",
+  "official_diffusers_version": "",
+  "official_repo_exists": true,
+  "official_weights_exists": true,
+  "official_python_exists": true,
+  "official_python_version_works": true,
+  "official_python_can_import_torch": true,
+  "official_python_can_import_diffusers": false,
+  "repo_missing_expected_files": [],
+  "weights_missing_expected_entries": [],
+  "scheduler_config_exists": true,
+  "model_index_or_config_candidates": [
+    "scheduler/scheduler_config.json",
+    "time_vae/config.json",
+    "unet/config.json"
+  ],
+  "timevae_weight_candidates": [
+    "time_vae/diffusion_pytorch_model.bin"
+  ],
+  "lora_weight_candidates": [],
+  "checks": [
+    {
+      "name": "official_repo_exists",
+      "status": "PASS",
+      "detail": "/mnt/data/sj/projects/TADSR_official_pytorch (cli)"
+    },
+    {
+      "name": "official_weights_exists",
+      "status": "PASS",
+      "detail": "/mnt/data/sj/checkpoints/TADSR/preset/weights (cli)"
+    },
+    {
+      "name": "official_python_exists",
+      "status": "PASS",
+      "detail": "/mnt/data/sj/venvs/tadsr_official_strict_cu118/bin/python (cli)"
+    },
+    {
+      "name": "official_repo_has_expected_files",
+      "status": "PASS",
+      "detail": "all expected files present"
+    },
+    {
+      "name": "official_weights_has_expected_files",
+      "status": "PASS",
+      "detail": "all expected weights present"
+    },
+    {
+      "name": "official_python_version",
+      "status": "PASS",
+      "detail": "3.10.12"
+    },
+    {
+      "name": "official_python_can_import_torch",
+      "status": "PASS",
+      "detail": "2.0.1+cu118"
+    },
+    {
+      "name": "official_python_can_import_diffusers",
+      "status": "PARTIAL",
+      "detail": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'diffusers'"
+    },
+    {
+      "name": "scheduler_config_exists",
+      "status": "PASS",
+      "detail": "scheduler/scheduler_config.json"
+    },
+    {
+      "name": "model_index_or_config_candidates",
+      "status": "PASS",
+      "detail": "scheduler/scheduler_config.json, time_vae/config.json, unet/config.json"
+    },
+    {
+      "name": "timevae_weight_candidates",
+      "status": "PASS",
+      "detail": "time_vae/diffusion_pytorch_model.bin"
+    },
+    {
+      "name": "lora_weight_candidates",
+      "status": "PARTIAL",
+      "detail": "no LoRA weight candidates found"
+    }
+  ],
+  "blocker_reason": "",
+  "next_action": "Proceed with live metadata-only TimeVAE oracle export."
+}

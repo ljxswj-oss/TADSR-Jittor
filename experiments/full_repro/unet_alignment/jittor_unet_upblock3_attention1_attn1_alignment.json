@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.0877847671508789e-05,
+      "mean_abs_error": 1.81244810121238e-06,
+      "relative_error": 3.379432982427406e-06,
+      "cosine_similarity": 0.9999999999937147,
+      "tolerance": 0.0001
+    },
+    "attn1_q": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 2.5987625122070312e-05,
+      "mean_abs_error": 5.0948967111830165e-06,
+      "relative_error": 3.4542233991741264e-06,
+      "cosine_similarity": 0.9999999999940213,
+      "tolerance": 0.0001
+    },
+    "attn1_k": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 2.4318695068359375e-05,
+      "mean_abs_error": 5.1721533923507205e-06,
+      "relative_error": 3.7204763723101094e-06,
+      "cosine_similarity": 0.9999999999939578,
+      "tolerance": 0.0001
+    },
+    "attn1_v": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.1563301086425781e-05,
+      "mean_abs_error": 2.215611864515507e-06,
+      "relative_error": 3.71090206593981e-06,
+      "cosine_similarity": 0.9999999999922721,
+      "tolerance": 0.0001
+    },
+    "attn1_output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.4066696166992188e-05,
+      "mean_abs_error": 2.53367795437498e-06,
+      "relative_error": 4.952915522962423e-06,
+      "cosine_similarity": 0.9999999999880875,
+      "tolerance": 0.001
+    },
+    "after_attn1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 1.2099742889404297e-05,
+      "mean_abs_error": 2.3313927457024873e-06,
+      "relative_error": 4.113674995355372e-06,
+      "cosine_similarity": 0.9999999999912864,
+      "tolerance": 0.001
+    }
+  }
+}

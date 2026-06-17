@@ -1,0 +1,6 @@
+{
+  "status": "NOT_APPLICABLE",
+  "target": "encoder.down_blocks.3.downsamplers.0",
+  "reason": "official encoder.down_blocks.3 has no downsampler",
+  "note": "This is expected for the final encoder down block and is not counted as a failure."
+}

@@ -1,0 +1,22 @@
+{
+  "status_marker": "TADSR_ONE_STEP_TENSOR_ALIGNMENT_VALIDATION",
+  "status": "PASS",
+  "created_at": "2026-06-13T11:59:23.036798+00:00",
+  "markers": {
+    "TADSR_ONE_STEP_TENSOR_ALIGNMENT_VALIDATION": "PASS",
+    "TADSR_ONE_STEP_NO_IMAGE_VIDEO_GUARD": "PASS",
+    "TADSR_ONE_STEP_RAW_TENSOR_POLICY": "PASS",
+    "TADSR_ONE_STEP_FULL_INFERENCE_GUARD_PRESERVED": "PASS",
+    "TADSR_FULL_INFERENCE_ONE_STEP_ALIGNMENT": "PASS"
+  },
+  "official_path_audit_status": "PASS",
+  "official_oracle_status": "PASS",
+  "jittor_one_step_run_status": "PASS",
+  "jittor_stage_alignment_status": "PASS",
+  "raw_tensor_policy_offenders": [],
+  "image_video_offenders": [],
+  "bad_execution_claims": [],
+  "full_inference_guard_note": "full inference CLI still contains NotImplementedError guard",
+  "blockers": [],
+  "next_required_action": "One-step tensor alignment passed; next phase may plan tiny multi-step latent-only alignment, still without image/video/full-inference claims."
+}

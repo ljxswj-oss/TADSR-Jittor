@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "target": "encoder.conv_in + down_blocks.0..3 + mid_block",
+  "module_order": [
+    "encoder.conv_in",
+    "encoder.down_blocks.0",
+    "encoder.down_blocks.1",
+    "encoder.down_blocks.2",
+    "encoder.down_blocks.3",
+    "encoder.mid_block"
+  ],
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      512,
+      4,
+      4
+    ],
+    "max_abs_error": 7.62939453125e-05,
+    "mean_abs_error": 7.5620901043294e-06,
+    "relative_error": 2.8592266364109767e-07,
+    "cosine_similarity": 0.9999999999999617,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

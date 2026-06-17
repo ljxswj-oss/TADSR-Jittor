@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target": "encoder.conv_in + down_blocks.0..3 + mid_block + tail + quant_conv",
+  "note": "deterministic encoder-to-quant moments path; no latent sampling",
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      8,
+      4,
+      4
+    ],
+    "max_abs_error": 9.5367431640625e-06,
+    "mean_abs_error": 1.689302735030651e-06,
+    "relative_error": 1.6456072783499378e-07,
+    "cosine_similarity": 0.9999999999999774,
+    "tolerance": 0.0001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

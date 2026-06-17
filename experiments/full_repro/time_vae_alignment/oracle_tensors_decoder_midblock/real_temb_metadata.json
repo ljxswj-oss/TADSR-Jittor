@@ -1,0 +1,8 @@
+{
+  "decoder_midblock_temb_is_none": true,
+  "encoder_temb_shape": [
+    1,
+    256
+  ],
+  "note": "real_encoder_temb is used only for the encoder-side path; decoder.mid_block receives None."
+}

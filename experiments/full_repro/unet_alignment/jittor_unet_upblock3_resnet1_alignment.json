@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "concat_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_error": 0.0,
+      "cosine_similarity": 1.0000000000000002,
+      "tolerance": 1e-06
+    },
+    "norm1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        640,
+        32,
+        32
+      ],
+      "max_abs_error": 2.980232238769531e-07,
+      "mean_abs_error": 1.1337631913507784e-08,
+      "relative_error": 8.100818208705424e-08,
+      "cosine_similarity": 0.9999999999999961,
+      "tolerance": 0.0001
+    },
+    "conv1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.152557373046875e-07,
+      "mean_abs_error": 7.338655176880593e-08,
+      "relative_error": 2.578336677880157e-07,
+      "cosine_similarity": 0.9999999999999681,
+      "tolerance": 0.0002
+    },
+    "time_emb_proj": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320
+      ],
+      "max_abs_error": 1.7881393432617188e-07,
+      "mean_abs_error": 1.806547516025603e-08,
+      "relative_error": 1.1680654885968535e-07,
+      "cosine_similarity": 0.9999999999999895,
+      "tolerance": 0.0001
+    },
+    "after_temb_add": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 7.152557373046875e-07,
+      "mean_abs_error": 7.756764972555174e-08,
+      "relative_error": 2.2591668509253215e-07,
+      "cosine_similarity": 0.9999999999999748,
+      "tolerance": 0.0002
+    },
+    "norm2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.9073486328125e-06,
+      "mean_abs_error": 1.1453761627113617e-07,
+      "relative_error": 2.5089655459958206e-07,
+      "cosine_similarity": 0.9999999999999699,
+      "tolerance": 0.0001
+    },
+    "conv2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.3113021850585938e-06,
+      "mean_abs_error": 1.9772324879596682e-07,
+      "relative_error": 3.337009793187614e-07,
+      "cosine_similarity": 0.999999999999944,
+      "tolerance": 0.0001
+    },
+    "shortcut": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.2516975402832031e-06,
+      "mean_abs_error": 1.1502214745107153e-07,
+      "relative_error": 1.726669406479938e-07,
+      "cosine_similarity": 0.9999999999999846,
+      "tolerance": 0.0001
+    },
+    "output": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.6689300537109375e-06,
+      "mean_abs_error": 2.3189018847347142e-07,
+      "relative_error": 2.906548968351266e-07,
+      "cosine_similarity": 0.9999999999999583,
+      "tolerance": 0.0001
+    }
+  },
+  "note": "Only up_blocks.3.resnets.1 is executed after official residual concat. It stops before up_blocks.3.attentions.1, full up_blocks.3, full UNet forward, runtime LoRA, and full TADSR inference."
+}

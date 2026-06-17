@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json
+from time_vae_decoder_midblock_common import *
+
+
+def main() -> int:
+    oracle, blocked = load_oracle()
+    if blocked:
+        result = blocked
+    else:
+        tester = TimeVAEDecoderMidBlockTester(WEIGHTS)
+        got = tester.run_midblock(oracle['synthetic_decoder_midblock_input'], None, return_intermediates=True)
+        diagnostics = {
+            'resnet0': add_metrics(got['resnet0'], oracle['synthetic_decoder_midblock_resnet0_output']),
+            'attention': add_metrics(got['attention'], oracle['synthetic_decoder_midblock_attention_output']),
+            'resnet1': add_metrics(got['resnet1'], oracle['synthetic_decoder_midblock_resnet1_output']),
+            'output': add_metrics(got['output'], oracle['synthetic_decoder_midblock_output']),
+        }
+        result = {
+            'status': status_from_diagnostics(diagnostics),
+            'target': 'synthetic hidden -> decoder.mid_block',
+            'note': 'isolated deterministic synthetic hidden; decoder temb is None',
+            'diagnostics': diagnostics,
+            'metrics': diagnostics['output'],
+            'weights': str(WEIGHTS),
+        }
+        if result['status'] == 'FAIL':
+            result['failure_analysis'] = failure_analysis()
+    write_report('jittor_decoder_midblock_synthetic_alignment', 'TimeAware VAE Decoder MidBlock Synthetic Alignment', result)
+    print(f"TIME_VAE_DECODER_MIDBLOCK_SYNTHETIC_ALIGNMENT: {result['status']}")
+    if result.get('diagnostics'):
+        print(json.dumps(result['diagnostics'], indent=2))
+    return 0 if result['status'] in {'PASS', 'PARTIAL'} else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

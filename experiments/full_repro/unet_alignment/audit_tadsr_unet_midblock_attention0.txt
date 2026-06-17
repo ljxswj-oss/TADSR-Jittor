@@ -1,0 +1,10 @@
+# TADSR UNet mid_block.attentions.0 audit
+
+TADSR_UNET_MIDBLOCK_ATTENTION0_AUDIT: PASS
+TADSR_UNET_MIDBLOCK_ATTENTION0_LORA_AUDIT: PASS
+attention0 class: diffusers.models.transformer_2d.Transformer2DModel
+transformer block count: 1
+input shape: [1, 1280, 4, 4]
+output shape: [1, 1280, 4, 4]
+next module: mid_block.resnets.1
+Full mid_block/up_blocks/full UNet/full inference remain unopened.

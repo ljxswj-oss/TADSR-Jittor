@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+from unet_downblock0_attention0_common import *
+
+def main() -> int:
+    oracle, blocked = load_oracle()
+    if blocked:
+        print(f"TADSR_UNET_DOWNBLOCK0_ATTENTION0_PROJ_IN_ALIGNMENT: {blocked['status']}")
+        blocked_result('jittor_unet_downblock0_attention0_proj_alignment', 'TADSR UNet down_blocks.0.attentions.0 Projection Alignment', blocked)
+        return 1
+    t = attention_tester()
+    out = t.run_input_projection(oracle['synthetic_attention0_input'])
+    diagnostics = {
+        'norm': add_metrics(out['norm'], oracle['synthetic_attention0_norm'], 1e-4),
+        'sequence_input': add_metrics(out['sequence_input'], oracle['synthetic_attention0_sequence_input'], 1e-4),
+        'proj_in': add_metrics(out['proj_in'], oracle['synthetic_attention0_proj_in'], 1e-4),
+    }
+    result = {'status': status_from_diagnostics(diagnostics), 'target': 'attention0 top-level norm + proj_in + sequence reshape', 'diagnostics': diagnostics}
+    write_report('jittor_unet_downblock0_attention0_proj_alignment', 'TADSR UNet down_blocks.0.attentions.0 Projection Alignment', result)
+    print(f"TADSR_UNET_DOWNBLOCK0_ATTENTION0_NORM_ALIGNMENT: {status_from_metrics(diagnostics['norm'])}")
+    print(f"TADSR_UNET_DOWNBLOCK0_ATTENTION0_PROJ_IN_ALIGNMENT: {status_from_metrics(diagnostics['proj_in'])}")
+    print(f"TADSR_UNET_DOWNBLOCK0_ATTENTION0_SEQUENCE_ALIGNMENT: {status_from_metrics(diagnostics['sequence_input'])}")
+    return 0 if result['status'] in {'PASS','PARTIAL'} else 1
+if __name__ == '__main__': raise SystemExit(main())

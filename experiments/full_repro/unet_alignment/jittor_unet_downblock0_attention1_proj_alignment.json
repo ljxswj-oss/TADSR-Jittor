@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "target": "isolated attention1 norm/sequence/proj_in only",
+  "note": "Stops before transformer block.",
+  "diagnostics": {
+    "norm": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 3.7550926208496094e-06,
+      "mean_abs_error": 8.382014853772213e-07,
+      "relative_error": 3.023417664427977e-06,
+      "cosine_similarity": 0.9999999999936152,
+      "tolerance": 0.0001
+    },
+    "sequence_input": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 3.7550926208496094e-06,
+      "mean_abs_error": 8.382014853772213e-07,
+      "relative_error": 3.023417664427977e-06,
+      "cosine_similarity": 0.9999999999936146,
+      "tolerance": 0.0001
+    },
+    "proj_in": {
+      "shape_match": true,
+      "shape": [
+        1,
+        1024,
+        320
+      ],
+      "max_abs_error": 6.794929504394531e-06,
+      "mean_abs_error": 9.88851792627088e-07,
+      "relative_error": 3.404352791583805e-06,
+      "cosine_similarity": 0.999999999993715,
+      "tolerance": 0.0001
+    }
+  }
+}

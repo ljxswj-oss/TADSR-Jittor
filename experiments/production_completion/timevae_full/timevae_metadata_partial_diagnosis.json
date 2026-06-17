@@ -1,0 +1,61 @@
+{
+  "status_marker": "TADSR_TIMEVAE_METADATA_PARTIAL_DIAGNOSIS",
+  "status": "PASS",
+  "current_status": "PARTIAL",
+  "preflight_status": "PARTIAL",
+  "metadata_contract_status": "PARTIAL",
+  "phase3_status": "PASS_WITH_BLOCKERS",
+  "audit_status": "PASS",
+  "missing_required_fields": [
+    "dependency_blockers",
+    "encode_input_shape",
+    "encode_input_dtype",
+    "encode_input_range",
+    "encode_input_stats",
+    "quant_conv_used",
+    "latent_distribution_type",
+    "posterior_mean_shape",
+    "posterior_logvar_shape",
+    "fixed_epsilon_used",
+    "latent_shape",
+    "latent_dtype",
+    "latent_stats",
+    "scaled_latent_shape",
+    "scaled_latent_stats",
+    "decode_input_shape",
+    "decode_input_dtype",
+    "post_quant_conv_used",
+    "decode_output_shape",
+    "decode_output_dtype",
+    "decode_output_range",
+    "decode_output_stats",
+    "clamp_policy"
+  ],
+  "missing_optional_fields": [
+    "summary_stats",
+    "sha256",
+    "local_tensor_paths",
+    "blockers"
+  ],
+  "blocked_by_dependency": false,
+  "blocked_by_forward_execution": true,
+  "blocked_by_missing_diffusers": false,
+  "blocked_by_missing_weight": false,
+  "blocked_by_missing_shape_contract": true,
+  "dependency_blockers": [],
+  "blockers": [
+    "TimeVAE production oracle metadata is not exported live"
+  ],
+  "recommended_repair_actions": [
+    "Run the metadata exporter in Linux official env in metadata-only mode; do not save or commit raw tensors.",
+    "Populate encode/decode shape, dtype, range, sampling, scaling and clamp policy fields."
+  ],
+  "can_attempt_live_repair_on_linux": true,
+  "safe_scope": {
+    "imports_torch": false,
+    "imports_jittor": false,
+    "executes_model": false,
+    "runs_full_inference": false,
+    "generates_image_or_video": false
+  }
+}

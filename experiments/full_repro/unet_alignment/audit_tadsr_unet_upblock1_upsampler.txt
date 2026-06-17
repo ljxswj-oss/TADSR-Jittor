@@ -1,0 +1,13 @@
+# TADSR UNet up_blocks.1.upsamplers.0 official audit
+
+TADSR_UNET_UPBLOCK1_UPSAMPLER_AUDIT: PASS
+TADSR_UNET_UPBLOCK1_UPSAMPLER_LORA_AUDIT: PASS
+TADSR_UNET_UPBLOCK1_UPSAMPLER_RESIDUAL_CONTRACT_AUDIT: PASS
+
+upblock1 class: diffusers.models.unet_2d_blocks.CrossAttnUpBlock2D
+upsampler class: diffusers.models.upsampling.Upsample2D
+operation type: nearest_interpolation_plus_conv
+input shape: [1, 1280, 8, 8]
+output shape: [1, 1280, 16, 16]
+actual next module: up_blocks.2
+full up_blocks.1 aggregate/full UNet/full inference remain NOT_COMPLETE.

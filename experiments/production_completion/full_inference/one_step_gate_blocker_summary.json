@@ -1,0 +1,11 @@
+{
+  "status_marker": "TADSR_FULL_INFERENCE_ONE_STEP_GATE_BLOCKER_SUMMARY",
+  "status": "PASS",
+  "one_step_allowed_next": false,
+  "blockers": [
+    "one-step tensor alignment prerequisites are not satisfied"
+  ],
+  "recommended_next_action": "Resolve one-step prerequisites before any tensor alignment execution.",
+  "full_inference_status": "NOT_COMPLETE",
+  "note": "This blocker summary does not execute one-step tensor alignment and does not open full inference."
+}

@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "target": "decoder.mid_block output -> decoder.up_blocks.0 -> decoder.up_blocks.1 -> decoder.up_blocks.2 -> decoder.up_blocks.3",
+  "note": "bridge test for consecutive decoder upblocks through the final channel-changing upblock3; decoder tail remains out of scope",
+  "diagnostics": {
+    "decoder_upblock0": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        8,
+        8
+      ],
+      "max_abs_error": 1.1444091796875e-05,
+      "mean_abs_error": 1.265898209368288e-06,
+      "relative_error": 4.244973501315773e-07,
+      "cosine_similarity": 0.9999999999999165,
+      "tolerance": 0.001
+    },
+    "decoder_upblock1": {
+      "shape_match": true,
+      "shape": [
+        1,
+        512,
+        16,
+        16
+      ],
+      "max_abs_error": 5.030632019042969e-05,
+      "mean_abs_error": 6.402784205050693e-06,
+      "relative_error": 5.91286974577679e-07,
+      "cosine_similarity": 0.9999999999998331,
+      "tolerance": 0.001
+    },
+    "decoder_upblock2": {
+      "shape_match": true,
+      "shape": [
+        1,
+        256,
+        32,
+        32
+      ],
+      "max_abs_error": 0.00014591217041015625,
+      "mean_abs_error": 1.2784620821548742e-05,
+      "relative_error": 8.997569789783459e-07,
+      "cosine_similarity": 0.9999999999996184,
+      "tolerance": 0.001
+    },
+    "decoder_upblock3": {
+      "shape_match": true,
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs_error": 0.00048828125,
+      "mean_abs_error": 1.7898237473445988e-05,
+      "relative_error": 8.239870910820068e-07,
+      "cosine_similarity": 0.999999999999662,
+      "tolerance": 0.001
+    }
+  },
+  "metrics": {
+    "shape_match": true,
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "max_abs_error": 0.00048828125,
+    "mean_abs_error": 1.7898237473445988e-05,
+    "relative_error": 8.239870910820068e-07,
+    "cosine_similarity": 0.999999999999662,
+    "tolerance": 0.001
+  },
+  "weights": "/mnt/data/sj/checkpoints/TADSR/jittor_converted/diffusers/time_vae_weights.npz"
+}

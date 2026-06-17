@@ -1,0 +1,2166 @@
+{
+  "status": "PASS",
+  "policy_json": "experiments/full_repro/lora_alignment/audit_tadsr_lora_policy.json",
+  "active_lora_module_count": 290,
+  "covered_count": 290,
+  "partial_count": 0,
+  "missing_count": 0,
+  "module_coverage": [
+    {
+      "module_path": "conv_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.0.downsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.1.downsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.2.downsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.3.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.3.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.3.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "down_blocks.3.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.1.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.2.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.2.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.resnets.2.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.0.upsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.attentions.2.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.1.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.2.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.2.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.resnets.2.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.1.upsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.attentions.2.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.1.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.2.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.2.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.resnets.2.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.2.upsamplers.0.conv",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.1.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.attentions.2.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.0.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.1.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.2.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.2.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "up_blocks.3.resnets.2.conv_shortcut",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.proj_in",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn1.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn1.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn1.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn1.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn2.to_q",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn2.to_k",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn2.to_v",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.attn2.to_out.0",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.ff.net.0.proj",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.transformer_blocks.0.ff.net.2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.attentions.0.proj_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.resnets.0.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.resnets.0.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.resnets.1.conv1",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "mid_block.resnets.1.conv2",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "conv_out",
+      "component": "UNet",
+      "coverage_status": "PASS",
+      "coverage_evidence": "UNet static effective-weight NPZ artifacts plus TADSR_UNET_FULL_FORWARD_ALIGNMENT PASS"
+    },
+    {
+      "module_path": "encoder.conv_in",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.0.resnets.0.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.0.resnets.0.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.0.resnets.1.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.0.resnets.1.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.0.downsamplers.0.conv",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.resnets.0.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.resnets.0.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.resnets.0.conv_shortcut",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.resnets.1.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.resnets.1.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.1.downsamplers.0.conv",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.resnets.0.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.resnets.0.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.resnets.0.conv_shortcut",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.resnets.1.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.resnets.1.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.2.downsamplers.0.conv",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.3.resnets.0.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.3.resnets.0.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.3.resnets.1.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.down_blocks.3.resnets.1.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.attentions.0.to_q",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.attentions.0.to_k",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.attentions.0.to_v",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.attentions.0.to_out.0",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.resnets.0.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.resnets.0.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.resnets.1.conv1",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.mid_block.resnets.1.conv2",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "encoder.conv_out",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    },
+    {
+      "module_path": "quant_conv",
+      "component": "TimeVAE",
+      "coverage_status": "PASS",
+      "coverage_evidence": "TimeVAE static effective LoRA artifact metadata includes this module and manual official-active-module-vs-effective-weight verification is PASS."
+    }
+  ],
+  "component_coverage": {
+    "UNet": {
+      "total": 258,
+      "PASS": 258,
+      "PARTIAL": 0,
+      "missing": 0
+    },
+    "TimeVAE": {
+      "total": 32,
+      "PASS": 32,
+      "PARTIAL": 0,
+      "missing": 0
+    }
+  },
+  "timevae_lora_effective_metadata": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/timevae_lora_effective_weights_metadata.json",
+  "timevae_lora_effective_metadata_status": "PASS",
+  "timevae_lora_effective_artifact_coverage": "PASS",
+  "timevae_active_lora_module_coverage": "PASS",
+  "effective_weight_artifact_count": 47,
+  "effective_weight_artifacts": [
+    {
+      "path": "experiments/full_repro/lora_alignment/timevae_lora_effective_weights/converted_timevae_lora_effective_weights.npz",
+      "component": "TimeVAE",
+      "exists": true,
+      "size_bytes": 380694872,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock0_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 10058807,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock0_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 10061118,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock0_downsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 3430372,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock0_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 8386933,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock0_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 8392496,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock1_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 35287274,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock1_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 35292588,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock1_downsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 13711093,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock1_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 24398733,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock1_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 30518256,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock2_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131290548,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock2_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131275620,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock2_downsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 54658431,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock2_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 91327179,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock2_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 115587438,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock3_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 115917434,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_downblock3_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 115891162,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 7670557,
+      "git_ignored": false,
+      "git_tracked": true
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_midblock_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131511175,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_midblock_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 115909889,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_midblock_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 115807829,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_output_tail_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 92762,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock0_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 182865053,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock0_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 183094288,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock0_resnet2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 183228954,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock0_upsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 54787520,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131268821,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131272397,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_attention2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 131243257,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 182817304,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 182608625,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_resnet2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 152144607,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock1_upsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 54800138,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 35296731,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 35294371,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_attention2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 35292890,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 62553308,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 47319354,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_resnet2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 39696152,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock2_upsampler_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 13709912,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_attention0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 10060589,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_attention1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 10061166,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_attention2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 10063413,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_resnet0_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 16434694,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_resnet1_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 12605142,
+      "git_ignored": true,
+      "git_tracked": false
+    },
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_upblock3_resnet2_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 12593738,
+      "git_ignored": true,
+      "git_tracked": false
+    }
+  ],
+  "ignored_large_npz_count": 45,
+  "committed_large_npz_count": 1,
+  "committed_large_npz": [
+    {
+      "path": "experiments/full_repro/unet_alignment/converted_unet_entry_effective_weights.npz",
+      "component": "UNet",
+      "exists": true,
+      "size_bytes": 7670557,
+      "git_ignored": false,
+      "git_tracked": true
+    }
+  ],
+  "staged_npy_npz_count": 0,
+  "staged_npy_npz": [],
+  "static_effective_lora_coverage_audit": "PASS",
+  "active_lora_module_coverage": "PASS",
+  "effective_weight_artifact_coverage": "PASS",
+  "dynamic_runtime_lora_implementation": "NOT_IMPLEMENTED_BY_DESIGN",
+  "note": "All active LoRA modules are covered by static effective-weight artifacts. Generic runtime LoRA remains not implemented by design."
+}

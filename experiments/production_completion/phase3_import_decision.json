@@ -1,0 +1,14 @@
+{
+  "status_marker": "TADSR_PHASE3D_ONE_STEP_GATE_DECISION",
+  "status": "BLOCKED",
+  "one_step_allowed_next": false,
+  "import_gate": "PASS",
+  "package_found": true,
+  "package_security_status": "PASS",
+  "phase3b_import_validation_status": "PASS",
+  "phase3b_import_no_raw_tensors_status": "PASS",
+  "blockers": [
+    "one-step tensor alignment prerequisites are not satisfied"
+  ],
+  "next_required_action": "Resolve one-step prerequisites before any tensor alignment execution."
+}

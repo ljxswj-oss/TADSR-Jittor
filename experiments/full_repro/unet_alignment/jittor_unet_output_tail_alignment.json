@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "diagnostics": {
+    "norm": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 9.5367431640625e-07,
+      "mean_abs_error": 1.9101597324035808e-08,
+      "relative_error": 4.682003268718505e-08,
+      "cosine_similarity": 0.9999999999999987,
+      "tolerance": 0.0001
+    },
+    "act": {
+      "shape_match": true,
+      "shape": [
+        1,
+        320,
+        32,
+        32
+      ],
+      "max_abs_error": 1.7881393432617188e-07,
+      "mean_abs_error": 5.8304399278383635e-09,
+      "relative_error": 8.787306465458178e-08,
+      "cosine_similarity": 0.9999999999999944,
+      "tolerance": 0.0001
+    },
+    "conv_out": {
+      "shape_match": true,
+      "shape": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "max_abs_error": 1.4901161193847656e-07,
+      "mean_abs_error": 3.231585310459195e-08,
+      "relative_error": 3.8489308860744733e-07,
+      "cosine_similarity": 0.9999999999999357,
+      "tolerance": 0.0002
+    }
+  },
+  "norm_status": "PASS",
+  "act_status": "PASS",
+  "conv_out_status": "PASS",
+  "note": "Isolated output-tail validation from the PyTorch up_blocks.3 output tensor. This executes only conv_norm_out -> conv_act -> conv_out and does not call official UNet.forward or full TADSR inference."
+}
